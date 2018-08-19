@@ -1,0 +1,11 @@
+buildscript {
+    // Buildscript is evaluated before everything else so we can't use getExtOrDefault
+    def kotlin_version = rootProject.ext.has('kotlinVersion') ? rootProject.ext.get('kotlinVersion') : project.properties['StarIO10Module_kotlinVersion']
+
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencie

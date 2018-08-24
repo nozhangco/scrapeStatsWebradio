@@ -8,4 +8,27 @@ buildscript {
         jcenter()
     }
 
-    dependencie
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.2'
+        // noinspection DifferentKotlinGradleVersion
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+def getExtOrDefault(name) {
+    return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['StarIO10Module_' + name]
+}
+
+def getExtOrIntegerDefault(name) {
+    return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties['StarIO10Module_' + name]).toInteger()
+}
+
+android {
+    compileSdkVersion getExtOrIntegerDefault('compileSdkVersion')
+    buildToolsVersion getExtOrDefault('buildToolsVersion')
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion getExtOrIntegerDefault(

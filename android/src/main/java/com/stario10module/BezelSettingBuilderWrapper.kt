@@ -31,4 +31,22 @@ class BezelSettingBuilderWrapper internal constructor(context: ReactApplicationC
             promise.resolve(0)
         }
         else {
-            promise.reject(ReactNoCrashSoftExcep
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+
+    @ReactMethod
+    fun settingLedAutomaticBlink(identifier: String, type: String, onTime: Int, offTime: Int, promise: Promise) {
+        val builder = InstanceManager.get(identifier)
+
+        if (builder is BezelSettingBuilder) {
+            val parameter = StarIO10ValueConverter.toBezelLedAutomaticBlinkParameter(type, onTime, offTime)
+
+            builder.settingLedAutomaticBlink(parameter)
+            promise.resolve(0)
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+}

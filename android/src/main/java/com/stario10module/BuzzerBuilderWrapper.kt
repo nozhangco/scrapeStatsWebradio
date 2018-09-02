@@ -27,4 +27,13 @@ class BuzzerBuilderWrapper internal constructor(context: ReactApplicationContext
         val builder = InstanceManager.get(identifier)
 
         if (builder is BuzzerBuilder) {
-    
+            val parameter = StarIO10ValueConverter.toBuzzerDriveParameter(channel, repeat, onTime, offTime)
+
+            builder.actionDrive(parameter)
+            promise.resolve(0)
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+}

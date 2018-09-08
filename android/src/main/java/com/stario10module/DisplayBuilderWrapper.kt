@@ -55,4 +55,31 @@ class DisplayBuilderWrapper internal constructor(context: ReactApplicationContex
         val builder = InstanceManager.get(identifier)
 
         if (builder is DisplayBuilder) {
-            builder.styleCursorPositionTo(StarIO10ValueConvert
+            builder.styleCursorPositionTo(StarIO10ValueConverter.toDisplayPositionParameter(x, y))
+            promise.resolve(0)
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+
+    @ReactMethod
+    fun actionClearLine(identifier: String, promise: Promise) {
+        val builder = InstanceManager.get(identifier)
+
+        if (builder is DisplayBuilder) {
+            builder.actionClearLine()
+            promise.resolve(0)
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+
+    @ReactMethod
+    fun actionClearAll(identifier: String, promise: Promise) {
+        val builder = InstanceManager.get(identifier)
+
+        if (builder is DisplayBuilder) {
+            builder.actionClearAll()
+            promise.resol

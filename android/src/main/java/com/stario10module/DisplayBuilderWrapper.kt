@@ -82,4 +82,29 @@ class DisplayBuilderWrapper internal constructor(context: ReactApplicationContex
 
         if (builder is DisplayBuilder) {
             builder.actionClearAll()
-            promise.resol
+            promise.resolve(0)
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+
+    @ReactMethod
+    fun actionSetBackLightState(identifier: String, on: Boolean, promise: Promise) {
+        val builder = InstanceManager.get(identifier)
+
+        if (builder is DisplayBuilder) {
+            builder.actionSetBackLightState(on)
+            promise.resolve(0)
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+
+    @ReactMethod
+    fun actionSetCursorState(identifier: String, state: String, promise: Promise) {
+        val builder = InstanceManager.get(identifier)
+
+        if (builder is DisplayBuilder) {
+       

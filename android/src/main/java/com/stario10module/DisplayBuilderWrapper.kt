@@ -130,4 +130,24 @@ class DisplayBuilderWrapper internal constructor(context: ReactApplicationContex
 
     @ReactMethod
     fun actionShowText(identifier: String, content: String, promise: Promise) {
-        val b
+        val builder = InstanceManager.get(identifier)
+
+        if (builder is DisplayBuilder) {
+            builder.actionShowText(content)
+            promise.resolve(0)
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+
+    @ReactMethod
+    fun actionShowImage(identifier: String, source: String, effectDiffusion: Boolean, threshold: Int, promise: Promise) {
+        val builder = InstanceManager.get(identifier)
+
+        if (builder is DisplayBuilder) {
+            try {
+                val parameter = StarIO10ValueConverter.toDisplayImageParameter(source, effectDiffusion, threshold, reactApplicationContext)
+                builder.actionShowImage(parameter)
+                promise.resolve(0)
+           

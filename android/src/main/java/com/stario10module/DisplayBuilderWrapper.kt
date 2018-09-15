@@ -150,4 +150,15 @@ class DisplayBuilderWrapper internal constructor(context: ReactApplicationContex
                 val parameter = StarIO10ValueConverter.toDisplayImageParameter(source, effectDiffusion, threshold, reactApplicationContext)
                 builder.actionShowImage(parameter)
                 promise.resolve(0)
-           
+            }
+            catch (e: Exception) {
+                val exception = StarIO10ArgumentException("Invalid source.")
+                val exceptionIdentifier = InstanceManager.set(exception)
+                promise.reject(exceptionIdentifier, exception)
+            }
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+}

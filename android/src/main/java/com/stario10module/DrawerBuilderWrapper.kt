@@ -29,4 +29,11 @@ class DrawerBuilderWrapper internal constructor(context: ReactApplicationContext
         if (builder is DrawerBuilder) {
             val parameter = StarIO10ValueConverter.toDrawerOpenParameter(channel, onTime)
 
-            builder.actionOpen(para
+            builder.actionOpen(parameter)
+            promise.resolve(0)
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+}

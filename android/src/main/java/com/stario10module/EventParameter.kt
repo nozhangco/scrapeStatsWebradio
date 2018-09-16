@@ -21,4 +21,15 @@ class EventParameter {
         const val NAME_PRINTER_DELEGATE_COVER_CLOSED = "PrinterCoverClosed"
         const val NAME_PRINTER_DELEGATE_COMMUNICATION_ERROR = "PrinterCommunicationError"
         const val NAME_DRAWER_DELEGATE_OPEN_CLOSE_SIGNAL_SWITCHED = "DrawerOpenCloseSignalSwitched"
-        const val NAME_DRAWER_DELEGATE_COMMUNICATION_ERROR = "DrawerCommunication
+        const val NAME_DRAWER_DELEGATE_COMMUNICATION_ERROR = "DrawerCommunicationError"
+        const val NAME_INPUT_DEVICE_DELEGATE_CONNECTED = "InputDeviceConnected"
+        const val NAME_INPUT_DEVICE_DELEGATE_DISCONNECTED = "InputDeviceDisconnected"
+        const val NAME_INPUT_DEVICE_DELEGATE_DATA_RECEIVED = "InputDeviceDataReceived"
+        const val NAME_INPUT_DEVICE_DELEGATE_COMMUNICATION_ERROR = "InputDeviceCommunicationError"
+        const val NAME_DISPLAY_DELEGATE_CONNECTED = "DisplayConnected"
+        const val NAME_DISPLAY_DELEGATE_DISCONNECTED = "DisplayDisconnected"
+        const val NAME_DISPLAY_DELEGATE_COMMUNICATION_ERROR = "DisplayCommunicationError"
+        const val NAME_PRINTER_FOUND = "PrinterFound"
+        const val NAME_DISCOVERY_FINISHED = "DiscoveryFinished"
+    }
+}

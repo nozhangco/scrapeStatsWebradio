@@ -42,4 +42,20 @@ class MelodySpeakerBuilderWrapper internal constructor(context: ReactApplication
     fun actionDriveOneTimeSound(identifier: String, source: String, volume: Int, promise: Promise) {
         val builder = InstanceManager.get(identifier)
 
-        if (builder is MelodySpeake
+        if (builder is MelodySpeakerBuilder) {
+            try {
+                val parameter = StarIO10ValueConverter.toMelodySpeakerDriveOneTimeSoundParameter(source, volume, reactApplicationContext)
+                builder.actionDriveOneTimeSound(parameter)
+                promise.resolve(0)
+            }
+            catch (e: Exception) {
+                val exception = StarIO10ArgumentException("Invalid source.")
+                val exceptionIdentifier = InstanceManager.set(exception)
+                promise.reject(exceptionIdentifier, exception)
+            }
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+}

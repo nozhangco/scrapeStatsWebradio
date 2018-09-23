@@ -41,4 +41,14 @@ class PreSettingBuilderWrapper internal constructor(context: ReactApplicationCon
     @ReactMethod
     fun addBezelSetting(identifier: String, bezelSettingBuilderIdentifier: String, promise: Promise) {
         val builder = InstanceManager.get(identifier)
-        val bezelSetting
+        val bezelSettingBuilder = InstanceManager.get(bezelSettingBuilderIdentifier)
+
+        if (builder is PreSettingBuilder && bezelSettingBuilder is BezelSettingBuilder) {
+            builder.addBezelSetting(bezelSettingBuilder)
+            promise.resolve(0)
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+}

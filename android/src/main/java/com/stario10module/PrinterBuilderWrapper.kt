@@ -314,3 +314,48 @@ class PrinterBuilderWrapper internal constructor(context: ReactApplicationContex
         val builder = InstanceManager.get(identifier)
 
         if (builder is PrinterBuilder) {
+            val parameter = StarIO10ValueConverter.toPrinterQRCodeParameter(content, model, level, cellSize)
+
+            builder.actionPrintQRCode(parameter)
+            promise.resolve(0)
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+
+    @ReactMethod
+    fun actionPrintImage(identifier: String, source: String, width: Int, effectDiffusion: Boolean, threshold: Int, promise: Promise) {
+        val builder = InstanceManager.get(identifier)
+
+        if (builder is PrinterBuilder) {
+            try {
+                val parameter = StarIO10ValueConverter.toPrinterImageParameter(source, width, effectDiffusion, threshold, reactApplicationContext)
+                builder.actionPrintImage(parameter)
+                promise.resolve(0)
+            }
+            catch (e: Exception) {
+                val exception = StarIO10ArgumentException("Invalid source.")
+                val exceptionIdentifier = InstanceManager.set(exception)
+                promise.reject(exceptionIdentifier, exception)
+            }
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+
+    @ReactMethod
+    fun add(identifier: String, printerBuilderIdentifier: String, promise: Promise) {
+        val builder = InstanceManager.get(identifier)
+        val printerBuilder = InstanceManager.get(printerBuilderIdentifier)
+
+        if (builder is PrinterBuilder && printerBuilder is PrinterBuilder) {
+            builder.add(printerBuilder)
+            promise.resolve(true)
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found native instance"))
+        }
+    }
+}

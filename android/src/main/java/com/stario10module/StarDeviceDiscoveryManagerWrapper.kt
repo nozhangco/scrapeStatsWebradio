@@ -42,4 +42,21 @@ class StarDeviceDiscoveryManagerWrapper internal constructor(context: ReactAppli
         // Set up any upstream listeners or background tasks as necessary
     }
 
-    @ReactMe
+    @ReactMethod
+    fun removeListeners(count: Int) {
+        // Remove upstream listeners, stop unnecessary background tasks
+    }
+
+    @ReactMethod
+    fun startDiscovery(identifier: String, discoveryTime: Int, promise: Promise) {
+        val manager = InstanceManager.get(identifier)
+
+        if (manager is StarDeviceDiscoveryManager) {
+            manager.discoveryTime = discoveryTime
+
+            try {
+                manager.callback = object: StarDeviceDiscoveryManager.Callback {
+                    override fun onPrinterFound(printer: StarPrinter) {
+                        val params = Arguments.createMap()
+                        params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+                        params.putString(EventPara

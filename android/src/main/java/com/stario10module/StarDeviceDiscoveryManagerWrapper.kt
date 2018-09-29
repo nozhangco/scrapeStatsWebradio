@@ -59,4 +59,10 @@ class StarDeviceDiscoveryManagerWrapper internal constructor(context: ReactAppli
                     override fun onPrinterFound(printer: StarPrinter) {
                         val params = Arguments.createMap()
                         params.putString(EventParameter.KEY_IDENTIFIER, identifier)
-                        params.putString(EventPara
+                        params.putString(EventParameter.KEY_INTERFACE_TYPE, StarIO10ValueConverter.toString(printer.connectionSettings.interfaceType))
+                        params.putString(EventParameter.KEY_CONNECTION_IDENTIFIER, printer.connectionSettings.identifier)
+                        params.putString(EventParameter.KEY_MODEL, StarIO10ValueConverter.toString(printer.information?.model ?: StarPrinterModel.Unknown))
+                        params.putString(EventParameter.KEY_EMULATION, StarIO10ValueConverter.toString(printer.information?.emulation ?: StarPrinterEmulation.Unknown))
+                        params.putMap(EventParameter.KEY_RESERVED, StarIO10ValueConverter.toWritableMap(printer.information?.reserved ?: mapOf<String, Any>()))
+
+                        sendEvent(EventParam

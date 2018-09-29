@@ -65,4 +65,25 @@ class StarDeviceDiscoveryManagerWrapper internal constructor(context: ReactAppli
                         params.putString(EventParameter.KEY_EMULATION, StarIO10ValueConverter.toString(printer.information?.emulation ?: StarPrinterEmulation.Unknown))
                         params.putMap(EventParameter.KEY_RESERVED, StarIO10ValueConverter.toWritableMap(printer.information?.reserved ?: mapOf<String, Any>()))
 
-                        sendEvent(EventParam
+                        sendEvent(EventParameter.NAME_PRINTER_FOUND, params)
+                    }
+
+                    override fun onDiscoveryFinished() {
+                        val params = Arguments.createMap()
+                        params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+
+                        sendEvent(EventParameter.NAME_DISCOVERY_FINISHED, params)
+                    }
+                }
+
+                manager.startDiscovery()
+
+                promise.resolve(0)
+            }
+            catch (e: StarIO10Exception) {
+                val exceptionIdentifier = InstanceManager.set(e)
+                promise.reject(exceptionIdentifier, e)
+            }
+        }
+        else {
+     

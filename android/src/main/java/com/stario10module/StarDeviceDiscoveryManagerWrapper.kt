@@ -86,4 +86,29 @@ class StarDeviceDiscoveryManagerWrapper internal constructor(context: ReactAppli
             }
         }
         else {
-     
+            promise.reject(StarIO10Exception("Identifier error"))
+        }
+    }
+
+    @ReactMethod
+    fun stopDiscovery(identifier: String, promise: Promise) {
+        val manager = InstanceManager.get(identifier)
+
+        if (manager is StarDeviceDiscoveryManager) {
+            try {
+                manager.stopDiscovery()
+                promise.resolve(0)
+            }
+            catch (e: StarIO10Exception) {
+                val exceptionIdentifier = InstanceManager.set(e)
+                promise.reject(exceptionIdentifier, e)
+            }
+        }
+        else {
+            promise.reject(StarIO10Exception("Identifier error"))
+        }
+    }
+
+    private fun sendEvent(eventName: String, @Nullable params: WritableMap) {
+        reactApplicationContext
+            .getJSM

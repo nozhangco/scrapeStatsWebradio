@@ -111,4 +111,8 @@ class StarDeviceDiscoveryManagerWrapper internal constructor(context: ReactAppli
 
     private fun sendEvent(eventName: String, @Nullable params: WritableMap) {
         reactApplicationContext
-            .getJSM
+            .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter::class.java)
+            .emit(eventName, params)
+    }
+}
+

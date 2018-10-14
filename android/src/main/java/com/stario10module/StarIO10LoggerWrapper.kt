@@ -13,4 +13,22 @@ class StarIO10LoggerWrapper internal constructor(context: ReactApplicationContex
     }
 
     @ReactMethod
-    fun 
+    fun appendHeader(header: String, promise: Promise) {
+        InternalInterface.addStringToLogHeader(header)
+        promise.resolve(0)
+    }
+
+    @ReactMethod
+    fun start(promise: Promise) {
+        val logger = StarIO10Logger.getInstance(reactApplicationContext)
+        logger.start()
+        promise.resolve(0)
+    }
+
+    @ReactMethod
+    fun stop(promise: Promise) {
+        val logger = StarIO10Logger.getInstance(reactApplicationContext)
+        logger.stop()
+        promise.resolve(0)
+    }
+}

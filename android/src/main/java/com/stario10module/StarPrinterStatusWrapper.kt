@@ -55,4 +55,28 @@ class StarPrinterStatusWrapper internal constructor(context: ReactApplicationCon
             promise.resolve(status.coverOpen)
         }
         else {
-            promise.reject(ReactNoCrashSo
+            promise.reject(ReactNoCrashSoftException("Not found $identifier identifier"))
+        }
+    }
+
+    @ReactMethod
+    fun getDrawerOpenCloseSignal(identifier: String, promise: Promise) {
+        val status = InstanceManager.get(identifier)
+
+        if (status is StarPrinterStatus) {
+            promise.resolve(status.drawerOpenCloseSignal)
+        }
+        else {
+            promise.reject(ReactNoCrashSoftException("Not found $identifier identifier"))
+        }
+    }
+
+    @ReactMethod
+    fun getReserved(identifier: String, promise: Promise) {
+        val status = InstanceManager.get(identifier)
+
+        if (status is StarPrinterStatus) {
+            promise.resolve(StarIO10ValueConverter.toWritableMap(status.reserved))
+        }
+        else {
+            promise.reject(StarIO10E

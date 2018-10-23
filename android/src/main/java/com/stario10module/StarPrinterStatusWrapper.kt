@@ -79,4 +79,14 @@ class StarPrinterStatusWrapper internal constructor(context: ReactApplicationCon
             promise.resolve(StarIO10ValueConverter.toWritableMap(status.reserved))
         }
         else {
-            promise.reject(StarIO10E
+            promise.reject(StarIO10Exception("Identifier error"))
+        }
+    }
+
+    @ReactMethod
+    fun dispose(identifier: String, promise: Promise) {
+        InstanceManager.remove(identifier)
+        promise.resolve(0)
+    }
+}
+

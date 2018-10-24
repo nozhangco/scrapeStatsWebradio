@@ -38,4 +38,21 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
         val printer = InstanceManager.get(identifier)
 
         if (printer is StarPrinter) {
-            printer.printerDelegate = object : Prin
+            printer.printerDelegate = object : PrinterDelegate() {
+                override fun onReady() {
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+
+                    sendEvent(EventParameter.NAME_PRINTER_DELEGATE_READY, params)
+                }
+
+                override fun onError() {
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+
+                    sendEvent(EventParameter.NAME_PRINTER_DELEGATE_ERROR, params)
+                }
+
+                override fun onPaperReady() {
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDEN

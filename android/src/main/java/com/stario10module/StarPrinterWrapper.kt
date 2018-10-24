@@ -55,4 +55,24 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
 
                 override fun onPaperReady() {
                     val params = Arguments.createMap()
-                    params.putString(EventParameter.KEY_IDEN
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+
+                    sendEvent(EventParameter.NAME_PRINTER_DELEGATE_PAPER_READY, params)
+                }
+
+                override fun onPaperNearEmpty() {
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+
+                    sendEvent(EventParameter.NAME_PRINTER_DELEGATE_PAPER_NEAR_EMPTY, params)
+                }
+
+                override fun onPaperEmpty() {
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+
+                    sendEvent(EventParameter.NAME_PRINTER_DELEGATE_PAPER_EMPTY, params)
+                }
+
+                override fun onCoverOpened() {
+     

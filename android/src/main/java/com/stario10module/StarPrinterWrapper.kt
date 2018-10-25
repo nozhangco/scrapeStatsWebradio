@@ -75,4 +75,21 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
                 }
 
                 override fun onCoverOpened() {
-     
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+
+                    sendEvent(EventParameter.NAME_PRINTER_DELEGATE_COVER_OPENED, params)
+                }
+
+                override fun onCoverClosed() {
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+
+                    sendEvent(EventParameter.NAME_PRINTER_DELEGATE_COVER_CLOSED, params)
+                }
+
+                override fun onCommunicationError(exception: StarIO10Exception) {
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+
+                    val exceptionIdentifier = InstanceManage

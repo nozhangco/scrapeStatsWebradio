@@ -114,4 +114,18 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
             printer.drawerDelegate = object : DrawerDelegate() {
                 override fun onOpenCloseSignalSwitched(signalState: Boolean) {
                     val params = Arguments.createMap()
-          
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+                    params.putBoolean(EventParameter.KEY_DRAWER_OPEN_CLOSE_SIGNAL_STATE, signalState)
+
+                    sendEvent(EventParameter.NAME_DRAWER_DELEGATE_OPEN_CLOSE_SIGNAL_SWITCHED, params)
+                }
+
+                override fun onCommunicationError(exception: StarIO10Exception) {
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+
+                    val exceptionIdentifier = InstanceManager.set(exception)
+                    params.putString(EventParameter.KEY_ERROR_IDENTIFIER, exceptionIdentifier)
+
+                    sendEvent(EventParameter.NAME_DRAWER_DELEGATE_COMMUNICATION_ERROR, params)
+         

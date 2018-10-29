@@ -128,4 +128,28 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
                     params.putString(EventParameter.KEY_ERROR_IDENTIFIER, exceptionIdentifier)
 
                     sendEvent(EventParameter.NAME_DRAWER_DELEGATE_COMMUNICATION_ERROR, params)
-         
+                }
+            }
+
+            promise.resolve(0)
+        }
+        else {
+            promise.reject(StarIO10Exception("Identifier error"))
+        }
+    }
+
+    @ReactMethod
+    fun activateInputDeviceDelegate(identifier: String, promise: Promise) {
+        val printer = InstanceManager.get(identifier)
+
+        if (printer is StarPrinter) {
+            printer.inputDeviceDelegate = object : InputDeviceDelegate() {
+                override fun onConnected() {
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+
+                    sendEvent(EventParameter.NAME_INPUT_DEVICE_DELEGATE_CONNECTED, params)
+                }
+
+                override fun onDisconnected() {
+            

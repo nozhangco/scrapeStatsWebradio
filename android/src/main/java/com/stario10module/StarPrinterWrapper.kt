@@ -152,4 +152,20 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
                 }
 
                 override fun onDisconnected() {
-            
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+
+                    sendEvent(EventParameter.NAME_INPUT_DEVICE_DELEGATE_DISCONNECTED, params)
+                }
+
+                override fun onDataReceived(data: List<Byte>) {
+                    val reactData = Arguments.createArray()
+                    data.forEach {
+                        reactData.pushInt(it.toInt())
+                    }
+
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+                    params.putArray(EventParameter.KEY_INPUT_DEVICE_DATA, reactData)
+
+                    sendEvent(EventParameter.NAME_INPUT_DEVICE_DELEGATE_DATA

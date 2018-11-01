@@ -168,4 +168,26 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
                     params.putString(EventParameter.KEY_IDENTIFIER, identifier)
                     params.putArray(EventParameter.KEY_INPUT_DEVICE_DATA, reactData)
 
-                    sendEvent(EventParameter.NAME_INPUT_DEVICE_DELEGATE_DATA
+                    sendEvent(EventParameter.NAME_INPUT_DEVICE_DELEGATE_DATA_RECEIVED, params)
+                }
+
+                override fun onCommunicationError(exception: StarIO10Exception) {
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, identifier)
+
+                    val exceptionIdentifier = InstanceManager.set(exception)
+                    params.putString(EventParameter.KEY_ERROR_IDENTIFIER, exceptionIdentifier)
+
+                    sendEvent(EventParameter.NAME_INPUT_DEVICE_DELEGATE_COMMUNICATION_ERROR, params)
+                }
+            }
+
+            promise.resolve(0)
+        }
+        else {
+            promise.reject(StarIO10Exception("Identifier error"))
+        }
+    }
+
+    @ReactMethod
+    fun activateDisplayDelegate(s

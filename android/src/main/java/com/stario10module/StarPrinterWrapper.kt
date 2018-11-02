@@ -206,4 +206,26 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
                     val params = Arguments.createMap()
                     params.putString(EventParameter.KEY_IDENTIFIER, starPrinterIdentifier)
 
-                
+                    sendEvent(EventParameter.NAME_DISPLAY_DELEGATE_DISCONNECTED, params)
+                }
+
+                override fun onCommunicationError(exception: StarIO10Exception) {
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, starPrinterIdentifier)
+
+                    val exceptionIdentifier = InstanceManager.set(exception)
+                    params.putString(EventParameter.KEY_ERROR_IDENTIFIER, exceptionIdentifier)
+
+                    sendEvent(EventParameter.NAME_DISPLAY_DELEGATE_COMMUNICATION_ERROR, params)
+                }
+            }
+
+            promise.resolve(0)
+        }
+        else {
+            promise.reject(StarIO10Exception("Identifier error"))
+        }
+    }
+
+    @ReactMethod
+    fun

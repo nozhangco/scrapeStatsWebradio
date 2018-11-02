@@ -190,4 +190,20 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
     }
 
     @ReactMethod
-    fun activateDisplayDelegate(s
+    fun activateDisplayDelegate(starPrinterIdentifier: String, promise: Promise) {
+        val starPrinter = InstanceManager.get(starPrinterIdentifier)
+
+        if (starPrinter is StarPrinter) {
+            starPrinter.displayDelegate = object : DisplayDelegate() {
+                override fun onConnected() {
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, starPrinterIdentifier)
+
+                    sendEvent(EventParameter.NAME_DISPLAY_DELEGATE_CONNECTED, params)
+                }
+
+                override fun onDisconnected() {
+                    val params = Arguments.createMap()
+                    params.putString(EventParameter.KEY_IDENTIFIER, starPrinterIdentifier)
+
+                

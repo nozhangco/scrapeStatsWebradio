@@ -228,4 +228,19 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
     }
 
     @ReactMethod
-    fun
+    fun open(identifier: String, interfaceType: String, connectionIdentifier: String, openTimeout: Int, autoSwitchInterface: Boolean, promise: Promise) {
+        val job = SupervisorJob()
+        val scope = CoroutineScope(Dispatchers.Default + job)
+
+        scope.launch {
+            val printer = InstanceManager.get(identifier)
+
+            if (printer is StarPrinter) {
+                printer.connectionSettings.identifier = connectionIdentifier
+                printer.connectionSettings.interfaceType = StarIO10ValueConverter.toInterfaceType(interfaceType)
+                printer.connectionSettings.autoSwitchInterface = autoSwitchInterface
+                printer.openTimeout = openTimeout
+
+                try {
+                    printer.openAsync().await()
+                    promise.resolve(0

@@ -243,4 +243,30 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
 
                 try {
                     printer.openAsync().await()
-                    promise.resolve(0
+                    promise.resolve(0)
+                }
+                catch (e: StarIO10Exception) {
+                    val exceptionIdentifier = InstanceManager.set(e)
+                    promise.reject(exceptionIdentifier, e)
+                }
+            }
+            else {
+                promise.reject(StarIO10ArgumentException("Argument error!"))
+            }
+        }
+    }
+
+    @ReactMethod
+    fun getModel(identifier: String, promise: Promise) {
+        val printer = InstanceManager.get(identifier)
+
+        if (printer is StarPrinter) {
+            promise.resolve(StarIO10ValueConverter.toString(printer.information!!.model))
+        }
+        else {
+            promise.reject(StarIO10Exception("Identifier error"))
+        }
+    }
+
+    @ReactMethod
+    fun getEmulation(identifier: String,

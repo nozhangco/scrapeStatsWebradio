@@ -293,4 +293,24 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
     }
 
     @ReactMethod
-    fun printRawData(identifier: Strin
+    fun printRawData(identifier: String, data: ReadableArray, timeout: Int, promise: Promise) {
+        val job = SupervisorJob()
+        val scope = CoroutineScope(Dispatchers.Default + job)
+
+        scope.launch {
+            val printer = InstanceManager.get(identifier)
+
+            if (printer is StarPrinter) {
+                printer.printTimeout = timeout
+
+                try {
+                    printer.printRawDataAsync(StarIO10ValueConverter.toList(data)).await()
+                    promise.resolve(0)
+                }
+                catch (e: StarIO10Exception) {
+                    val exceptionIdentifier = InstanceManager.set(e)
+                    promise.reject(exceptionIdentifier, e)
+                }
+            }
+            else {
+                promise.reject(S

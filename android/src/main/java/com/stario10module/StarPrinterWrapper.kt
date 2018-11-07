@@ -269,4 +269,28 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
     }
 
     @ReactMethod
-    fun getEmulation(identifier: String,
+    fun getEmulation(identifier: String, promise: Promise) {
+        val printer = InstanceManager.get(identifier)
+
+        if (printer is StarPrinter) {
+            promise.resolve(StarIO10ValueConverter.toString(printer.information!!.emulation))
+        }
+        else {
+            promise.reject(StarIO10Exception("Identifier error"))
+        }
+    }
+
+    @ReactMethod
+    fun getReserved(identifier: String, promise: Promise) {
+        val printer = InstanceManager.get(identifier)
+
+        if (printer is StarPrinter) {
+            promise.resolve(StarIO10ValueConverter.toWritableMap(printer.information!!.reserved))
+        }
+        else {
+            promise.reject(StarIO10Exception("Identifier error"))
+        }
+    }
+
+    @ReactMethod
+    fun printRawData(identifier: Strin

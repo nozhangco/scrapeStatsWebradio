@@ -313,4 +313,30 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
                 }
             }
             else {
-                promise.reject(S
+                promise.reject(StarIO10Exception("Identifier error"))
+            }
+        }
+    }
+
+    @ReactMethod
+    fun print(identifier: String, code: String, timeout: Int, promise: Promise) {
+        val job = SupervisorJob()
+        val scope = CoroutineScope(Dispatchers.Default + job)
+
+        scope.launch {
+            val printer = InstanceManager.get(identifier)
+
+            if (printer is StarPrinter) {
+                printer.printTimeout = timeout
+
+                try {
+                    printer.printAsync(code).await()
+                    promise.resolve(0)
+                }
+                catch (e: StarIO10Exception) {
+                    val exceptionIdentifier = InstanceManager.set(e)
+                    promise.reject(exceptionIdentifier, e)
+                }
+            }
+            else {
+   

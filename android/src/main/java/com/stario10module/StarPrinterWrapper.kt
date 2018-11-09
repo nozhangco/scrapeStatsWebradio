@@ -362,4 +362,28 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
                     promise.resolve(statusIdentifier)
                 }
                 catch (e: StarIO10Exception) {
-                    val exceptionIdent
+                    val exceptionIdentifier = InstanceManager.set(e)
+                    promise.reject(exceptionIdentifier, e)
+                }
+            }
+            else {
+                promise.reject(StarIO10Exception("Identifier error"))
+            }
+        }
+    }
+
+    @ReactMethod
+    fun close(identifier: String, promise: Promise) {
+        val job = SupervisorJob()
+        val scope = CoroutineScope(Dispatchers.Default + job)
+
+        scope.launch {
+            val printer = InstanceManager.get(identifier)
+
+            if (printer is StarPrinter) {
+                try {
+                    printer.closeAsync().await()
+                    promise.resolve(0)
+                }
+                catch (e: StarIO10Exception) {
+                    val exceptionIdentifier = InstanceMan

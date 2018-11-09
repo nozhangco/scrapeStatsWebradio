@@ -386,4 +386,25 @@ class StarPrinterWrapper internal constructor(context: ReactApplicationContext) 
                     promise.resolve(0)
                 }
                 catch (e: StarIO10Exception) {
-                    val exceptionIdentifier = InstanceMan
+                    val exceptionIdentifier = InstanceManager.set(e)
+                    promise.reject(exceptionIdentifier, e)
+                }
+            }
+            else {
+                promise.reject(StarIO10Exception("Identifier error"))
+            }
+        }
+    }
+
+    @ReactMethod
+    fun dispose(starPrinterIdentifier: String, promise: Promise) {
+        InstanceManager.remove(starPrinterIdentifier)
+        promise.resolve(0)
+    }
+
+    private fun sendEvent(eventName: String, @Nullable params: WritableMap) {
+        reactApplicationContext
+            .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter::class.java)
+            .emit(eventName, params)
+    }
+}

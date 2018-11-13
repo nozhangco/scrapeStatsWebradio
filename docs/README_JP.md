@@ -35,4 +35,20 @@ npm install react-native-star-io10 --save
 | プリンターのインターフェース  | 必要な対応                                                                                |
 |--------------------------|-----------------------------------------------------------------------------------------|
 | Bluetooth                | [1.](#SupportedEAProtocols) & [2.](#BluetoothAlwaysUsageDescription) & [4.](#MFi) |
-| Bluetooth Low Energy     | [2.](#BluetoothAlwaysUsageDescription
+| Bluetooth Low Energy     | [2.](#BluetoothAlwaysUsageDescription)                                                |
+| Ethernet (iOS14以上)      | [3.](#LocalNetworkUsageDescription)                                                   |
+| Lightning USB           | [1.](#SupportedEAProtocols) & [4.](#MFi)                                            |
+
+<a id="SupportedEAProtocols"></a>
+#### 1. `Supported external accessory protocols` 項目の設定
+
+1. Information Property List（デフォルトでは"Info.plist"）を選択します。
+2. Keyに `Supported external accessory protocols` を追加します。
+3. 項目名左側の▽をクリックして表示される"Item 0"の[Value]に `jp.star-m.starpro` を設定します。
+
+> :warning: 該当するプリンターを使用しない場合は、この設定を行わないでください。
+
+<a id="BluetoothAlwaysUsageDescription"></a>
+#### 2. `Bluetooth Always Usage Description` 項目および `Bluetooth Peripheral Usage Description` 項目の設定
+
+1. Information Property List

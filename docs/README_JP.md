@@ -51,4 +51,19 @@ npm install react-native-star-io10 --save
 <a id="BluetoothAlwaysUsageDescription"></a>
 #### 2. `Bluetooth Always Usage Description` 項目および `Bluetooth Peripheral Usage Description` 項目の設定
 
-1. Information Property List
+1. Information Property List（デフォルトでは"Info.plist"）を選択します。
+2. Keyに `Privacy – Bluetooth Always Usage Description` を追加します。
+3. `Deployment Target` をiOS12に設定する場合、Keyに `Privacy – Bluetooth Peripheral Usage Description` を追加します。
+3. それぞれのValue に Bluetoothの利用目的（例: `Use Bluetooth for communication with the printer.`）を設定します。
+4. Bluetoothにてプリンターと通信するとき、Bluetoothへのアクセス許可を求めるダイアログが表示されます。その際、Valueに設定した文字列がBluetoothを利用する理由として表示されます。
+
+より詳しくは、下記URLを参照してください。
+
+https://developer.apple.com/documentation/bundleresources/information_property_list/nsbluetoothperipheralusagedescription
+
+<a id="LocalNetworkUsageDescription"></a>
+#### 3. `Local Network Usage Description` 項目の設定
+
+1. Information Property List（デフォルトでは"Info.plist"）を選択します。
+2. Keyに `Privacy - Local Network Usage Description` を追加します。
+3. Value に Local Networkの利用目的（例: `Use Loc

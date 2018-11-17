@@ -66,4 +66,21 @@ https://developer.apple.com/documentation/bundleresources/information_property_l
 
 1. Information Property List（デフォルトでは"Info.plist"）を選択します。
 2. Keyに `Privacy - Local Network Usage Description` を追加します。
-3. Value に Local Networkの利用目的（例: `Use Loc
+3. Value に Local Networkの利用目的（例: `Use Local Network for communication with the printer or discovery the printers.`）を設定します。
+4. iOS14以上でEthernetプリンターと通信するとき、Local Networkへのアクセス許可を求めるダイアログが表示されます。その際、Valueに設定した文字列がLocal Networkを利用する理由として表示されます。
+
+<a id="MFi"></a>
+#### 4. MFi対応プリンター向けアプリ認証を取得
+
+MFi認証プリンターに対応したiOSアプリケーションを設計・開発し、 Apple iTunes App Storeにアプリケーション登録を行う場合、下記のURLに記載の手順によりアプリ認証を取得してください。Appleによるアプリ審査前に完了しておく必要があります。
+
+https://star-m.jp/products/s_print/apple_app_mfi/index.html
+
+> :warning: Bluetooth Low Energyプリンターを使用する場合は、このアプリ認証を行う必要はありません。
+
+### Android
+#### targetSdkVersionを31以降に設定する場合
+[サンプルコード](../example/samples)を参考にして、プリンターとの通信や検索を開始する前に、BLUETOOTH_CONNECTパーミッションを要求してください。
+
+#### targetSdkVersionを30以前に設定する場合
+`react-native-star-io10` ライブラリ

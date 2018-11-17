@@ -83,4 +83,25 @@ https://star-m.jp/products/s_print/apple_app_mfi/index.html
 [サンプルコード](../example/samples)を参考にして、プリンターとの通信や検索を開始する前に、BLUETOOTH_CONNECTパーミッションを要求してください。
 
 #### targetSdkVersionを30以前に設定する場合
-`react-native-star-io10` ライブラリ
+`react-native-star-io10` ライブラリには、APIレベル 31にて追加されたBLUETOOTH_CONNECTパーミッションが含まれています。AndroidManifest.xmlに下記二つの設定を行い、BLUETOOTH_CONNECTパーミッションを削除してください。
+
+* `manifest` 要素に `xmlns:tools="http://schemas.android.com/tools"` 属性を追加します。
+* `<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" tools:node="remove"/>` 要素を追加します。
+
+```xml
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.starmicronics.starxpandsdk">
+
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" tools:node="remove"/>
+    ...
+</manifest>
+```
+
+### Windows
+- 機能を`Package.appxmanifest`に追加してください。
+  - Bluetooth
+  - インターネット(クライアント)
+  - プライベート ネットワーク (クライアントとサーバー)
+- プロジェクトの「参照」に"Visual C++ 2015-2019 UWP Desktop Runt

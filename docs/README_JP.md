@@ -104,4 +104,36 @@ https://star-m.jp/products/s_print/apple_app_mfi/index.html
   - Bluetooth
   - インターネット(クライアント)
   - プライベート ネットワーク (クライアントとサーバー)
-- プロジェクトの「参照」に"Visual C++ 2015-2019 UWP Desktop Runt
+- プロジェクトの「参照」に"Visual C++ 2015-2019 UWP Desktop Runtime for native apps"を追加してください。
+
+## ドキュメント
+
+[ここを参照ください。](https://www.star-m.jp/react-native-stario10-oml.html)
+
+## 制限事項
+
+### Android端末を使用する場合、URLで指定した画像が低い解像度で印字されることがある
+
+actionPrintImageメソッドの引数ImageParameterのsourceにある程度サイズが大きい画像ファイルのURLを指定した場合、Android端末から印刷データが送付されると、画像が粗く印字されることがあります。
+
+下記いずれかの方法により回避することができます。 
+
+- あらかじめ画像の解像度を下げるなどして画像のデータ量を下げる 
+- アプリ内で画像をダウンロードし、sourceには画像ファイルを直接指定する 
+
+## Examples
+
+### Discover devices
+
+```typescript
+manager: StarDeviceDiscoveryManager;
+
+async discover(): Promise<void> {
+    try {
+        // Specify your printer interface types.
+        manager = await StarDeviceDiscoveryManagerFactory.create([
+            InterfaceType.Lan,
+            InterfaceType.Bluetooth,
+            InterfaceType.BluetoothLE,
+            InterfaceType.Usb
+        ]);

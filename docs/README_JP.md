@@ -137,3 +137,37 @@ async discover(): Promise<void> {
             InterfaceType.BluetoothLE,
             InterfaceType.Usb
         ]);
+
+        // Set discovery time. (option)
+        manager.discoveryTime = 10000;
+
+        // Callback for printer found.
+        manager.onPrinterFound = (printer: StarPrinter) => {
+            console.log(printer);
+        };
+
+        // Callback for discovery finished. (option)
+        manager.onDiscoveryFinished = () => {
+            console.log(`Discovery finished.`);
+        };
+
+        // Start discovery.
+        await manager.startDiscovery();
+
+        // Stop discovery.
+        // await manager.stopDiscovery()
+    }
+    catch(error) {
+        // Error.
+        console.log(error);
+    }
+}
+```
+
+### Print
+
+```typescript
+async print(): Promise<void> {
+    // Specify your printer connection settings.
+    var settings = new StarConnectionSettings();
+    settings.interfaceType = I

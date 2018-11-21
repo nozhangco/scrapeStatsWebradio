@@ -170,4 +170,35 @@ async discover(): Promise<void> {
 async print(): Promise<void> {
     // Specify your printer connection settings.
     var settings = new StarConnectionSettings();
-    settings.interfaceType = I
+    settings.interfaceType = InterfaceType.Lan;
+    settings.identifier = '00:11:62:00:00:00';
+    var printer = new StarPrinter(settings);
+
+    try {
+        // Connect to the printer.
+        await printer.open();
+
+        // create printing data. (Please refer to 'Create Printing data')
+        var builder = new StarXpandCommand.StarXpandCommandBuilder();
+        // ...
+        var commands = await builder.getCommands();
+
+        // Print.
+        await printer.print(commands);
+    }
+    catch(error) {
+        // Error.
+        console.log(error);
+    }
+    finally {
+        // Disconnect from the printer and dispose object.
+        await printer.close();
+        await printer.dispose();
+    }
+}
+```
+
+### Create printing data
+
+```typescript
+//

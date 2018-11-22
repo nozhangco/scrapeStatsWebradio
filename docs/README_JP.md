@@ -201,4 +201,17 @@ async print(): Promise<void> {
 ### Create printing data
 
 ```typescript
-//
+// Create printing data using StarXpandCommandBuilder object.
+var builder = new StarXpandCommand.StarXpandCommandBuilder();
+builder.addDocument(new StarXpandCommand.DocumentBuilder()
+.addPrinter(new StarXpandCommand.PrinterBuilder()
+    .actionPrintImage(new StarXpandCommand.Printer.ImageParameter("logo_01.png", 406))
+    .styleInternationalCharacter(StarXpandCommand.Printer.InternationalCharacterType.Usa)
+    .styleCharacterSpace(0)
+    .styleAlignment(StarXpandCommand.Printer.Alignment.Center)
+    .actionPrintText("Star Clothing Boutique\n" +
+                    "123 Star Road\n" +
+                    "City, State 12345\n" +
+                    "\n")
+    .styleAlignment(StarXpandCommand.Printer.Alignment.Left)
+    .actionPrintText("Date:MM/DD/YYYY    Ti

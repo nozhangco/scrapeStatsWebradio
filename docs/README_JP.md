@@ -229,4 +229,25 @@ builder.addDocument(new StarXpandCommand.DocumentBuilder()
                     "--------------------------------\n")
     .actionPrintText("Total     ")
     .add(new StarXpandCommand.PrinterBuilder()
-        .styleMagnif
+        .styleMagnification(new StarXpandCommand.MagnificationParameter(2, 2))
+        .actionPrintText("   $156.95\n")
+    )
+    .actionPrintText("--------------------------------\n" +
+                    "\n" +
+                    "Charge\n" +
+                    "156.95\n" +
+                    "Visa XXXX-XXXX-XXXX-0123\n" +
+                    "\n")
+    .add(new StarXpandCommand.PrinterBuilder()
+        .styleInvert(true)
+        .actionPrintText("Refunds and Exchanges\n")
+    )
+    .actionPrintText("Within ")
+    .add(new StarXpandCommand.PrinterBuilder()
+        .styleUnderLine(true)
+        .actionPrintText("30 days")
+    )
+    .actionPrintText(" with receipt\n")
+    .actionPrintText("And tags attached\n" +
+                    "\n")
+    .styleAlignment(StarXpandComma

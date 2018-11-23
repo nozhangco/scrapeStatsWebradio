@@ -214,4 +214,19 @@ builder.addDocument(new StarXpandCommand.DocumentBuilder()
                     "City, State 12345\n" +
                     "\n")
     .styleAlignment(StarXpandCommand.Printer.Alignment.Left)
-    .actionPrintText("Date:MM/DD/YYYY    Ti
+    .actionPrintText("Date:MM/DD/YYYY    Time:HH:MM PM\n" +
+                    "--------------------------------\n" +
+                    "\n")
+    .actionPrintText("SKU         Description    Total\n" +
+                    "300678566   PLAIN T-SHIRT  10.99\n" +
+                    "300692003   BLACK DENIM    29.99\n" +
+                    "300651148   BLUE DENIM     29.99\n" +
+                    "300642980   STRIPED DRESS  49.99\n" +
+                    "300638471   BLACK BOOTS    35.99\n" +
+                    "\n" +
+                    "Subtotal                  156.95\n" +
+                    "Tax                         0.00\n" +
+                    "--------------------------------\n")
+    .actionPrintText("Total     ")
+    .add(new StarXpandCommand.PrinterBuilder()
+        .styleMagnif

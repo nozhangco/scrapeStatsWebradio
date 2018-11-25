@@ -250,4 +250,16 @@ builder.addDocument(new StarXpandCommand.DocumentBuilder()
     .actionPrintText(" with receipt\n")
     .actionPrintText("And tags attached\n" +
                     "\n")
-    .styleAlignment(StarXpandComma
+    .styleAlignment(StarXpandCommand.Printer.Alignment.Center)
+    .actionPrintBarcode(new StarXpandCommand.Printer.BarcodeParameter('0123456',
+                        StarXpandCommand.Printer.BarcodeSymbology.Jan8)
+                        .setBarDots(3)
+                        .setBarRatioLevel(StarXpandCommand.Printer.BarcodeBarRatioLevel.Level0)
+                        .setHeight(5)
+                        .setPrintHri(true))
+    .actionFeedLine(1)
+    .actionPrintQRCode(new StarXpandCommand.Printer.QRCodeParameter('Hello World.\n')
+                        .setModel(StarXpandCommand.Printer.QRCodeModel.Model2)
+                        .setLevel(StarXpandCommand.Printer.QRCodeLevel.L)
+                        .setCellSize(8))
+    .actionCut(StarXpandCom

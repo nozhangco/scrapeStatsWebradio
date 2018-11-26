@@ -262,4 +262,35 @@ builder.addDocument(new StarXpandCommand.DocumentBuilder()
                         .setModel(StarXpandCommand.Printer.QRCodeModel.Model2)
                         .setLevel(StarXpandCommand.Printer.QRCodeLevel.L)
                         .setCellSize(8))
-    .actionCut(StarXpandCom
+    .actionCut(StarXpandCommand.Printer.CutType.Partial)
+    )
+);
+
+// Get printing data from StarXpandCommandBuilder object.
+var commands = await builder.getCommands();
+```
+
+### Get printer status
+
+```typescript
+async getStatus(): Promise<void> {
+    // Specify your printer connection settings.
+    var settings = new StarConnectionSettings();
+    settings.interfaceType = InterfaceType.Lan;
+    settings.identifier = '00:11:62:00:00:00';
+    var printer = new StarPrinter(settings);
+
+    try {
+        // Connect to the printer.
+        await printer.open();
+
+        // Get printer status.
+        var status = await printer.getStatus();
+        console.log(status);
+    }
+    catch(error) {
+        // Error.
+        console.log(error);
+    }
+    finally {
+        // Disconnect

@@ -293,4 +293,28 @@ async getStatus(): Promise<void> {
         console.log(error);
     }
     finally {
-        // Disconnect
+        // Disconnect from the printer and dispose object.
+        await printer.close();
+        await printer.dispose();
+    }
+}
+```
+
+### Monitor printer
+
+```typescript
+printer: StarPrinter;
+
+async monitor(): Promise<void> {
+    // Specify your printer connection settings.
+    var settings = new StarConnectionSettings();
+    settings.interfaceType = InterfaceType.Lan;
+    settings.identifier = '00:11:62:00:00:00';
+    printer = new StarPrinter(settings);
+
+    // Callback for printer state changed.
+    printer.printerDelegate.onReady = () => {
+        console.log(`Printer: Ready`);
+    }
+    printer.drawerDelegate.onOpenCloseSignalSwitched = (openCloseSignal) => {
+        console.log(`Drawer: Open Close Signal Switched: ${String(openCloseSignal)

@@ -317,4 +317,30 @@ async monitor(): Promise<void> {
         console.log(`Printer: Ready`);
     }
     printer.drawerDelegate.onOpenCloseSignalSwitched = (openCloseSignal) => {
-        console.log(`Drawer: Open Close Signal Switched: ${String(openCloseSignal)
+        console.log(`Drawer: Open Close Signal Switched: ${String(openCloseSignal)}`);
+    }
+    printer.inputDeviceDelegate.onDataReceived = (data) => {
+        console.log(`Input Device: DataReceived ${String(data)}`);
+    }
+    printer.displayDelegate.onConnected = () => {
+        console.log(`Display: Connected`);
+    }
+    // ...
+    // Please refer to document for other callback.
+
+    try {
+        // Connect to the printer.
+        await printer.open();
+    }
+    catch(error) {
+        // Error.
+        console.log(error);
+    }
+}
+```
+
+- [`example`プロジェクトはここを参照ください。](../example)
+
+## Copyright
+
+Copyright 2021 Star Micronics Co., Ltd. All rights reserved.

@@ -29,4 +29,19 @@ public class ReactNativeFlipper {
     if (FlipperUtils.shouldEnableFlipper(context)) {
       final FlipperClient client = AndroidFlipperClient.getInstance(context);
 
-     
+      client.addPlugin(new InspectorFlipperPlugin(context, DescriptorMapping.withDefaults()));
+      client.addPlugin(new ReactFlipperPlugin());
+      client.addPlugin(new DatabasesFlipperPlugin(context));
+      client.addPlugin(new SharedPreferencesFlipperPlugin(context));
+      client.addPlugin(CrashReporterPlugin.getInstance());
+
+      NetworkFlipperPlugin networkFlipperPlugin = new NetworkFlipperPlugin();
+      NetworkingModule.setCustomClientBuilder(
+          new NetworkingModule.CustomClientBuilder() {
+            @Override
+            public void apply(OkHttpClient.Builder builder) {
+              builder.addNetworkInterceptor(new FlipperOkhttpInterceptor(networkFlipperPlugin));
+            }
+          });
+      client.addPlugin(networkFlipperPlugin);
+      client.start

@@ -59,4 +59,14 @@ public class ReactNativeFlipper {
                     new Runnable() {
                       @Override
                       public void run() {
-                        c
+                        client.addPlugin(new FrescoFlipperPlugin());
+                      }
+                    });
+              }
+            });
+      } else {
+        client.addPlugin(new FrescoFlipperPlugin());
+      }
+    }
+  }
+}

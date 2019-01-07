@@ -20,4 +20,7 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>CFBun
+	<key>CFBundleVersion</key>
+	<string>1</string>
+</dict>
+</plist>

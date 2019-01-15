@@ -135,3 +135,69 @@ class App extends React.Component<AppProps, AppState> {
 
     private async _confirmBluetoothPermission(): Promise<boolean> {
         var hasPermission = false;
+
+        try {
+            hasPermission = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.BLUETOOTH_CONNECT);
+    
+            if (!hasPermission) {
+                const status = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.BLUETOOTH_CONNECT);
+                    
+                hasPermission = status == PermissionsAndroid.RESULTS.GRANTED;
+            }
+        }
+        catch (err) {
+            console.warn(err);
+        }
+
+        return hasPermission;
+    }
+
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            interfaceType: InterfaceType.Lan,
+            identifier: '00:11:62:00:00:00',
+            imageBase64: ''
+        };
+    }
+
+    render() {
+        return (
+            <View style={{ margin: 50 }}>
+                <View style={{ flexDirection: 'row' }}>
+                <Text style={{ width: 100 }}>Interface</Text>
+                <Picker
+                    style={{ width: 200, marginLeft: 20, justifyContent: 'center' }}
+                    selectedValue={this.state.interfaceType}
+                    onValueChange={(value) => {
+                    this.setState({ interfaceType: value });
+                    }}>
+                    <Picker.Item label='LAN' value={InterfaceType.Lan} />
+                    <Picker.Item label='Bluetooth' value={InterfaceType.Bluetooth}/>
+                    <Picker.Item label='Bluetooth LE' value={InterfaceType.BluetoothLE}/>
+                    <Picker.Item label='USB' value={InterfaceType.Usb} />
+                </Picker>
+                </View>
+                <View style={{ flexDirection: 'row', marginTop: 30 }}>
+                <Text style={{ width: 100 }}>Identifier</Text>
+                <TextInput
+                    style={{ width: 200, marginLeft: 20 }}
+                    value={this.state.identifier}
+                    onChangeText={(value) => {
+                    this.setState({ identifier: value });
+                    }}
+                />
+                </View>
+                <View style={{ width: 100, marginTop: 20 }}>
+                <Button
+                    title="Print"
+                    onPress={this._onPressPrintButton}
+                />
+                </View>
+            </View>
+        );
+    }
+};
+
+export default App;

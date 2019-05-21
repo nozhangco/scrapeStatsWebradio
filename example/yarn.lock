@@ -1231,4 +1231,17 @@
   integrity sha512-MVqeVWQVgbKTygADqC/+kJ+6VwtWtoUClK+/Hlt2bH7ZBSsrbkRx9yxTphefF+D5e1EqSp9PxXsRTU+v34kONg==
   dependencies:
     "@react-native-windows/find-repo-root" "0.67.0"
-    get-monorepo-p
+    get-monorepo-packages "^1.2.0"
+    lodash "^4.17.15"
+
+"@react-native-windows/telemetry@0.67.0":
+  version "0.67.0"
+  resolved "https://registry.yarnpkg.com/@react-native-windows/telemetry/-/telemetry-0.67.0.tgz#1dd2cdb3ad92031179a6217ae1342169cdb3d44c"
+  integrity sha512-bfU8mAIJSmYdopu71seGnuq4a8JvXzok85uAlyrfJzuiA9K42/neRqAZTeGtkIBShRIaB+iaqSRF0sS1l6n9UQ==
+  dependencies:
+    applicationinsights "^1.8.8"
+
+"@react-native-windows/virtualized-list@0.67.0":
+  version "0.67.0"
+  resolved "https://registry.yarnpkg.com/@react-native-windows/virtualized-list/-/virtualized-list-0.67.0.tgz#926e5fcf073104cb9f2fd9521cf47c1a4718220f"
+  integrity sha512-eB7t1r7ONpqP79gDj+9r7HjXomtTBZK2y0skdQ66qfe98kUJWun9XPoZ0zn/mu+I4U14y47QX6PYB6q2Jy6NjQ==

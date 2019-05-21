@@ -1191,4 +1191,28 @@
 "@react-native-picker/picker@^1.9.8":
   version "1.16.8"
   resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-1.16.8.tgz#2126ca54d4a5a3e9ea5e3f39ad1e6643f8e4b3d4"
-  integrity sha512-pacdQDX6V6EmjF+HoiIh6u++qx4mTK0WnhgUHRc01B+Qt5eoeUwse
+  integrity sha512-pacdQDX6V6EmjF+HoiIh6u++qx4mTK0WnhgUHRc01B+Qt5eoeUwseBqmqfTSXTx/aHDEd6PiIw7UGvKgFoqgFQ==
+
+"@react-native-windows/cli@0.67.0":
+  version "0.67.0"
+  resolved "https://registry.yarnpkg.com/@react-native-windows/cli/-/cli-0.67.0.tgz#c85aab23a905904a7811b744ef60d22fbeb844f7"
+  integrity sha512-C78n+6KP/vNz2G1jlx2RMu3bKGkUDSpAteM67T478nBw5ZGFQrwV+6/Mp2659Spek5RuznjVqip3nPSA21CGbw==
+  dependencies:
+    "@react-native-windows/package-utils" "0.67.0"
+    "@react-native-windows/telemetry" "0.67.0"
+    "@xmldom/xmldom" "^0.7.5"
+    chalk "^4.1.0"
+    cli-spinners "^2.2.0"
+    envinfo "^7.5.0"
+    find-up "^4.1.0"
+    glob "^7.1.1"
+    lodash "^4.17.15"
+    mustache "^4.0.1"
+    ora "^3.4.0"
+    prompts "^2.4.1"
+    semver "^7.3.2"
+    shelljs "^0.8.4"
+    username "^5.1.0"
+    uuid "^3.3.2"
+    xml-formatter "^2.4.0"
+    xml-pa

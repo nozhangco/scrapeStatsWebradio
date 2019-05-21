@@ -1215,4 +1215,20 @@
     username "^5.1.0"
     uuid "^3.3.2"
     xml-formatter "^2.4.0"
-    xml-pa
+    xml-parser "^1.2.1"
+    xpath "^0.0.27"
+
+"@react-native-windows/find-repo-root@0.67.0":
+  version "0.67.0"
+  resolved "https://registry.yarnpkg.com/@react-native-windows/find-repo-root/-/find-repo-root-0.67.0.tgz#14499256f3bf11d78cf3dddc706caf8c0dc43f96"
+  integrity sha512-zzlFcbu6ivOykLYf3aKpQUv5TLmmk6rHqGqFqI/9ZIzPxBcE4MwFcK4ZKHMSq8a19FN2dZS5ItbzDhIgO4MbgA==
+  dependencies:
+    find-up "^4.1.0"
+
+"@react-native-windows/package-utils@0.67.0":
+  version "0.67.0"
+  resolved "https://registry.yarnpkg.com/@react-native-windows/package-utils/-/package-utils-0.67.0.tgz#c01f69cee1aaf51ae0c61867f64dd6935416c7ee"
+  integrity sha512-MVqeVWQVgbKTygADqC/+kJ+6VwtWtoUClK+/Hlt2bH7ZBSsrbkRx9yxTphefF+D5e1EqSp9PxXsRTU+v34kONg==
+  dependencies:
+    "@react-native-windows/find-repo-root" "0.67.0"
+    get-monorepo-p

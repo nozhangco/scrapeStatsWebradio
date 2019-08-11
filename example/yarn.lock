@@ -1938,4 +1938,15 @@ babel-plugin-istanbul@^6.0.0:
 
 babel-plugin-jest-hoist@^26.6.2:
   version "26.6.2"
-  resolve
+  resolved "https://registry.yarnpkg.com/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-26.6.2.tgz#8185bd030348d254c6d7dd974355e6a28b21e62d"
+  integrity sha512-PO9t0697lNTmcEHH69mdtYiOIkkOlj9fySqfO3K1eCcdISevLAE0xY59VLLUj0SoiPiTX/JU2CYFpILydUa5Lw==
+  dependencies:
+    "@babel/template" "^7.3.3"
+    "@babel/types" "^7.3.3"
+    "@types/babel__core" "^7.0.0"
+    "@types/babel__traverse" "^7.0.6"
+
+babel-plugin-polyfill-corejs2@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-polyfill-corejs2/-/babel-plugin-polyfill-corejs2-0.2.2.tgz#e9124785e6fd94f94b618a7954e5693053bf5327"
+  integrity sha512-kISrENsJ0z5dNPq5eRvcctITNHYXWOA4DUZRFYCz3jYCcvTb/A546LIddmoGNMVYg2U38OyFeNosQwI9ENTq

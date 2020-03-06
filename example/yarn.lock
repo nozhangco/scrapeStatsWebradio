@@ -4286,4 +4286,28 @@ jest-snapshot@^26.6.2:
     chalk "^4.0.0"
     expect "^26.6.2"
     graceful-fs "^4.2.4"
- 
+    jest-diff "^26.6.2"
+    jest-get-type "^26.3.0"
+    jest-haste-map "^26.6.2"
+    jest-matcher-utils "^26.6.2"
+    jest-message-util "^26.6.2"
+    jest-resolve "^26.6.2"
+    natural-compare "^1.4.0"
+    pretty-format "^26.6.2"
+    semver "^7.3.2"
+
+jest-util@^26.6.2:
+  version "26.6.2"
+  resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-26.6.2.tgz#907535dbe4d5a6cb4c47ac9b926f6af29576cbc1"
+  integrity sha512-MDW0fKfsn0OI7MS7Euz6h8HNDXVQ0gaM9uW6RjfDmd1DAFcaxX9OqIakHIqhbnmF08Cf2DLDG+ulq8YQQ0Lp0Q==
+  dependencies:
+    "@jest/types" "^26.6.2"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    graceful-fs "^4.2.4"
+    is-ci "^2.0.0"
+    micromatch "^4.0.2"
+
+jest-validate@^26.5.2, jest-validate@^26.6.2:
+  version "26.6.2"
+  resolved "

@@ -5754,4 +5754,24 @@ react-native-windows@0.67.1:
   version "0.67.1"
   resolved "https://registry.yarnpkg.com/react-native-windows/-/react-native-windows-0.67.1.tgz#d3bf071e6365b0c021d27e90cea826c7bf4006fc"
   integrity sha512-E0bJjAWIonHSFJU/SreQl2ErPV/z1uFIxTdKGY67gzQ001V/V6q4JeGQ5nwqeaPog7TWx38m7yPPKPB2bdHiHw==
-  dependencie
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    "@jest/create-cache-key-function" "^27.0.1"
+    "@react-native-community/cli" "^6.0.0"
+    "@react-native-community/cli-platform-android" "^6.0.0"
+    "@react-native-community/cli-platform-ios" "^6.0.0"
+    "@react-native-windows/cli" "0.67.0"
+    "@react-native-windows/virtualized-list" "0.67.0"
+    "@react-native/assets" "1.0.0"
+    "@react-native/normalize-color" "2.0.0"
+    "@react-native/polyfills" "2.0.0"
+    abort-controller "^3.0.0"
+    anser "^1.4.9"
+    base64-js "^1.1.2"
+    event-target-shim "^5.0.1"
+    hermes-engine "~0.9.0"
+    invariant "^2.2.4"
+    jsc-android "^250230.2.1"
+    metro-react-native-babel-transformer "0.66.2"
+    metro-runtime "0.66.2"
+    metro-source-map "0.66

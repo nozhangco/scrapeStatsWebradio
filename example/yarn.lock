@@ -7162,4 +7162,22 @@ xcode@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/xcode/-/xcode-2.1.0.tgz#bab64a7e954bb50ca8d19da7e09531c65a43ecfe"
   integrity sha512-uCrmPITrqTEzhn0TtT57fJaNaw8YJs1aCzs+P/QqxsDbvPZSv7XMPPwXrKvHtD6pLjBM/NaVwraWJm8q83Y4iQ==
-  dependen
+  dependencies:
+    simple-plist "^1.0.0"
+    uuid "^3.3.2"
+
+xml-formatter@^2.4.0:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/xml-formatter/-/xml-formatter-2.4.1.tgz#20cd625ac2a1b330759ac64dc86a9de901ad2a0d"
+  integrity sha512-UFnFRNum4BxicU9U4DPhIlHAQqHtT/vTdCvC6fiD78xlpug8YLgawW3MHmT1+eCAM7YomvMGZziiMz9AnExZgQ==
+  dependencies:
+    xml-parser-xo "^3.1.2"
+
+xml-name-validator@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
+  integrity sha512-A5CUptxDsvxKJEU3yO6DuWBSJz/qizqzJKOMIfUJHETbBw/sFaDxgd6fxm1ewUaM0jZ444Fc5vC5ROYurg/4Pw==
+
+xml-parser-xo@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/xml-parser-xo/-/xml-parser-xo-3.1.2.tgz#adf5

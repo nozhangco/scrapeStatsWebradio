@@ -9,4 +9,16 @@ export { StarDeviceDiscoveryManagerFactory } from './src/StarDeviceDiscoveryMana
 export { StarConnectionSettings } from './src/StarConnectionSettings';
 export { StarPrinterModel } from './src/StarPrinterModel';
 export { StarPrinterEmulation } from './src/StarPrinterEmulation';
-export { StarPrinter } from './src/StarPr
+export { StarPrinter } from './src/StarPrinter';
+export { StarIO10Logger } from './src/StarIO10Logger';
+export { StarPrinterInformation } from './src/StarPrinterInformation';
+export { StarIO10ArgumentError } from './src/StarIO10ArgumentError';
+export { StarIO10BadResponseError } from './src/StarIO10BadResponseError';
+export { StarIO10CommunicationError } from './src/StarIO10CommunicationError';
+export { StarIO10Error } from './src/StarIO10Error';
+export { StarIO10ErrorCode } from './src/StarIO10ErrorCode';
+export { StarIO10IllegalDeviceStateError } from './src/StarIO10IllegalDeviceStateError';
+export { StarIO10InUseError } from './src/StarIO10InUseError';
+export { StarIO10InvalidOperationError } from './src/StarIO10InvalidOperationError';
+export { StarIO10NotFoundError } from './src/StarIO10NotFoundError';
+export { StarIO10UnknownError } fr

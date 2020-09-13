@@ -1,5 +1,7 @@
+
 import * as StarXpandCommand from './src/StarXpandCommand/StarXpandCommand';
 export { StarXpandCommand };
+
 export { DisplayDelegate } from './src/DisplayDelegate';
 export { InputDeviceDelegate } from './src/InputDeviceDelegate';
 export { InterfaceType } from './src/InterfaceType';

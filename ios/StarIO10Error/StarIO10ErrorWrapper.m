@@ -80,4 +80,36 @@ RCT_REMAP_METHOD(getType,
         case STARIO10ErrorIllegalDeviceState:
             type = kSTARIO10ErrorTypeIllegalDeviceState;
             break;
-       
+            
+        case STARIO10ErrorInUse:
+            type = kSTARIO10ErrorTypeInUse;
+            break;
+            
+        case STARIO10ErrorInvalidOperation:
+            type = kSTARIO10ErrorTypeInvalidOperation;
+            break;
+            
+        case STARIO10ErrorNotFound:
+            type = kSTARIO10ErrorTypeNotFound;
+            break;
+            
+        case STARIO10ErrorUnprintable:
+            type = kSTARIO10ErrorTypeUnprintable;
+            break;
+            
+        case STARIO10ErrorUnsupportedModel:
+            type = kSTARIO10ErrorTypeUnsupportedModel;
+            break;
+            
+        case STARIO10ErrorUnknown:
+            type = kSTARIO10ErrorTypeUnknown;
+            break;
+
+        default:
+            break;
+    }
+    
+    resolve(type);
+}
+
+RCT_REMA

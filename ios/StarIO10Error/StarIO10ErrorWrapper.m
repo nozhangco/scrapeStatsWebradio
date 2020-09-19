@@ -53,4 +53,31 @@ RCT_REMAP_METHOD(dispose,
 RCT_REMAP_METHOD(getType,
                  getTypeWithObjectIdentifier:(nonnull NSString *)objID
                  resolver:(RCTPromiseResolveBlock)resolve
-                 rej
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    NSError *error = [_objManager getObject:objID];
+    
+    if (error == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    NSString *type = nil;
+    
+    switch (error.code) {
+        case STARIO10ErrorArgument:
+            type = kSTARIO10ErrorTypeArgument;
+            break;
+            
+        case STARIO10ErrorBadResponse:
+            type = kSTARIO10ErrorTypeBadResponse;
+            break;
+            
+        case STARIO10ErrorCommunication:
+            type = kSTARIO10ErrorTypeCommunication;
+            break;
+            
+        case STARIO10ErrorIllegalDeviceState:
+            type = kSTARIO10ErrorTypeIllegalDeviceState;
+            break;
+       

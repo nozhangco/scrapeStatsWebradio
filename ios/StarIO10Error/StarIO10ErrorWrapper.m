@@ -136,4 +136,31 @@ RCT_REMAP_METHOD(getErrorCode,
     
     if (error == nil) {
         reject(@"Error", @"Fail to get object.", nil);
-        retur
+        return;
+    }
+    
+    NSNumber *errorCodeNumber = [error.userInfo objectForKey:STARIO10ErrorDetailErrorCodeKey];
+    
+    if(errorCodeNumber == nil) {
+        reject(@"Error", @"Error code is undefined.", nil);
+        return;
+    }
+    
+    resolve(@([errorCodeNumber intValue]));
+}
+
+RCT_REMAP_METHOD(getStatus,
+                 getStatusWithObjectIdentifier:(nonnull NSString *)objID
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    NSError *error = [_objManager getObject:objID];
+    
+    if (error == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    STARIO10StarPrinterStatus *status = [error.userInfo objectForKey:STARIO10ErrorStatusKey];
+    
+    i

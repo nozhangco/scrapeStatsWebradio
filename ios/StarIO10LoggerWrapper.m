@@ -19,3 +19,37 @@
         _objManager = StarObjectManager.sharedManager;
     }
     return self;
+}
+
++ (BOOL)requiresMainQueueSetup
+{
+    return NO;
+}
+
+RCT_EXPORT_MODULE()
+
+#pragma mark -
+
+RCT_REMAP_METHOD(appendHeader,
+                 appendHeaderWithString:(nonnull NSString *)string
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    [STARIO10InternalInterface appendLogHeader:string];
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(start,
+                 startWithResolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    [STARIO10Logger.sharedObject start];
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(stop,
+                 stopWithResolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    [STARIO10Logger.sharedObject stop];
+    resol

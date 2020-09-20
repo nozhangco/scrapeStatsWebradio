@@ -112,4 +112,28 @@ RCT_REMAP_METHOD(getType,
     resolve(type);
 }
 
-RCT_REMA
+RCT_REMAP_METHOD(getMessage,
+                 getMessageWithObjectIdentifier:(nonnull NSString *)objID
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    NSError *error = [_objManager getObject:objID];
+    
+    if (error == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    resolve(error.localizedDescription);
+}
+
+RCT_REMAP_METHOD(getErrorCode,
+                 getErrorCodeWithObjectIdentifier:(nonnull NSString *)objID
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    NSError *error = [_objManager getObject:objID];
+    
+    if (error == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        retur

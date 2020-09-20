@@ -163,4 +163,14 @@ RCT_REMAP_METHOD(getStatus,
     
     STARIO10StarPrinterStatus *status = [error.userInfo objectForKey:STARIO10ErrorStatusKey];
     
-    i
+    if(status == nil) {
+        reject(@"Error", @"Status is undefined.", nil);
+        return;
+    }
+    
+    NSString *statusID = [_objManager add:status];
+
+    resolve(statusID);
+}
+
+@end

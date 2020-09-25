@@ -52,4 +52,7 @@ RCT_REMAP_METHOD(stop,
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
     [STARIO10Logger.sharedObject stop];
-    resol
+    resolve(nil);
+}
+
+@end

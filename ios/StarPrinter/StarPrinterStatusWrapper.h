@@ -1,4 +1,6 @@
 #import <React/RCTBridgeModule.h>
 #import <Foundation/Foundation.h>
 
-@interface StarPrinterStatusWrapper : NSObje
+@interface StarPrinterStatusWrapper : NSObject <RCTBridgeModule>
+
+@end

@@ -1,2 +1,6 @@
 #import <Foundation/Foundation.h>
-#import <React/RCTBridgeModu
+#import <React/RCTBridgeModule.h>
+
+@interface BezelSettingBuilderWrapper : NSObject <RCTBridgeModule>
+
+@end

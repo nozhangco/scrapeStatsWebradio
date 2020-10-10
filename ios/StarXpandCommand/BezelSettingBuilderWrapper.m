@@ -58,4 +58,26 @@ RCT_REMAP_METHOD(settingAutomaticPageLength,
                  settingAutomaticPageLengthWithObjectIdentifier:(nonnull NSString *)objID
                  enable:(BOOL)enable
                  resolver:(RCTPromiseResolveBlock)resolve
-                 rejecter:(
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandBezelSettingBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    [builder settingAutomaticPageLength:enable];
+    
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(settingLedAutomaticBlink,
+                 settingLedAutomaticBlinkWithObjectIdentifier:(nonnull NSString *)objID
+                 type:(nonnull NSString *)type
+                 onTime:(nonnull NSNumber *)onTime
+                 offTime:(nonnull NSNumber *)offTime
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10

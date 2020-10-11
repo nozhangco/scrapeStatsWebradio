@@ -80,4 +80,19 @@ RCT_REMAP_METHOD(settingLedAutomaticBlink,
                  resolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
-    STARIO10
+    STARIO10StarXpandCommandBezelSettingBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    STARIO10StarXpandCommandBezelLEDAutomaticBlinkParameter *parameter = [StarIO10ValueConverter toBezelLEDAutomaticBlinkParameterWithType:type
+                                                                                                                                    onTime:onTime
+                                                                                                                                   offTime:offTime];
+    [builder settingLEDAutomaticBlink:parameter];
+
+    resolve(nil);
+}
+
+@end

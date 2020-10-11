@@ -1,4 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
 
-@interfac
+@interface BuzzerBuilderWrapper : NSObject <RCTBridgeModule>
+
+@end

@@ -61,4 +61,22 @@ RCT_REMAP_METHOD(actionDrive,
                  channel:(nonnull NSString *)channel
                  repeat:(nonnull NSNumber *)repeat
                  onTime:(nonnull NSNumber *)onTime
-         
+                 offTime:(nonnull NSNumber *)offTime
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandBuzzerBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    STARIO10StarXpandCommandBuzzerDriveParameter *param = [StarIO10ValueConverter toBuzzerDriveParameterWithChannel:channel repeat:repeat onTime:onTime offTime:offTime];
+    
+    [builder actionDrive:param];
+    
+    resolve(nil);
+}
+
+@end

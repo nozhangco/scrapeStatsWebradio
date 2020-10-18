@@ -42,4 +42,30 @@ RCT_REMAP_METHOD(init,
     
     NSString *objID = [_objManager add:builder];
     
-    resolv
+    resolve(objID);
+}
+
+RCT_REMAP_METHOD(dispose,
+                 disposeWithObjectIdentifier:(nonnull NSString *)objID
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    [_objManager remove:objID];
+    
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(styleInternationalCharacter,
+                 styleInternationalCharacterWithObjectIdentifier:(nonnull NSString *)objID
+                 type:(nonnull NSString *)type
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandDisplayBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    STARIO10StarXp

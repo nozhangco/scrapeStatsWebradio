@@ -68,4 +68,24 @@ RCT_REMAP_METHOD(styleInternationalCharacter,
         return;
     }
     
-    STARIO10StarXp
+    STARIO10StarXpandCommandDisplayInternationalCharacterType nativeType = [StarIO10ValueConverter toDisplayInternationalCharacterType:type];
+    
+    [builder styleInternationalCharacter:nativeType];
+    
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(styleCharacterEncoding,
+                 styleCharacterEncodingWithObjectIdentifier:(nonnull NSString *)objID
+                 type:(nonnull NSString *)type
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandDisplayBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    STARIO10StarXpandCommandDisplayCharacterEncodingType nativeType = [StarIO10V

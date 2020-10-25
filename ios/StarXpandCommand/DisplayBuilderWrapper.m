@@ -88,4 +88,27 @@ RCT_REMAP_METHOD(styleCharacterEncoding,
         return;
     }
     
-    STARIO10StarXpandCommandDisplayCharacterEncodingType nativeType = [StarIO10V
+    STARIO10StarXpandCommandDisplayCharacterEncodingType nativeType = [StarIO10ValueConverter toDisplayCharacterEncodingType:type];
+    
+    [builder styleCharacterEncoding:nativeType];
+    
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(styleCursorPositionTo,
+                 styleCursorPositionToWithObjectIdentifier:(nonnull NSString *)objID
+                 x:(nonnull NSNumber *)x
+                 y:(nonnull NSNumber *)y
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandDisplayBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    STARIO10StarXpandCommandDisplayPositionParameter *param = [StarIO10ValueConverter toDisplayPositionParameterWithX:x y:y];
+    
+    [builder styleCursorPo

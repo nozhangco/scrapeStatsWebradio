@@ -111,4 +111,29 @@ RCT_REMAP_METHOD(styleCursorPositionTo,
     
     STARIO10StarXpandCommandDisplayPositionParameter *param = [StarIO10ValueConverter toDisplayPositionParameterWithX:x y:y];
     
-    [builder styleCursorPo
+    [builder styleCursorPositionTo:param];
+    
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(actionClearLine,
+                 actionClearLineWithObjectIdentifier:(nonnull NSString *)objID
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandDisplayBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    [builder actionClearLine];
+    
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(actionClearAll,
+                 actionClearAllWithObjectIdentifier:(nonnull NSString *)objID
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)rej

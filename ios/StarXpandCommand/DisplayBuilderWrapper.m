@@ -136,4 +136,31 @@ RCT_REMAP_METHOD(actionClearLine,
 RCT_REMAP_METHOD(actionClearAll,
                  actionClearAllWithObjectIdentifier:(nonnull NSString *)objID
                  resolver:(RCTPromiseResolveBlock)resolve
-                 rejecter:(RCTPromiseRejectBlock)rej
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandDisplayBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    [builder actionClearAll];
+    
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(actionSetBackLightState,
+                 actionSetBackLightStateWithObjectIdentifier:(nonnull NSString *)objID
+                 on:(BOOL)on
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandDisplayBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    [builder actionSetBackLi

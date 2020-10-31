@@ -210,4 +210,26 @@ RCT_REMAP_METHOD(actionSetContrast,
 
 RCT_REMAP_METHOD(actionShowText,
                  actionShowTextWithObjectIdentifier:(nonnull NSString *)objID
-              
+                 content:(nonnull NSString *)content
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandDisplayBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+
+    [builder actionShowText:content];
+    
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(actionShowImage,
+                 actionShowImageWithObjectIdentifier:(nonnull NSString *)objID
+                 source:(nonnull NSString *)source
+                 effectDiffusion:(BOOL)effectDiffusion
+                 threshold:(nonnull NSNumber *)threshold
+                 resolver:(RCTPromiseResolveBlock)resolve
+       

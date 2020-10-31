@@ -232,4 +232,19 @@ RCT_REMAP_METHOD(actionShowImage,
                  effectDiffusion:(BOOL)effectDiffusion
                  threshold:(nonnull NSNumber *)threshold
                  resolver:(RCTPromiseResolveBlock)resolve
-       
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandDisplayBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    STARIO10StarXpandCommandDisplayImageParameter *param = [StarIO10ValueConverter toDisplayImageParameterWithSource:source
+                                                                                                     effectDiffusion:effectDiffusion
+                                                                                                           threshold:threshold];
+    
+    if (param == nil) {
+        NSDictionary *info = @{
+            NSLocalizedDescriptionKey: @"In

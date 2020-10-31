@@ -189,4 +189,25 @@ RCT_REMAP_METHOD(actionSetCursorState,
 }
 
 RCT_REMAP_METHOD(actionSetContrast,
-                 actionSet
+                 actionSetContrastWithObjectIdentifier:(nonnull NSString *)objID
+                 value:(nonnull NSString *)value
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandDisplayBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    STARIO10StarXpandCommandDisplayContrast nativeValue = [StarIO10ValueConverter toDisplayContrast:value];
+    
+    [builder actionSetContrast:nativeValue];
+    
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(actionShowText,
+                 actionShowTextWithObjectIdentifier:(nonnull NSString *)objID
+              

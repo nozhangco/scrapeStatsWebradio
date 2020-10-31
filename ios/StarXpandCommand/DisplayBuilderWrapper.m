@@ -163,4 +163,30 @@ RCT_REMAP_METHOD(actionSetBackLightState,
         return;
     }
     
-    [builder actionSetBackLi
+    [builder actionSetBackLightState:on];
+    
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(actionSetCursorState,
+                 actionSetCursorStateWithObjectIdentifier:(nonnull NSString *)objID
+                 state:(nonnull NSString *)state
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandDisplayBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    STARIO10StarXpandCommandDisplayCursorState nativeState = [StarIO10ValueConverter toDisplayCursorState:state];
+    
+    [builder actionSetCursorState:nativeState];
+    
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(actionSetContrast,
+                 actionSet

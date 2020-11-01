@@ -288,3 +288,12 @@ RCT_REMAP_METHOD(addRaw,
         reject(@"Error", @"Fail to get object.", nil);
         return;
     }
+    
+    NSData *data = [StarIO10ValueConverter toData:content];
+    
+    [builder addRaw:data];
+    
+    resolve(nil);
+}
+
+@end

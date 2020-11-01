@@ -247,4 +247,18 @@ RCT_REMAP_METHOD(actionShowImage,
     
     if (param == nil) {
         NSDictionary *info = @{
-            NSLocalizedDescriptionKey: @"In
+            NSLocalizedDescriptionKey: @"Invalid source.",
+            STARIO10ErrorDetailErrorCodeKey: [[NSNumber alloc] initWithInt:STARIO10ErrorCodeNone]
+        };
+        NSError *error = [[NSError alloc] initWithDomain:@"StarIO10.STARIO10Error" code:STARIO10ErrorArgument userInfo:info];
+        NSString *errorID = [self->_objManager add:error];
+        reject(errorID, error.localizedDescription, error);
+        return;
+    }
+    
+    [builder actionShowImage:param];
+     
+    resolve(nil);
+}
+
+@end

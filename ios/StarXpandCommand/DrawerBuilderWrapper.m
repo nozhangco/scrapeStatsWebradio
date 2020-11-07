@@ -59,4 +59,21 @@ RCT_REMAP_METHOD(actionOpen,
                  actionOpenWithObjectIdentifier:(nonnull NSString *)objID
                  channel:(nonnull NSString *)channel
                  onTime:(nonnull NSNumber *)onTime
-                 resolver:
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandDrawerBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    STARIO10StarXpandCommandDrawerOpenParameter *param = [StarIO10ValueConverter toDrawerOpenParameterWithChannel:channel onTime:onTime];
+  
+    [builder actionOpen:param];
+
+    resolve(nil);
+}
+
+@end

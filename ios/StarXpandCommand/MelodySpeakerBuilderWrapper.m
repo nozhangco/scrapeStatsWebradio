@@ -101,3 +101,13 @@ RCT_REMAP_METHOD(actionDriveOneTimeSound,
         };
         NSError *error = [[NSError alloc] initWithDomain:@"StarIO10.STARIO10Error" code:STARIO10ErrorArgument userInfo:info];
         NSString *errorID = [self->_objManager add:error];
+        reject(errorID, error.localizedDescription, error);
+        return;
+    }
+    
+    [builder actionDriveOneTimeSound:param];
+    
+    resolve(nil);
+}
+
+@end

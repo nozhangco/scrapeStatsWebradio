@@ -81,4 +81,27 @@ RCT_REMAP_METHOD(addPresenterSetting,
 }
 
 RCT_REMAP_METHOD(addBezelSetting,
-                 addBezelSettingWithObjectIdentifier:(nonnu
+                 addBezelSettingWithObjectIdentifier:(nonnull NSString *)objID
+                 bezelSettingBuilderIdentifier:(nonnull NSString *)bezelSettingBuilderID
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandPreSettingBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    STARIO10StarXpandCommandBezelSettingBuilder *bezelSettingBuilder = [_objManager getObject:bezelSettingBuilderID];
+    if (bezelSettingBuilder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    [builder addBezelSetting:bezelSettingBuilder];
+
+    resolve(nil);
+}
+
+@end

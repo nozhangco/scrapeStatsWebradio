@@ -1,2 +1,6 @@
 #import <Foundation/Foundation.h>
-#import 
+#import <React/RCTBridgeModule.h>
+
+@interface PresenterSettingBuilderWrapper : NSObject <RCTBridgeModule>
+
+@end

@@ -555,3 +555,12 @@ RCT_REMAP_METHOD(add,
     
     if (childPrinterBuilder == nil) {
         reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+
+    [builder add:childPrinterBuilder];
+
+     resolve(nil);
+}
+
+@end

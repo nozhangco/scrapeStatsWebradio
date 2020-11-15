@@ -81,4 +81,28 @@ RCT_REMAP_METHOD(setPreSetting,
 
 RCT_REMAP_METHOD(addDocument,
                  addDocumentWithObjectIdentifier:(nonnull NSString *)objID
-                 documentBuilderIdentifi
+                 documentBuilderIdentifier:(nonnull NSString *)documentBuilderID
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    STARIO10StarXpandCommandBuilder *builder = [_objManager getObject:objID];
+    
+    if (builder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    STARIO10StarXpandCommandDocumentBuilder *docBuilder = [_objManager getObject:documentBuilderID];
+    if (docBuilder == nil) {
+        reject(@"Error", @"Fail to get object.", nil);
+        return;
+    }
+    
+    builder = [builder addDocument:docBuilder];
+    
+    resolve(nil);
+}
+
+RCT_REMAP_METHOD(getCommands,
+                 getCommandsWithObjectIdentifier:(nonnull NSString *)objID
+                 resolver:

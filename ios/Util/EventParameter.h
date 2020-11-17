@@ -16,4 +16,18 @@ extern NSString * const kKeyErrorIdentifier;
 extern NSString * const kKeyDraweOpenCloseSognalState;
 extern NSString * const kKeyInputDeviceData;
 extern NSString * const kKeyInterfaceType;
-ext
+extern NSString * const kKeyConnectionIdentifier;
+extern NSString * const kKeyModel;
+extern NSString * const kKeyEmulation;
+extern NSString * const kKeyReserved;
+
+extern NSString * const kNamePrinterDelegateReady;
+extern NSString * const kNamePrinterDelegateError;
+extern NSString * const kNamePrinterDelegatePaperReady;
+extern NSString * const kNamePrinterDelegatePaperNearEmpty;
+extern NSString * const kNamePrinterDelegatePaperEmpty;
+extern NSString * const kNamePrinterDelegateCoverOpened;
+extern NSString * const kNamePrinterDelegateCoverClosed;
+extern NSString * const kNamePrinterDelegateCommunicationError;
+extern NSString * const kNameDrawerDelegateOpenCloseSignalSwitched;
+extern NSString * const kNameDrawerDelegateCommunicationEr

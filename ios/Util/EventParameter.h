@@ -30,4 +30,17 @@ extern NSString * const kNamePrinterDelegateCoverOpened;
 extern NSString * const kNamePrinterDelegateCoverClosed;
 extern NSString * const kNamePrinterDelegateCommunicationError;
 extern NSString * const kNameDrawerDelegateOpenCloseSignalSwitched;
-extern NSString * const kNameDrawerDelegateCommunicationEr
+extern NSString * const kNameDrawerDelegateCommunicationError;
+extern NSString * const kNameInputDeviceDelegateConnected;
+extern NSString * const kNameInputDeviceDelegateDisconnected;
+extern NSString * const kNameInputDeviceDelegateDataReceived;
+extern NSString * const kNameInputDeviceDelegateCommunicationError;
+extern NSString * const kNameDisplayDelegateConnected;
+extern NSString * const kNameDisplayDelegateDisconnected;
+extern NSString * const kNameDisplayDelegateCommunicationError;
+extern NSString * const kNamePrinterFound;
+extern NSString * const kNameDiscoveryFinished;
+
+@end
+
+NS_ASSUME_NONNULL_END

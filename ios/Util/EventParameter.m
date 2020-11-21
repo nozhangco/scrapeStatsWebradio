@@ -32,4 +32,11 @@ NSString * const kNameDrawerDelegateCommunicationError = @"DrawerCommunicationEr
 NSString * const kNameInputDeviceDelegateConnected = @"InputDeviceConnected";
 NSString * const kNameInputDeviceDelegateDisconnected = @"InputDeviceDisconnected";
 NSString * const kNameInputDeviceDelegateDataReceived = @"InputDeviceDataReceived";
-NSString * const kNameInputDeviceDelegateCommunicationError = @"InputDeviceCommunicat
+NSString * const kNameInputDeviceDelegateCommunicationError = @"InputDeviceCommunicationError";
+NSString * const kNameDisplayDelegateConnected = @"DisplayConnected";
+NSString * const kNameDisplayDelegateDisconnected = @"DisplayDisconnected";
+NSString * const kNameDisplayDelegateCommunicationError = @"DisplayCommunicationError";
+NSString * const kNamePrinterFound = @"PrinterFound";
+NSString * const kNameDiscoveryFinished = @"DiscoveryFinished";
+
+@end

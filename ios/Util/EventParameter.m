@@ -24,4 +24,12 @@ NSString * const kNamePrinterDelegateError = @"PrinterError";
 NSString * const kNamePrinterDelegatePaperReady = @"PrinterPaperReady";
 NSString * const kNamePrinterDelegatePaperNearEmpty = @"PrinterPaperNearEmpty";
 NSString * const kNamePrinterDelegatePaperEmpty = @"PrinterPaperEmpty";
-NSString *
+NSString * const kNamePrinterDelegateCoverOpened = @"PrinterCoverOpened";
+NSString * const kNamePrinterDelegateCoverClosed = @"PrinterCoverClosed";
+NSString * const kNamePrinterDelegateCommunicationError = @"PrinterCommunicationError";
+NSString * const kNameDrawerDelegateOpenCloseSignalSwitched = @"DrawerOpenCloseSignalSwitched";
+NSString * const kNameDrawerDelegateCommunicationError = @"DrawerCommunicationError";
+NSString * const kNameInputDeviceDelegateConnected = @"InputDeviceConnected";
+NSString * const kNameInputDeviceDelegateDisconnected = @"InputDeviceDisconnected";
+NSString * const kNameInputDeviceDelegateDataReceived = @"InputDeviceDataReceived";
+NSString * const kNameInputDeviceDelegateCommunicationError = @"InputDeviceCommunicat

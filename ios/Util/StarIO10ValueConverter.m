@@ -21,4 +21,14 @@ NSDictionary<NSNumber *, NSString *> *kPrinterInternationalCharacterTypeDictiona
 NSDictionary<NSNumber *, NSString *> *kPrinterCharacterEncodingTypeDictionary;
 NSDictionary<NSNumber *, NSString *> *kPrinterCJKCharacterTypeDictionary;
 NSDictionary<NSNumber *, NSString *> *kPrinterCutTypeDictionary;
-NSDictionary<NSNumber *, NSStrin
+NSDictionary<NSNumber *, NSString *> *kPrinterBarcodeSymbologyDictionary;
+NSDictionary<NSNumber *, NSString *> *kPrinterBarcodeBarRatioLevelDictionary;
+NSDictionary<NSNumber *, NSString *> *kPrinterPDF417LevelDictionary;
+NSDictionary<NSNumber *, NSString *> *kPrinterQRCodeModelDictionary;
+NSDictionary<NSNumber *, NSString *> *kPrinterQRCodeLevelDictionary;
+NSDictionary<NSNumber *, NSString *> *kDrawerChannelDictionary;
+NSDictionary<NSNumber *, NSString *> *kBuzzerChannelDictionary;
+NSDictionary<NSNumber *, NSString *> *kMelodySpeakerSoundStorageAreaDictionary;
+NSDictionary<NSNumber *, NSString *> *kDisplayCharacterEncodingTypeDictionary;
+NSDictionary<NSNumber *, NSString *> *kDisplayContrastDictionary;
+NSDictionary<NSNumber *, NSString *> *kDisplayCursorStateDict

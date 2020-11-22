@@ -31,4 +31,20 @@ NSDictionary<NSNumber *, NSString *> *kBuzzerChannelDictionary;
 NSDictionary<NSNumber *, NSString *> *kMelodySpeakerSoundStorageAreaDictionary;
 NSDictionary<NSNumber *, NSString *> *kDisplayCharacterEncodingTypeDictionary;
 NSDictionary<NSNumber *, NSString *> *kDisplayContrastDictionary;
-NSDictionary<NSNumber *, NSString *> *kDisplayCursorStateDict
+NSDictionary<NSNumber *, NSString *> *kDisplayCursorStateDictionary;
+NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictionary;
+
++ (void)initialize
+{
+    static dispatch_once_t oncePredicate;
+    dispatch_once(&oncePredicate, ^{
+        kStarPrinterModelDictionary = @{
+            @(STARIO10StarPrinterModelUnknown): @"Unknown",
+            @(STARIO10StarPrinterModelTSP650II): @"TSP650II",
+            @(STARIO10StarPrinterModelTSP700II): @"TSP700II",
+            @(STARIO10StarPrinterModelTSP800II): @"TSP800II",
+            @(STARIO10StarPrinterModelTSP100IIIW): @"TSP100IIIW",
+            @(STARIO10StarPrinterModelTSP100IIILAN): @"TSP100IIILAN",
+            @(STARIO10StarPrinterModelTSP100IIIBI): @"TSP100IIIBI",
+            @(STARIO10StarPrinterModelTSP100IIIU): @"TSP100IIIU",
+            @(STARIO10StarPrinterModelTSP100IV): @"TS

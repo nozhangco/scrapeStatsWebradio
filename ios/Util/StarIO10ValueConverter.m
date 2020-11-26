@@ -47,4 +47,20 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
             @(STARIO10StarPrinterModelTSP100IIILAN): @"TSP100IIILAN",
             @(STARIO10StarPrinterModelTSP100IIIBI): @"TSP100IIIBI",
             @(STARIO10StarPrinterModelTSP100IIIU): @"TSP100IIIU",
-            @(STARIO10StarPrinterModelTSP100IV): @"TS
+            @(STARIO10StarPrinterModelTSP100IV): @"TSP100IV", 
+            @(STARIO10StarPrinterModelmPOP): @"mPOP",
+            @(STARIO10StarPrinterModelmC_Print2): @"mC_Print2",
+            @(STARIO10StarPrinterModelmC_Print3): @"mC_Print3",
+            @(STARIO10StarPrinterModelSM_S210i): @"SM_S210i",
+            @(STARIO10StarPrinterModelSM_S230i): @"SM_S230i",
+            @(STARIO10StarPrinterModelSM_T300i): @"SM_T300i",
+            @(STARIO10StarPrinterModelSM_T400i): @"SM_T400i",
+            @(STARIO10StarPrinterModelSM_L200): @"SM_L200",
+            @(STARIO10StarPrinterModelSM_L300): @"SM_L300",
+            @(STARIO10StarPrinterModelBSC10): @"BSC10",
+            @(STARIO10StarPrinterModelTSP043): @"TSP043",
+            @(STARIO10StarPrinterModelSP700): @"SP700",
+            @(STARIO10StarPrinterModelTUP500): @"TUP500"
+        };
+        
+        kStarPrinterEmula

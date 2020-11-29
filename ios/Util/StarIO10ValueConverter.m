@@ -63,4 +63,18 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
             @(STARIO10StarPrinterModelTUP500): @"TUP500"
         };
         
-        kStarPrinterEmula
+        kStarPrinterEmulationDictionary = @{
+            @(STARIO10StarPrinterEmulationUnknown): @"Unknown",
+            @(STARIO10StarPrinterEmulationStarLine): @"StarLine",
+            @(STARIO10StarPrinterEmulationStarDot): @"StarDot",
+            @(STARIO10StarPrinterEmulationStarGraphic): @"StarGraphic",
+            @(STARIO10StarPrinterEmulationStarPRNT): @"StarPRNT",
+            @(STARIO10StarPrinterEmulationEscPos): @"EscPos",
+            @(STARIO10StarPrinterEmulationEscPosMobile): @"EscPosMobile"
+        };
+        
+        kInterfaceTypeDictionary = @{
+            @(STARIO10InterfaceTypeLAN): @"Lan",
+            @(STARIO10InterfaceTypeBluetooth): @"Bluetooth",
+            @(STARIO10InterfaceTypeBluetoothLE): @"BluetoothLE",
+            @(STARIO10InterfaceTypeUSB

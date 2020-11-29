@@ -77,4 +77,21 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
             @(STARIO10InterfaceTypeLAN): @"Lan",
             @(STARIO10InterfaceTypeBluetooth): @"Bluetooth",
             @(STARIO10InterfaceTypeBluetoothLE): @"BluetoothLE",
-            @(STARIO10InterfaceTypeUSB
+            @(STARIO10InterfaceTypeUSB): @"Usb"
+        };
+        
+        kPresenterLEDTypeDictionary = @{
+            @(STARIO10StarXpandCommandPresenterLEDTypeHolding): @"Holding",
+            @(STARIO10StarXpandCommandPresenterLEDTypeError): @"Error",
+            @(STARIO10StarXpandCommandPresenterLEDTypeIdle): @"Idle"
+        };
+        
+        kBezelLEDTypeDictionary = @{
+            @(STARIO10StarXpandCommandBezelLEDTypeHolding): @"Holding",
+            @(STARIO10StarXpandCommandBezelLEDTypeError): @"Error",
+            @(STARIO10StarXpandCommandBezelLEDTypeIdle): @"Idle"
+        };
+        
+        kPrinterAlignmentDictionary = @{
+            @(STARIO10StarXpandCommandPrinterAlignmentLeft): @"Left",
+            @(STARIO10StarXpandCommandPrinterAlignmentCenter)

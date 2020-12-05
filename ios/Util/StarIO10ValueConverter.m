@@ -94,4 +94,21 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
         
         kPrinterAlignmentDictionary = @{
             @(STARIO10StarXpandCommandPrinterAlignmentLeft): @"Left",
-            @(STARIO10StarXpandCommandPrinterAlignmentCenter)
+            @(STARIO10StarXpandCommandPrinterAlignmentCenter): @"Center",
+            @(STARIO10StarXpandCommandPrinterAlignmentRight): @"Right"
+        };
+        
+        kPrinterBlackMarkPositionDictionary = @{
+            @(STARIO10StarXpandCommandPrinterBlackMarkPositionFront): @"Front",
+            @(STARIO10StarXpandCommandPrinterBlackMarkPositionBack): @"Back"
+        };
+        
+        kPrinterFontTypeDictionary = @{
+            @(STARIO10StarXpandCommandPrinterFontTypeA): @"A",
+            @(STARIO10StarXpandCommandPrinterFontTypeB): @"B"
+        };
+        
+        kPrinterInternationalCharacterTypeDictionary = @{
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeUsa): @"Usa",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeFrance): @"France",
+            @(STARIO10StarXpandCommandPr

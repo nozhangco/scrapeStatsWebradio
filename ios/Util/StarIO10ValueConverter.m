@@ -119,4 +119,12 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
             @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeSpain): @"Spain",
             @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeJapan): @"Japan",
             @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeNorway): @"Norway",
-            @(STARIO10StarXpandCommandPrinterInternationalCharacterTy
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeDenmark2): @"Denmark2",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeSpain2): @"Spain2",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeLatinAmerica): @"LatinAmerica",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeKorea): @"Korea",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeIreland): @"Ireland",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeSlovenia): @"Slovenia",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeCroatia): @"Croatia",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeChina): @"China",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeVietnam): 

@@ -111,4 +111,12 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
         kPrinterInternationalCharacterTypeDictionary = @{
             @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeUsa): @"Usa",
             @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeFrance): @"France",
-            @(STARIO10StarXpandCommandPr
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeGermany): @"Germany",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeUk): @"UK",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeDenmark): @"Denmark",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeSweden): @"Sweden",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeItaly): @"Italy",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeSpain): @"Spain",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeJapan): @"Japan",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeNorway): @"Norway",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTy

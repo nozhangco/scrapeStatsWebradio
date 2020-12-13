@@ -137,4 +137,18 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
             @(STARIO10StarXpandCommandPrinterCharacterEncodingTypeSimplifiedChinese): @"SimplifiedChinese",
             @(STARIO10StarXpandCommandPrinterCharacterEncodingTypeTraditionalChinese): @"TraditionalChinese",
             @(STARIO10StarXpandCommandPrinterCharacterEncodingTypeKorean): @"Korean",
-            @(STARIO10StarXpandCommandPrinterCharacterE
+            @(STARIO10StarXpandCommandPrinterCharacterEncodingTypeCodePage): @"CodePage"
+        };
+        
+        kPrinterCJKCharacterTypeDictionary = @{
+            @(STARIO10StarXpandCommandPrinterCJKCharacterTypeJapanese): @"Japanese",
+            @(STARIO10StarXpandCommandPrinterCJKCharacterTypeSimplifiedChinese): @"SimplifiedChinese",
+            @(STARIO10StarXpandCommandPrinterCJKCharacterTypeTraditionalChinese): @"TraditionalChinese",
+            @(STARIO10StarXpandCommandPrinterCJKCharacterTypeKorean): @"Korean"
+        };
+        
+        kPrinterCutTypeDictionary = @{
+            @(STARIO10StarXpandCommandPrinterCutTypeFull): @"Full",
+            @(STARIO10StarXpandCommandPrinterCutTypePartial): @"Partial",
+            @(STARIO10StarXpandCommandPrinterCutTypeFullDirect): @"FullDirect",
+     

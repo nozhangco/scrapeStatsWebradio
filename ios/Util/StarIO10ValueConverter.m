@@ -127,4 +127,14 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
             @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeSlovenia): @"Slovenia",
             @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeCroatia): @"Croatia",
             @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeChina): @"China",
-            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeVietnam): 
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeVietnam): @"Vietnam",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeArabic): @"Arabic",
+            @(STARIO10StarXpandCommandPrinterInternationalCharacterTypeLegal): @"Legal"
+        };
+        
+        kPrinterCharacterEncodingTypeDictionary = @{
+            @(STARIO10StarXpandCommandPrinterCharacterEncodingTypeJapanese): @"Japanese",
+            @(STARIO10StarXpandCommandPrinterCharacterEncodingTypeSimplifiedChinese): @"SimplifiedChinese",
+            @(STARIO10StarXpandCommandPrinterCharacterEncodingTypeTraditionalChinese): @"TraditionalChinese",
+            @(STARIO10StarXpandCommandPrinterCharacterEncodingTypeKorean): @"Korean",
+            @(STARIO10StarXpandCommandPrinterCharacterE

@@ -162,4 +162,18 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
             @(STARIO10StarXpandCommandPrinterBarcodeSymbologyJan13): @"Jan13",
             @(STARIO10StarXpandCommandPrinterBarcodeSymbologyEan13): @"Ean13",
             @(STARIO10StarXpandCommandPrinterBarcodeSymbologyCode39): @"Code39",
-            @(STARIO10StarXpandCommandPrint
+            @(STARIO10StarXpandCommandPrinterBarcodeSymbologyItf): @"Itf",
+            @(STARIO10StarXpandCommandPrinterBarcodeSymbologyCode128): @"Code128",
+            @(STARIO10StarXpandCommandPrinterBarcodeSymbologyCode93): @"Code93",
+            @(STARIO10StarXpandCommandPrinterBarcodeSymbologyNw7): @"NW7"
+        };
+        
+        kPrinterBarcodeBarRatioLevelDictionary = @{
+            @(STARIO10StarXpandCommandPrinterBarcodeBarRatioLevelLevelPlus1): @"LevelPlus1",
+            @(STARIO10StarXpandCommandPrinterBarcodeBarRatioLevelLevel0): @"Level0",
+            @(STARIO10StarXpandCommandPrinterBarcodeBarRatioLevelLevelMinus1): @"LevelMinus1"
+        };
+        
+        kPrinterPDF417LevelDictionary = @{
+            @(STARIO10StarXpandCommandPrinterPDF417LevelEcc0): @"Ecc0",
+            @(STARIO10St

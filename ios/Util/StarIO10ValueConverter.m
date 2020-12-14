@@ -151,4 +151,15 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
             @(STARIO10StarXpandCommandPrinterCutTypeFull): @"Full",
             @(STARIO10StarXpandCommandPrinterCutTypePartial): @"Partial",
             @(STARIO10StarXpandCommandPrinterCutTypeFullDirect): @"FullDirect",
-     
+            @(STARIO10StarXpandCommandPrinterCutTypePartialDirect): @"PartialDirect"
+        };
+        
+        kPrinterBarcodeSymbologyDictionary = @{
+            @(STARIO10StarXpandCommandPrinterBarcodeSymbologyUpcE): @"UpcE",
+            @(STARIO10StarXpandCommandPrinterBarcodeSymbologyUpcA): @"UpcA",
+            @(STARIO10StarXpandCommandPrinterBarcodeSymbologyJan8): @"Jan8",
+            @(STARIO10StarXpandCommandPrinterBarcodeSymbologyEan8): @"Ean8",
+            @(STARIO10StarXpandCommandPrinterBarcodeSymbologyJan13): @"Jan13",
+            @(STARIO10StarXpandCommandPrinterBarcodeSymbologyEan13): @"Ean13",
+            @(STARIO10StarXpandCommandPrinterBarcodeSymbologyCode39): @"Code39",
+            @(STARIO10StarXpandCommandPrint

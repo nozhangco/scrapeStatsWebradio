@@ -208,4 +208,18 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
             @(STARIO10StarXpandCommandBuzzerChannelNo2): @"No2"
         };
         
-        kMelodySpeakerSoundStorageAreaDictionar
+        kMelodySpeakerSoundStorageAreaDictionary = @{
+            @(STARIO10StarXpandCommandMelodySpeakerSoundStorageAreaArea1): @"Area1",
+            @(STARIO10StarXpandCommandMelodySpeakerSoundStorageAreaArea2): @"Area2"
+        };
+        
+        kDisplayContrastDictionary = @{
+            @(STARIO10StarXpandCommandDisplayContrastPlus3): @"Plus3",
+            @(STARIO10StarXpandCommandDisplayContrastPlus2): @"Plus2",
+            @(STARIO10StarXpandCommandDisplayContrastPlus1): @"Plus1",
+            @(STARIO10StarXpandCommandDisplayContrastDefault): @"Default",
+            @(STARIO10StarXpandCommandDisplayContrastMinus1): @"Minus1",
+            @(STARIO10StarXpandCommandDisplayContrastMinus2): @"Minus2",
+            @(STARIO10StarXpandCommandDisplayContrastMinus3): @"Minus3"
+        };
+   

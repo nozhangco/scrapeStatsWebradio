@@ -176,4 +176,19 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
         
         kPrinterPDF417LevelDictionary = @{
             @(STARIO10StarXpandCommandPrinterPDF417LevelEcc0): @"Ecc0",
-            @(STARIO10St
+            @(STARIO10StarXpandCommandPrinterPDF417LevelEcc1): @"Ecc1",
+            @(STARIO10StarXpandCommandPrinterPDF417LevelEcc2): @"Ecc2",
+            @(STARIO10StarXpandCommandPrinterPDF417LevelEcc3): @"Ecc3",
+            @(STARIO10StarXpandCommandPrinterPDF417LevelEcc4): @"Ecc4",
+            @(STARIO10StarXpandCommandPrinterPDF417LevelEcc5): @"Ecc5",
+            @(STARIO10StarXpandCommandPrinterPDF417LevelEcc6): @"Ecc6",
+            @(STARIO10StarXpandCommandPrinterPDF417LevelEcc7): @"Ecc7",
+            @(STARIO10StarXpandCommandPrinterPDF417LevelEcc8): @"Ecc8"
+        };
+        
+        kPrinterQRCodeModelDictionary = @{
+            @(STARIO10StarXpandCommandPrinterQRCodeModelModel1): @"Model1",
+            @(STARIO10StarXpandCommandPrinterQRCodeModelModel2): @"Model2"
+        };
+        
+        k

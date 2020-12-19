@@ -191,4 +191,21 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
             @(STARIO10StarXpandCommandPrinterQRCodeModelModel2): @"Model2"
         };
         
-        k
+        kPrinterQRCodeLevelDictionary = @{
+            @(STARIO10StarXpandCommandPrinterQRCodeLevelL): @"L",
+            @(STARIO10StarXpandCommandPrinterQRCodeLevelM): @"M",
+            @(STARIO10StarXpandCommandPrinterQRCodeLevelQ): @"Q",
+            @(STARIO10StarXpandCommandPrinterQRCodeLevelH): @"H"
+        };
+        
+        kDrawerChannelDictionary = @{
+            @(STARIO10StarXpandCommandDrawerChannelNo1): @"No1",
+            @(STARIO10StarXpandCommandDrawerChannelNo2): @"No2"
+        };
+        
+        kBuzzerChannelDictionary = @{
+            @(STARIO10StarXpandCommandBuzzerChannelNo1): @"No1",
+            @(STARIO10StarXpandCommandBuzzerChannelNo2): @"No2"
+        };
+        
+        kMelodySpeakerSoundStorageAreaDictionar

@@ -242,4 +242,20 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
             @(STARIO10StarXpandCommandDisplayInternationalCharacterTypeNorway): @"Norway",
             @(STARIO10StarXpandCommandDisplayInternationalCharacterTypeDenmark2): @"Denmark2",
             @(STARIO10StarXpandCommandDisplayInternationalCharacterTypeSpain2): @"Spain2",
-            @(STARIO10StarXpandCommandDisplayInternationalCharacterTypeLatinAmerica)
+            @(STARIO10StarXpandCommandDisplayInternationalCharacterTypeLatinAmerica): @"LatinAmerica",
+            @(STARIO10StarXpandCommandDisplayInternationalCharacterTypeKorea): @"Korea"
+        };
+        
+        kDisplayCharacterEncodingTypeDictionary = @{
+            @(STARIO10StarXpandCommandDisplayCharacterEncodingTypeJapanese): @"Japanese",
+            @(STARIO10StarXpandCommandDisplayCharacterEncodingTypeSimplifiedChinese): @"SimplifiedChinese",
+            @(STARIO10StarXpandCommandDisplayCharacterEncodingTypeTraditionalChinese): @"TraditionalChinese",
+            @(STARIO10StarXpandCommandDisplayCharacterEncodingTypeKorean): @"Korean",
+            @(STARIO10StarXpandCommandDisplayCharacterEncodingTypeCodePage): @"CodePage"
+        };
+    });
+}
+
++ (NSData *)toData:(NSArray<NSNumber *> *)values
+{
+    NSMutableData *d

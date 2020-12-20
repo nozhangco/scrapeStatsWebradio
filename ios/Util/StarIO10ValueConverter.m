@@ -222,4 +222,16 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
             @(STARIO10StarXpandCommandDisplayContrastMinus2): @"Minus2",
             @(STARIO10StarXpandCommandDisplayContrastMinus3): @"Minus3"
         };
-   
+        
+        kDisplayCursorStateDictionary = @{
+            @(STARIO10StarXpandCommandDisplayCursorStateOn): @"On",
+            @(STARIO10StarXpandCommandDisplayCursorStateBlink): @"Blink",
+            @(STARIO10StarXpandCommandDisplayCursorStateOff): @"Off"
+        };
+        
+        kDisplayInternationalCharacterTypeDictionary = @{
+            @(STARIO10StarXpandCommandDisplayInternationalCharacterTypeUsa): @"Usa",
+            @(STARIO10StarXpandCommandDisplayInternationalCharacterTypeFrance): @"France",
+            @(STARIO10StarXpandCommandDisplayInternationalCharacterTypeGermany): @"Germany",
+            @(STARIO10StarXpandCommandDisplayInternationalCharacterTypeUk): @"UK",
+            @(STARIO10StarXpandCommandDisplayInter

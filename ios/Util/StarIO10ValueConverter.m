@@ -258,4 +258,31 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
 
 + (NSData *)toData:(NSArray<NSNumber *> *)values
 {
-    NSMutableData *d
+    NSMutableData *data = [NSMutableData data];
+
+    [values enumerateObjectsUsingBlock:^(NSNumber *number, NSUInteger idx, BOOL *stop) {
+        // 0x00-0xff の範囲か確認
+        if (([number compare:@(0x00)] == NSOrderedAscending) ||
+            ([number compare:@(0xff)] == NSOrderedDescending)) {
+            *stop = YES;
+        }
+            
+        uint8_t rawByte = number.unsignedCharValue;
+        [data appendBytes:&rawByte length:1];
+    }];
+    
+    if (data.length < values.count) {
+        return nil;
+    }
+    
+    return data;
+}
+
++ (NSArray<NSNumber *> *)toNumberArray:(NSData *)data
+{
+    NSMutableArray<NSNumber *> *numberArray = [NSMutableArray array];
+    
+    uint8_t *bytes = (uint8_t *)data.bytes;
+    
+    for (NSUInteger i = 0; i < data.length; i++) {
+        [

@@ -285,4 +285,37 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     uint8_t *bytes = (uint8_t *)data.bytes;
     
     for (NSUInteger i = 0; i < data.length; i++) {
-        [
+        [numberArray addObject:@(*(bytes + i))];
+    }
+    
+    return numberArray;
+}
+
++ (NSString *)toStringFromStarPrinterModel:(STARIO10StarPrinterModel)value
+{
+    NSString *result = kStarPrinterModelDictionary[@(value)];
+    
+    if (result == nil) {
+        result = @"Unknown";
+    }
+    
+    return result;
+}
+
++ (NSString *)toStringFromStarPrinterEmulation:(STARIO10StarPrinterEmulation)value
+{
+    NSString *result = kStarPrinterEmulationDictionary[@(value)];
+    
+    if (result == nil) {
+        result = @"Unknown";
+    }
+    
+    return result;
+}
+
++ (NSString *)toStringFromInterfaceType:(STARIO10InterfaceType)value
+{
+    return kInterfaceTypeDictionary[@(value)];
+}
+
++ (NSArray<NSNumber *> *)toPrinterCJKCharacterPriorityTypes

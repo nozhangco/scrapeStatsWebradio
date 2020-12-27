@@ -318,4 +318,29 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     return kInterfaceTypeDictionary[@(value)];
 }
 
-+ (NSArray<NSNumber *> *)toPrinterCJKCharacterPriorityTypes
++ (NSArray<NSNumber *> *)toPrinterCJKCharacterPriorityTypes:(nonnull NSArray<NSString *> *)types
+{
+    NSMutableArray<NSNumber *> *numberArray = [[NSMutableArray alloc] init];
+    
+    for (NSString *type in types) {
+        STARIO10StarXpandCommandPrinterCJKCharacterType nativeType = [StarIO10ValueConverter toPrinterCJKCharacterType:type];
+        [numberArray addObject:@(nativeType)];
+    }
+    
+    return (NSArray *)numberArray;
+}
+
++ (STARIO10StarPrinterModel)toStarPrinterModel:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kStarPrinterModelDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarPrinterModelUnknown;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10InterfaceType)toInterfaceType:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kInterfaceTypeDictionary al

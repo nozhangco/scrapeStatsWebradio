@@ -343,4 +343,32 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
 
 + (STARIO10InterfaceType)toInterfaceType:(NSString *)value
 {
-    NSArray<NSNumber *> *allKeys = [kInterfaceTypeDictionary al
+    NSArray<NSNumber *> *allKeys = [kInterfaceTypeDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10InterfaceTypeUnknown;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandPresenterLEDType)toPresenterLEDType:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kPresenterLEDTypeDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandPresenterLEDTypeHolding;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandBezelLEDType)toBezelLEDType:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kBezelLEDTypeDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandBezelLEDTypeHolding;
+    }
+    
+    return [[allKeys objectAtIndex:0] i

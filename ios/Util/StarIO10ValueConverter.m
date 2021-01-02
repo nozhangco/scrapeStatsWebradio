@@ -371,4 +371,29 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
         return STARIO10StarXpandCommandBezelLEDTypeHolding;
     }
     
-    return [[allKeys objectAtIndex:0] i
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandPrinterAlignment)toPrinterAlignment:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kPrinterAlignmentDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandPrinterAlignmentLeft;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandPrinterBlackMarkPosition)toPrinterBlackMarkPosition:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kPrinterBlackMarkPositionDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandPrinterBlackMarkPositionFront;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandPrinterFontType)toPrinter

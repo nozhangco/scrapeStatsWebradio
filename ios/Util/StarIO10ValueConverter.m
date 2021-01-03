@@ -396,4 +396,26 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     return [[allKeys objectAtIndex:0] intValue];
 }
 
-+ (STARIO10StarXpandCommandPrinterFontType)toPrinter
++ (STARIO10StarXpandCommandPrinterFontType)toPrinterFontType:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kPrinterFontTypeDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandPrinterFontTypeA;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandPrinterInternationalCharacterType)toPrinterInternationalCharacterType:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kPrinterInternationalCharacterTypeDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandPrinterInternationalCharacterTypeUsa;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandPrinterCharacterEncodingType)toPrinterCharacterEncodingType:(NSString *)v

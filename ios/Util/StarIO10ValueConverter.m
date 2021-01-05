@@ -418,4 +418,28 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     return [[allKeys objectAtIndex:0] intValue];
 }
 
-+ (STARIO10StarXpandCommandPrinterCharacterEncodingType)toPrinterCharacterEncodingType:(NSString *)v
++ (STARIO10StarXpandCommandPrinterCharacterEncodingType)toPrinterCharacterEncodingType:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kPrinterCharacterEncodingTypeDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandPrinterCharacterEncodingTypeCodePage;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandPrinterCJKCharacterType)toPrinterCJKCharacterType:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kPrinterCJKCharacterTypeDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandPrinterCJKCharacterTypeJapanese;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandPrinterCutType)toPrinterCutType:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kPrinterCutTypeDictionary allKeys

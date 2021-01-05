@@ -442,4 +442,29 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
 
 + (STARIO10StarXpandCommandPrinterCutType)toPrinterCutType:(NSString *)value
 {
-    NSArray<NSNumber *> *allKeys = [kPrinterCutTypeDictionary allKeys
+    NSArray<NSNumber *> *allKeys = [kPrinterCutTypeDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandPrinterCutTypePartial;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandPrinterBarcodeSymbology)toPrinterBarcodeSymbology:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kPrinterBarcodeSymbologyDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandPrinterBarcodeSymbologyUpcE;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandPrinterBarcodeBarRatioLevel)toPrinterBarcodeBarRatioLevel:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kPrinterBarcodeBarRatioLevelDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10Sta

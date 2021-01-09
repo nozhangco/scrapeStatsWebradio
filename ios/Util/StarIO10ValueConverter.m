@@ -467,4 +467,32 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     NSArray<NSNumber *> *allKeys = [kPrinterBarcodeBarRatioLevelDictionary allKeysForObject:value];
     
     if (allKeys == nil) {
-        return STARIO10Sta
+        return STARIO10StarXpandCommandPrinterBarcodeBarRatioLevelLevel0;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandPrinterPDF417Level)toPrinterPDF417Level:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kPrinterPDF417LevelDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandPrinterPDF417LevelEcc0;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandPrinterQRCodeModel)toPrinterQRCodeModel:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kPrinterQRCodeModelDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandPrinterQRCodeModelModel2;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO

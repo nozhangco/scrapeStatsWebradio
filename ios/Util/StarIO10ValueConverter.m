@@ -495,4 +495,29 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     return [[allKeys objectAtIndex:0] intValue];
 }
 
-+ (STARIO
++ (STARIO10StarXpandCommandPrinterQRCodeLevel)toPrinterQRCodeLevel:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kPrinterQRCodeLevelDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandPrinterQRCodeLevelL;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
+
++ (STARIO10StarXpandCommandDrawerChannel)toDrawerChannel:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kDrawerChannelDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandDrawerChannelNo1;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandBuzzerChannel)toBuzzerChannel:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kBuzzerChannelDic

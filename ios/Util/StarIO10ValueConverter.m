@@ -544,4 +544,27 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
 {
     NSArray<NSNumber *> *allKeys = [kDisplayContrastDictionary allKeysForObject:value];
     
-    if (a
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandDisplayContrastDefault;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandDisplayCursorState)toDisplayCursorState:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kDisplayCursorStateDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandDisplayCursorStateOff;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandDisplayInternationalCharacterType)toDisplayInternationalCharacterType:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kDisplayInternationalCharacterTypeDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandDisplayInternationalCharacter

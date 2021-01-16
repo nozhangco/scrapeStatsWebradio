@@ -567,4 +567,24 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     NSArray<NSNumber *> *allKeys = [kDisplayInternationalCharacterTypeDictionary allKeysForObject:value];
     
     if (allKeys == nil) {
-        return STARIO10StarXpandCommandDisplayInternationalCharacter
+        return STARIO10StarXpandCommandDisplayInternationalCharacterTypeUsa;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandDisplayCharacterEncodingType)toDisplayCharacterEncodingType:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kDisplayCharacterEncodingTypeDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandDisplayCharacterEncodingTypeCodePage;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandPresenterModeParameter *)toPresenterModeParameterWithLoop:(BOOL)loop
+                                                                                hold:(BOOL)hold
+                                                                             retract:(BOOL)retract
+     

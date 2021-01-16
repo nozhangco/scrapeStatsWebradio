@@ -520,4 +520,28 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
 
 + (STARIO10StarXpandCommandBuzzerChannel)toBuzzerChannel:(NSString *)value
 {
-    NSArray<NSNumber *> *allKeys = [kBuzzerChannelDic
+    NSArray<NSNumber *> *allKeys = [kBuzzerChannelDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandBuzzerChannelNo1;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandMelodySpeakerSoundStorageArea)toMelodySpeakerSoundStorageArea:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kMelodySpeakerSoundStorageAreaDictionary allKeysForObject:value];
+    
+    if (allKeys == nil) {
+        return STARIO10StarXpandCommandMelodySpeakerSoundStorageAreaArea1;
+    }
+    
+    return [[allKeys objectAtIndex:0] intValue];
+}
+
++ (STARIO10StarXpandCommandDisplayContrast)toDisplayContrast:(NSString *)value
+{
+    NSArray<NSNumber *> *allKeys = [kDisplayContrastDictionary allKeysForObject:value];
+    
+    if (a

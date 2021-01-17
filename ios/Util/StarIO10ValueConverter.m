@@ -587,4 +587,18 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
 + (STARIO10StarXpandCommandPresenterModeParameter *)toPresenterModeParameterWithLoop:(BOOL)loop
                                                                                 hold:(BOOL)hold
                                                                              retract:(BOOL)retract
-     
+                                                                            holdTime:(nonnull NSNumber *)holdTime
+{
+    STARIO10StarXpandCommandPresenterModeParameter *param = [[STARIO10StarXpandCommandPresenterModeParameter alloc] init];
+    param = [param setLoop:loop];
+    param = [param setHold:hold];
+    param = [param setRetract:retract];
+    param = [param setHoldTime:holdTime.intValue];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandPrinterBlackMarkParameter *)toPrinterBlackMarkParameterWithStart:(BOOL)enable
+                                                                                   position:(nonnull NSString *)position
+{
+    STARIO10StarXpandCommandPrinterBlackMarkPosition nativePosition = [StarIO10ValueConverter toPrinterBla

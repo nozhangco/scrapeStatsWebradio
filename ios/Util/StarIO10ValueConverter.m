@@ -601,4 +601,23 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
 + (STARIO10StarXpandCommandPrinterBlackMarkParameter *)toPrinterBlackMarkParameterWithStart:(BOOL)enable
                                                                                    position:(nonnull NSString *)position
 {
-    STARIO10StarXpandCommandPrinterBlackMarkPosition nativePosition = [StarIO10ValueConverter toPrinterBla
+    STARIO10StarXpandCommandPrinterBlackMarkPosition nativePosition = [StarIO10ValueConverter toPrinterBlackMarkPosition:position];
+    
+    STARIO10StarXpandCommandPrinterBlackMarkParameter *param = [[STARIO10StarXpandCommandPrinterBlackMarkParameter alloc] init];
+    param = [param setPosition:nativePosition];
+    param = [param setEnable:enable];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandPrinterLabelParameter *)toPrinterLabelParameterWithStart:(BOOL)enable
+{
+    STARIO10StarXpandCommandPrinterLabelParameter *param = [[STARIO10StarXpandCommandPrinterLabelParameter alloc] init];
+    param = [param setEnable:enable];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandPrinterHoldPrintParameter *)toPrinterHoldPrintParameterWithEnable:(BOOL)enable
+{
+    STARIO10StarXpandCommandPrinterHoldPrintParameter *param = [[STARIO10StarXpandCommandPr

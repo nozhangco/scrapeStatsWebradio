@@ -620,4 +620,21 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
 
 + (STARIO10StarXpandCommandPrinterHoldPrintParameter *)toPrinterHoldPrintParameterWithEnable:(BOOL)enable
 {
-    STARIO10StarXpandCommandPrinterHoldPrintParameter *param = [[STARIO10StarXpandCommandPr
+    STARIO10StarXpandCommandPrinterHoldPrintParameter *param = [[STARIO10StarXpandCommandPrinterHoldPrintParameter alloc] initWithEnable:enable];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandMagnificationParameter *)toMagnificationParameterWithWidth:(nonnull NSNumber *)width
+                                                                               height:(nonnull NSNumber *)height
+{
+    STARIO10StarXpandCommandMagnificationParameter *param = [[STARIO10StarXpandCommandMagnificationParameter alloc] initWithWidth:width.integerValue height:height.integerValue];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandPrinterLogoParameter *)toPrinterLogoParameterWithKeyCode:(nonnull NSString *)keyCode
+{
+    STARIO10StarXpandCommandPrinterLogoParameter *param = [[STARIO10StarXpandCommandPrinterLogoParameter alloc] initWithKeyCode:keyCode];
+    
+    retur

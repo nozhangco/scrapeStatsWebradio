@@ -637,4 +637,14 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
 {
     STARIO10StarXpandCommandPrinterLogoParameter *param = [[STARIO10StarXpandCommandPrinterLogoParameter alloc] initWithKeyCode:keyCode];
     
-    retur
+    return param;
+}
+
++ (STARIO10StarXpandCommandPrinterBarcodeParameter *)toPrinterBarcodeParameterWithContent:(nonnull NSString *)content
+                                                                                symbology:(nonnull NSString *)symbology
+                                                                                 printHRI:(BOOL)printHRI
+                                                                                  barDots:(nonnull NSNumber *)barDots
+                                                                            barRatioLevel:(nonnull NSString *)barRatioLevel
+                                                                                   height:(nonnull NSNumber *)height
+{
+    STARIO10StarXpandCommandPrinterBarcodeSym

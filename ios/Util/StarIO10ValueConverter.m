@@ -660,4 +660,11 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     return param;
 }
 
-+ (STARIO10
++ (STARIO10StarXpandCommandPrinterPDF417Parameter *)toPrinterPDF417ParameterWithContent:(nonnull NSString *)content
+                                                                                 column:(nonnull NSNumber *)column
+                                                                                   line:(nonnull NSNumber *)line
+                                                                                 module:(nonnull NSNumber *)module
+                                                                                 aspect:(nonnull NSNumber *)aspect
+                                                                                  level:(nonnull NSString *)level
+{
+    STARIO10StarXpandCommandPrinterPDF417Level nativeLevel = [StarIO10Value

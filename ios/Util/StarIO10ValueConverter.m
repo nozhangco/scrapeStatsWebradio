@@ -667,4 +667,18 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
                                                                                  aspect:(nonnull NSNumber *)aspect
                                                                                   level:(nonnull NSString *)level
 {
-    STARIO10StarXpandCommandPrinterPDF417Level nativeLevel = [StarIO10Value
+    STARIO10StarXpandCommandPrinterPDF417Level nativeLevel = [StarIO10ValueConverter toPrinterPDF417Level:level];
+    
+    STARIO10StarXpandCommandPrinterPDF417Parameter *param = [[STARIO10StarXpandCommandPrinterPDF417Parameter alloc] initWithContent:content];
+    param = [param setColumn:column.integerValue];
+    param = [param setLine:line.integerValue];
+    param = [param setModule:module.integerValue];
+    param = [param setAspect:aspect.integerValue];
+    param = [param setLevel:nativeLevel];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandPrinterQRCodeParameter *)toPrinterQRCodeParameterWithContent:(nonnull NSString *)content
+                                                                                  model:(nonnull NSString *)model
+                                     

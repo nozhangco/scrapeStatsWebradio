@@ -647,4 +647,17 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
                                                                             barRatioLevel:(nonnull NSString *)barRatioLevel
                                                                                    height:(nonnull NSNumber *)height
 {
-    STARIO10StarXpandCommandPrinterBarcodeSym
+    STARIO10StarXpandCommandPrinterBarcodeSymbology nativeSymbology = [StarIO10ValueConverter toPrinterBarcodeSymbology:symbology];
+    STARIO10StarXpandCommandPrinterBarcodeBarRatioLevel nativeBarRatioLevel = [StarIO10ValueConverter toPrinterBarcodeBarRatioLevel:barRatioLevel];
+    
+    STARIO10StarXpandCommandPrinterBarcodeParameter *param = [[STARIO10StarXpandCommandPrinterBarcodeParameter alloc] initWithContent:content
+                                                                                                                            symbology:nativeSymbology];
+    param = [param setPrintHRI:printHRI];
+    param = [param setBarDots:barDots.integerValue];
+    param = [param setBarRatioLevel:nativeBarRatioLevel];
+    param = [param setHeight:height.doubleValue];
+    
+    return param;
+}
+
++ (STARIO10

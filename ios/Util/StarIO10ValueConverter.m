@@ -695,4 +695,15 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     return param;
 }
 
-+ (STARIO10StarXpandCo
++ (STARIO10StarXpandCommandPrinterImageParameter *)toPrinterImageParameterWithSource:(nonnull NSString *)source
+                                                                                width:(nonnull NSNumber *)width
+                                                                                effectDiffusion:(BOOL)effectDiffusion
+                                                                                threshold:(nonnull NSNumber *)threshold
+{
+    UIImage *image = [self sourceToImage:source];
+    if (image == nil) {
+        return nil;
+    }
+    
+    STARIO10StarXpandCommandPrinterImageParameter *param = [[STARIO10StarXpandCommandPrinterImageParameter alloc] initWithImage:image width:width.integerValue];
+    param = [p

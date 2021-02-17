@@ -681,4 +681,18 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
 
 + (STARIO10StarXpandCommandPrinterQRCodeParameter *)toPrinterQRCodeParameterWithContent:(nonnull NSString *)content
                                                                                   model:(nonnull NSString *)model
-                                     
+                                                                                  level:(nonnull NSString *)level
+                                                                               cellSize:(nonnull NSNumber *)cellSize
+{
+    STARIO10StarXpandCommandPrinterQRCodeModel nativeModel = [StarIO10ValueConverter toPrinterQRCodeModel:model];
+    STARIO10StarXpandCommandPrinterQRCodeLevel nativeLevel = [StarIO10ValueConverter toPrinterQRCodeLevel:level];
+    
+    STARIO10StarXpandCommandPrinterQRCodeParameter *param = [[STARIO10StarXpandCommandPrinterQRCodeParameter alloc] initWithContent:content];
+    param = [param setModel:nativeModel];
+    param = [param setLevel:nativeLevel];
+    param = [param setCellSize:cellSize.integerValue];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCo

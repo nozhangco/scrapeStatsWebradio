@@ -724,4 +724,14 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     return param;
 }
 
-+ (STARIO10StarXpandCommandBuzzerDriveParameter *)toBuzzerDrivePar
++ (STARIO10StarXpandCommandBuzzerDriveParameter *)toBuzzerDriveParameterWithChannel:(nonnull NSString *)channel
+                                                                             repeat:(nonnull NSNumber *)repeat
+                                                                             onTime:(nonnull NSNumber *)onTime
+                                                                            offTime:(nonnull NSNumber *)offTime
+{
+    STARIO10StarXpandCommandBuzzerChannel nativeChannel = [StarIO10ValueConverter toBuzzerChannel:channel];
+    
+    STARIO10StarXpandCommandBuzzerDriveParameter *param = [[STARIO10StarXpandCommandBuzzerDriveParameter alloc] init];
+    param = [param setChannel:nativeChannel];
+    param = [param setRepeat:repeat.integerValue];
+    param = [param se

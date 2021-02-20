@@ -706,4 +706,22 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     }
     
     STARIO10StarXpandCommandPrinterImageParameter *param = [[STARIO10StarXpandCommandPrinterImageParameter alloc] initWithImage:image width:width.integerValue];
-    param = [p
+    param = [param setEffectDiffusion:effectDiffusion];
+    param = [param setThreshold:threshold.integerValue];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandDrawerOpenParameter *)toDrawerOpenParameterWithChannel:(nonnull NSString *)channel
+                                                                           onTime:(nonnull NSNumber *)onTime
+{
+    STARIO10StarXpandCommandDrawerChannel nativeChannel = [StarIO10ValueConverter toDrawerChannel:channel];
+    
+    STARIO10StarXpandCommandDrawerOpenParameter *param = [[STARIO10StarXpandCommandDrawerOpenParameter alloc] init];
+    param = [param setChannel:nativeChannel];
+    param = [param setOnTime:onTime.integerValue];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandBuzzerDriveParameter *)toBuzzerDrivePar

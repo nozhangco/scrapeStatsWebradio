@@ -734,4 +734,16 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     STARIO10StarXpandCommandBuzzerDriveParameter *param = [[STARIO10StarXpandCommandBuzzerDriveParameter alloc] init];
     param = [param setChannel:nativeChannel];
     param = [param setRepeat:repeat.integerValue];
-    param = [param se
+    param = [param setOnTime:onTime.integerValue];
+    param = [param setOffTime:offTime.integerValue];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandMelodySpeakerDriveRegisteredSoundParameter *)toMelodySpeakerDriveRegisteredSoundParameterWithArea:(nonnull NSString *)area
+                                                                                                                      number:(nonnull NSNumber *)number
+                                                                                                                      volume:(nonnull NSNumber *)volume
+{
+    STARIO10StarXpandCommandMelodySpeakerSoundStorageArea nativeArea = [StarIO10ValueConverter toMelodySpeakerSoundStorageArea:area];
+    
+    STARIO10StarXpandCommandMelodySpeakerDriveRegisteredSoundParameter *param = [[STARIO1

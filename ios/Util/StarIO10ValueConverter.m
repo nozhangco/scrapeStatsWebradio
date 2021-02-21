@@ -746,4 +746,18 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
 {
     STARIO10StarXpandCommandMelodySpeakerSoundStorageArea nativeArea = [StarIO10ValueConverter toMelodySpeakerSoundStorageArea:area];
     
-    STARIO10StarXpandCommandMelodySpeakerDriveRegisteredSoundParameter *param = [[STARIO1
+    STARIO10StarXpandCommandMelodySpeakerDriveRegisteredSoundParameter *param = [[STARIO10StarXpandCommandMelodySpeakerDriveRegisteredSoundParameter alloc] initWithArea:nativeArea number:number.integerValue];
+    param = [param setVolume:volume.integerValue];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandMelodySpeakerDriveOneTimeSoundParameter *)toMelodySpeakerDriveOneTimeSoundParameterWithSource:(nonnull NSString *)source
+                                                                                                                  volume:(nonnull NSNumber *)volume
+{
+    NSData *data = [self sourceToData:source];
+    if (data == nil) {
+        return nil;
+    }
+    
+    STARIO10StarXpandCommandMelodySpeakerDriveOneTimeSoundParameter *param = [[STARIO10StarXpandCommandMelodySpeakerDriveOneTimeSoundParameter alloc] initWithSou

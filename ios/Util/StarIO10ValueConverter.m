@@ -760,4 +760,17 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
         return nil;
     }
     
-    STARIO10StarXpandCommandMelodySpeakerDriveOneTimeSoundParameter *param = [[STARIO10StarXpandCommandMelodySpeakerDriveOneTimeSoundParameter alloc] initWithSou
+    STARIO10StarXpandCommandMelodySpeakerDriveOneTimeSoundParameter *param = [[STARIO10StarXpandCommandMelodySpeakerDriveOneTimeSoundParameter alloc] initWithSource:data];
+    param = [param setVolume:volume.integerValue];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandPresenterLEDAutomaticBlinkParameter *)toPresenterLEDAutomaticBlinkParameterWithType:(nonnull NSString *)type
+                                                                                                        onTime:(nonnull NSNumber *)onTime
+                                                                                                       offTime:(nonnull NSNumber *)offTime
+{
+    STARIO10StarXpandCommandPresenterLEDType nativeType = [StarIO10ValueConverter toPresenterLEDType:type];
+
+    STARIO10StarXpandCommandPresenterLEDAutomaticBlinkParameter *param = [[STARIO10StarXpandCommandPresenterLEDAutomaticBlinkParameter alloc] initWithType:nativeType];
+    param = [param set

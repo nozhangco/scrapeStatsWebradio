@@ -773,4 +773,16 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     STARIO10StarXpandCommandPresenterLEDType nativeType = [StarIO10ValueConverter toPresenterLEDType:type];
 
     STARIO10StarXpandCommandPresenterLEDAutomaticBlinkParameter *param = [[STARIO10StarXpandCommandPresenterLEDAutomaticBlinkParameter alloc] initWithType:nativeType];
-    param = [param set
+    param = [param setOnTime:onTime.integerValue];
+    param = [param setOffTime:offTime.integerValue];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandBezelLEDAutomaticBlinkParameter *)toBezelLEDAutomaticBlinkParameterWithType:(nonnull NSString *)type
+                                                                                                onTime:(nonnull NSNumber *)onTime
+                                                                                               offTime:(nonnull NSNumber *)offTime
+{
+    STARIO10StarXpandCommandBezelLEDType nativeType = [StarIO10ValueConverter toBezelLEDType:type];
+
+    STARIO10StarXpandCommandBezelLEDAutomaticBlinkParameter *param = [[STARIO10StarXpandCommandBezelLEDAutomaticBlinkParameter alloc

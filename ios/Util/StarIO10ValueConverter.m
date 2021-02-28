@@ -802,4 +802,25 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     }
     
     STARIO10StarXpandCommandDisplayImageParameter *param = [[STARIO10StarXpandCommandDisplayImageParameter alloc] initWithImage:image];
-    param = [param setEffectDiffusion:eff
+    param = [param setEffectDiffusion:effectDiffusion];
+    param = [param setThreshold:threshold.integerValue];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandDisplayPositionParameter *)toDisplayPositionParameterWithX:(nonnull NSNumber *)x
+                                                                                    y:(nonnull NSNumber *)y
+{
+    STARIO10StarXpandCommandDisplayPositionParameter *param = [[STARIO10StarXpandCommandDisplayPositionParameter alloc] initWithX:(NSInteger)x.integerValue y:y.integerValue];
+    
+    return param;
+}
+
++ (UIImage *)sourceToImage:(nonnull NSString *)source
+{
+    UIImage *image = nil;
+    NSData *imageData = [self sourceToData:source];
+    
+    if(imageData != nil) {
+        image = [UIImage imageWithData:imageData];
+ 

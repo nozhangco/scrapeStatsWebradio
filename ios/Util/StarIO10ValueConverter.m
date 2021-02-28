@@ -785,4 +785,21 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
 {
     STARIO10StarXpandCommandBezelLEDType nativeType = [StarIO10ValueConverter toBezelLEDType:type];
 
-    STARIO10StarXpandCommandBezelLEDAutomaticBlinkParameter *param = [[STARIO10StarXpandCommandBezelLEDAutomaticBlinkParameter alloc
+    STARIO10StarXpandCommandBezelLEDAutomaticBlinkParameter *param = [[STARIO10StarXpandCommandBezelLEDAutomaticBlinkParameter alloc] initWithType:nativeType];
+    param = [param setOnTime:onTime.integerValue];
+    param = [param setOffTime:offTime.integerValue];
+    
+    return param;
+}
+
++ (STARIO10StarXpandCommandDisplayImageParameter *)toDisplayImageParameterWithSource:(nonnull NSString *)source
+                                                                     effectDiffusion:(BOOL)effectDiffusion
+                                                                           threshold:(nonnull NSNumber *)threshold
+{
+    UIImage *image = [self sourceToImage:source];
+    if (image == nil) {
+        return nil;
+    }
+    
+    STARIO10StarXpandCommandDisplayImageParameter *param = [[STARIO10StarXpandCommandDisplayImageParameter alloc] initWithImage:image];
+    param = [param setEffectDiffusion:eff

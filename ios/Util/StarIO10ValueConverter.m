@@ -865,4 +865,34 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     }
     
     NSURL *url = [[NSURL alloc] initWithString:uri];
-  
+    NSData *data = [[NSData alloc] initWithContentsOfURL:url];
+    
+    return data;
+}
+
++ (NSData *)resourceFileToData:(nonnull NSString *)resourceFile
+{
+    if (resourceFile == nil) {
+        return nil;
+    }
+    
+    NSString* fileName = [[resourceFile lastPathComponent] stringByDeletingPathExtension];
+    NSString* extension = [resourceFile pathExtension];
+    
+    if (fileName == nil || extension == nil) {
+        return nil;
+    }
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:extension];
+    
+    if (filePath == nil) {
+        return nil;
+    }
+    
+    NSURL *url = [NSURL fileURLWithPath: filePath];
+    NSData *data = [[NSData alloc] initWithContentsOfURL:url];
+    
+    return data;
+}
+
++ (NSDictionary<NSString *, i

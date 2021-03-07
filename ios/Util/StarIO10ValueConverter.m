@@ -823,4 +823,46 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     
     if(imageData != nil) {
         image = [UIImage imageWithData:imageData];
- 
+    }
+    
+    return image;
+}
+
++ (NSData *)sourceToData:(nonnull NSString *)source
+{
+    NSData *data = nil;
+    
+    if(data == nil) {
+        data = [self uriToData:source];
+    }
+    
+    if(data == nil) {
+        data = [self resourceFileToData:source];
+    }
+    
+    if(data == nil) {
+        data = [self base64ToData:source];
+    }
+    
+    return data;
+}
+
++ (NSData *)base64ToData:(nonnull NSString *)base64String
+{
+    if (base64String == nil) {
+        return nil;
+    }
+    
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:base64String options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    
+    return data;
+}
+
++ (NSData *)uriToData:(nonnull NSString *)uri
+{
+    if (uri == nil) {
+        return nil;
+    }
+    
+    NSURL *url = [[NSURL alloc] initWithString:uri];
+  

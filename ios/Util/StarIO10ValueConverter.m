@@ -895,4 +895,27 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
     return data;
 }
 
-+ (NSDictionary<NSString *, i
++ (NSDictionary<NSString *, id> *)toJSNamingDictionary:(NSDictionary<NSString *, id> *)dictionary
+{
+    NSMutableDictionary<NSString *, id> *jsNamingDictionary = [[NSMutableDictionary alloc] init];
+    
+    for (id key in [dictionary keyEnumerator]) {
+        [jsNamingDictionary setObject:[dictionary valueForKey:key] forKey:[self toJSNaming:key]];
+    }
+    
+    return jsNamingDictionary;
+}
+
++ (NSString *)toJSNaming:(NSString *)value
+{
+    if (value == nil) {
+        return value;
+    }
+    
+    NSMutableString *result = [[NSMutableString alloc] init];
+    
+    for (int i = 0; i < value.length; i++) {
+        unichar character = [value characterAtIndex:i];
+
+        if (isupper(character)) {
+            NSMutableString *uppercaseWord = [[NSMutableString alloc]

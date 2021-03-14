@@ -918,4 +918,24 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
         unichar character = [value characterAtIndex:i];
 
         if (isupper(character)) {
-            NSMutableString *uppercaseWord = [[NSMutableString alloc]
+            NSMutableString *uppercaseWord = [[NSMutableString alloc] initWithFormat:@"%c", character];
+            for (int j = i + 1; j < value.length; j++) {
+                i = j;
+                
+                unichar nextCharacter = [value characterAtIndex:j];
+                
+                if (isupper(nextCharacter)) {
+                    [uppercaseWord appendString:[[NSString alloc] initWithFormat:@"%c", nextCharacter]];
+                } else {
+                    i = j - 1;
+                    break;
+                }
+            }
+            
+            if (2 <= uppercaseWord.length && i != value.length - 1) {
+                uppercaseWord = (NSMutableString *)[uppercaseWord substringToIndex:uppercaseWord.length - 1];
+                i--;
+            }
+            
+            if (result.length == 0) {
+                [result appendString:up

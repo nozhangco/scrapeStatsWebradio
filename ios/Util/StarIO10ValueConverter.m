@@ -938,4 +938,28 @@ NSDictionary<NSNumber *, NSString *> *kDisplayInternationalCharacterTypeDictiona
             }
             
             if (result.length == 0) {
-                [result appendString:up
+                [result appendString:uppercaseWord.lowercaseString];
+            } else {
+                [result appendString:[self toProperString:uppercaseWord]];
+            }
+        } else {
+            [result appendString:[[NSString alloc] initWithFormat:@"%c", character]];
+        }
+    }
+    
+    result = (NSMutableString *)[self toTopLowerString:result];
+    
+    return result;
+}
+
++ (NSString *)toProperString:(NSString *)value
+{
+    NSMutableString *result = [[NSMutableString alloc] init];
+    
+    for (int i = 0; i < value.length; i++) {
+        NSString *character = [[NSString alloc] initWithFormat:@"%c", [value characterAtIndex:i]];
+
+        if (i == 0 || value.length <= 2) {
+            [result appendString:character.uppercaseString];
+        } else {
+            [result ap

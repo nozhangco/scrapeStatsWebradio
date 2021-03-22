@@ -9,4 +9,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)add:(id)obj;
 - (id)getObject:(NSString *) identifier;
-- (NSStrin
+- (NSString *) getExsitingIdentifier:(id)obj;
+- (void)remove:(NSString *) identifier;
+
+@end
+
+NS_ASSUME_NONNULL_END

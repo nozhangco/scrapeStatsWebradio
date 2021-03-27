@@ -9,4 +9,32 @@
 #endif
 #if !defined(__has_attribute)
 # define __has_attribute(x) 0
-#e
+#endif
+#if !defined(__has_feature)
+# define __has_feature(x) 0
+#endif
+#if !defined(__has_warning)
+# define __has_warning(x) 0
+#endif
+
+#if __has_include(<swift/objc-prologue.h>)
+# include <swift/objc-prologue.h>
+#endif
+
+#pragma clang diagnostic ignored "-Wauto-import"
+#include <Foundation/Foundation.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
+
+#if !defined(SWIFT_TYPEDEFS)
+# define SWIFT_TYPEDEFS 1
+# if __has_include(<uchar.h>)
+#  include <uchar.h>
+# elif !defined(__cplusplus)
+typedef uint_least16_t char16_t;
+typedef uint_least32_t char32_t;
+# endif
+typedef float swift_float2  __attribute__((__ext_vector_type__(2)));
+typedef float swift_float3  __attribute__((__ext_vector_type__(3)));
+typedef float swift_float4  __attribute__((__ext_

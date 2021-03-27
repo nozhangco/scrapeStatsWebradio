@@ -66,4 +66,10 @@ static StarObjectManager *sharedData_ = nil;
 }
 
 - (void)remove:(NSString *) identifier {
-    
+    @synchronized (self) {
+        _objectDict[identifier] = nil;
+    }
+}
+
+
+@end

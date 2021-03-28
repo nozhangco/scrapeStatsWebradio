@@ -37,4 +37,20 @@ typedef uint_least32_t char32_t;
 # endif
 typedef float swift_float2  __attribute__((__ext_vector_type__(2)));
 typedef float swift_float3  __attribute__((__ext_vector_type__(3)));
-typedef float swift_float4  __attribute__((__ext_
+typedef float swift_float4  __attribute__((__ext_vector_type__(4)));
+typedef double swift_double2  __attribute__((__ext_vector_type__(2)));
+typedef double swift_double3  __attribute__((__ext_vector_type__(3)));
+typedef double swift_double4  __attribute__((__ext_vector_type__(4)));
+typedef int swift_int2  __attribute__((__ext_vector_type__(2)));
+typedef int swift_int3  __attribute__((__ext_vector_type__(3)));
+typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
+typedef unsigned int swift_uint2  __attribute__((__ext_vector_type__(2)));
+typedef unsigned int swift_uint3  __attribute__((__ext_vector_type__(3)));
+typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
+#endif
+
+#if !defined(SWIFT_PASTE)
+# define SWIFT_PASTE_HELPER(x, y) x##y
+# define SWIFT_PASTE(x, y) SWIFT_PASTE_HELPER(x, y)
+#endif
+#if !defi

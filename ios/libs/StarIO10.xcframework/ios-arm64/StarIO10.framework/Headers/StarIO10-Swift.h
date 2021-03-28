@@ -53,4 +53,34 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_PASTE_HELPER(x, y) x##y
 # define SWIFT_PASTE(x, y) SWIFT_PASTE_HELPER(x, y)
 #endif
-#if !defi
+#if !defined(SWIFT_METATYPE)
+# define SWIFT_METATYPE(X) Class
+#endif
+#if !defined(SWIFT_CLASS_PROPERTY)
+# if __has_feature(objc_class_property)
+#  define SWIFT_CLASS_PROPERTY(...) __VA_ARGS__
+# else
+#  define SWIFT_CLASS_PROPERTY(...)
+# endif
+#endif
+
+#if __has_attribute(objc_runtime_name)
+# define SWIFT_RUNTIME_NAME(X) __attribute__((objc_runtime_name(X)))
+#else
+# define SWIFT_RUNTIME_NAME(X)
+#endif
+#if __has_attribute(swift_name)
+# define SWIFT_COMPILE_NAME(X) __attribute__((swift_name(X)))
+#else
+# define SWIFT_COMPILE_NAME(X)
+#endif
+#if __has_attribute(objc_method_family)
+# define SWIFT_METHOD_FAMILY(X) __attribute__((objc_method_family(X)))
+#else
+# define SWIFT_METHOD_FAMILY(X)
+#endif
+#if __has_attribute(noescape)
+# define SWIFT_NOESCAPE __attribute__((noescape))
+#else
+# define SWIFT_NOESCAPE
+#

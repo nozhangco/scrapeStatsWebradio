@@ -123,4 +123,26 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #  define SWIFT_RESILIENT_CLASS_NAMED(SWIFT_NAME) __attribute__((objc_class_stub)) SWIFT_CLASS_NAMED(SWIFT_NAME)
 # else
 #  define SWIFT_RESILIENT_CLASS(SWIFT_NAME) SWIFT_CLASS(SWIFT_NAME)
-#  define SWIFT_RESILIENT_CLASS_NAMED(SWIFT_NAM
+#  define SWIFT_RESILIENT_CLASS_NAMED(SWIFT_NAME) SWIFT_CLASS_NAMED(SWIFT_NAME)
+# endif
+#endif
+
+#if !defined(SWIFT_PROTOCOL)
+# define SWIFT_PROTOCOL(SWIFT_NAME) SWIFT_RUNTIME_NAME(SWIFT_NAME) SWIFT_PROTOCOL_EXTRA
+# define SWIFT_PROTOCOL_NAMED(SWIFT_NAME) SWIFT_COMPILE_NAME(SWIFT_NAME) SWIFT_PROTOCOL_EXTRA
+#endif
+
+#if !defined(SWIFT_EXTENSION)
+# define SWIFT_EXTENSION(M) SWIFT_PASTE(M##_Swift_, __LINE__)
+#endif
+
+#if !defined(OBJC_DESIGNATED_INITIALIZER)
+# if __has_attribute(objc_designated_initializer)
+#  define OBJC_DESIGNATED_INITIALIZER __attribute__((objc_designated_initializer))
+# else
+#  define OBJC_DESIGNATED_INITIALIZER
+# endif
+#endif
+#if !defined(SWIFT_ENUM_ATTR)
+# if defined(__has_attribute) && __has_attribute(enum_extensibility)
+#  define SWIFT_ENUM_ATTR(_extensibility) __attribute__((enum_extensibility(_exte

@@ -83,4 +83,31 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_NOESCAPE __attribute__((noescape))
 #else
 # define SWIFT_NOESCAPE
-#
+#endif
+#if __has_attribute(ns_consumed)
+# define SWIFT_RELEASES_ARGUMENT __attribute__((ns_consumed))
+#else
+# define SWIFT_RELEASES_ARGUMENT
+#endif
+#if __has_attribute(warn_unused_result)
+# define SWIFT_WARN_UNUSED_RESULT __attribute__((warn_unused_result))
+#else
+# define SWIFT_WARN_UNUSED_RESULT
+#endif
+#if __has_attribute(noreturn)
+# define SWIFT_NORETURN __attribute__((noreturn))
+#else
+# define SWIFT_NORETURN
+#endif
+#if !defined(SWIFT_CLASS_EXTRA)
+# define SWIFT_CLASS_EXTRA
+#endif
+#if !defined(SWIFT_PROTOCOL_EXTRA)
+# define SWIFT_PROTOCOL_EXTRA
+#endif
+#if !defined(SWIFT_ENUM_EXTRA)
+# define SWIFT_ENUM_EXTRA
+#endif
+#if !defined(SWIFT_CLASS)
+# if __has_attribute(objc_subclassing_restricted)
+#  define SWIFT_CLASS(SWIFT_NAME) SWIFT_RUNTIME_NAME(SWIFT_NAME) __attribute__((objc_subc

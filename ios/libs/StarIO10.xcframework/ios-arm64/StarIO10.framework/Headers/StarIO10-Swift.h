@@ -145,4 +145,21 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if !defined(SWIFT_ENUM_ATTR)
 # if defined(__has_attribute) && __has_attribute(enum_extensibility)
-#  define SWIFT_ENUM_ATTR(_extensibility) __attribute__((enum_extensibility(_exte
+#  define SWIFT_ENUM_ATTR(_extensibility) __attribute__((enum_extensibility(_extensibility)))
+# else
+#  define SWIFT_ENUM_ATTR(_extensibility)
+# endif
+#endif
+#if !defined(SWIFT_ENUM)
+# define SWIFT_ENUM(_type, _name, _extensibility) enum _name : _type _name; enum SWIFT_ENUM_ATTR(_extensibility) SWIFT_ENUM_EXTRA _name : _type
+# if __has_feature(generalized_swift_name)
+#  define SWIFT_ENUM_NAMED(_type, _name, SWIFT_NAME, _extensibility) enum _name : _type _name SWIFT_COMPILE_NAME(SWIFT_NAME); enum SWIFT_COMPILE_NAME(SWIFT_NAME) SWIFT_ENUM_ATTR(_extensibility) SWIFT_ENUM_EXTRA _name : _type
+# else
+#  define SWIFT_ENUM_NAMED(_type, _name, SWIFT_NAME, _extensibility) SWIFT_ENUM(_type, _name, _extensibility)
+# endif
+#endif
+#if !defined(SWIFT_UNAVAILABLE)
+# define SWIFT_UNAVAILABLE __attribute__((unavailable))
+#endif
+#if !defined(SWIFT_UNAVAILABLE_MSG)
+# define SWIFT

@@ -183,3 +183,24 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if !defined(IBSegueAction)
 # define IBSegueAction
+#endif
+#if __has_feature(modules)
+#if __has_warning("-Watimport-in-framework-header")
+#pragma clang diagnostic ignored "-Watimport-in-framework-header"
+#endif
+@import Foundation;
+@import ObjectiveC;
+#endif
+
+#pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
+#pragma clang diagnostic ignored "-Wduplicate-method-arg"
+#if __has_warning("-Wpragma-clang-attribute")
+# pragma clang diagnostic ignored "-Wpragma-clang-attribute"
+#endif
+#pragma clang diagnostic ignored "-Wunknown-pragmas"
+#pragma clang diagnostic ignored "-Wnullability"
+
+#if __has_attribute(external_source_symbol)
+# pragma push_macro("any")
+# undef any
+# pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="StarIO10",generated_declaration))), apply_to=any(function,enum

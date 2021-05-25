@@ -203,4 +203,31 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_attribute(external_source_symbol)
 # pragma push_macro("any")
 # undef any
-# pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="StarIO10",generated_declaration))), apply_to=any(function,enum
+# pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="StarIO10",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
+# pragma pop_macro("any")
+#endif
+
+
+SWIFT_CLASS("_TtCC8StarIO1016StarXpandCommand5Bezel")
+@interface Bezel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Bezel (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandBezelLEDType, "LEDType", open) {
+  STARIO10StarXpandCommandBezelLEDTypeHolding = 0,
+  STARIO10StarXpandCommandBezelLEDTypeError = 1,
+  STARIO10StarXpandCommandBezelLEDTypeIdle = 2,
+};
+
+
+@interface Bezel (SWIFT_EXTENSION(StarIO10))
+@end
+
+@class NSNumber;
+
+SWIFT_CLASS_NAMED("LEDAutomaticBlinkParameter")
+@interface STARIO10StarXpandCommandBezelLEDAutomaticBlin

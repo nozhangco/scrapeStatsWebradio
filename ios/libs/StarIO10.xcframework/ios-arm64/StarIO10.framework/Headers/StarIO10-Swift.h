@@ -162,4 +162,24 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_UNAVAILABLE __attribute__((unavailable))
 #endif
 #if !defined(SWIFT_UNAVAILABLE_MSG)
-# define SWIFT
+# define SWIFT_UNAVAILABLE_MSG(msg) __attribute__((unavailable(msg)))
+#endif
+#if !defined(SWIFT_AVAILABILITY)
+# define SWIFT_AVAILABILITY(plat, ...) __attribute__((availability(plat, __VA_ARGS__)))
+#endif
+#if !defined(SWIFT_WEAK_IMPORT)
+# define SWIFT_WEAK_IMPORT __attribute__((weak_import))
+#endif
+#if !defined(SWIFT_DEPRECATED)
+# define SWIFT_DEPRECATED __attribute__((deprecated))
+#endif
+#if !defined(SWIFT_DEPRECATED_MSG)
+# define SWIFT_DEPRECATED_MSG(...) __attribute__((deprecated(__VA_ARGS__)))
+#endif
+#if __has_feature(attribute_diagnose_if_objc)
+# define SWIFT_DEPRECATED_OBJC(Msg) __attribute__((diagnose_if(1, Msg, "warning")))
+#else
+# define SWIFT_DEPRECATED_OBJC(Msg) SWIFT_DEPRECATED_MSG(Msg)
+#endif
+#if !defined(IBSegueAction)
+# define IBSegueAction

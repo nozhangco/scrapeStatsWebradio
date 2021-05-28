@@ -248,3 +248,23 @@ SWIFT_CLASS("_TtCC8StarIO1016StarXpandCommand6Buzzer")
 @end
 
 
+@interface Buzzer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandBuzzerChannel, "Channel", open) {
+  STARIO10StarXpandCommandBuzzerChannelNo1 = 0,
+  STARIO10StarXpandCommandBuzzerChannelNo2 = 1,
+};
+
+
+@interface Buzzer (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("DriveParameter")
+@interface STARIO10StarXpandCommandBuzzerDriveParameter : NSObject
+@property (nonatomic, readonly) enum STARIO10StarXpandCommandBuzzerChannel channel;
+- (nonnull instancetype)setChannel:(enum STARIO10StarXpandCommandBuzzerChannel)channel SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSInteger repeat;
+- (nonnull instancetype)setRepeat:(NSInteger)repeat SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, r

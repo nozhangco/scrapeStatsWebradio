@@ -267,4 +267,27 @@ SWIFT_CLASS_NAMED("DriveParameter")
 - (nonnull instancetype)setChannel:(enum STARIO10StarXpandCommandBuzzerChannel)channel SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly) NSInteger repeat;
 - (nonnull instancetype)setRepeat:(NSInteger)repeat SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic, r
+@property (nonatomic, readonly) NSInteger onTime;
+- (nonnull instancetype)setOnTime:(NSInteger)onTime SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSInteger offTime;
+- (nonnull instancetype)setOffTime:(NSInteger)offTime SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtCC8StarIO1016StarXpandCommand7Display")
+@interface Display : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Display (SWIFT_EXTENSION(StarIO10))
+@end
+
+@class UIImage;
+
+SWIFT_CLASS_NAMED("ImageParameter")
+@interface STARIO10StarXpandCommandDisplayImageParameter : NSObject
+@property (nonatomic, readonly, strong) UIImage * _Nonnull image;
+@property (nonatomic, readonly) BOOL effectDiffusion;
+- (nonnull i

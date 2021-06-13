@@ -316,3 +316,26 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandDisplayInternational
   STARIO10StarXpandCommandDisplayInternationalCharacterTypeDenmark2 = 10,
   STARIO10StarXpandCommandDisplayInternationalCharacterTypeSpain2 = 11,
   STARIO10StarXpandCommandDisplayInternationalCharacterTypeLatinAmerica = 12,
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeKorea = 13,
+};
+
+
+@interface Display (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandDisplayCursorState, "CursorState", open) {
+  STARIO10StarXpandCommandDisplayCursorStateOn = 0,
+  STARIO10StarXpandCommandDisplayCursorStateBlink = 1,
+  STARIO10StarXpandCommandDisplayCursorStateOff = 2,
+};
+
+
+@interface Display (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("PositionParameter")
+@interface STARIO10StarXpandCommandDisplayPositionParameter : NSObject
+@property (nonatomic, readonly) NSInteger x;
+@property (nonatomic, readonly) NSInteger y;
+- (nonnull instancetype)initWithX:(NSInteger)x y:(NSInteger)y OBJC_DESIGNATED_INITIALI

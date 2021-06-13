@@ -361,4 +361,18 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandDisplayContrast, "Co
 @interface Display (SWIFT_EXTENSION(StarIO10))
 @end
 
-typedef SWIFT_ENUM_NAMED(NSInteger, S
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandDisplayCharacterEncodingType, "CharacterEncodingType", open) {
+  STARIO10StarXpandCommandDisplayCharacterEncodingTypeJapanese = 0,
+  STARIO10StarXpandCommandDisplayCharacterEncodingTypeSimplifiedChinese = 1,
+  STARIO10StarXpandCommandDisplayCharacterEncodingTypeTraditionalChinese = 2,
+  STARIO10StarXpandCommandDisplayCharacterEncodingTypeKorean = 3,
+  STARIO10StarXpandCommandDisplayCharacterEncodingTypeCodePage = 4,
+};
+
+@class STARIO10StarPrinter;
+
+SWIFT_PROTOCOL_NAMED("DisplayDelegate")
+@protocol STARIO10DisplayDelegate
+- (void)displayWithPrinter:(STARIO10StarPrinter * _Nonnull)printer communicationErrorDidOccur:(NSError * _Nonnull)error;
+- (void)displayDidConnectWithPrinter:(STARIO10StarPrinter * _Nonnull)printer;
+- (void)displayDidDisconne

@@ -290,4 +290,19 @@ SWIFT_CLASS_NAMED("ImageParameter")
 @interface STARIO10StarXpandCommandDisplayImageParameter : NSObject
 @property (nonatomic, readonly, strong) UIImage * _Nonnull image;
 @property (nonatomic, readonly) BOOL effectDiffusion;
-- (nonnull i
+- (nonnull instancetype)setEffectDiffusion:(BOOL)enable SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSInteger threshold;
+- (nonnull instancetype)setThreshold:(NSInteger)threshold SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithImage:(UIImage * _Nonnull)image OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface Display (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandDisplayInternationalCharacterType, "InternationalCharacterType", open) {
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeUsa = 0,
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeFrance = 1,
+  STARIO10StarX

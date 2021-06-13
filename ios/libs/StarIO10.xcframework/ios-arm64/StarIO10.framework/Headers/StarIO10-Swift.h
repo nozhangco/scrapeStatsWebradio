@@ -305,4 +305,14 @@ SWIFT_CLASS_NAMED("ImageParameter")
 typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandDisplayInternationalCharacterType, "InternationalCharacterType", open) {
   STARIO10StarXpandCommandDisplayInternationalCharacterTypeUsa = 0,
   STARIO10StarXpandCommandDisplayInternationalCharacterTypeFrance = 1,
-  STARIO10StarX
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeGermany = 2,
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeUk = 3,
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeDenmark = 4,
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeSweden = 5,
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeItaly = 6,
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeSpain = 7,
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeJapan = 8,
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeNorway = 9,
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeDenmark2 = 10,
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeSpain2 = 11,
+  STARIO10StarXpandCommandDisplayInternationalCharacterTypeLatinAmerica = 12,

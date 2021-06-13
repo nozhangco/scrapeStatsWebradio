@@ -338,4 +338,27 @@ SWIFT_CLASS_NAMED("PositionParameter")
 @interface STARIO10StarXpandCommandDisplayPositionParameter : NSObject
 @property (nonatomic, readonly) NSInteger x;
 @property (nonatomic, readonly) NSInteger y;
-- (nonnull instancetype)initWithX:(NSInteger)x y:(NSInteger)y OBJC_DESIGNATED_INITIALI
+- (nonnull instancetype)initWithX:(NSInteger)x y:(NSInteger)y OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface Display (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandDisplayContrast, "Contrast", open) {
+  STARIO10StarXpandCommandDisplayContrastPlus3 = 0,
+  STARIO10StarXpandCommandDisplayContrastPlus2 = 1,
+  STARIO10StarXpandCommandDisplayContrastPlus1 = 2,
+  STARIO10StarXpandCommandDisplayContrastDefault = 3,
+  STARIO10StarXpandCommandDisplayContrastMinus1 = 4,
+  STARIO10StarXpandCommandDisplayContrastMinus2 = 5,
+  STARIO10StarXpandCommandDisplayContrastMinus3 = 6,
+};
+
+
+@interface Display (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, S

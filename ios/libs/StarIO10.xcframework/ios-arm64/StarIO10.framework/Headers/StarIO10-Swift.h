@@ -375,4 +375,25 @@ SWIFT_PROTOCOL_NAMED("DisplayDelegate")
 @protocol STARIO10DisplayDelegate
 - (void)displayWithPrinter:(STARIO10StarPrinter * _Nonnull)printer communicationErrorDidOccur:(NSError * _Nonnull)error;
 - (void)displayDidConnectWithPrinter:(STARIO10StarPrinter * _Nonnull)printer;
-- (void)displayDidDisconne
+- (void)displayDidDisconnectWithPrinter:(STARIO10StarPrinter * _Nonnull)printer;
+@end
+
+
+SWIFT_CLASS("_TtCC8StarIO1016StarXpandCommand6Drawer")
+@interface Drawer : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Drawer (SWIFT_EXTENSION(StarIO10))
+@end
+
+enum STARIO10StarXpandCommandDrawerChannel : NSInteger;
+
+SWIFT_CLASS_NAMED("OpenParameter")
+@interface STARIO10StarXpandCommandDrawerOpenParameter : NSObject
+@property (nonatomic, readonly) enum STARIO10StarXpandCommandDrawerChannel channel;
+- (nonnull instancetype)setChannel:(enum STARIO10StarXpandCommandDrawerChannel)channel SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSInteger onTime;
+- (nonnull instancetype)setOnTime:(NSInteger)onTime SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INI

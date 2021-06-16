@@ -396,4 +396,27 @@ SWIFT_CLASS_NAMED("OpenParameter")
 - (nonnull instancetype)setChannel:(enum STARIO10StarXpandCommandDrawerChannel)channel SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly) NSInteger onTime;
 - (nonnull instancetype)setOnTime:(NSInteger)onTime SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INI
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Drawer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandDrawerChannel, "Channel", open) {
+  STARIO10StarXpandCommandDrawerChannelNo1 = 0,
+  STARIO10StarXpandCommandDrawerChannelNo2 = 1,
+};
+
+
+SWIFT_PROTOCOL_NAMED("DrawerDelegate")
+@protocol STARIO10DrawerDelegate
+- (void)drawerWithPrinter:(STARIO10StarPrinter * _Nonnull)printer communicationErrorDidOccur:(NSError * _Nonnull)error;
+- (void)drawerWithPrinter:(STARIO10StarPrinter * _Nonnull)printer didSwitch:(BOOL)openCloseSignal;
+@end
+
+@class NSData;
+
+SWIFT_PROTOCOL_NAMED("InputDeviceDelegate")
+@protocol STARIO10InputDeviceDelegate
+- (void)inputDeviceWithPrinter:(STARIO10StarPrinter * _Nonnull)printer c

@@ -419,4 +419,15 @@ SWIFT_PROTOCOL_NAMED("DrawerDelegate")
 
 SWIFT_PROTOCOL_NAMED("InputDeviceDelegate")
 @protocol STARIO10InputDeviceDelegate
-- (void)inputDeviceWithPrinter:(STARIO10StarPrinter * _Nonnull)printer c
+- (void)inputDeviceWithPrinter:(STARIO10StarPrinter * _Nonnull)printer communicationErrorDidOccur:(NSError * _Nonnull)error;
+- (void)inputDeviceDidConnectWithPrinter:(STARIO10StarPrinter * _Nonnull)printer;
+- (void)inputDeviceDidDisconnectWithPrinter:(STARIO10StarPrinter * _Nonnull)printer;
+- (void)inputDeviceWithPrinter:(STARIO10StarPrinter * _Nonnull)printer didReceive:(NSData * _Nonnull)data;
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10InterfaceType, "InterfaceType", open) {
+  STARIO10InterfaceTypeUnknown SWIFT_COMPILE_NAME("unknown") = 0,
+  STARIO10InterfaceTypeUSB SWIFT_COMPILE_NAME("usb") = 1,
+  STARIO10InterfaceTypeBluetooth SWIFT_COMPILE_NAME("bluetooth") = 2,
+  STARIO10InterfaceTypeBluetoothLE SWIFT_COMPILE_NAME("bluetoothLE") = 3,
+  STARIO10InterfaceTypeLAN SWIFT_COMPILE_NA

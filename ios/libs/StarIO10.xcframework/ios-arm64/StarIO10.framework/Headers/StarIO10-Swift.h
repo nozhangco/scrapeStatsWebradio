@@ -430,4 +430,34 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10InterfaceType, "InterfaceType", open
   STARIO10InterfaceTypeUSB SWIFT_COMPILE_NAME("usb") = 1,
   STARIO10InterfaceTypeBluetooth SWIFT_COMPILE_NAME("bluetooth") = 2,
   STARIO10InterfaceTypeBluetoothLE SWIFT_COMPILE_NAME("bluetoothLE") = 3,
-  STARIO10InterfaceTypeLAN SWIFT_COMPILE_NA
+  STARIO10InterfaceTypeLAN SWIFT_COMPILE_NAME("lan") = 4,
+};
+
+
+SWIFT_CLASS("_TtC8StarIO108Internal")
+@interface Internal : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSString;
+
+SWIFT_CLASS_NAMED("InternalInterface")
+@interface STARIO10InternalInterface : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
++ (void)appendLogHeader:(NSString * _Nonnull)header;
+@end
+
+
+SWIFT_CLASS("_TtCC8StarIO1016StarXpandCommand13MelodySpeaker")
+@interface MelodySpeaker : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface MelodySpeaker (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("DriveOneTimeSoundParameter")
+@interface STARIO10StarXpandCommandMelodySpeakerDriveOneTimeSoundParameter : NSObject
+@property (no

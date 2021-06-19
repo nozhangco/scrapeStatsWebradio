@@ -460,4 +460,22 @@ SWIFT_CLASS("_TtCC8StarIO1016StarXpandCommand13MelodySpeaker")
 
 SWIFT_CLASS_NAMED("DriveOneTimeSoundParameter")
 @interface STARIO10StarXpandCommandMelodySpeakerDriveOneTimeSoundParameter : NSObject
-@property (no
+@property (nonatomic, readonly, copy) NSData * _Nonnull source;
+@property (nonatomic, readonly) NSInteger volume;
+- (nonnull instancetype)setVolume:(NSInteger)volume SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithSource:(NSData * _Nonnull)source OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface MelodySpeaker (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandMelodySpeakerSoundStorageArea, "SoundStorageArea", open) {
+  STARIO10StarXpandCommandMelodySpeakerSoundStorageAreaArea1 = 0,
+  STARIO10StarXpandCommandMelodySpeakerSoundStorageAreaArea2 = 1,
+};
+
+
+@interface MelodySpeaker (SWI

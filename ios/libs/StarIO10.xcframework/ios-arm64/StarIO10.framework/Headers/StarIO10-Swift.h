@@ -478,4 +478,20 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandMelodySpeakerSoundSt
 };
 
 
-@interface MelodySpeaker (SWI
+@interface MelodySpeaker (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("DriveRegisteredSoundParameter")
+@interface STARIO10StarXpandCommandMelodySpeakerDriveRegisteredSoundParameter : NSObject
+@property (nonatomic, readonly) enum STARIO10StarXpandCommandMelodySpeakerSoundStorageArea area;
+@property (nonatomic, readonly) NSInteger number;
+@property (nonatomic, readonly) NSInteger volume;
+- (nonnull instancetype)setVolume:(NSInteger)volume SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithArea:(enum STARIO10StarXpandCommandMelodySpeakerSoundStorageArea)area number:(NSInteger)number OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtCC8StarIO1016StarXpand

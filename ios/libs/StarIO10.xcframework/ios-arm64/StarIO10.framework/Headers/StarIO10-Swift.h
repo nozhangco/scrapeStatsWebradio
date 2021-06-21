@@ -494,4 +494,28 @@ SWIFT_CLASS_NAMED("DriveRegisteredSoundParameter")
 @end
 
 
-SWIFT_CLASS("_TtCC8StarIO1016StarXpand
+SWIFT_CLASS("_TtCC8StarIO1016StarXpandCommand9Presenter")
+@interface Presenter : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Presenter (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPresenterLEDType, "LEDType", open) {
+  STARIO10StarXpandCommandPresenterLEDTypeHolding = 0,
+  STARIO10StarXpandCommandPresenterLEDTypeError = 1,
+  STARIO10StarXpandCommandPresenterLEDTypeIdle = 2,
+};
+
+
+@interface Presenter (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("ModeParameter")
+@interface STARIO10StarXpandCommandPresenterModeParameter : NSObject
+@property (nonatomic, readonly) BOOL loop;
+- (nonnull instancetype)setLoop:(BOOL)loop SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) BOOL h

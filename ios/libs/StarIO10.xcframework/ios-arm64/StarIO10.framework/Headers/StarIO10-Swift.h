@@ -518,4 +518,21 @@ SWIFT_CLASS_NAMED("ModeParameter")
 @interface STARIO10StarXpandCommandPresenterModeParameter : NSObject
 @property (nonatomic, readonly) BOOL loop;
 - (nonnull instancetype)setLoop:(BOOL)loop SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic, readonly) BOOL h
+@property (nonatomic, readonly) BOOL hold;
+- (nonnull instancetype)setHold:(BOOL)hold SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) BOOL retract;
+- (nonnull instancetype)setRetract:(BOOL)retract SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSInteger holdTime;
+- (nonnull instancetype)setHoldTime:(NSInteger)holdTime SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Presenter (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("LEDAutomaticBlinkParameter")
+@interface STARIO10StarXpandCommandPresenterLEDAutomaticBlinkParameter : NSObject
+- (nonnull instancetype)initWithType:(enum STARIO10StarXpandCommandPresenterLEDType)type OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) enum STARIO10StarXpandCommandPres

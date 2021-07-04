@@ -535,4 +535,24 @@ SWIFT_CLASS_NAMED("ModeParameter")
 SWIFT_CLASS_NAMED("LEDAutomaticBlinkParameter")
 @interface STARIO10StarXpandCommandPresenterLEDAutomaticBlinkParameter : NSObject
 - (nonnull instancetype)initWithType:(enum STARIO10StarXpandCommandPresenterLEDType)type OBJC_DESIGNATED_INITIALIZER;
-@property (nonatomic, readonly) enum STARIO10StarXpandCommandPres
+@property (nonatomic, readonly) enum STARIO10StarXpandCommandPresenterLEDType type;
+@property (nonatomic, readonly) NSInteger onTime;
+- (nonnull instancetype)setOnTime:(NSInteger)onTime SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSInteger offTime;
+- (nonnull instancetype)setOffTime:(NSInteger)offTime SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtCC8StarIO1016StarXpandCommand7Printer")
+@interface Printer : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterCJKCharacterType, "CJKCharacterType", open) {
+  STARIO10StarXpandCommandPrinterCJKCharacterTypeJapanese =

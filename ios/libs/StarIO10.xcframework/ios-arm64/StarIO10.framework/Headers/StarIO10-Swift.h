@@ -555,4 +555,27 @@ SWIFT_CLASS("_TtCC8StarIO1016StarXpandCommand7Printer")
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterCJKCharacterType, "CJKCharacterType", open) {
-  STARIO10StarXpandCommandPrinterCJKCharacterTypeJapanese =
+  STARIO10StarXpandCommandPrinterCJKCharacterTypeJapanese = 0,
+  STARIO10StarXpandCommandPrinterCJKCharacterTypeSimplifiedChinese = 1,
+  STARIO10StarXpandCommandPrinterCJKCharacterTypeTraditionalChinese = 2,
+  STARIO10StarXpandCommandPrinterCJKCharacterTypeKorean = 3,
+};
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterCutType, "CutType", open) {
+  STARIO10StarXpandCommandPrinterCutTypeFull = 0,
+  STARIO10StarXpandCommandPrinterCutTypePartial = 1,
+  STARIO10StarXpandCommandPrinterCutTypeFullDirect = 2,
+  STARIO10StarXpandCommandPrinterCutTypePartialDirect = 3,
+};
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("HoldPrintParameter")
+@interface STARIO10StarXpandCommandPrinterHoldPrintParameter : NSObject

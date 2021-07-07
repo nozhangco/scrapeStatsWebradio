@@ -599,4 +599,19 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterBarcodeBarRat
 @interface Printer (SWIFT_EXTENSION(StarIO10))
 @end
 
-typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterBarcodeSymbology, "
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterBarcodeSymbology, "BarcodeSymbology", open) {
+  STARIO10StarXpandCommandPrinterBarcodeSymbologyUpcE = 0,
+  STARIO10StarXpandCommandPrinterBarcodeSymbologyUpcA = 1,
+  STARIO10StarXpandCommandPrinterBarcodeSymbologyJan8 = 2,
+  STARIO10StarXpandCommandPrinterBarcodeSymbologyEan8 = 3,
+  STARIO10StarXpandCommandPrinterBarcodeSymbologyJan13 = 4,
+  STARIO10StarXpandCommandPrinterBarcodeSymbologyEan13 = 5,
+  STARIO10StarXpandCommandPrinterBarcodeSymbologyCode39 = 6,
+  STARIO10StarXpandCommandPrinterBarcodeSymbologyItf = 7,
+  STARIO10StarXpandCommandPrinterBarcodeSymbologyCode128 = 8,
+  STARIO10StarXpandCommandPrinterBarcodeSymbologyCode93 = 9,
+  STARIO10StarXpandCommandPrinterBarcodeSymbologyNw7 = 10,
+};
+
+
+@interface Printer (SWIFT_EXTENSION(StarI

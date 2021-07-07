@@ -579,3 +579,24 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterCutType, "Cut
 
 SWIFT_CLASS_NAMED("HoldPrintParameter")
 @interface STARIO10StarXpandCommandPrinterHoldPrintParameter : NSObject
+@property (nonatomic, readonly) BOOL enable;
+- (nonnull instancetype)initWithEnable:(BOOL)enable OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterBarcodeBarRatioLevel, "BarcodeBarRatioLevel", open) {
+  STARIO10StarXpandCommandPrinterBarcodeBarRatioLevelLevelPlus1 = 0,
+  STARIO10StarXpandCommandPrinterBarcodeBarRatioLevelLevel0 = 1,
+  STARIO10StarXpandCommandPrinterBarcodeBarRatioLevelLevelMinus1 = 2,
+};
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterBarcodeSymbology, "

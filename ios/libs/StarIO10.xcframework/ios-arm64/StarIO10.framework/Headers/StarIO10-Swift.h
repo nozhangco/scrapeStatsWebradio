@@ -614,4 +614,16 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterBarcodeSymbol
 };
 
 
-@interface Printer (SWIFT_EXTENSION(StarI
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterInternationalCharacterType, "InternationalCharacterType", open) {
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeUsa = 0,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeFrance = 1,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeGermany = 2,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeUk = 3,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeDenmark = 4,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeSweden = 5,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeItaly = 6,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeSpain = 7,
+  STARIO10StarXpandCommandPrinterInt

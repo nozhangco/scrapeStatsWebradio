@@ -637,4 +637,24 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterInternational
   STARIO10StarXpandCommandPrinterInternationalCharacterTypeCroatia = 16,
   STARIO10StarXpandCommandPrinterInternationalCharacterTypeChina = 17,
   STARIO10StarXpandCommandPrinterInternationalCharacterTypeVietnam = 18,
-  STARIO10StarXpandCommandPrinterInternationalCharacterT
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeArabic = 19,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeLegal = 20,
+};
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+enum STARIO10StarXpandCommandPrinterBlackMarkPosition : NSInteger;
+
+SWIFT_CLASS_NAMED("BlackMarkParameter")
+@interface STARIO10StarXpandCommandPrinterBlackMarkParameter : NSObject
+@property (nonatomic, readonly) BOOL enable;
+- (nonnull instancetype)setEnable:(BOOL)enable SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) enum STARIO10StarXpandCommandPrinterBlackMarkPosition position;
+- (nonnull instancetype)setPosition:(enum STARIO10StarXpandCommandPrinterBlackMarkPosition)position SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Printer (S

@@ -626,4 +626,15 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterInternational
   STARIO10StarXpandCommandPrinterInternationalCharacterTypeSweden = 5,
   STARIO10StarXpandCommandPrinterInternationalCharacterTypeItaly = 6,
   STARIO10StarXpandCommandPrinterInternationalCharacterTypeSpain = 7,
-  STARIO10StarXpandCommandPrinterInt
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeJapan = 8,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeNorway = 9,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeDenmark2 = 10,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeSpain2 = 11,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeLatinAmerica = 12,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeKorea = 13,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeIreland = 14,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeSlovenia = 15,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeCroatia = 16,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeChina = 17,
+  STARIO10StarXpandCommandPrinterInternationalCharacterTypeVietnam = 18,
+  STARIO10StarXpandCommandPrinterInternationalCharacterT

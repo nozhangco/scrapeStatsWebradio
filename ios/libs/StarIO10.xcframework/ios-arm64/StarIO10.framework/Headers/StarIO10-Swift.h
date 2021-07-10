@@ -657,4 +657,20 @@ SWIFT_CLASS_NAMED("BlackMarkParameter")
 @end
 
 
-@interface Printer (S
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+enum STARIO10StarXpandCommandPrinterPDF417Level : NSInteger;
+
+SWIFT_CLASS_NAMED("PDF417Parameter")
+@interface STARIO10StarXpandCommandPrinterPDF417Parameter : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull content;
+@property (nonatomic, readonly) NSInteger column;
+- (nonnull instancetype)setColumn:(NSInteger)column SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSInteger line;
+- (nonnull instancetype)setLine:(NSInteger)line SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, getter=module) NSInteger module_;
+- (nonnull instancetype)setModule:(NSInteger)module_ SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSInteger aspect;
+- (nonnull instancetype)setAspect:(NSInteger)aspect SWIFT_WARN_UNUSED_RESULT;
+@pro

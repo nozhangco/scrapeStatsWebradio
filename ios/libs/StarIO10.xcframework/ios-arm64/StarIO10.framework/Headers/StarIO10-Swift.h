@@ -673,4 +673,21 @@ SWIFT_CLASS_NAMED("PDF417Parameter")
 - (nonnull instancetype)setModule:(NSInteger)module_ SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly) NSInteger aspect;
 - (nonnull instancetype)setAspect:(NSInteger)aspect SWIFT_WARN_UNUSED_RESULT;
-@pro
+@property (nonatomic, readonly) enum STARIO10StarXpandCommandPrinterPDF417Level level;
+- (nonnull instancetype)setLevel:(enum STARIO10StarXpandCommandPrinterPDF417Level)level SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithContent:(NSString * _Nonnull)content OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterQRCodeModel, "QRCodeModel", open) {
+  STARIO10StarXpandCommandPrinterQRCodeModelModel1 = 0,
+  STARIO10StarXpandCommandPrinterQRCodeModelModel2 = 1,
+};
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO

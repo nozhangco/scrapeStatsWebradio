@@ -703,4 +703,19 @@ SWIFT_CLASS_NAMED("BarcodeParameter")
 @property (nonatomic, readonly) NSInteger barDots;
 - (nonnull instancetype)setBarDots:(NSInteger)barDots SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly) enum STARIO10StarXpandCommandPrinterBarcodeBarRatioLevel barRatioLevel;
-- (nonnull instancetype)setBarRatioLevel:(enum STARIO10StarXpandCommandPrinterBarcod
+- (nonnull instancetype)setBarRatioLevel:(enum STARIO10StarXpandCommandPrinterBarcodeBarRatioLevel)barRatioLevel SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) double height;
+- (nonnull instancetype)setHeight:(double)height SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithContent:(NSString * _Nonnull)content symbology:(enum STARIO10StarXpandCommandPrinterBarcodeSymbology)symbology OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterPDF417Level, "PDF417Level", open) {
+  STARIO10StarXpandCommandPrinterPDF417LevelEcc0 = 0,
+  STARIO10StarXpandCommandPrinterPDF417LevelEcc1 = 1,
+  STARIO10StarXpandCommandPrinterPDF4

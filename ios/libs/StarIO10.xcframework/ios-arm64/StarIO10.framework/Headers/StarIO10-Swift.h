@@ -690,4 +690,17 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterQRCodeModel, 
 };
 
 
-@interface Printer (SWIFT_EXTENSION(StarIO
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("BarcodeParameter")
+@interface STARIO10StarXpandCommandPrinterBarcodeParameter : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull content;
+@property (nonatomic, readonly) enum STARIO10StarXpandCommandPrinterBarcodeSymbology symbology;
+@property (nonatomic, readonly) BOOL printHRI;
+- (nonnull instancetype)setPrintHRI:(BOOL)printHRI SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSInteger barDots;
+- (nonnull instancetype)setBarDots:(NSInteger)barDots SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) enum STARIO10StarXpandCommandPrinterBarcodeBarRatioLevel barRatioLevel;
+- (nonnull instancetype)setBarRatioLevel:(enum STARIO10StarXpandCommandPrinterBarcod

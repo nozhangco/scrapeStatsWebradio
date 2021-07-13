@@ -740,4 +740,20 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterBlackMarkPosi
 @interface Printer (SWIFT_EXTENSION(StarIO10))
 @end
 
-typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterCha
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterCharacterEncodingType, "CharacterEncodingType", open) {
+  STARIO10StarXpandCommandPrinterCharacterEncodingTypeJapanese = 0,
+  STARIO10StarXpandCommandPrinterCharacterEncodingTypeSimplifiedChinese = 1,
+  STARIO10StarXpandCommandPrinterCharacterEncodingTypeTraditionalChinese = 2,
+  STARIO10StarXpandCommandPrinterCharacterEncodingTypeKorean = 3,
+  STARIO10StarXpandCommandPrinterCharacterEncodingTypeCodePage = 4,
+};
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("LogoParameter")
+@interface STARIO10StarXpandCommandPrinterLogoParameter : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull keyCode;
+- (nonnull instancetype)initWithKeyCode:(NSString * _Nonnull)keyCode

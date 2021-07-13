@@ -756,4 +756,27 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterCharacterEnco
 SWIFT_CLASS_NAMED("LogoParameter")
 @interface STARIO10StarXpandCommandPrinterLogoParameter : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull keyCode;
-- (nonnull instancetype)initWithKeyCode:(NSString * _Nonnull)keyCode
+- (nonnull instancetype)initWithKeyCode:(NSString * _Nonnull)keyCode OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("LabelParameter")
+@interface STARIO10StarXpandCommandPrinterLabelParameter : NSObject
+- (BOOL)enable SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)setEnable:(BOOL)enable SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterQRCodeLevel, "QRCodeLevel", open) {
+  STARIO10StarXpandCommandPrinterQRCodeLevelL = 0,
+  STARIO10StarXpandCommandPrinterQRCodeLevelM = 1,

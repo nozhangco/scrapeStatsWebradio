@@ -718,4 +718,26 @@ SWIFT_CLASS_NAMED("BarcodeParameter")
 typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterPDF417Level, "PDF417Level", open) {
   STARIO10StarXpandCommandPrinterPDF417LevelEcc0 = 0,
   STARIO10StarXpandCommandPrinterPDF417LevelEcc1 = 1,
-  STARIO10StarXpandCommandPrinterPDF4
+  STARIO10StarXpandCommandPrinterPDF417LevelEcc2 = 2,
+  STARIO10StarXpandCommandPrinterPDF417LevelEcc3 = 3,
+  STARIO10StarXpandCommandPrinterPDF417LevelEcc4 = 4,
+  STARIO10StarXpandCommandPrinterPDF417LevelEcc5 = 5,
+  STARIO10StarXpandCommandPrinterPDF417LevelEcc6 = 6,
+  STARIO10StarXpandCommandPrinterPDF417LevelEcc7 = 7,
+  STARIO10StarXpandCommandPrinterPDF417LevelEcc8 = 8,
+};
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterBlackMarkPosition, "BlackMarkPosition", open) {
+  STARIO10StarXpandCommandPrinterBlackMarkPositionFront = 0,
+  STARIO10StarXpandCommandPrinterBlackMarkPositionBack = 1,
+};
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterCha

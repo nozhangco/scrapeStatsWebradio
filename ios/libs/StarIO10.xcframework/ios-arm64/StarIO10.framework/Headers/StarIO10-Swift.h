@@ -780,3 +780,22 @@ SWIFT_CLASS_NAMED("LabelParameter")
 typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterQRCodeLevel, "QRCodeLevel", open) {
   STARIO10StarXpandCommandPrinterQRCodeLevelL = 0,
   STARIO10StarXpandCommandPrinterQRCodeLevelM = 1,
+  STARIO10StarXpandCommandPrinterQRCodeLevelQ = 2,
+  STARIO10StarXpandCommandPrinterQRCodeLevelH = 3,
+};
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("ImageParameter")
+@interface STARIO10StarXpandCommandPrinterImageParameter : NSObject
+@property (nonatomic, readonly, strong) UIImage * _Nonnull image;
+@property (nonatomic, readonly) NSInteger width;
+@property (nonatomic, readonly) BOOL effectDiffusion;
+- (nonnull instancetype)setEffectDiffusion:(BOOL)enable SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSInteger threshold;
+- (nonnull instancetype)setThreshold:(NSInteger)threshold SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithImage:(UIImage * _Nonnull)image width:(NSInteger)width OBJC_DESIGNATED_INITIALIZER;
+- (nonnu

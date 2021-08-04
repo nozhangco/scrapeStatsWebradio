@@ -822,4 +822,19 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterAlignment, "A
 SWIFT_CLASS_NAMED("QRCodeParameter")
 @interface STARIO10StarXpandCommandPrinterQRCodeParameter : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull content;
-@property (nonatomic, readonly) enum STARIO10StarXpandCommandPrinterQRCodeMo
+@property (nonatomic, readonly) enum STARIO10StarXpandCommandPrinterQRCodeModel model;
+- (nonnull instancetype)setModel:(enum STARIO10StarXpandCommandPrinterQRCodeModel)model SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) enum STARIO10StarXpandCommandPrinterQRCodeLevel level;
+- (nonnull instancetype)setLevel:(enum STARIO10StarXpandCommandPrinterQRCodeLevel)level SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSInteger cellSize;
+- (nonnull instancetype)setCellSize:(NSInteger)cellSize SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithContent:(NSString * _Nonnull)content OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterFontType

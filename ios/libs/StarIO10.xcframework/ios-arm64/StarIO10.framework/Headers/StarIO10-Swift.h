@@ -798,4 +798,28 @@ SWIFT_CLASS_NAMED("ImageParameter")
 @property (nonatomic, readonly) NSInteger threshold;
 - (nonnull instancetype)setThreshold:(NSInteger)threshold SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithImage:(UIImage * _Nonnull)image width:(NSInteger)width OBJC_DESIGNATED_INITIALIZER;
-- (nonnu
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterAlignment, "Alignment", open) {
+  STARIO10StarXpandCommandPrinterAlignmentLeft = 0,
+  STARIO10StarXpandCommandPrinterAlignmentCenter = 1,
+  STARIO10StarXpandCommandPrinterAlignmentRight = 2,
+};
+
+
+
+
+@interface Printer (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("QRCodeParameter")
+@interface STARIO10StarXpandCommandPrinterQRCodeParameter : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull content;
+@property (nonatomic, readonly) enum STARIO10StarXpandCommandPrinterQRCodeMo

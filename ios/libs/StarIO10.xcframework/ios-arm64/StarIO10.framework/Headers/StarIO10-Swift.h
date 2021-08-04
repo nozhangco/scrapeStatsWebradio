@@ -837,4 +837,20 @@ SWIFT_CLASS_NAMED("QRCodeParameter")
 @interface Printer (SWIFT_EXTENSION(StarIO10))
 @end
 
-typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterFontType
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarXpandCommandPrinterFontType, "FontType", open) {
+  STARIO10StarXpandCommandPrinterFontTypeA = 0,
+  STARIO10StarXpandCommandPrinterFontTypeB = 1,
+};
+
+
+SWIFT_PROTOCOL_NAMED("PrinterDelegate")
+@protocol STARIO10PrinterDelegate
+- (void)printer:(STARIO10StarPrinter * _Nonnull)printer communicationErrorDidOccur:(NSError * _Nonnull)error;
+- (void)printerIsReady:(STARIO10StarPrinter * _Nonnull)printer;
+- (void)printerDidHaveError:(STARIO10StarPrinter * _Nonnull)printer;
+- (void)printerIsPaperReady:(STARIO10StarPrinter * _Nonnull)printer;
+- (void)printerIsPaperNearEmpty:(STARIO10StarPrinter * _Nonnull)printer;
+- (void)printerIsPaperEmpty:(STARIO10StarPrinter * _Nonnull)printer;
+- (void)printerIsCoverOpen:(STARIO10StarPrinter * _Nonnull)printer;
+- (void)printerIsCoverClose:(STARIO10StarPrinter * _Nonnull)printer;
+@en

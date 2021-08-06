@@ -865,4 +865,22 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @property (nonatomic, copy) NSString * _Nonnull identifier;
 @property (nonatomic) BOOL autoSwitchInterface;
 - (nonnull instancetype)initWithInterfaceType:(enum STARIO10InterfaceType)interfaceType identifier:(NSString * _Nonnull)identifier autoSwitchInterface:(BOOL)autoSwitchInterface OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@protocol STARIO10StarDeviceDiscoveryManagerDelegate;
+
+SWIFT_PROTOCOL_NAMED("StarDeviceDiscoveryManager")
+@protocol STARIO10StarDeviceDiscoveryManager
+@property (nonatomic, weak) id <STARIO10StarDeviceDiscoveryManagerDelegate> _Nullable delegate;
+@property (nonatomic) NSInteger discoveryTime;
+- (BOOL)startDiscoveryWithError:(NSError * _Nullable * _Nullable)error;
+- (void)stopDiscovery;
+@end
+
+
+SWIFT_PROTOCOL_NAMED("StarDeviceDiscoveryManagerDelegate")
+@protocol STARIO10StarDeviceDiscoveryManagerDelegate
+- (void)manager:(id <STARIO10StarDeviceDiscoveryManager> _Nonnull)manager didFindPrinter:(STARIO10StarPrinter * _Nonnull)printer;
+- (void)managerDidFinishDis

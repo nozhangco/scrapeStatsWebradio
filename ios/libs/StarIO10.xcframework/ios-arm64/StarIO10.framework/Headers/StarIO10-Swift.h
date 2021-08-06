@@ -853,4 +853,16 @@ SWIFT_PROTOCOL_NAMED("PrinterDelegate")
 - (void)printerIsPaperEmpty:(STARIO10StarPrinter * _Nonnull)printer;
 - (void)printerIsCoverOpen:(STARIO10StarPrinter * _Nonnull)printer;
 - (void)printerIsCoverClose:(STARIO10StarPrinter * _Nonnull)printer;
-@en
+@end
+
+
+SWIFT_CLASS_NAMED("StarConnectionSettings")
+@interface STARIO10StarConnectionSettings : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull FIRST_FOUND_DEVICE;)
++ (NSString * _Nonnull)FIRST_FOUND_DEVICE SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic) enum STARIO10InterfaceType interfaceType;
+@property (nonatomic, copy) NSString * _Nonnull identifier;
+@property (nonatomic) BOOL autoSwitchInterface;
+- (nonnull instancetype)initWithInterfaceType:(enum STARIO10InterfaceType)interfaceType identifier:(NSString * _Nonnull)identifier autoSwitchInterface:(BOOL)autoSwitchInterface OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype

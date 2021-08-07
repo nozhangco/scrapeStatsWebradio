@@ -883,4 +883,18 @@ SWIFT_PROTOCOL_NAMED("StarDeviceDiscoveryManager")
 SWIFT_PROTOCOL_NAMED("StarDeviceDiscoveryManagerDelegate")
 @protocol STARIO10StarDeviceDiscoveryManagerDelegate
 - (void)manager:(id <STARIO10StarDeviceDiscoveryManager> _Nonnull)manager didFindPrinter:(STARIO10StarPrinter * _Nonnull)printer;
-- (void)managerDidFinishDis
+- (void)managerDidFinishDiscovery:(id <STARIO10StarDeviceDiscoveryManager> _Nonnull)manager;
+@end
+
+
+SWIFT_CLASS_NAMED("StarDeviceDiscoveryManagerFactory")
+@interface STARIO10StarDeviceDiscoveryManagerFactory : NSObject
++ (id <STARIO10StarDeviceDiscoveryManager> _Nullable)createWithInterfaceTypes:(NSArray<NSNumber *> * _Nonnull)interfaceTypes error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10ErrorCode, "StarIO10ErrorCode", open) {
+  STARIO10ErrorCodeNone SWIFT_COMPILE_NAME("none") = 0,
+  STARIO10ErrorCodeDeviceHasError SWIFT_COMPILE_NAME("deviceHasError") = 1000,
+  STARIO10ErrorCodePrinterHoldingPaper SWIFT_COMPILE_NAME("prin

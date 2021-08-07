@@ -897,4 +897,21 @@ SWIFT_CLASS_NAMED("StarDeviceDiscoveryManagerFactory")
 typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10ErrorCode, "StarIO10ErrorCode", open) {
   STARIO10ErrorCodeNone SWIFT_COMPILE_NAME("none") = 0,
   STARIO10ErrorCodeDeviceHasError SWIFT_COMPILE_NAME("deviceHasError") = 1000,
-  STARIO10ErrorCodePrinterHoldingPaper SWIFT_COMPILE_NAME("prin
+  STARIO10ErrorCodePrinterHoldingPaper SWIFT_COMPILE_NAME("printerHoldingPaper") = 1001,
+  STARIO10ErrorCodePrintingTimeout SWIFT_COMPILE_NAME("printingTimeout") = 1002,
+  STARIO10ErrorCodeBluetoothUnavailable SWIFT_COMPILE_NAME("bluetoothUnavailable") = 2000,
+  STARIO10ErrorCodeNetworkUnavailable SWIFT_COMPILE_NAME("networkUnavailable") = 2001,
+};
+
+
+SWIFT_CLASS_NAMED("StarIO10Logger")
+@interface STARIO10Logger : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) STARIO10Logger * _Nonnull sharedObject;)
++ (STARIO10Logger * _Nonnull)sharedObject SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (void)start;
+- (void)stop;
+@end
+
+@class STARIO10StarP

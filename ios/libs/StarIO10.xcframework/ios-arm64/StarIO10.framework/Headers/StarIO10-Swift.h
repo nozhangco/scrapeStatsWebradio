@@ -914,4 +914,16 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) STARIO10Logg
 - (void)stop;
 @end
 
-@class STARIO10StarP
+@class STARIO10StarPrinterInformation;
+
+SWIFT_CLASS_NAMED("StarPrinter")
+@interface STARIO10StarPrinter : NSObject
+@property (nonatomic, readonly, strong) STARIO10StarPrinterInformation * _Nullable information;
+@property (nonatomic, readonly, strong) STARIO10StarConnectionSettings * _Nonnull connectionSettings;
+@property (nonatomic, strong) id <STARIO10PrinterDelegate> _Nullable printerDelegate;
+@property (nonatomic, strong) id <STARIO10DrawerDelegate> _Nullable drawerDelegate;
+@property (nonatomic, strong) id <STARIO10InputDeviceDelegate> _Nullable inputDeviceDelegate;
+@property (nonatomic, strong) id <STARIO10DisplayDelegate> _Nullable displayDelegate;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+@property (nonatomic) NSInteger openTimeout;
+@property (nonatomic) NSInt

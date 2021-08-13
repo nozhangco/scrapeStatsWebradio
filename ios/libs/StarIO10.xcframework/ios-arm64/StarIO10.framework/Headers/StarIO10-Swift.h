@@ -926,4 +926,19 @@ SWIFT_CLASS_NAMED("StarPrinter")
 @property (nonatomic, strong) id <STARIO10DisplayDelegate> _Nullable displayDelegate;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 @property (nonatomic) NSInteger openTimeout;
-@property (nonatomic) NSInt
+@property (nonatomic) NSInteger getStatusTimeout;
+@property (nonatomic) NSInteger printTimeout;
+- (nonnull instancetype)initWithConnectionSettings:(STARIO10StarConnectionSettings * _Nonnull)connectionSettings;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@class STARIO10StarPrinterStatus;
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface STARIO10StarPrinter (SWIFT_EXTENSION(StarIO10))
+- (void)openWithCompletionHandler:(void (^ _Nonnull)(NSError * _Nullable))completionHandler;
+- (void)closeWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)readWithSize:(NSInteger)size completionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler;
+- (void)printWithRaw:(NSData * 

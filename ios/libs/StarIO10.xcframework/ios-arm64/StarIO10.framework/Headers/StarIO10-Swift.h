@@ -941,4 +941,15 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 - (void)openWithCompletionHandler:(void (^ _Nonnull)(NSError * _Nullable))completionHandler;
 - (void)closeWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
 - (void)readWithSize:(NSInteger)size completionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler;
-- (void)printWithRaw:(NSData * 
+- (void)printWithRaw:(NSData * _Nonnull)raw completionHandler:(void (^ _Nonnull)(NSError * _Nullable))completionHandler;
+- (void)printWithCommand:(NSString * _Nonnull)command completionHandler:(void (^ _Nonnull)(NSError * _Nullable))completionHandler;
+- (void)getStatusWithCompletionHandler:(void (^ _Nonnull)(STARIO10StarPrinterStatus * _Nullable, NSError * _Nullable))completionHandler;
+@end
+
+
+@interface STARIO10StarPrinter (SWIFT_EXTENSION(StarIO10))
+/// @available(iOS, obsoleted: 15.0, message: “Not available on iOS 15 or later: Please use open() async”)
+/// 以下の各funcに上記@availableを設定していたが削除(Ver2.0以降)。ReactNative用StarIO10WrapperからはiOS15でも利用するため。
+- (void)openWithCompletion:(void (^ _Nonnull)(NSError * _Nullable))completion;
+- (void)closeWithCompletion:(void (^ _Nonnull)(void))completion;
+- 

@@ -952,4 +952,15 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 /// 以下の各funcに上記@availableを設定していたが削除(Ver2.0以降)。ReactNative用StarIO10WrapperからはiOS15でも利用するため。
 - (void)openWithCompletion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 - (void)closeWithCompletion:(void (^ _Nonnull)(void))completion;
-- 
+- (void)readWithSize:(NSInteger)size completion:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completion;
+- (void)printWithRaw:(NSData * _Nonnull)raw completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
+- (void)printWithCommand:(NSString * _Nonnull)command completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
+- (void)getStatusWithCompletion:(void (^ _Nonnull)(STARIO10StarPrinterStatus * _Nullable, NSError * _Nullable))completion;
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarPrinterEmulation, "StarPrinterEmulation", open) {
+  STARIO10StarPrinterEmulationUnknown = 0,
+  STARIO10StarPrinterEmulationStarLine = 1,
+  STARIO10StarPrinterEmulationStarDot = 2,
+  STARIO10StarPrinterEmulationStarGraphic = 3,
+  STARIO10StarPrinterEmulation

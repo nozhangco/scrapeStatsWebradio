@@ -963,4 +963,22 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarPrinterEmulation, "StarPrinterEm
   STARIO10StarPrinterEmulationStarLine = 1,
   STARIO10StarPrinterEmulationStarDot = 2,
   STARIO10StarPrinterEmulationStarGraphic = 3,
-  STARIO10StarPrinterEmulation
+  STARIO10StarPrinterEmulationStarPRNT = 4,
+  STARIO10StarPrinterEmulationEscPos = 5,
+  STARIO10StarPrinterEmulationEscPosMobile = 6,
+};
+
+enum STARIO10StarPrinterModel : NSInteger;
+
+SWIFT_CLASS_NAMED("StarPrinterInformation")
+@interface STARIO10StarPrinterInformation : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+@property (nonatomic, readonly) enum STARIO10StarPrinterModel model;
+@property (nonatomic, readonly) enum STARIO10StarPrinterEmulation emulation;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull reserved;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarPrinterModel, "StarPrinterModel", open) {
+ 

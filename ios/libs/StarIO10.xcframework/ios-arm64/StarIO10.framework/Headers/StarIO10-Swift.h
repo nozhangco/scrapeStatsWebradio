@@ -1002,4 +1002,19 @@ typedef SWIFT_ENUM_NAMED(NSInteger, STARIO10StarPrinterModel, "StarPrinterModel"
   STARIO10StarPrinterModelSM_L200 SWIFT_COMPILE_NAME("sm_L200") = 18,
   STARIO10StarPrinterModelSM_L300 SWIFT_COMPILE_NAME("sm_L300") = 19,
   STARIO10StarPrinterModelBSC10 SWIFT_COMPILE_NAME("bsc10") = 20,
-  STARIO10St
+  STARIO10StarPrinterModelTSP043 SWIFT_COMPILE_NAME("tsp043") = 21,
+  STARIO10StarPrinterModelSP700 SWIFT_COMPILE_NAME("sp700") = 22,
+  STARIO10StarPrinterModelTUP500 SWIFT_COMPILE_NAME("tup500") = 23,
+};
+
+
+SWIFT_CLASS_NAMED("StarPrinterStatus")
+@interface STARIO10StarPrinterStatus : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+@property (nonatomic, readonly) BOOL hasError;
+@property (nonatomic, readonly) BOOL coverOpen;
+@property (nonatomic, readonly) BOOL drawerOpenCloseSignal;
+@property (nonatomic, readonly) BOOL paperEmpty;
+@property (nonatomic, readonly) BOOL paperNearEmpty;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull reserved;
+- (nonnull instancetype)init SWIFT_UNAVAILA

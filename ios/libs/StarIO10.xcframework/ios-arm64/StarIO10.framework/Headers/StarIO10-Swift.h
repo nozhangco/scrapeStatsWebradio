@@ -1017,4 +1017,31 @@ SWIFT_CLASS_NAMED("StarPrinterStatus")
 @property (nonatomic, readonly) BOOL paperEmpty;
 @property (nonatomic, readonly) BOOL paperNearEmpty;
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull reserved;
-- (nonnull instancetype)init SWIFT_UNAVAILA
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS_NAMED("StarXpandCommand")
+@interface STARIO10StarXpandCommand : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface STARIO10StarXpandCommand (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("BezelSettingBuilder")
+@interface STARIO10StarXpandCommandBezelSettingBuilder : NSObject
+- (nonnull instancetype)settingAutomaticPageLength:(BOOL)enable SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)settingLEDAutomaticBlink:(STARIO10StarXpandCommandBezelLEDAutomaticBlinkParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface STARIO10StarXpandCommand (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_N

@@ -1061,4 +1061,12 @@ SWIFT_CLASS_NAMED("PrinterBuilder")
 @interface STARIO10StarXpandCommandPrinterBuilder : NSObject
 - (nonnull instancetype)styleAlignment:(enum STARIO10StarXpandCommandPrinterAlignment)position SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)styleFont:(enum STARIO10StarXpandCommandPrinterFontType)type SWIFT_WARN_UNUSED_RESULT;
-- (nonnull inst
+- (nonnull instancetype)styleBold:(BOOL)enable SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleInvert:(BOOL)enable SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleUnderLine:(BOOL)enable SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleMagnification:(STARIO10StarXpandCommandMagnificationParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleCharacterSpace:(double)width SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleLineSpace:(double)height SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleHorizontalPositionTo:(double)position SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleHorizontalPositionBy:(double)position SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleHorizontalTabPositions:(NSArray<NSNumber *> 

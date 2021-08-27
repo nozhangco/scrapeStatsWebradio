@@ -1044,4 +1044,21 @@ SWIFT_CLASS_NAMED("BezelSettingBuilder")
 @end
 
 
-SWIFT_CLASS_N
+SWIFT_CLASS_NAMED("DrawerBuilder")
+@interface STARIO10StarXpandCommandDrawerBuilder : NSObject
+- (nonnull instancetype)actionOpen:(STARIO10StarXpandCommandDrawerOpenParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@interface STARIO10StarXpandCommand (SWIFT_EXTENSION(StarIO10))
+@end
+
+@class STARIO10StarXpandCommandMagnificationParameter;
+
+SWIFT_CLASS_NAMED("PrinterBuilder")
+@interface STARIO10StarXpandCommandPrinterBuilder : NSObject
+- (nonnull instancetype)styleAlignment:(enum STARIO10StarXpandCommandPrinterAlignment)position SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleFont:(enum STARIO10StarXpandCommandPrinterFontType)type SWIFT_WARN_UNUSED_RESULT;
+- (nonnull inst

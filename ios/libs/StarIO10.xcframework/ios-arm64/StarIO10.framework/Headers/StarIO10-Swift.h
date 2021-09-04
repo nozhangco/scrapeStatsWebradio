@@ -1069,4 +1069,11 @@ SWIFT_CLASS_NAMED("PrinterBuilder")
 - (nonnull instancetype)styleLineSpace:(double)height SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)styleHorizontalPositionTo:(double)position SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)styleHorizontalPositionBy:(double)position SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)styleHorizontalTabPositions:(NSArray<NSNumber *> 
+- (nonnull instancetype)styleHorizontalTabPositions:(NSArray<NSNumber *> * _Nonnull)position SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleInternationalCharacter:(enum STARIO10StarXpandCommandPrinterInternationalCharacterType)type SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleSecondPriorityCharacterEncoding:(enum STARIO10StarXpandCommandPrinterCharacterEncodingType)type SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleCJKCharacterPriority:(NSArray<NSNumber *> * _Nonnull)types SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionCut:(enum STARIO10StarXpandCommandPrinterCutType)type SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionFeed:(double)height SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionFeedLine:(NSInteger)lines SWIFT_WARN_UNUSED_RESULT;
+- (nonnull insta

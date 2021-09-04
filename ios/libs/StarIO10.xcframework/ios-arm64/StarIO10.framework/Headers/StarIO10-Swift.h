@@ -1076,4 +1076,9 @@ SWIFT_CLASS_NAMED("PrinterBuilder")
 - (nonnull instancetype)actionCut:(enum STARIO10StarXpandCommandPrinterCutType)type SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)actionFeed:(double)height SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)actionFeedLine:(NSInteger)lines SWIFT_WARN_UNUSED_RESULT;
-- (nonnull insta
+- (nonnull instancetype)actionPrintText:(NSString * _Nonnull)content SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionPrintLogo:(STARIO10StarXpandCommandPrinterLogoParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionPrintBarcode:(STARIO10StarXpandCommandPrinterBarcodeParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionPrintPDF417:(STARIO10StarXpandCommandPrinterPDF417Parameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionPrintQRCode:(STARIO10StarXpandCommandPrinterQRCodeParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionPrintImage:(STARIO10StarXpandCommandPrinterImageParameter * _Nonnull)parameter SWIFT_WARN_UNUSE

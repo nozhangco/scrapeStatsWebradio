@@ -1081,4 +1081,22 @@ SWIFT_CLASS_NAMED("PrinterBuilder")
 - (nonnull instancetype)actionPrintBarcode:(STARIO10StarXpandCommandPrinterBarcodeParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)actionPrintPDF417:(STARIO10StarXpandCommandPrinterPDF417Parameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)actionPrintQRCode:(STARIO10StarXpandCommandPrinterQRCodeParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)actionPrintImage:(STARIO10StarXpandCommandPrinterImageParameter * _Nonnull)parameter SWIFT_WARN_UNUSE
+- (nonnull instancetype)actionPrintImage:(STARIO10StarXpandCommandPrinterImageParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)add:(STARIO10StarXpandCommandPrinterBuilder * _Nonnull)builder SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface STARIO10StarXpandCommand (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("PresenterSettingBuilder")
+@interface STARIO10StarXpandCommandPresenterSettingBuilder : NSObject
+- (nonnull instancetype)settingMode:(STARIO10StarXpandCommandPresenterModeParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)settingLEDAutomaticBlinkWithParameter:(STARIO10StarXpandCommandPresenterLEDAutomaticBlinkParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface S

@@ -1099,4 +1099,22 @@ SWIFT_CLASS_NAMED("PresenterSettingBuilder")
 @end
 
 
-@interface S
+@interface STARIO10StarXpandCommand (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("PreSettingBuilder")
+@interface STARIO10StarXpandCommandPreSettingBuilder : NSObject
+- (nonnull instancetype)addPresenterSetting:(STARIO10StarXpandCommandPresenterSettingBuilder * _Nonnull)builder SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)addBezelSetting:(STARIO10StarXpandCommandBezelSettingBuilder * _Nonnull)builder SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface STARIO10StarXpandCommand (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("MelodySpeakerBuilder")
+@interface STARIO10StarXpandCommandMelodySpeakerBuilder : NSObject
+- (nonnull instancetype)actionDriveRegisteredSound:(STARIO10StarXpandComman

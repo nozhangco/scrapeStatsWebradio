@@ -1117,4 +1117,19 @@ SWIFT_CLASS_NAMED("PreSettingBuilder")
 
 SWIFT_CLASS_NAMED("MelodySpeakerBuilder")
 @interface STARIO10StarXpandCommandMelodySpeakerBuilder : NSObject
-- (nonnull instancetype)actionDriveRegisteredSound:(STARIO10StarXpandComman
+- (nonnull instancetype)actionDriveRegisteredSound:(STARIO10StarXpandCommandMelodySpeakerDriveRegisteredSoundParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionDriveOneTimeSound:(STARIO10StarXpandCommandMelodySpeakerDriveOneTimeSoundParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface STARIO10StarXpandCommand (SWIFT_EXTENSION(StarIO10))
+@end
+
+@class STARIO10StarXpandCommandBuzzerBuilder;
+@class STARIO10StarXpandCommandDisplayBuilder;
+
+SWIFT_CLASS_NAMED("DocumentBuilder")
+@interface STARIO10StarXpandCommandDocumentBuilder : NSObject
+- (nonnull instancetype)settingTopMargin:(double)height SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)settingBlackMark:(STARIO10StarXpandCommandPrinterBlackMarkParameter * _Nonnull)parameter SWIFT_

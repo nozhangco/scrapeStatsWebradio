@@ -1132,4 +1132,11 @@ SWIFT_CLASS_NAMED("MelodySpeakerBuilder")
 SWIFT_CLASS_NAMED("DocumentBuilder")
 @interface STARIO10StarXpandCommandDocumentBuilder : NSObject
 - (nonnull instancetype)settingTopMargin:(double)height SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)settingBlackMark:(STARIO10StarXpandCommandPrinterBlackMarkParameter * _Nonnull)parameter SWIFT_
+- (nonnull instancetype)settingBlackMark:(STARIO10StarXpandCommandPrinterBlackMarkParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)settingLabel:(STARIO10StarXpandCommandPrinterLabelParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)settingHoldPrint:(STARIO10StarXpandCommandPrinterHoldPrintParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)settingPrintableArea:(double)width SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)addPrinter:(STARIO10StarXpandCommandPrinterBuilder * _Nonnull)builder SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)addDrawer:(STARIO10StarXpandCommandDrawerBuilder * _Nonnull)builder SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)addBuzzer:(STARIO10StarXpandCommandBuzzerBuilder * _Nonnull)builder SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)addMe

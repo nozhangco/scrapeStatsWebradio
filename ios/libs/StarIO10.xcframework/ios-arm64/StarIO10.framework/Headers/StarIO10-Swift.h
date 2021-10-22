@@ -1139,4 +1139,26 @@ SWIFT_CLASS_NAMED("DocumentBuilder")
 - (nonnull instancetype)addPrinter:(STARIO10StarXpandCommandPrinterBuilder * _Nonnull)builder SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)addDrawer:(STARIO10StarXpandCommandDrawerBuilder * _Nonnull)builder SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)addBuzzer:(STARIO10StarXpandCommandBuzzerBuilder * _Nonnull)builder SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)addMe
+- (nonnull instancetype)addMelodySpeaker:(STARIO10StarXpandCommandMelodySpeakerBuilder * _Nonnull)builder SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)addDisplay:(STARIO10StarXpandCommandDisplayBuilder * _Nonnull)builder SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)addRaw:(NSData * _Nonnull)content SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface STARIO10StarXpandCommand (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("BuzzerBuilder")
+@interface STARIO10StarXpandCommandBuzzerBuilder : NSObject
+- (nonnull instancetype)actionDrive:(STARIO10StarXpandCommandBuzzerDriveParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface STARIO10StarXpandCommand (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED(

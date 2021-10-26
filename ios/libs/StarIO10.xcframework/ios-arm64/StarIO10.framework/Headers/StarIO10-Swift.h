@@ -1161,4 +1161,21 @@ SWIFT_CLASS_NAMED("BuzzerBuilder")
 @end
 
 
-SWIFT_CLASS_NAMED(
+SWIFT_CLASS_NAMED("StarXpandCommandBuilder")
+@interface STARIO10StarXpandCommandBuilder : NSObject
+@property (nonatomic, strong) STARIO10StarXpandCommandPreSettingBuilder * _Nullable preSetting;
+- (nonnull instancetype)addDocument:(STARIO10StarXpandCommandDocumentBuilder * _Nonnull)builder SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)getCommands SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface STARIO10StarXpandCommand (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("MagnificationParameter")
+@interface STARIO10StarXpandCommandMagnificationParameter : NSObject
+@property (nonatomic, readonly) NSInteger width;
+@property (nonatomic, readonly) NSInteger height;
+- (nonnull instancetype)initWithWidth:(

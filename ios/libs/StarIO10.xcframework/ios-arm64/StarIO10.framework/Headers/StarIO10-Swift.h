@@ -1178,4 +1178,18 @@ SWIFT_CLASS_NAMED("MagnificationParameter")
 @interface STARIO10StarXpandCommandMagnificationParameter : NSObject
 @property (nonatomic, readonly) NSInteger width;
 @property (nonatomic, readonly) NSInteger height;
-- (nonnull instancetype)initWithWidth:(
+- (nonnull instancetype)initWithWidth:(NSInteger)width height:(NSInteger)height OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface STARIO10StarXpandCommand (SWIFT_EXTENSION(StarIO10))
+@end
+
+
+SWIFT_CLASS_NAMED("DisplayBuilder")
+@interface STARIO10StarXpandCommandDisplayBuilder : NSObject
+- (nonnull instancetype)styleInternationalCharacter:(enum STARIO10StarXpandCommandDisplayInternationalCharacterType)type SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleCharacterEncoding:(enum STARIO10StarXpandCommandDisplayCharacterEncodingType)type SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleCursorPositionTo:(STARIO10StarXpandCommandDisplayPositionPara

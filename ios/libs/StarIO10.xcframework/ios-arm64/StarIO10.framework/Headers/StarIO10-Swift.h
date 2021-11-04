@@ -1202,3 +1202,11 @@ SWIFT_CLASS_NAMED("DisplayBuilder")
 - (nonnull instancetype)actionShowImage:(STARIO10StarXpandCommandDisplayImageParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
+#if __has_attribute(external_source_symbol)
+# pragma clang attribute pop
+#endif
+#pragma clang diagnostic pop
+#endif

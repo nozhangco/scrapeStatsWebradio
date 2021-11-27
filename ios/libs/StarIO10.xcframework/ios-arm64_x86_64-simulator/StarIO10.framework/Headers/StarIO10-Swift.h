@@ -2406,3 +2406,26 @@ SWIFT_CLASS_NAMED("MagnificationParameter")
 
 
 SWIFT_CLASS_NAMED("DisplayBuilder")
+@interface STARIO10StarXpandCommandDisplayBuilder : NSObject
+- (nonnull instancetype)styleInternationalCharacter:(enum STARIO10StarXpandCommandDisplayInternationalCharacterType)type SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleCharacterEncoding:(enum STARIO10StarXpandCommandDisplayCharacterEncodingType)type SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)styleCursorPositionTo:(STARIO10StarXpandCommandDisplayPositionParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionClearLine SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionClearAll SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionSetBackLightState:(BOOL)on SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionSetCursorState:(enum STARIO10StarXpandCommandDisplayCursorState)state SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionSetContrast:(enum STARIO10StarXpandCommandDisplayContrast)value SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionShowText:(NSString * _Nonnull)content SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)actionShowImage:(STARIO10StarXpandCommandDisplayImageParameter * _Nonnull)parameter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+#if __has_attribute(external_source_symbol)
+# pragma clang attribute pop
+#endif
+#pragma clang diagnostic pop
+#endif
+
+#endif

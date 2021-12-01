@@ -28,4 +28,6 @@ typedef NS_ENUM(NSInteger, STARIO10Error) {
 extern NSString * const STARIO10ErrorDetailErrorCodeKey;
 extern NSString * const STARIO10ErrorStatusKey;
 
-@
+@end
+
+NS_ASSUME_NONNULL_END

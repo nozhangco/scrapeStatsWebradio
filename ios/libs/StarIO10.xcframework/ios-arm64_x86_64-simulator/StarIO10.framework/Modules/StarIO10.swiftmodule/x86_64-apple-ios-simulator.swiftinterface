@@ -15,4 +15,26 @@ extension StarIO10.StarPrinter {
   @objc dynamic public func open(completion: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public func close(completion: @escaping () -> Swift.Void)
   @objc dynamic public func read(size: Swift.Int, completion: @escaping (Foundation.Data?, Swift.Error?) -> Swift.Void)
-  @objc dynamic publi
+  @objc dynamic public func print(raw: Foundation.Data, completion: @escaping (Swift.Error?) -> Swift.Void)
+  @objc dynamic public func print(command: Swift.String, completion: @escaping (Swift.Error?) -> Swift.Void)
+  @objc dynamic public func getStatus(completion: @escaping (StarIO10.StarPrinterStatus?, Swift.Error?) -> Swift.Void)
+}
+@objc(STARIO10StarPrinterEmulation) public enum StarPrinterEmulation : Swift.Int, Swift.CustomStringConvertible {
+  case unknown
+  case starLine
+  case starDot
+  case starGraphic
+  case starPRNT
+  case escPos
+  case escPosMobile
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension StarIO10.StarXpandCommand.Display {
+  @ob

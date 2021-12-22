@@ -37,4 +37,19 @@ extension StarIO10.StarPrinter {
   }
 }
 extension StarIO10.StarXpandCommand.Display {
-  @ob
+  @objc(STARIO10StarXpandCommandDisplayCursorState) public enum CursorState : Swift.Int {
+    case on
+    case blink
+    case off
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+extension StarIO10.StarXpandCommand {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandDisplayBuilder) public class DisplayBuilder : ObjectiveC.NSObject {
+    @objc public func styleInternationalCharacter(_ type: StarIO10.StarXpandCommand.Display.InternationalCharacterType) -> Self
+    @objc public func styleCharacterEncoding(_ type: StarIO10.StarXpandCommand.Display.CharacterEncodingType) -> Self
+    @objc public func styleCursorPositionTo(_ parameter: Sta

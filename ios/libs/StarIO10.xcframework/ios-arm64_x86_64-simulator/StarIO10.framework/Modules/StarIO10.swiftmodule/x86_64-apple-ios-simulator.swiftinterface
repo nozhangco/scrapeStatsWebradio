@@ -52,4 +52,17 @@ extension StarIO10.StarXpandCommand {
   @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandDisplayBuilder) public class DisplayBuilder : ObjectiveC.NSObject {
     @objc public func styleInternationalCharacter(_ type: StarIO10.StarXpandCommand.Display.InternationalCharacterType) -> Self
     @objc public func styleCharacterEncoding(_ type: StarIO10.StarXpandCommand.Display.CharacterEncodingType) -> Self
-    @objc public func styleCursorPositionTo(_ parameter: Sta
+    @objc public func styleCursorPositionTo(_ parameter: StarIO10.StarXpandCommand.Display.PositionParameter) -> Self
+    @objc public func actionClearLine() -> Self
+    @objc public func actionClearAll() -> Self
+    @objc public func actionSetBackLightState(_ on: Swift.Bool) -> Self
+    @objc public func actionSetCursorState(_ state: StarIO10.StarXpandCommand.Display.CursorState) -> Self
+    @objc public func actionSetContrast(_ value: StarIO10.StarXpandCommand.Display.Contrast) -> Self
+    @objc public func actionShowText(_ content: Swift.String) -> Self
+    @objc public func actionShowImage(_ parameter: StarIO10.StarXpandCommand.Display.ImageParameter) -> Self
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand {
+ 

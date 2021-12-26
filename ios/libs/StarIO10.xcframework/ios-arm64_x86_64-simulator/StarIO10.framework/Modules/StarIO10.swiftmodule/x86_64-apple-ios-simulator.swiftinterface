@@ -65,4 +65,24 @@ extension StarIO10.StarXpandCommand {
   }
 }
 extension StarIO10.StarXpandCommand {
- 
+  @objcMembers @objc(STARIO10StarXpandCommandMagnificationParameter) public class MagnificationParameter : ObjectiveC.NSObject {
+    @objc final public let width: Swift.Int
+    @objc final public let height: Swift.Int
+    @objc public init(width: Swift.Int, height: Swift.Int)
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Bezel {
+  @objc(STARIO10StarXpandCommandBezelLEDType) public enum LEDType : Swift.Int {
+    case holding
+    case error
+    case idle
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@_inheritsConvenienceInitializers @objc public class Internal : ObjectiveC.NSObject {
+  @_inheritsConvenienceInitializers @objc(STARIO10InternalInterface) @objcMembers public class InternalInter

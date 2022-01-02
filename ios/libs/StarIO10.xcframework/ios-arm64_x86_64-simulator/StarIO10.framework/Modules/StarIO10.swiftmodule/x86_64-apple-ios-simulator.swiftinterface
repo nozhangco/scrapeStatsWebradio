@@ -100,4 +100,17 @@ extension StarIO10.StarXpandCommand.Bezel {
 }
 extension StarIO10.StarXpandCommand.MelodySpeaker {
   @objcMembers @objc(STARIO10StarXpandCommandMelodySpeakerDriveRegisteredSoundParameter) public class DriveRegisteredSoundParameter : ObjectiveC.NSObject {
-    @objc final publ
+    @objc final public let area: StarIO10.StarXpandCommand.MelodySpeaker.SoundStorageArea
+    @objc final public let number: Swift.Int
+    @objc public var volume: Swift.Int {
+      @objc get
+    }
+    @objc public func setVolume(_ volume: Swift.Int) -> Self
+    @objc public init(area: StarIO10.StarXpandCommand.MelodySpeaker.SoundStorageArea, number: Swift.Int)
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandPreSettingBuilder) public class PreSettingBuilder : ObjectiveC.NSObject {
+    @objc public func addPresenterSetting(_ builder: StarIO10.StarXpandCommand.PresenterSettingBuilder) -> Self
+    @objc public func addBezelSetting(_ builder: StarIO10.StarXpandCommand.BezelSettingBuilder

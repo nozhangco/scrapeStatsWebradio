@@ -85,4 +85,19 @@ extension StarIO10.StarXpandCommand.Bezel {
   }
 }
 @_inheritsConvenienceInitializers @objc public class Internal : ObjectiveC.NSObject {
-  @_inheritsConvenienceInitializers @objc(STARIO10InternalInterface) @objcMembers public class InternalInter
+  @_inheritsConvenienceInitializers @objc(STARIO10InternalInterface) @objcMembers public class InternalInterface : ObjectiveC.NSObject {
+    @objc override dynamic public init()
+    @objc public static func appendLogHeader(_ header: Swift.String)
+    @objc deinit
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc(STARIO10DisplayDelegate) public protocol DisplayDelegate {
+  @objc func display(printer: StarIO10.StarPrinter, communicationErrorDidOccur error: Swift.Error)
+  @objc func displayDidConnect(printer: StarIO10.StarPrinter)
+  @objc func displayDidDisconnect(printer: StarIO10.StarPrinter)
+}
+extension StarIO10.StarXpandCommand.MelodySpeaker {
+  @objcMembers @objc(STARIO10StarXpandCommandMelodySpeakerDriveRegisteredSoundParameter) public class DriveRegisteredSoundParameter : ObjectiveC.NSObject {
+    @objc final publ

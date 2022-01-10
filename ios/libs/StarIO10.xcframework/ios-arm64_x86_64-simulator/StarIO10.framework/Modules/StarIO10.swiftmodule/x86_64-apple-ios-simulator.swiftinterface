@@ -113,4 +113,26 @@ extension StarIO10.StarXpandCommand.MelodySpeaker {
 extension StarIO10.StarXpandCommand {
   @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandPreSettingBuilder) public class PreSettingBuilder : ObjectiveC.NSObject {
     @objc public func addPresenterSetting(_ builder: StarIO10.StarXpandCommand.PresenterSettingBuilder) -> Self
-    @objc public func addBezelSetting(_ builder: StarIO10.StarXpandCommand.BezelSettingBuilder
+    @objc public func addBezelSetting(_ builder: StarIO10.StarXpandCommand.BezelSettingBuilder) -> Self
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Bezel {
+  @objcMembers @objc(STARIO10StarXpandCommandBezelLEDAutomaticBlinkParameter) public class LEDAutomaticBlinkParameter : ObjectiveC.NSObject {
+    @objc public init(type: StarIO10.StarXpandCommand.Bezel.LEDType)
+    @objc public var type: StarIO10.StarXpandCommand.Bezel.LEDType {
+      get
+    }
+    @objc public var onTime: Swift.Int {
+      @objc get
+    }
+    @objc public func setOnTime(_ onTime: Swift.Int) -> Self
+    @objc public var offTime: Swift.Int {
+      @objc get
+    }
+    @objc public func setOffTime(_ offTime: Swift.Int) -> Self
+    @objc deinit
+  }
+}
+@objc(STARIO10PrinterDelegate) public protocol 

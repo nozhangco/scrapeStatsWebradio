@@ -135,4 +135,15 @@ extension StarIO10.StarXpandCommand.Bezel {
     @objc deinit
   }
 }
-@objc(STARIO10PrinterDelegate) public protocol 
+@objc(STARIO10PrinterDelegate) public protocol PrinterDelegate {
+  @objc func printer(_ printer: StarIO10.StarPrinter, communicationErrorDidOccur error: Swift.Error)
+  @objc func printerIsReady(_ printer: StarIO10.StarPrinter)
+  @objc func printerDidHaveError(_ printer: StarIO10.StarPrinter)
+  @objc func printerIsPaperReady(_ printer: StarIO10.StarPrinter)
+  @objc func printerIsPaperNearEmpty(_ printer: StarIO10.StarPrinter)
+  @objc func printerIsPaperEmpty(_ printer: StarIO10.StarPrinter)
+  @objc func printerIsCoverOpen(_ printer: StarIO10.StarPrinter)
+  @objc func printerIsCoverClose(_ printer: StarIO10.StarPrinter)
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandPrinterBlackMarkParameter) public class BlackMarkParameter : O

@@ -146,4 +146,24 @@ extension StarIO10.StarXpandCommand.Bezel {
   @objc func printerIsCoverClose(_ printer: StarIO10.StarPrinter)
 }
 extension StarIO10.StarXpandCommand.Printer {
-  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandPrinterBlackMarkParameter) public class BlackMarkParameter : O
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandPrinterBlackMarkParameter) public class BlackMarkParameter : ObjectiveC.NSObject {
+    @objc public var enable: Swift.Bool {
+      @objc get
+    }
+    @objc public func setEnable(_ enable: Swift.Bool) -> Self
+    @objc public var position: StarIO10.StarXpandCommand.Printer.BlackMarkPosition {
+      @objc get
+    }
+    @objc public func setPosition(_ position: StarIO10.StarXpandCommand.Printer.BlackMarkPosition) -> Self
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objcMembers @objc(STARIO10StarXpandCommandPrinterPDF417Parameter) public class PDF417Parameter : ObjectiveC.NSObject {
+    @objc final public let content: Swift.String
+    @objc public var column: Swift.Int {
+      @objc get
+    }
+    @objc public func setColumn(_ column: Swift.Int) -> Self
+ 

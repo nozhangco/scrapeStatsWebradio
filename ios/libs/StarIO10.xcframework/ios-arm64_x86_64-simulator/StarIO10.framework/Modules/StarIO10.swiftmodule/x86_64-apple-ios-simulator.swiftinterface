@@ -166,4 +166,28 @@ extension StarIO10.StarXpandCommand.Printer {
       @objc get
     }
     @objc public func setColumn(_ column: Swift.Int) -> Self
+    @objc public var line: Swift.Int {
+      @objc get
+    }
+    @objc public func setLine(_ line: Swift.Int) -> Self
+    @objc public var module: Swift.Int {
+      @objc get
+    }
+    @objc public func setModule(_ module: Swift.Int) -> Self
+    @objc public var aspect: Swift.Int {
+      @objc get
+    }
+    @objc public func setAspect(_ aspect: Swift.Int) -> Self
+    @objc public var level: StarIO10.StarXpandCommand.Printer.PDF417Level {
+      @objc get
+    }
+    @objc public func setLevel(_ level: StarIO10.StarXpandCommand.Printer.PDF417Level) -> Self
+    @objc public init(content: Swift.String)
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Display {
+  @objc(STARIO10StarXpandCommandDisplayContrast) public enum Contrast : Swift.Int {
+    case plus3
+    case plus2
  

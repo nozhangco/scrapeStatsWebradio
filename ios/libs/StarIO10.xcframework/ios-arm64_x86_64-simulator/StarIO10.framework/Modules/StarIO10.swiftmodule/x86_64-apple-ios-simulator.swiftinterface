@@ -213,4 +213,34 @@ extension CoreBluetooth.CBManagerState : Swift.CustomStringConvertible {
   @objc final public func stop()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @objc(STARIO10StarPrinterSta
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @objc(STARIO10StarPrinterStatus) public class StarPrinterStatus : ObjectiveC.NSObject {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc public var hasError: Swift.Bool {
+    get
+  }
+  @objc public var coverOpen: Swift.Bool {
+    get
+  }
+  @objc public var drawerOpenCloseSignal: Swift.Bool {
+    get
+  }
+  @objc public var paperEmpty: Swift.Bool {
+    get
+  }
+  @objc public var paperNearEmpty: Swift.Bool {
+    get
+  }
+  @objc public var reserved: Swift.Dictionary<Swift.String, Any> {
+    @objc get
+  }
+  @objc deinit
+}
+extension StarIO10.StarXpandCommand.Drawer {
+  @objc(STARIO10StarXpandCommandDrawerChannel) public enum Channel : Swift.Int {
+    case no1
+    case no2
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    p

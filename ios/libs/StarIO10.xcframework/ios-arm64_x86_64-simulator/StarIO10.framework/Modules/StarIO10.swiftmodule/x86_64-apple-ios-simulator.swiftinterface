@@ -190,4 +190,27 @@ extension StarIO10.StarXpandCommand.Display {
   @objc(STARIO10StarXpandCommandDisplayContrast) public enum Contrast : Swift.Int {
     case plus3
     case plus2
- 
+    case plus1
+    case `default`
+    case minus1
+    case minus2
+    case minus3
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+extension CoreBluetooth.CBManagerState : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(STARIO10Logger) @objcMembers final public class StarIO10Logger : ObjectiveC.NSObject {
+  @objc(sharedObject) public static let shared: StarIO10.StarIO10Logger
+  @objc final public func start()
+  @objc final public func stop()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @objc(STARIO10StarPrinterSta

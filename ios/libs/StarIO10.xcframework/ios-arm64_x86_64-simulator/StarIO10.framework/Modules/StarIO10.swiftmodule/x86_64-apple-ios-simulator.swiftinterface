@@ -261,4 +261,28 @@ extension StarIO10.StarXpandCommand.Printer {
       @objc get
     }
     @objc public func setModel(_ model: StarIO10.StarXpandCommand.Printer.QRCodeModel) -> Self
-    @objc public var lev
+    @objc public var level: StarIO10.StarXpandCommand.Printer.QRCodeLevel {
+      @objc get
+    }
+    @objc public func setLevel(_ level: StarIO10.StarXpandCommand.Printer.QRCodeLevel) -> Self
+    @objc public var cellSize: Swift.Int {
+      @objc get
+    }
+    @objc public func setCellSize(_ cellSize: Swift.Int) -> Self
+    @objc public init(content: Swift.String)
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Buzzer {
+  @objc(STARIO10StarXpandCommandBuzzerChannel) public enum Channel : Swift.Int {
+    case no1
+    case no2
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+extension StarIO10.StarXpandCommand {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandMelodySpeakerBuilder) 

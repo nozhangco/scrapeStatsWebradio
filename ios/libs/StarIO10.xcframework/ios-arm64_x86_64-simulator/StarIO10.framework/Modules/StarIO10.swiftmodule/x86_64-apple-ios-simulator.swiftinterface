@@ -243,4 +243,22 @@ extension StarIO10.StarXpandCommand.Drawer {
     case no2
     public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
-    p
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@objc(STARIO10StarDeviceDiscoveryManager) public protocol StarDeviceDiscoveryManager {
+  @objc weak var delegate: StarIO10.StarDeviceDiscoveryManagerDelegate? { get set }
+  @objc var discoveryTime: Swift.Int { get set }
+  @objc(startDiscoveryWithError:) func startDiscovery() throws
+  @objc func stopDiscovery()
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objcMembers @objc(STARIO10StarXpandCommandPrinterQRCodeParameter) public class QRCodeParameter : ObjectiveC.NSObject {
+    @objc final public let content: Swift.String
+    @objc public var model: StarIO10.StarXpandCommand.Printer.QRCodeModel {
+      @objc get
+    }
+    @objc public func setModel(_ model: StarIO10.StarXpandCommand.Printer.QRCodeModel) -> Self
+    @objc public var lev

@@ -285,4 +285,15 @@ extension StarIO10.StarXpandCommand.Buzzer {
   }
 }
 extension StarIO10.StarXpandCommand {
-  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandMelodySpeakerBuilder) 
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandMelodySpeakerBuilder) public class MelodySpeakerBuilder : ObjectiveC.NSObject {
+    @objc public func actionDriveRegisteredSound(_ parameter: StarIO10.StarXpandCommand.MelodySpeaker.DriveRegisteredSoundParameter) -> Self
+    @objc public func actionDriveOneTimeSound(_ parameter: StarIO10.StarXpandCommand.MelodySpeaker.DriveOneTimeSoundParameter) -> Self
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+@objc(STARIO10InputDeviceDelegate) public protocol InputDeviceDelegate {
+  @objc func inputDevice(printer: StarIO10.StarPrinter, communicationErrorDidOccur error: Swift.Error)
+  @objc func inputDeviceDidConnect(printer: StarIO10.StarPrinter)
+  @objc func inputDeviceDidDisconnect(printer: StarIO10.StarPrinter)
+  @objc func inputDevice(printer: StarIO10.St

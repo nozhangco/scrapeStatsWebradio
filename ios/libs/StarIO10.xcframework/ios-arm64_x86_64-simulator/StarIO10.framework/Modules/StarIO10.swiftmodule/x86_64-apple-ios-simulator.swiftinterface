@@ -296,4 +296,26 @@ extension StarIO10.StarXpandCommand {
   @objc func inputDevice(printer: StarIO10.StarPrinter, communicationErrorDidOccur error: Swift.Error)
   @objc func inputDeviceDidConnect(printer: StarIO10.StarPrinter)
   @objc func inputDeviceDidDisconnect(printer: StarIO10.StarPrinter)
-  @objc func inputDevice(printer: StarIO10.St
+  @objc func inputDevice(printer: StarIO10.StarPrinter, didReceive data: Foundation.Data)
+}
+extension StarIO10.StarXpandCommand.Display {
+  @objc(STARIO10StarXpandCommandDisplayCharacterEncodingType) public enum CharacterEncodingType : Swift.Int {
+    case japanese
+    case simplifiedChinese
+    case traditionalChinese
+    case korean
+    case codePage
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+extension StarIO10.StarXpandCommand.Display {
+  @objcMembers @objc(STARIO10StarXpandCommandDisplayPositionParameter) public class PositionParameter : ObjectiveC.NSObject {
+    @objc final public let x: Swift.Int
+    @objc final public let y: Swift.Int
+    @objc public init(x: Swift.Int, y: Swift.Int)
+    @objc deinit
+ 

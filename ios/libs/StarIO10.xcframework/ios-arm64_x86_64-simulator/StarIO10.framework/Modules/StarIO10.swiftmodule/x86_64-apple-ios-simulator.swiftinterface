@@ -318,4 +318,27 @@ extension StarIO10.StarXpandCommand.Display {
     @objc final public let y: Swift.Int
     @objc public init(x: Swift.Int, y: Swift.Int)
     @objc deinit
- 
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objc(STARIO10StarXpandCommandPrinterFontType) public enum FontType : Swift.Int {
+    case a
+    case b
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @objc(STARIO10StarPrinterInformation) public class StarPrinterInformation : ObjectiveC.NSObject {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc public var model: StarIO10.StarPrinterModel {
+    get
+  }
+  @objc public var emulation: StarIO10.StarPrinterEmulation {
+    get
+  }
+  @objc public var reserved: Swift.Dictionary<Swift.String

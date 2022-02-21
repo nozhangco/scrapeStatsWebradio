@@ -341,4 +341,16 @@ extension StarIO10.StarXpandCommand.Printer {
   @objc public var emulation: StarIO10.StarPrinterEmulation {
     get
   }
-  @objc public var reserved: Swift.Dictionary<Swift.String
+  @objc public var reserved: Swift.Dictionary<Swift.String, Any> {
+    @objc get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(STARIO10StarDeviceDiscoveryManagerFactory) public class StarDeviceDiscoveryManagerFactory : ObjectiveC.NSObject {
+  public static func create(interfaceTypes: [StarIO10.InterfaceType]) throws -> StarIO10.StarDeviceDiscoveryManager
+  @available(swift, obsoleted: 0.1)
+  @objc(createWithInterfaceTypes:error:) public static func create(interfaceTypes: [Swift.Int]) throws -> StarIO10.StarDeviceDiscoveryManager
+  @objc deinit
+}
+extension StarIO10.StarXpandCommand.Presenter {
+  @objcMembers @objc(STARIO10StarXpandCommandPresenterLEDAutomaticBlinkParameter) public class LEDAutomaticBlinkParameter : Objec

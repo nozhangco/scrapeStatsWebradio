@@ -379,4 +379,27 @@ extension StarIO10.StarXpandCommand.Printer {
     }
   }
 }
-@_hasMiss
+@_hasMissingDesignatedInitializers @objcMembers @objc(STARIO10StarPrinter) public class StarPrinter : ObjectiveC.NSObject {
+  @objc public var information: StarIO10.StarPrinterInformation? {
+    get
+  }
+  @objc public var connectionSettings: StarIO10.StarConnectionSettings {
+    get
+  }
+  @objc public var printerDelegate: StarIO10.PrinterDelegate? {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var drawerDelegate: StarIO10.DrawerDelegate? {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var inputDeviceDelegate: StarIO10.InputDeviceDelegate? {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var displayDelegate: StarIO10.DisplayDelegate? {
+    @objc get
+    @objc set(value)
+  }
+  @objc ov

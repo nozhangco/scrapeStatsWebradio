@@ -353,4 +353,30 @@ extension StarIO10.StarXpandCommand.Printer {
   @objc deinit
 }
 extension StarIO10.StarXpandCommand.Presenter {
-  @objcMembers @objc(STARIO10StarXpandCommandPresenterLEDAutomaticBlinkParameter) public class LEDAutomaticBlinkParameter : Objec
+  @objcMembers @objc(STARIO10StarXpandCommandPresenterLEDAutomaticBlinkParameter) public class LEDAutomaticBlinkParameter : ObjectiveC.NSObject {
+    @objc public init(type: StarIO10.StarXpandCommand.Presenter.LEDType)
+    @objc final public let type: StarIO10.StarXpandCommand.Presenter.LEDType
+    @objc public var onTime: Swift.Int {
+      @objc get
+    }
+    @objc public func setOnTime(_ onTime: Swift.Int) -> Self
+    @objc public var offTime: Swift.Int {
+      @objc get
+    }
+    @objc public func setOffTime(_ offTime: Swift.Int) -> Self
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objc(STARIO10StarXpandCommandPrinterAlignment) public enum Alignment : Swift.Int {
+    case left
+    case center
+    case right
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@_hasMiss

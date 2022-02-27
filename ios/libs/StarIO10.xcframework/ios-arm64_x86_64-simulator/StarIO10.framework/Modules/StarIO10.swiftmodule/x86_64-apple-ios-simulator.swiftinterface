@@ -402,4 +402,17 @@ extension StarIO10.StarXpandCommand.Printer {
     @objc get
     @objc set(value)
   }
-  @objc ov
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc public var openTimeout: Swift.Int
+  @objc public var getStatusTimeout: Swift.Int
+  @objc public var printTimeout: Swift.Int
+  @objc(initWithConnectionSettings:) convenience public init(_ connectionSettings: StarIO10.StarConnectionSettings)
+  @objc deinit
+}
+public enum StarIO10Error : Swift.Error {
+  case unknown(message: Swift.String, errorCode: StarIO10.StarIO10ErrorCode = StarIO10ErrorCode.none)
+  case argument(message: Swift.String, errorCode: StarIO10.StarIO10ErrorCode = StarIO10ErrorCode.none)
+  case badResponse(message: Swift.String, errorCode: StarIO10.StarIO10ErrorCode = StarIO10ErrorCode.none)
+  case communication(message: Swift.String, errorCode: StarIO10.StarIO

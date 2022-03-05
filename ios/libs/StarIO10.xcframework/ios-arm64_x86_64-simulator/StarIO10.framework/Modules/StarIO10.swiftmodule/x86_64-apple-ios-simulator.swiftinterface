@@ -422,4 +422,26 @@ public enum StarIO10Error : Swift.Error {
   case notFound(message: Swift.String, errorCode: StarIO10.StarIO10ErrorCode = StarIO10ErrorCode.none)
   case unprintable(message: Swift.String, errorCode: StarIO10.StarIO10ErrorCode = StarIO10ErrorCode.none, status: StarIO10.StarPrinterStatus? = nil)
   case unsupportedModel(message: Swift.String, errorCode: StarIO10.StarIO10ErrorCode = StarIO10ErrorCode.none)
-  case unsupported
+  case unsupportedOSVersion(message: Swift.String, errorCode: StarIO10.StarIO10ErrorCode = StarIO10ErrorCode.none)
+}
+extension StarIO10.StarIO10Error : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension StarIO10.StarIO10Error : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public var failureReason: Swift.String? {
+    get
+  }
+  public var recoverySuggestion: Swift.String? {
+    get
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objcMembers @objc(STARIO10StarXpandCommandPrinterImageParameter) public class ImageParameter : ObjectiveC.NSObject {
+    @objc final public let image: UIKit.UIImage
+    @objc final public let width: Swift.Int
+    @objc publ

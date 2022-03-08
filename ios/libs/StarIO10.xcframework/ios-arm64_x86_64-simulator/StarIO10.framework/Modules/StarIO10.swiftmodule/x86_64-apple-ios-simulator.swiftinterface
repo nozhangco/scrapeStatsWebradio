@@ -444,4 +444,22 @@ extension StarIO10.StarXpandCommand.Printer {
   @objcMembers @objc(STARIO10StarXpandCommandPrinterImageParameter) public class ImageParameter : ObjectiveC.NSObject {
     @objc final public let image: UIKit.UIImage
     @objc final public let width: Swift.Int
-    @objc publ
+    @objc public var effectDiffusion: Swift.Bool {
+      @objc get
+    }
+    @objc public func setEffectDiffusion(_ enable: Swift.Bool) -> Self
+    @objc public var threshold: Swift.Int {
+      @objc get
+    }
+    @objc public func setThreshold(_ threshold: Swift.Int) -> Self
+    @objc public init(image: UIKit.UIImage, width: Swift.Int)
+    @objc deinit
+  }
+}
+@objc(STARIO10DrawerDelegate) public protocol DrawerDelegate {
+  @objc func drawer(printer: StarIO10.StarPrinter, communicationErrorDidOccur error: Swift.Error)
+  @objc func drawer(printer: StarIO10.StarPrinter, didSwitch openCloseSignal: Swift.Bool)
+}
+extension StarIO10.StarXpandCommand {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandBezelSettingBuilder) public class BezelSettingBuilder : ObjectiveC.NSObject {
+    @objc public func 

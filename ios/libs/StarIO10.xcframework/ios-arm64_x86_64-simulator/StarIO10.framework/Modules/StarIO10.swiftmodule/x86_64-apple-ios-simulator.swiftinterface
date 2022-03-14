@@ -486,4 +486,23 @@ extension StarIO10.StarXpandCommand.Presenter {
     case holding
     case error
     case idle
-    pu
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandPrinterLabelParameter) public class LabelParameter : ObjectiveC.NSObject {
+    @objc public func enable() -> Swift.Bool
+    @objc public func setEnable(_ enable: Swift.Bool) -> Self
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Display {
+  @objcMembers @objc(STARIO10StarXpandCommandDisplayImageParameter) public class ImageParameter : ObjectiveC.NSObject {
+    @objc final public let image: UIKit.UIImage
+    @objc public var effectDiffusion: Swift.Bool {
+      @objc get

@@ -527,4 +527,26 @@ extension StarIO10.StarXpandCommand.Printer {
   @objc(STARIO10StarXpandCommandPrinterCharacterEncodingType) public enum CharacterEncodingType : Swift.Int {
     case japanese
     case simplifiedChinese
-  
+    case traditionalChinese
+    case korean
+    case codePage
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+extension StarIO10.StarXpandCommand.MelodySpeaker {
+  @objcMembers @objc(STARIO10StarXpandCommandMelodySpeakerDriveOneTimeSoundParameter) public class DriveOneTimeSoundParameter : ObjectiveC.NSObject {
+    @objc final public let source: Foundation.Data
+    @objc public var volume: Swift.Int {
+      @objc get
+    }
+    @objc public func setVolume(_ volume: Swift.Int) -> Self
+    @objc public init(source: Foundation.Data)
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objc(STARIO10StarXpandCommandPrinterBlackMa

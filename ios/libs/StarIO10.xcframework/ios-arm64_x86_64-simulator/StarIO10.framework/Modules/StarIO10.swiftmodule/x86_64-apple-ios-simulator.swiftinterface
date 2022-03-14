@@ -506,3 +506,25 @@ extension StarIO10.StarXpandCommand.Display {
     @objc final public let image: UIKit.UIImage
     @objc public var effectDiffusion: Swift.Bool {
       @objc get
+    }
+    @objc public func setEffectDiffusion(_ enable: Swift.Bool) -> Self
+    @objc public var threshold: Swift.Int {
+      @objc get
+    }
+    @objc public func setThreshold(_ threshold: Swift.Int) -> Self
+    @objc public init(image: UIKit.UIImage)
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objcMembers @objc(STARIO10StarXpandCommandPrinterLogoParameter) public class LogoParameter : ObjectiveC.NSObject {
+    @objc final public let keyCode: Swift.String
+    @objc public init(keyCode: Swift.String)
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objc(STARIO10StarXpandCommandPrinterCharacterEncodingType) public enum CharacterEncodingType : Swift.Int {
+    case japanese
+    case simplifiedChinese
+  

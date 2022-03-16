@@ -549,4 +549,36 @@ extension StarIO10.StarXpandCommand.MelodySpeaker {
   }
 }
 extension StarIO10.StarXpandCommand.Printer {
-  @objc(STARIO10StarXpandCommandPrinterBlackMa
+  @objc(STARIO10StarXpandCommandPrinterBlackMarkPosition) public enum BlackMarkPosition : Swift.Int {
+    case front
+    case back
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objc(STARIO10StarXpandCommandPrinterPDF417Level) public enum PDF417Level : Swift.Int {
+    case ecc0
+    case ecc1
+    case ecc2
+    case ecc3
+    case ecc4
+    case ecc5
+    case ecc6
+    case ecc7
+    case ecc8
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@available(iOS 13.0, *)
+extension StarIO10.StarPrinter {
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  @objc dynamic p

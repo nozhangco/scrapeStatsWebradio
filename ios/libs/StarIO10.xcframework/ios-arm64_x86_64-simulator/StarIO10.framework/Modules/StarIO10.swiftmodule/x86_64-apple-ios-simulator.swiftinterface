@@ -581,4 +581,34 @@ extension StarIO10.StarXpandCommand.Printer {
 extension StarIO10.StarPrinter {
   
   #if compiler(>=5.3) && $AsyncAwait
-  @objc dynamic p
+  @objc dynamic public func open() async throws
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  @objc dynamic public func close() async
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  @objc dynamic public func read(size: Swift.Int) async throws -> Foundation.Data
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  @objc dynamic public func print(raw: Foundation.Data) async throws
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  @objc dynamic public func print(command: Swift.String) async throws
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  @objc dynamic public func getStatus() async throws -> StarIO10.StarPrinterStatus
+  #endif
+
+}
+extension StarIO10.StarXpandCommand.Display {
+  @objc(STARIO10StarXpandCommandDisplayInternationalCharacterType) public enum Interna

@@ -611,4 +611,32 @@ extension StarIO10.StarPrinter {
 
 }
 extension StarIO10.StarXpandCommand.Display {
-  @objc(STARIO10StarXpandCommandDisplayInternationalCharacterType) public enum Interna
+  @objc(STARIO10StarXpandCommandDisplayInternationalCharacterType) public enum InternationalCharacterType : Swift.Int {
+    case usa
+    case france
+    case germany
+    case uk
+    case denmark
+    case sweden
+    case italy
+    case spain
+    case japan
+    case norway
+    case denmark2
+    case spain2
+    case latinAmerica
+    case korea
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+extension StarIO10.StarXpandCommand.Drawer {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandDrawerOpenParameter) public class OpenParameter : ObjectiveC.NSObject {
+    @objc public var channel: StarIO10.StarXpandCommand.Drawer.Channel {
+      @objc get
+    }
+    @objc public func setChannel(_ channel: StarIO10.StarXpandCommand.Drawer.Channel) -> Self
+    @obj

@@ -639,4 +639,24 @@ extension StarIO10.StarXpandCommand.Drawer {
       @objc get
     }
     @objc public func setChannel(_ channel: StarIO10.StarXpandCommand.Drawer.Channel) -> Self
-    @obj
+    @objc public var onTime: Swift.Int {
+      @objc get
+    }
+    @objc public func setOnTime(_ onTime: Swift.Int) -> Self
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objcMembers @objc(STARIO10StarXpandCommandPrinterBarcodeParameter) public class BarcodeParameter : ObjectiveC.NSObject {
+    @objc final public let content: Swift.String
+    @objc final public let symbology: StarIO10.StarXpandCommand.Printer.BarcodeSymbology
+    @objc public var printHRI: Swift.Bool {
+      @objc get
+    }
+    @objc public func setPrintHRI(_ printHRI: Swift.Bool) -> Self
+    @objc public var barDots: Swift.Int {
+      @objc get
+    }
+    @objc public func setBarDots(_ barDots: Swift.Int) -> Self
+    @objc public var b

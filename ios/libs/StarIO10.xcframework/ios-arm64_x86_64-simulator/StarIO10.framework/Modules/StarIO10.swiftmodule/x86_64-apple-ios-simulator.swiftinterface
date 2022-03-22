@@ -659,4 +659,23 @@ extension StarIO10.StarXpandCommand.Printer {
       @objc get
     }
     @objc public func setBarDots(_ barDots: Swift.Int) -> Self
-    @objc public var b
+    @objc public var barRatioLevel: StarIO10.StarXpandCommand.Printer.BarcodeBarRatioLevel {
+      @objc get
+    }
+    @objc public func setBarRatioLevel(_ barRatioLevel: StarIO10.StarXpandCommand.Printer.BarcodeBarRatioLevel) -> Self
+    @objc public var height: Swift.Double {
+      @objc get
+    }
+    @objc public func setHeight(_ height: Swift.Double) -> Self
+    @objc public init(content: Swift.String, symbology: StarIO10.StarXpandCommand.Printer.BarcodeSymbology)
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objc(STARIO10StarXpandCommandPrinterQRCodeModel) public enum QRCodeModel : Swift.Int {
+    case model1
+    case model2
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      ge

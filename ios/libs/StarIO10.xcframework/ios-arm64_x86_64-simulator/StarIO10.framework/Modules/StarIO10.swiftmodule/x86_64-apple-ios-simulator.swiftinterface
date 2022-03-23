@@ -678,4 +678,22 @@ extension StarIO10.StarXpandCommand.Printer {
     public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
-      ge
+      get
+    }
+  }
+}
+extension StarIO10.StarXpandCommand {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandDrawerBuilder) public class DrawerBuilder : ObjectiveC.NSObject {
+    @objc public func actionOpen(_ parameter: StarIO10.StarXpandCommand.Drawer.OpenParameter) -> Self
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+@objc(STARIO10StarPrinterModel) public enum StarPrinterModel : Swift.Int, Swift.CustomStringConvertible {
+  case unknown
+  @objc(STARIO10StarPrinterModelTSP650II) case tsp650II
+  @objc(STARIO10StarPrinterModelTSP700II) case tsp700II
+  @objc(STARIO10StarPrinterModelTSP800II) case tsp800II
+  @objc(STARIO10StarPrinterModelFVP10) case fvp10
+  @objc(STARIO10StarPrinterModelTSP100LAN) case tsp100LAN
+  @objc(STARIO10StarPrinterModelTSP100IIIW)

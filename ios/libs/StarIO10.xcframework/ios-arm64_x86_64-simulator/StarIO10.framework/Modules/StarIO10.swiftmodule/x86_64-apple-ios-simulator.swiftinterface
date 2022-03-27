@@ -709,4 +709,30 @@ extension StarIO10.StarXpandCommand {
   @objc(STARIO10StarPrinterModelSM_T300i) case sm_T300i
   @objc(STARIO10StarPrinterModelSM_T400i) case sm_T400i
   @objc(STARIO10StarPrinterModelSM_L200) case sm_L200
-  @objc(STARIO10StarPrinterModelSM_L300) 
+  @objc(STARIO10StarPrinterModelSM_L300) case sm_L300
+  @objc(STARIO10StarPrinterModelBSC10) case bsc10
+  @objc(STARIO10StarPrinterModelTSP043) case tsp043
+  @objc(STARIO10StarPrinterModelSP700) case sp700
+  @objc(STARIO10StarPrinterModelTUP500) case tup500
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension StarIO10.StarIO10Error : Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+}
+extension StarIO10.StarXpandCommand.Presenter {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STAR

@@ -735,4 +735,26 @@ extension StarIO10.StarIO10Error : Foundation.CustomNSError {
   }
 }
 extension StarIO10.StarXpandCommand.Presenter {
-  @_inheritsConvenienceInitializers @objcMembers @objc(STAR
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandPresenterModeParameter) public class ModeParameter : ObjectiveC.NSObject {
+    @objc public var loop: Swift.Bool {
+      @objc get
+    }
+    @objc public func setLoop(_ loop: Swift.Bool) -> Self
+    @objc public var hold: Swift.Bool {
+      @objc get
+    }
+    @objc public func setHold(_ hold: Swift.Bool) -> Self
+    @objc public var retract: Swift.Bool {
+      @objc get
+    }
+    @objc public func setRetract(_ retract: Swift.Bool) -> Self
+    @objc public var holdTime: Swift.Int {
+      @objc get
+    }
+    @objc public func setHoldTime(_ holdTime: Swift.Int) -> Self
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand {
+  @_inheritsConvenienceInitialize

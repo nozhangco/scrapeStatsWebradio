@@ -757,4 +757,13 @@ extension StarIO10.StarXpandCommand.Presenter {
   }
 }
 extension StarIO10.StarXpandCommand {
-  @_inheritsConvenienceInitialize
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandPrinterBuilder) public class PrinterBuilder : ObjectiveC.NSObject {
+    @objc public func styleAlignment(_ position: StarIO10.StarXpandCommand.Printer.Alignment) -> Self
+    @objc public func styleFont(_ type: StarIO10.StarXpandCommand.Printer.FontType) -> Self
+    @objc public func styleBold(_ enable: Swift.Bool) -> Self
+    @objc public func styleInvert(_ enable: Swift.Bool) -> Self
+    @objc public func styleUnderLine(_ enable: Swift.Bool) -> Self
+    @objc public func styleMagnification(_ parameter: StarIO10.StarXpandCommand.MagnificationParameter) -> Self
+    @objc public func styleCharacterSpace(_ width: Swift.Double) -> Self
+    @objc public func styleLineSpace(_ height: Swift.Double) -> Self
+    @objc public func styleHorizontalPositionTo(_ position: Swift.

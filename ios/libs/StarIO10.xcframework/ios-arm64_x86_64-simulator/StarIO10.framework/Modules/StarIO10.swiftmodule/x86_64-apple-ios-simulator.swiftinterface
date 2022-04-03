@@ -774,4 +774,12 @@ extension StarIO10.StarXpandCommand {
     public func styleCJKCharacterPriority(_ types: [StarIO10.StarXpandCommand.Printer.CJKCharacterType]) -> Self
     @available(swift, obsoleted: 0.1)
     @objc(styleCJKCharacterPriority:) public func styleCJKCharacterPriority(_ types: [Swift.Int]) -> Self
-    @objc public func actionCut(_ type: StarIO10.StarXpandCommand.Printer.CutType) ->
+    @objc public func actionCut(_ type: StarIO10.StarXpandCommand.Printer.CutType) -> Self
+    @objc public func actionFeed(_ height: Swift.Double) -> Self
+    @objc public func actionFeedLine(_ lines: Swift.Int) -> Self
+    @objc public func actionPrintText(_ content: Swift.String) -> Self
+    @objc public func actionPrintLogo(_ parameter: StarIO10.StarXpandCommand.Printer.LogoParameter) -> Self
+    @objc public func actionPrintBarcode(_ parameter: StarIO10.StarXpandCommand.Printer.BarcodeParameter) -> Self
+    @objc public func actionPrintPDF417(_ parameter: StarIO10.StarXpandCommand.Printer.PDF417Parameter) -> Self
+    @objc public func actionPrintQRCode(_ parameter: StarIO10.StarXpandCommand.Printer.QRCodeParameter) -> Self
+    @objc public func actionPrintImage(_ parameter: StarIO10.StarXpandCommand.Printer.ImagePar

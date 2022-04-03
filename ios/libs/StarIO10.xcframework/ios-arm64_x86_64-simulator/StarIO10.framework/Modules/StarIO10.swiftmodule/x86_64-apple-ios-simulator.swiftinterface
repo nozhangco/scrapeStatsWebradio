@@ -782,4 +782,24 @@ extension StarIO10.StarXpandCommand {
     @objc public func actionPrintBarcode(_ parameter: StarIO10.StarXpandCommand.Printer.BarcodeParameter) -> Self
     @objc public func actionPrintPDF417(_ parameter: StarIO10.StarXpandCommand.Printer.PDF417Parameter) -> Self
     @objc public func actionPrintQRCode(_ parameter: StarIO10.StarXpandCommand.Printer.QRCodeParameter) -> Self
-    @objc public func actionPrintImage(_ parameter: StarIO10.StarXpandCommand.Printer.ImagePar
+    @objc public func actionPrintImage(_ parameter: StarIO10.StarXpandCommand.Printer.ImageParameter) -> Self
+    @objc public func add(_ builder: StarIO10.StarXpandCommand.PrinterBuilder) -> Self
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Buzzer {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandBuzzerDriveParameter) public class DriveParameter : ObjectiveC.NSObject {
+    @objc public var channel: StarIO10.StarXpandCommand.Buzzer.Channel {
+      @objc get
+    }
+    @objc public func setChannel(_ channel: StarIO10.StarXpandCommand.Buzzer.Channel) -> Self
+    @objc public var `repeat`: Swift.Int {
+      @objc get
+    }
+    @objc public func setRepeat(_ repeat: Swift.Int) -> Self
+    @objc public var onTime: Swift.Int {
+      @objc get
+    }
+    @objc public func setOnTime(_ onTime: Swift.Int) -> Self
+    @objc public var offTime:

@@ -766,4 +766,12 @@ extension StarIO10.StarXpandCommand {
     @objc public func styleMagnification(_ parameter: StarIO10.StarXpandCommand.MagnificationParameter) -> Self
     @objc public func styleCharacterSpace(_ width: Swift.Double) -> Self
     @objc public func styleLineSpace(_ height: Swift.Double) -> Self
-    @objc public func styleHorizontalPositionTo(_ position: Swift.
+    @objc public func styleHorizontalPositionTo(_ position: Swift.Double) -> Self
+    @objc public func styleHorizontalPositionBy(_ position: Swift.Double) -> Self
+    @objc public func styleHorizontalTabPositions(_ position: [Swift.Int]) -> Self
+    @objc public func styleInternationalCharacter(_ type: StarIO10.StarXpandCommand.Printer.InternationalCharacterType) -> Self
+    @objc public func styleSecondPriorityCharacterEncoding(_ type: StarIO10.StarXpandCommand.Printer.CharacterEncodingType) -> Self
+    public func styleCJKCharacterPriority(_ types: [StarIO10.StarXpandCommand.Printer.CJKCharacterType]) -> Self
+    @available(swift, obsoleted: 0.1)
+    @objc(styleCJKCharacterPriority:) public func styleCJKCharacterPriority(_ types: [Swift.Int]) -> Self
+    @objc public func actionCut(_ type: StarIO10.StarXpandCommand.Printer.CutType) ->

@@ -802,4 +802,36 @@ extension StarIO10.StarXpandCommand.Buzzer {
       @objc get
     }
     @objc public func setOnTime(_ onTime: Swift.Int) -> Self
-    @objc public var offTime:
+    @objc public var offTime: Swift.Int {
+      @objc get
+    }
+    @objc public func setOffTime(_ offTime: Swift.Int) -> Self
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objc(STARIO10StarXpandCommandPrinterInternationalCharacterType) public enum InternationalCharacterType : Swift.Int {
+    case usa
+    case france
+    case germany
+    case uk
+    case denmark
+    case sweden
+    case italy
+    case spain
+    case japan
+    case norway
+    case denmark2
+    case spain2
+    case latinAmerica
+    case korea
+    case ireland
+    case slovenia
+    case croatia
+    case china
+    case vietnam
+    case arabic
+    case legal
+    public init?(rawValue: Swift.Int)
+    public typealias

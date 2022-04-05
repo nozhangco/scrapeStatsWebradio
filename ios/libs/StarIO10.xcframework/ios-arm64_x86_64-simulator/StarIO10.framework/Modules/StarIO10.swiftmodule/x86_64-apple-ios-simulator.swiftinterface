@@ -834,4 +834,28 @@ extension StarIO10.StarXpandCommand.Printer {
     case arabic
     case legal
     public init?(rawValue: Swift.Int)
-    public typealias
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@objc(STARIO10StarDeviceDiscoveryManagerDelegate) public protocol StarDeviceDiscoveryManagerDelegate {
+  @objc(manager:didFindPrinter:) func manager(_ manager: StarIO10.StarDeviceDiscoveryManager, didFind printer: StarIO10.StarPrinter)
+  @objc func managerDidFinishDiscovery(_ manager: StarIO10.StarDeviceDiscoveryManager)
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objc(STARIO10StarXpandCommandPrinterBarcodeSymbology) public enum BarcodeSymbology : Swift.Int {
+    case upcE
+    case upcA
+    case jan8
+    case ean8
+    case jan13
+    case ean13
+    case code39
+    case itf
+    case code128
+    case code93
+    case nw7
+    public init?(rawValue: Swift.Int)
+    public typeal

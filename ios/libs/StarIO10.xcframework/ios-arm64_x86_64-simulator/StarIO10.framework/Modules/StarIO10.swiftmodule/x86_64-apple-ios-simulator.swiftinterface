@@ -858,4 +858,20 @@ extension StarIO10.StarXpandCommand.Printer {
     case code93
     case nw7
     public init?(rawValue: Swift.Int)
-    public typeal
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@objc(STARIO10ErrorCode) public enum StarIO10ErrorCode : Swift.Int, Swift.CaseIterable {
+  @objc(STARIO10ErrorCodeNone) case none = 0
+  @objc(STARIO10ErrorCodeDeviceHasError) case deviceHasError = 1000
+  @objc(STARIO10ErrorCodePrinterHoldingPaper) case printerHoldingPaper = 1001
+  @objc(STARIO10ErrorCodePrintingTimeout) case printingTimeout = 1002
+  @objc(STARIO10ErrorCodeBluetoothUnavailable) case bluetoothUnavailable = 2000
+  @objc(STARIO10ErrorCodeNetworkUnavailable) case networkUnavailable = 2001
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [StarIO10.StarIO10ErrorCode]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [StarIO10.StarIO1

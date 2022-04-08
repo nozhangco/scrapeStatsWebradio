@@ -874,4 +874,25 @@ extension StarIO10.StarXpandCommand.Printer {
   public init?(rawValue: Swift.Int)
   public typealias AllCases = [StarIO10.StarIO10ErrorCode]
   public typealias RawValue = Swift.Int
-  public static var allCases: [StarIO10.StarIO1
+  public static var allCases: [StarIO10.StarIO10ErrorCode] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension StarIO10.StarIO10ErrorCode : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@objcMembers @objc(STARIO10StarConnectionSettings) public class StarConnectionSettings : ObjectiveC.NSObject {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc public static let FIRST_FOUND_DEVICE: Swift.String
+  @objc public var interfaceType: StarIO10.InterfaceType
+  @objc public var identifier: Swift.String
+  @objc public var autoSwitchInterface: Swift.Bool
+  @objc public init(interfaceType: StarIO10.InterfaceType, identifier: Swift.String = FIRST_FOUND_DEVICE, autoSwitchInterface: Swift.Bool = false)
+  @objc dei

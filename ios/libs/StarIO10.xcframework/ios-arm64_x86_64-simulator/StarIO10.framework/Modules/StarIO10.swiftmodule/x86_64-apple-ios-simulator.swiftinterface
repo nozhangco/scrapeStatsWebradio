@@ -895,4 +895,30 @@ extension StarIO10.StarIO10ErrorCode : Swift.CustomStringConvertible {
   @objc public var identifier: Swift.String
   @objc public var autoSwitchInterface: Swift.Bool
   @objc public init(interfaceType: StarIO10.InterfaceType, identifier: Swift.String = FIRST_FOUND_DEVICE, autoSwitchInterface: Swift.Bool = false)
-  @objc dei
+  @objc deinit
+}
+extension StarIO10.StarXpandCommand.MelodySpeaker {
+  @objc(STARIO10StarXpandCommandMelodySpeakerSoundStorageArea) public enum SoundStorageArea : Swift.Int {
+    case area1
+    case area2
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objc(STARIO10StarXpandCommandPrinterBarcodeBarRatioLevel) public enum BarcodeBarRatioLevel : Swift.Int {
+    case levelPlus1
+    case level0
+    case levelMinus1
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+extension StarIO10.StarXpandCommand {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommand

@@ -929,4 +929,19 @@ extension StarIO10.StarXpandCommand {
     @objc public func settingPrintableArea(_ width: Swift.Double) -> Self
     @objc public func addPrinter(_ builder: StarIO10.StarXpandCommand.PrinterBuilder) -> Self
     @objc public func addDrawer(_ builder: StarIO10.StarXpandCommand.DrawerBuilder) -> Self
-    @objc public func a
+    @objc public func addBuzzer(_ builder: StarIO10.StarXpandCommand.BuzzerBuilder) -> Self
+    @objc public func addMelodySpeaker(_ builder: StarIO10.StarXpandCommand.MelodySpeakerBuilder) -> Self
+    @objc public func addDisplay(_ builder: StarIO10.StarXpandCommand.DisplayBuilder) -> Self
+    @objc public func addRaw(_ content: Foundation.Data) -> Self
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objcMembers @objc(STARIO10StarXpandCommandPrinterHoldPrintParameter) public class HoldPrintParameter : ObjectiveC.NSObject {
+    @objc final public let enable: Swift.Bool
+    @objc public init(enable: Swift.Bool)
+    @objc deinit
+  }
+}
+@objc(STARIO10InterfaceType) public enum InterfaceType : Swift.Int, Swift.CustomStringConvertib

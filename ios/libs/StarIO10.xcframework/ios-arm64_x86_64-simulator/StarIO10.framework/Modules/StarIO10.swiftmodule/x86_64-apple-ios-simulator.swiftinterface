@@ -944,4 +944,21 @@ extension StarIO10.StarXpandCommand.Printer {
     @objc deinit
   }
 }
-@objc(STARIO10InterfaceType) public enum InterfaceType : Swift.Int, Swift.CustomStringConvertib
+@objc(STARIO10InterfaceType) public enum InterfaceType : Swift.Int, Swift.CustomStringConvertible {
+  @objc(STARIO10InterfaceTypeUnknown) case unknown
+  @objc(STARIO10InterfaceTypeUSB) case usb
+  @objc(STARIO10InterfaceTypeBluetooth) case bluetooth
+  @objc(STARIO10InterfaceTypeBluetoothLE) case bluetoothLE
+  @objc(STARIO10InterfaceTypeLAN) case lan
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension StarIO10.StarXpandCommand {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandBuzzerBuilder) public class BuzzerBuilder : ObjectiveC.NSObject {
+    @objc public func actionDrive(_ parameter: StarIO10.StarXpandCommand.B

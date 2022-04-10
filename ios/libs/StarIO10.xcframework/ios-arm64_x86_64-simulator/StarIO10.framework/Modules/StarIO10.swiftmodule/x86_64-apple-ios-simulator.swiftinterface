@@ -921,4 +921,12 @@ extension StarIO10.StarXpandCommand.Printer {
   }
 }
 extension StarIO10.StarXpandCommand {
-  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommand
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandDocumentBuilder) public class DocumentBuilder : ObjectiveC.NSObject {
+    @objc public func settingTopMargin(_ height: Swift.Double) -> Self
+    @objc public func settingBlackMark(_ parameter: StarIO10.StarXpandCommand.Printer.BlackMarkParameter) -> Self
+    @objc public func settingLabel(_ parameter: StarIO10.StarXpandCommand.Printer.LabelParameter) -> Self
+    @objc public func settingHoldPrint(_ parameter: StarIO10.StarXpandCommand.Printer.HoldPrintParameter) -> Self
+    @objc public func settingPrintableArea(_ width: Swift.Double) -> Self
+    @objc public func addPrinter(_ builder: StarIO10.StarXpandCommand.PrinterBuilder) -> Self
+    @objc public func addDrawer(_ builder: StarIO10.StarXpandCommand.DrawerBuilder) -> Self
+    @objc public func a

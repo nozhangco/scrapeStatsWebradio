@@ -961,4 +961,23 @@ extension StarIO10.StarXpandCommand.Printer {
 }
 extension StarIO10.StarXpandCommand {
   @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandBuzzerBuilder) public class BuzzerBuilder : ObjectiveC.NSObject {
-    @objc public func actionDrive(_ parameter: StarIO10.StarXpandCommand.B
+    @objc public func actionDrive(_ parameter: StarIO10.StarXpandCommand.Buzzer.DriveParameter) -> Self
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+@_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommand) public class StarXpandCommand : ObjectiveC.NSObject {
+  @objc @_inheritsConvenienceInitializers public class Printer : ObjectiveC.NSObject {
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc @_inheritsConvenienceInitializers public class Buzzer : ObjectiveC.NSObject {
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc @_inheritsConvenienceInitializers public class Drawer : ObjectiveC.NSObject {
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc @_inheritsConvenienceInitializers public class MelodySpeaker : ObjectiveC.NSObject {
+  

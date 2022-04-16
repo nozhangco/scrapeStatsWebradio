@@ -980,4 +980,27 @@ extension StarIO10.StarXpandCommand {
     @objc deinit
   }
   @objc @_inheritsConvenienceInitializers public class MelodySpeaker : ObjectiveC.NSObject {
-  
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc @_inheritsConvenienceInitializers public class Presenter : ObjectiveC.NSObject {
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc @_inheritsConvenienceInitializers public class Display : ObjectiveC.NSObject {
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc @_inheritsConvenienceInitializers public class Bezel : ObjectiveC.NSObject {
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objc(STARIO10StarXpandCommandPrinterCutType) public enum CutType : Swift.Int {
+    case full
+    case partial
+    case fullDirect
+    case partialDirect

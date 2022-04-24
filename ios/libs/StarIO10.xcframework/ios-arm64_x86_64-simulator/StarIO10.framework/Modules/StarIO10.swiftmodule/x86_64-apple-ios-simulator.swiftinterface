@@ -1021,4 +1021,22 @@ extension StarIO10.StarXpandCommand {
   }
 }
 extension StarIO10.StarXpandCommand.Printer {
-  @objc(STARIO10StarXpandCommandPrinterCJKCharacterType) public enum CJKCharacterType : Swif
+  @objc(STARIO10StarXpandCommandPrinterCJKCharacterType) public enum CJKCharacterType : Swift.Int {
+    case japanese
+    case simplifiedChinese
+    case traditionalChinese
+    case korean
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+extension StarIO10.StarXpandCommand {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandPresenterSettingBuilder) public class PresenterSettingBuilder : ObjectiveC.NSObject {
+    @objc public func settingMode(_ parameter: StarIO10.StarXpandCommand.Presenter.ModeParameter) -> Self
+    @objc public func settingLEDAutomaticBlink(parameter: StarIO10.StarXpandCommand.Presenter.LEDAutomaticBlinkParameter) -> Self
+    @objc override dynamic public init()
+    @objc deinit
+  

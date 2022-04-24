@@ -1004,3 +1004,21 @@ extension StarIO10.StarXpandCommand.Printer {
     case partial
     case fullDirect
     case partialDirect
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+extension StarIO10.StarXpandCommand {
+  @_inheritsConvenienceInitializers @objcMembers @objc(STARIO10StarXpandCommandBuilder) public class StarXpandCommandBuilder : ObjectiveC.NSObject {
+    @objc public var preSetting: StarIO10.StarXpandCommand.PreSettingBuilder?
+    @objc public func addDocument(_ builder: StarIO10.StarXpandCommand.DocumentBuilder) -> Self
+    @objc public func getCommands() -> Swift.String
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+extension StarIO10.StarXpandCommand.Printer {
+  @objc(STARIO10StarXpandCommandPrinterCJKCharacterType) public enum CJKCharacterType : Swif

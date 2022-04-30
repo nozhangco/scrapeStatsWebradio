@@ -1039,4 +1039,16 @@ extension StarIO10.StarXpandCommand {
     @objc public func settingLEDAutomaticBlink(parameter: StarIO10.StarXpandCommand.Presenter.LEDAutomaticBlinkParameter) -> Self
     @objc override dynamic public init()
     @objc deinit
-  
+  }
+}
+extension StarIO10.StarPrinterEmulation : Swift.Equatable {}
+extension StarIO10.StarPrinterEmulation : Swift.Hashable {}
+extension StarIO10.StarPrinterEmulation : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Display.CursorState : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Display.CursorState : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Display.CursorState : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Bezel.LEDType : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Bezel.LEDType : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Bezel.LEDType : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Display.Contrast : Swift.Equatable {}
+extension StarIO10.StarXpandCo

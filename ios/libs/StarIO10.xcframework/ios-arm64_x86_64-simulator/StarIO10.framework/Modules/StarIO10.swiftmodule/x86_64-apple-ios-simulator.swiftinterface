@@ -1061,4 +1061,13 @@ extension StarIO10.StarXpandCommand.Buzzer.Channel : Swift.Hashable {}
 extension StarIO10.StarXpandCommand.Buzzer.Channel : Swift.RawRepresentable {}
 extension StarIO10.StarXpandCommand.Display.CharacterEncodingType : Swift.Equatable {}
 extension StarIO10.StarXpandCommand.Display.CharacterEncodingType : Swift.Hashable {}
-ex
+extension StarIO10.StarXpandCommand.Display.CharacterEncodingType : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Printer.FontType : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Printer.FontType : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Printer.FontType : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Printer.Alignment : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Printer.Alignment : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Printer.Alignment : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Printer.QRCodeLevel : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Printer.QRCodeLevel : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Printer.QRCodeLevel : Swi

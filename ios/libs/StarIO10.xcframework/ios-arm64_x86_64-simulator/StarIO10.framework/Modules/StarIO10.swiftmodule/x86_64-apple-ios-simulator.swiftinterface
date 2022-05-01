@@ -1051,4 +1051,14 @@ extension StarIO10.StarXpandCommand.Bezel.LEDType : Swift.Equatable {}
 extension StarIO10.StarXpandCommand.Bezel.LEDType : Swift.Hashable {}
 extension StarIO10.StarXpandCommand.Bezel.LEDType : Swift.RawRepresentable {}
 extension StarIO10.StarXpandCommand.Display.Contrast : Swift.Equatable {}
-extension StarIO10.StarXpandCo
+extension StarIO10.StarXpandCommand.Display.Contrast : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Display.Contrast : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Drawer.Channel : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Drawer.Channel : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Drawer.Channel : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Buzzer.Channel : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Buzzer.Channel : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Buzzer.Channel : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Display.CharacterEncodingType : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Display.CharacterEncodingType : Swift.Hashable {}
+ex

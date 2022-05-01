@@ -1070,4 +1070,14 @@ extension StarIO10.StarXpandCommand.Printer.Alignment : Swift.Hashable {}
 extension StarIO10.StarXpandCommand.Printer.Alignment : Swift.RawRepresentable {}
 extension StarIO10.StarXpandCommand.Printer.QRCodeLevel : Swift.Equatable {}
 extension StarIO10.StarXpandCommand.Printer.QRCodeLevel : Swift.Hashable {}
-extension StarIO10.StarXpandCommand.Printer.QRCodeLevel : Swi
+extension StarIO10.StarXpandCommand.Printer.QRCodeLevel : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Presenter.LEDType : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Presenter.LEDType : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Presenter.LEDType : Swift.RawRepresentable {}
+extension StarIO10.StarPrinterModel : Swift.Equatable {}
+extension StarIO10.StarPrinterModel : Swift.Hashable {}
+extension StarIO10.StarPrinterModel : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Printer.CharacterEncodingType : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Printer.CharacterEncodingType : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Printer.CharacterEncodingType : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Printer.BlackMarkPosition

@@ -1098,4 +1098,14 @@ extension StarIO10.StarXpandCommand.Printer.InternationalCharacterType : Swift.R
 extension StarIO10.StarXpandCommand.Printer.BarcodeSymbology : Swift.Equatable {}
 extension StarIO10.StarXpandCommand.Printer.BarcodeSymbology : Swift.Hashable {}
 extension StarIO10.StarXpandCommand.Printer.BarcodeSymbology : Swift.RawRepresentable {}
-extension StarIO10.StarIO10Erro
+extension StarIO10.StarIO10ErrorCode : Swift.Equatable {}
+extension StarIO10.StarIO10ErrorCode : Swift.Hashable {}
+extension StarIO10.StarIO10ErrorCode : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.MelodySpeaker.SoundStorageArea : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.MelodySpeaker.SoundStorageArea : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.MelodySpeaker.SoundStorageArea : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Printer.BarcodeBarRatioLevel : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Printer.BarcodeBarRatioLevel : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Printer.BarcodeBarRatioLevel : Swift.RawRepresentable {}
+extension StarIO10.InterfaceType : Swift.Equatable {}
+extension StarIO10.Int

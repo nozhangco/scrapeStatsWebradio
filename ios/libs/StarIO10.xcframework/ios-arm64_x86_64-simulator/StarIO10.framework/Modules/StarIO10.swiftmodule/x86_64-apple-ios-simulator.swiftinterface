@@ -1089,4 +1089,13 @@ extension StarIO10.StarXpandCommand.Printer.PDF417Level : Swift.RawRepresentable
 extension StarIO10.StarXpandCommand.Display.InternationalCharacterType : Swift.Equatable {}
 extension StarIO10.StarXpandCommand.Display.InternationalCharacterType : Swift.Hashable {}
 extension StarIO10.StarXpandCommand.Display.InternationalCharacterType : Swift.RawRepresentable {}
-extension StarIO10.StarXpandCommand.Printer.QRCodeModel 
+extension StarIO10.StarXpandCommand.Printer.QRCodeModel : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Printer.QRCodeModel : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Printer.QRCodeModel : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Printer.InternationalCharacterType : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Printer.InternationalCharacterType : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Printer.InternationalCharacterType : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Printer.BarcodeSymbology : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Printer.BarcodeSymbology : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Printer.BarcodeSymbology : Swift.RawRepresentable {}
+extension StarIO10.StarIO10Erro

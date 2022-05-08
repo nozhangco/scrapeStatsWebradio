@@ -1108,4 +1108,11 @@ extension StarIO10.StarXpandCommand.Printer.BarcodeBarRatioLevel : Swift.Equatab
 extension StarIO10.StarXpandCommand.Printer.BarcodeBarRatioLevel : Swift.Hashable {}
 extension StarIO10.StarXpandCommand.Printer.BarcodeBarRatioLevel : Swift.RawRepresentable {}
 extension StarIO10.InterfaceType : Swift.Equatable {}
-extension StarIO10.Int
+extension StarIO10.InterfaceType : Swift.Hashable {}
+extension StarIO10.InterfaceType : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Printer.CutType : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Printer.CutType : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Printer.CutType : Swift.RawRepresentable {}
+extension StarIO10.StarXpandCommand.Printer.CJKCharacterType : Swift.Equatable {}
+extension StarIO10.StarXpandCommand.Printer.CJKCharacterType : Swift.Hashable {}
+extension StarIO10.StarXpandCommand.Printer.CJKCharacterType : Swift.RawRepresentable {}

@@ -1,4 +1,29 @@
 {
   "name": "react-native-star-io10",
   "version": "1.2.0",
-  "description": "
+  "description": "react-native-star-io10 is a library for supporting application development for Star Micronics devices.",
+  "main": "index.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/star-micronics/react-native-star-io10.git",
+    "baseUrl": "https://github.com/star-micronics/react-native-star-io10"
+  },
+  "keywords": [
+    "typescript",
+    "react-native",
+    "printer",
+    "pos",
+    "receipt-printer",
+    "star-micronics"
+  ],
+  "author": {
+    "name": "Star Micronics Co., Ltd.",
+    "email": "sp_tsales@star-m.jp"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "licenseFilename": "LICENSE",
+  "readmeFilename"

@@ -18,4 +18,13 @@ export class DisplayDelegate {
         return this._onConnected;
     }
 
-    set onDi
+    set onDisconnected(value: () => void) {
+        this._onDisconnected = value;
+
+        this._onEventSet();
+    }
+
+    get onDisconnected(): () => void {
+        return this._onDisconnected;
+    }
+}

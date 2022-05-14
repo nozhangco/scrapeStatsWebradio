@@ -23,4 +23,12 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = { 
     'EXCLUDED_ARCHS[sdk=iphoneos*]' => 'x86_64',
     'EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*]' => '$(SRCROOT)/../../node_modules/react-native-star-io10/ios/libs/StarIO10.xcframework/ios-arm64_x86_64-simulator/*.*',
-    'FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]' => '$(SRCROOT)/libs/*
+    'FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]' => '$(SRCROOT)/libs/** $(SRCROOT)/../../node_modules/react-native-star-io10/ios/libs $(SRCROOT)/../../node_modules/react-native-star-io10/ios/libs/StarIO10.xcframework/ios-arm64',
+  }
+
+  # ...
+  # s.dependency "..."
+
+  s.vendored_frameworks = 'ios/libs/StarIO10.xcframework'
+end
+

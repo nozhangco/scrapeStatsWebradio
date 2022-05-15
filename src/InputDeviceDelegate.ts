@@ -36,4 +36,6 @@ export class InputDeviceDelegate {
     }
 
     get onDataReceived(): (data: Array<number>) => void {
-        return this._onDat
+        return this._onDataReceived;
+    }
+}

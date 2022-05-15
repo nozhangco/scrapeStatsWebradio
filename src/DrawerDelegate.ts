@@ -14,4 +14,6 @@ export class DrawerDelegate {
     }
 
     get onOpenCloseSignalSwitched(): (openCloseSignal: boolean) => void {
-        return t
+        return this._onOpenCloseSignalSwitched;
+    }
+}

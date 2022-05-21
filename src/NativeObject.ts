@@ -20,4 +20,22 @@ export abstract class NativeObject {
     protected async _disposeNativeObject(): Promise<void> {
         await this._lock.lock();
 
-     
+        if (this._nativeObject != null) {
+            await this._disposeNativeObjectImpl(this._nativeObject);
+            this._nativeObject = undefined;
+        }
+
+        this._lock.unlock();
+    }
+
+    protected static _getEventParams(params: any): any {
+        var result;
+        if (params instanceof Array) {
+            result = params[0];
+        } else {
+            result = params;
+        }
+
+        return result
+    }
+}

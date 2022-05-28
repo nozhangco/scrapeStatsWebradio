@@ -39,4 +39,39 @@ export class PrinterDelegate {
         this._onEventSet();
     }
 
-    get onPaperReady(): () => 
+    get onPaperReady(): () => void {
+        return this._onPaperReady;
+    }
+
+    set onPaperNearEmpty(value: () => void) {
+        this._onPaperNearEmpty = value;
+
+        this._onEventSet();
+    }
+
+    get onPaperNearEmpty(): () => void {
+        return this._onPaperNearEmpty;
+    }
+
+    set onPaperEmpty(value: () => void) {
+        this._onPaperEmpty = value;
+
+        this._onEventSet();
+    }
+
+    get onPaperEmpty(): () => void {
+        return this._onPaperEmpty;
+    }
+
+    set onCoverOpened(value: () => void) {
+        this._onCoverOpened = value;
+
+        this._onEventSet();
+    }
+
+    get onCoverOpened(): () => void {
+        return this._onCoverOpened;
+    }
+
+    set onCoverClosed(value: () => void) {
+        this._onCoverClosed = va

@@ -74,4 +74,12 @@ export class PrinterDelegate {
     }
 
     set onCoverClosed(value: () => void) {
-        this._onCoverClosed = va
+        this._onCoverClosed = value;
+
+        this._onEventSet();
+    }
+
+    get onCoverClosed(): () => void {
+        return this._onCoverClosed;
+    }
+}

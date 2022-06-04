@@ -13,4 +13,6 @@ export class StarDeviceDiscoveryManagerFactory {
             throw error;
         });
 
-        return new StarDeviceDiscoveryManager(interfaceTypes, nativeOb
+        return new StarDeviceDiscoveryManager(interfaceTypes, nativeObject);
+    }
+}

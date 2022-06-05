@@ -25,3 +25,26 @@ export class StarIO10ErrorFactory {
         }
         catch(_) {
             error = new StarIO10UnknownError("Failed to create Error.");
+        }
+        finally {
+            await NativeModules.StarIO10ErrorWrapper.dispose(identifier);
+        }
+
+        return error;
+    }
+
+    private static async _buildObject(identifier: String, type: string, message: string, errorCode: number): Promise<StarIO10Error> {
+        var error;
+
+        switch (type) {
+            case 'Argument':
+                error = new StarIO10ArgumentError(message, errorCode);
+                break;
+            case 'BadResponse':
+                error = new StarIO10BadResponseError(message, errorCode);
+                break;
+            case 'Communication':
+                error = new StarIO10CommunicationError(message, errorCode);
+                break;
+            case 'IllegalDeviceState':
+                error = new StarIO10Ill

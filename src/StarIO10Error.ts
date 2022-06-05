@@ -11,4 +11,6 @@ export class StarIO10Error extends Error {
         super(message);
 
         this.name = this.constructor.name;
-        this.
+        this._errorCode = errorCode;
+    }
+}

@@ -47,4 +47,22 @@ export class StarIO10ErrorFactory {
                 error = new StarIO10CommunicationError(message, errorCode);
                 break;
             case 'IllegalDeviceState':
-                error = new StarIO10Ill
+                error = new StarIO10IllegalDeviceStateError(message, errorCode);
+                break;
+            case 'InUse':
+                error = new StarIO10InUseError(message, errorCode);
+                break;
+            case 'InvalidOperation':
+                error = new StarIO10InvalidOperationError(message, errorCode);
+                break;
+            case 'NotFound':
+                error = new StarIO10NotFoundError(message, errorCode);
+                break;
+            case 'Unknown':
+                error = new StarIO10UnknownError(message, errorCode);
+                break;
+            case 'Unprintable':
+                var status: StarPrinterStatus | undefined;
+
+                try {
+                    var nativeStatus = await NativeModule

@@ -1,0 +1,1 @@
+import { StarIO10Error } from './StarIO10Erro

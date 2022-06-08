@@ -65,4 +65,23 @@ export class StarIO10ErrorFactory {
                 var status: StarPrinterStatus | undefined;
 
                 try {
-                    var nativeStatus = await NativeModule
+                    var nativeStatus = await NativeModules.StarIO10ErrorWrapper.getStatus(identifier);
+                    status = await StarPrinterStatusFactory.create(nativeStatus);
+                }
+                catch(_) {
+                    status = undefined;
+                }
+
+                error = new StarIO10UnprintableError(message, errorCode, status);
+                break;
+            case 'UnsupportedModel':
+                error = new StarIO10UnsupportedModelError(message, errorCode);
+                break;
+            default:
+                error = new StarIO10UnknownError("Failed to create Error.");
+                break;
+        }
+
+        return error;
+    }
+}

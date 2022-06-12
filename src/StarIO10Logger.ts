@@ -33,4 +33,20 @@ export class StarIO10Logger extends NativeObject {
     }
 
     async stop(): Promise<void> {
-        await this._initNativeO
+        await this._initNativeObject();
+
+        await NativeModules.StarIO10LoggerWrapper.stop()
+        .catch(async (nativeError: any) => {
+            var error = await StarIO10ErrorFactory.create(nativeError.code);
+            throw error;
+        });
+    }
+
+    protected async _initNativeObjectImpl(): Promise<string> {
+        await NativeModules.StarIO10LoggerWrapper.appendHeader(`- React Native Wrapper Version: ${version}`)
+        await this._sleep(100);
+        return `dammy`;
+    }
+
+    protected async _disposeNativeObjectImpl(nativeObject: string): Promise<void> {}
+}

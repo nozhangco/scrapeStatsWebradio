@@ -25,4 +25,11 @@ export declare class StarPrinter extends NativeObject {
     get displayDelegate(): DisplayDelegate;
     constructor(connectionSettings: StarConnectionSettings);
     open(): Promise<void>;
-    print(command
+    print(command: string): Promise<void>;
+    printRawData(data: Array<number>): Promise<void>;
+    getStatus(): Promise<StarPrinterStatus>;
+    close(): Promise<void>;
+    dispose(): Promise<void>;
+    protected _initNativeObjectImpl(): Promise<string>;
+    protected _disposeNativeObjectImpl(nativeObject: string): Promise<void>;
+}

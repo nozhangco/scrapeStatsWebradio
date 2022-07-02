@@ -20,4 +20,8 @@ export enum StarPrinterModel {
     SM_L300 = 'SM_L300',
     BSC10 = 'BSC10',
     TSP043 = 'TSP043',
-    SP700 
+    SP700 = 'SP700',
+    TUP500 = 'TUP500',
+    SK1_2xx = 'SK1_2xx',
+    SK1_3xx = 'SK1_3xx'
+}

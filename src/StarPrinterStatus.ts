@@ -26,4 +26,7 @@ export class StarPrinterStatus {
         return this._paperNearEmpty;
     }
 
- 
+    get reserved(): ReadonlyMap<string, any | undefined> {
+        return this._reserved;
+    }
+}

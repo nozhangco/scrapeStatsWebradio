@@ -3,3 +3,5 @@ export declare enum CharacterEncodingType {
     SimplifiedChinese = "SimplifiedChinese",
     TraditionalChinese = "TraditionalChinese",
     Korean = "Korean",
+    CodePage = "CodePage"
+}

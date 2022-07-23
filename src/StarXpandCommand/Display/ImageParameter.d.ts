@@ -5,3 +5,7 @@ export declare class ImageParameter {
     get source(): string;
     get effectDiffusion(): boolean;
     get threshold(): number;
+    constructor(source: string);
+    setEffectDiffusion(effectDiffusion: boolean): ImageParameter;
+    setThreshold(threshold: number): ImageParameter;
+}

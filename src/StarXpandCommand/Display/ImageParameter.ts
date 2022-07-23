@@ -26,4 +26,8 @@ export class ImageParameter {
     }
 
     setThreshold(threshold: number): ImageParameter {
-        this.
+        this._threshold = threshold;
+
+        return this;
+    }
+}

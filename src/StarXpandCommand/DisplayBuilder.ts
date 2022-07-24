@@ -21,4 +21,25 @@ export class DisplayBuilder extends BaseStarXpandCommandBuilder {
             await NativeModules.DisplayBuilderWrapper.styleCharacterEncoding(this._nativeObject, type)
             .catch(async (nativeError: any) => {
                 var error = await StarIO10ErrorFactory.create(nativeError.code);
-                t
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    styleCursorPositionTo(parameter: StarXpandCommand.Display.PositionParameter): DisplayBuilder {
+        this._addAction(async() => {
+            await NativeModules.DisplayBuilderWrapper.styleCursorPositionTo(this._nativeObject, parameter.x, parameter.y)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    actionClearLine(): DisplayBuilder {
+        this._addAction(async() => {
+            await NativeModules.DisplayBuilderWrapper.actionClearLine(this._native

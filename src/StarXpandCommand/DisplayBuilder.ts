@@ -42,4 +42,28 @@ export class DisplayBuilder extends BaseStarXpandCommandBuilder {
 
     actionClearLine(): DisplayBuilder {
         this._addAction(async() => {
-            await NativeModules.DisplayBuilderWrapper.actionClearLine(this._native
+            await NativeModules.DisplayBuilderWrapper.actionClearLine(this._nativeObject)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    actionClearAll(): DisplayBuilder {
+        this._addAction(async() => {
+            await NativeModules.DisplayBuilderWrapper.actionClearAll(this._nativeObject)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    actionSetBackLightState(on: boolean): DisplayBuilder {
+        this._addAction(async() => {
+            await NativeModules.DisplayBuilderWrapp

@@ -88,4 +88,23 @@ export class DisplayBuilder extends BaseStarXpandCommandBuilder {
         return this;
     }
 
-    actionSetContrast(value: StarXpandCommand.Display.Contrast
+    actionSetContrast(value: StarXpandCommand.Display.Contrast): DisplayBuilder {
+        this._addAction(async() => {
+            await NativeModules.DisplayBuilderWrapper.actionSetContrast(this._nativeObject, value)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    actionShowText(content: string): DisplayBuilder {
+        this._addAction(async() => {
+            await NativeModules.DisplayBuilderWrapper.actionShowText(this._nativeObject, content)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+       

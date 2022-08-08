@@ -66,4 +66,26 @@ export class DisplayBuilder extends BaseStarXpandCommandBuilder {
 
     actionSetBackLightState(on: boolean): DisplayBuilder {
         this._addAction(async() => {
-            await NativeModules.DisplayBuilderWrapp
+            await NativeModules.DisplayBuilderWrapper.actionSetBackLightState(this._nativeObject, on)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    actionSetCursorState(state: StarXpandCommand.Display.CursorState): DisplayBuilder {
+        this._addAction(async() => {
+            await NativeModules.DisplayBuilderWrapper.actionSetCursorState(this._nativeObject, state)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    actionSetContrast(value: StarXpandCommand.Display.Contrast

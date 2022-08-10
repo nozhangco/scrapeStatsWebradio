@@ -107,4 +107,25 @@ export class DisplayBuilder extends BaseStarXpandCommandBuilder {
                 var error = await StarIO10ErrorFactory.create(nativeError.code);
                 throw error;
             });
-       
+        });
+
+        return this;
+    }
+
+    actionShowImage(parameter: StarXpandCommand.Display.ImageParameter): DisplayBuilder {
+        this._addAction(async() => {
+            await NativeModules.DisplayBuilderWrapper.actionShowImage(this._nativeObject, parameter.source, parameter.effectDiffusion, parameter.threshold)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    protected async _initNativeObjectImpl(): Promise<string> {
+        return await NativeModules.DisplayBuilderWrapper.init();
+    }
+
+    protected async _disposeNativeObjectImpl(nativeObject: string): Promis

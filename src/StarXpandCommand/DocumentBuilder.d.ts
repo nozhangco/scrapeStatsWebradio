@@ -7,4 +7,11 @@ export declare class DocumentBuilder extends BaseStarXpandCommandBuilder {
     settingHoldPrint(parameter: StarXpandCommand.Printer.HoldPrintParameter): DocumentBuilder;
     settingPrintableArea(width: number): DocumentBuilder;
     addPrinter(builder: StarXpandCommand.PrinterBuilder): DocumentBuilder;
-    addDrawer(builder: StarX
+    addDrawer(builder: StarXpandCommand.DrawerBuilder): DocumentBuilder;
+    addBuzzer(builder: StarXpandCommand.BuzzerBuilder): DocumentBuilder;
+    addMelodySpeaker(builder: StarXpandCommand.MelodySpeakerBuilder): DocumentBuilder;
+    addDisplay(builder: StarXpandCommand.DisplayBuilder): DocumentBuilder;
+    addRaw(content: Array<number>): DocumentBuilder;
+    protected _initNativeObjectImpl(): Promise<string>;
+    protected _disposeNativeObjectImpl(nativeObject: string): Promise<void>;
+}

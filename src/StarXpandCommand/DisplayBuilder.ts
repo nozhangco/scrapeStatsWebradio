@@ -128,4 +128,7 @@ export class DisplayBuilder extends BaseStarXpandCommandBuilder {
         return await NativeModules.DisplayBuilderWrapper.init();
     }
 
-    protected async _disposeNativeObjectImpl(nativeObject: string): Promis
+    protected async _disposeNativeObjectImpl(nativeObject: string): Promise<void> {
+        await NativeModules.DisplayBuilderWrapper.dispose(nativeObject);
+    }
+}

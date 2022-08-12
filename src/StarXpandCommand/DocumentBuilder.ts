@@ -64,4 +64,23 @@ export class DocumentBuilder extends BaseStarXpandCommandBuilder {
         return this;
     }
 
-    addPrinter(builder: 
+    addPrinter(builder: StarXpandCommand.PrinterBuilder): DocumentBuilder {
+        this._addChild(builder);
+
+        this._addAction(async() => {
+            await NativeModules.DocumentBuilderWrapper.addPrinter(this._nativeObject, builder._nativeObject)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    addDrawer(builder: StarXpandCommand.DrawerBuilder): DocumentBuilder {
+        this._addChild(builder);
+
+        this._addAction(async() => {
+            await NativeModules.DocumentBuilderWrapper.addDrawer(this._nativeObject, builder._nativeObject)
+            .catch(async (nativeError: any) => {

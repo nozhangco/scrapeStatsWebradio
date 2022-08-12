@@ -42,4 +42,26 @@ export class DocumentBuilder extends BaseStarXpandCommandBuilder {
 
     settingHoldPrint(parameter: StarXpandCommand.Printer.HoldPrintParameter): DocumentBuilder {
         this._addAction(async() => {
-  
+            await NativeModules.DocumentBuilderWrapper.settingHoldPrint(this._nativeObject, parameter.enable)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    settingPrintableArea(width: number): DocumentBuilder {
+        this._addAction(async() => {
+            await NativeModules.DocumentBuilderWrapper.settingPrintableArea(this._nativeObject, width)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    addPrinter(builder: 

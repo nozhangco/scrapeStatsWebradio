@@ -109,4 +109,23 @@ export class DocumentBuilder extends BaseStarXpandCommandBuilder {
     addMelodySpeaker(builder: StarXpandCommand.MelodySpeakerBuilder): DocumentBuilder {
         this._addChild(builder);
 
-        this._addAction(async() =
+        this._addAction(async() => {
+            await NativeModules.DocumentBuilderWrapper.addMelodySpeaker(this._nativeObject, builder._nativeObject)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    addDisplay(builder: StarXpandCommand.DisplayBuilder): DocumentBuilder {
+        this._addChild(builder);
+
+        this._addAction(async() => {
+            await NativeModules.DocumentBuilderWrapper.addDisplay(this._nativeObject, builder._nativeObject)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            })

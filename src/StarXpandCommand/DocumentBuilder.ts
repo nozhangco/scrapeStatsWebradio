@@ -128,4 +128,29 @@ export class DocumentBuilder extends BaseStarXpandCommandBuilder {
             .catch(async (nativeError: any) => {
                 var error = await StarIO10ErrorFactory.create(nativeError.code);
                 throw error;
-            })
+            });
+        });
+
+        return this;
+    }
+
+    addRaw(content: Array<number>): DocumentBuilder {
+        this._addAction(async() => {
+            await NativeModules.DocumentBuilderWrapper.addRaw(this._nativeObject, content)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    protected async _initNativeObjectImpl(): Promise<string> {
+        return await NativeModules.DocumentBuilderWrapper.init();
+    }
+
+    protected async _disposeNativeObjectImpl(nativeObject: string): Promise<void> {
+        await NativeModules.DocumentBuilderWrapper.dispose(nativeObject);
+    }
+}

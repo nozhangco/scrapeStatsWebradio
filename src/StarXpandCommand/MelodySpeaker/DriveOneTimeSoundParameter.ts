@@ -10,4 +10,13 @@ export class DriveOneTimeSoundParameter {
         return this._volume;
     }
 
- 
+    constructor(source: string) {
+        this._source = source;
+    }
+
+    setVolume(volume: number): DriveOneTimeSoundParameter {
+        this._volume = volume;
+
+        return this;
+    }
+}

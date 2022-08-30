@@ -36,4 +36,7 @@ export class PreSettingBuilder extends BaseStarXpandCommandBuilder {
         return await NativeModules.PreSettingBuilderWrapper.init();
     }
 
-    protected async _disposeNativeObjectImpl(nativeObject: string): Promise<void
+    protected async _disposeNativeObjectImpl(nativeObject: string): Promise<void> {
+        await NativeModules.PreSettingBuilderWrapper.dispose(nativeObject);
+    }
+}

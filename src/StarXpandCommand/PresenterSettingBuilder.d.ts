@@ -4,4 +4,5 @@ export declare class PresenterSettingBuilder extends BaseStarXpandCommandBuilder
     settingMode(parameter: StarXpandCommand.Presenter.ModeParameter): PresenterSettingBuilder;
     settingLedAutomaticBlink(parameter: StarXpandCommand.Presenter.LedAutomaticBlinkParameter): PresenterSettingBuilder;
     protected _initNativeObjectImpl(): Promise<string>;
-    protected _disposeNativeObjectImpl(nativeObject: stri
+    protected _disposeNativeObjectImpl(nativeObject: string): Promise<void>;
+}

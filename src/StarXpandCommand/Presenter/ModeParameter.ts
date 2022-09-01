@@ -39,4 +39,8 @@ export class ModeParameter {
     }
 
     setHoldTime(holdTime: number): ModeParameter {
-        this._holdTime = holdTim
+        this._holdTime = holdTime;
+
+        return this;
+    }
+}

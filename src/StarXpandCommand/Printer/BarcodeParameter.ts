@@ -42,3 +42,23 @@ export class BarcodeParameter {
         this._printHri = printHri;
 
         return this;
+    }
+
+    setBarDots(barDots: number): BarcodeParameter {
+        this._barDots = barDots;
+
+        return this;
+    }
+    
+    setBarRatioLevel(barRatioLevel: BarcodeBarRatioLevel): BarcodeParameter {
+        this._barRatioLevel = barRatioLevel;
+
+        return this;
+    }
+
+    setHeight(height: number): BarcodeParameter {
+        this._height = height;
+
+        return this;
+    }
+}

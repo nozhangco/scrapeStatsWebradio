@@ -21,4 +21,6 @@ export class BlackMarkParameter {
     setPosition(position: BlackMarkPosition): BlackMarkParameter {
         this._position = position;
 
-        return
+        return this;
+    }
+}

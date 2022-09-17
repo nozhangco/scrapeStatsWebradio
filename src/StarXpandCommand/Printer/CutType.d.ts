@@ -1,4 +1,6 @@
 export declare enum CutType {
     Full = "Full",
     Partial = "Partial",
-    FullDirect = "Ful
+    FullDirect = "FullDirect",
+    PartialDirect = "PartialDirect"
+}

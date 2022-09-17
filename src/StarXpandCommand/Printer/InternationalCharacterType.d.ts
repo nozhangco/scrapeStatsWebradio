@@ -18,4 +18,6 @@ export declare enum InternationalCharacterType {
     Croatia = "Croatia",
     China = "China",
     Vietnam = "Vietnam",
-    Arabic 
+    Arabic = "Arabic",
+    Legal = "Legal"
+}

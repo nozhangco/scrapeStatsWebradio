@@ -25,4 +25,15 @@ export class ImageParameter {
         this._width = width;
     }
 
-    setEffectDiffusion(effe
+    setEffectDiffusion(effectDiffusion: boolean): ImageParameter {
+        this._effectDiffusion = effectDiffusion;
+
+        return this;
+    }
+
+    setThreshold(threshold: number): ImageParameter {
+        this._threshold = threshold;
+
+        return this;
+    }
+}

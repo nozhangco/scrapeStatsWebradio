@@ -27,4 +27,21 @@ export class QRCodeParameter {
         this._content = content;
     }
 
-    setModel(model: QRCodeModel): QRCodeParam
+    setModel(model: QRCodeModel): QRCodeParameter {
+        this._model = model;
+
+        return this;
+    }
+
+    setLevel(level: QRCodeLevel): QRCodeParameter {
+        this._level = level;
+
+        return this;
+    }
+
+    setCellSize(cellSize: number): QRCodeParameter {
+        this._cellSize = cellSize;
+
+        return this;
+    }
+}

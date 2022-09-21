@@ -8,4 +8,6 @@ export class LabelParameter {
     setEnable(enable: boolean): LabelParameter {
         this._enable = enable;
 
-       
+        return this;
+    }
+}

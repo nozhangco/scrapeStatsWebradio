@@ -15,4 +15,15 @@ export declare class PrinterBuilder extends BaseStarXpandCommandBuilder {
     styleInternationalCharacter(type: StarXpandCommand.Printer.InternationalCharacterType): PrinterBuilder;
     styleSecondPriorityCharacterEncoding(type: StarXpandCommand.Printer.CharacterEncodingType): PrinterBuilder;
     styleCjkCharacterPriority(types: Array<StarXpandCommand.Printer.CjkCharacterType>): PrinterBuilder;
-    actionCut(type: StarXp
+    actionCut(type: StarXpandCommand.Printer.CutType): PrinterBuilder;
+    actionFeed(height: number): PrinterBuilder;
+    actionFeedLine(lines: number): PrinterBuilder;
+    actionPrintText(content: string): PrinterBuilder;
+    actionPrintLogo(parameter: StarXpandCommand.Printer.LogoParameter): PrinterBuilder;
+    actionPrintBarcode(parameter: StarXpandCommand.Printer.BarcodeParameter): PrinterBuilder;
+    actionPrintPdf417(parameter: StarXpandCommand.Printer.Pdf417Parameter): PrinterBuilder;
+    actionPrintQRCode(parameter: StarXpandCommand.Printer.QRCodeParameter): PrinterBuilder;
+    actionPrintImage(parameter: StarXpandCommand.Printer.ImageParameter): PrinterBuilder;
+    add(builder: PrinterBuilder): PrinterBuilder;
+    protected _initNativeObjectImpl(): Promise<string>;
+    protected _disposeN

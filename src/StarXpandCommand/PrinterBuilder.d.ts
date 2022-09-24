@@ -26,4 +26,5 @@ export declare class PrinterBuilder extends BaseStarXpandCommandBuilder {
     actionPrintImage(parameter: StarXpandCommand.Printer.ImageParameter): PrinterBuilder;
     add(builder: PrinterBuilder): PrinterBuilder;
     protected _initNativeObjectImpl(): Promise<string>;
-    protected _disposeN
+    protected _disposeNativeObjectImpl(nativeObject: string): Promise<void>;
+}

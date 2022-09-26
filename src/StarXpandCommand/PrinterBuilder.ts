@@ -40,3 +40,28 @@ export class PrinterBuilder extends BaseStarXpandCommandBuilder {
         return this;
     }
 
+    styleInvert(enable: boolean): PrinterBuilder {
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.styleInvert(this._nativeObject, enable)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    styleUnderLine(enable: boolean): PrinterBuilder {
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.styleUnderLine(this._nativeObject, enable)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    styleMagnification(paramete

@@ -16,4 +16,27 @@ export class PrinterBuilder extends BaseStarXpandCommandBuilder {
         return this;
     }
 
-    styleFont(type: StarXpand
+    styleFont(type: StarXpandCommand.Printer.FontType): PrinterBuilder {
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.styleFont(this._nativeObject, type)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    styleBold(enable: boolean): PrinterBuilder {
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.styleBold(this._nativeObject, enable)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+

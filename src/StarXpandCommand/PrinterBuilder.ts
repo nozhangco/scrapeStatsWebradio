@@ -126,4 +126,26 @@ export class PrinterBuilder extends BaseStarXpandCommandBuilder {
 
     styleHorizontalTabPositions(positions: Array<number>): PrinterBuilder {
         this._addAction(async() => {
-            await NativeModules.PrinterBuilderWrapper.styleHorizontalTabPositions(this._nativeObje
+            await NativeModules.PrinterBuilderWrapper.styleHorizontalTabPositions(this._nativeObject, positions)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    styleInternationalCharacter(type: StarXpandCommand.Printer.InternationalCharacterType): PrinterBuilder {
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.styleInternationalCharacter(this._nativeObject, type)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    styleSecondPriorityCharacterEncoding(type: StarXpandCommand.Printer.CharacterEncodingType): Pr

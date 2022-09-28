@@ -64,4 +64,22 @@ export class PrinterBuilder extends BaseStarXpandCommandBuilder {
         return this;
     }
 
-    styleMagnification(paramete
+    styleMagnification(parameter: StarXpandCommand.MagnificationParameter): PrinterBuilder {
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.styleMagnification(this._nativeObject, parameter.width, parameter.height)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    styleCharacterSpace(width: number): PrinterBuilder {
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.styleCharacterSpace(this._nativeObject, width)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+          

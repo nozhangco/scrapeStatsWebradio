@@ -148,4 +148,20 @@ export class PrinterBuilder extends BaseStarXpandCommandBuilder {
         return this;
     }
 
-    styleSecondPriorityCharacterEncoding(type: StarXpandCommand.Printer.CharacterEncodingType): Pr
+    styleSecondPriorityCharacterEncoding(type: StarXpandCommand.Printer.CharacterEncodingType): PrinterBuilder {
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.styleSecondPriorityCharacterEncoding(this._nativeObject, type)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    styleCjkCharacterPriority(types: Array<StarXpandCommand.Printer.CjkCharacterType>): PrinterBuilder {
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.styleCjkCharacterPriority(this._nativeObject, types)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeE

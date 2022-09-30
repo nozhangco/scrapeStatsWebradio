@@ -164,4 +164,28 @@ export class PrinterBuilder extends BaseStarXpandCommandBuilder {
         this._addAction(async() => {
             await NativeModules.PrinterBuilderWrapper.styleCjkCharacterPriority(this._nativeObject, types)
             .catch(async (nativeError: any) => {
-                var error = await StarIO10ErrorFactory.create(nativeE
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    actionCut(type: StarXpandCommand.Printer.CutType): PrinterBuilder {
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.actionCut(this._nativeObject, type)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    actionFeed(height: number): PrinterBuilder {
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.actionFeed(this._nativeObject, height)
+            .catch(async (nativeError: any) => {
+                va

@@ -234,4 +234,18 @@ export class PrinterBuilder extends BaseStarXpandCommandBuilder {
 
     actionPrintBarcode(parameter: StarXpandCommand.Printer.BarcodeParameter): PrinterBuilder {
         this._addAction(async() => {
- 
+            await NativeModules.PrinterBuilderWrapper.actionPrintBarcode(this._nativeObject, parameter.content, parameter.symbology, parameter.printHri, parameter.barDots, parameter.barRatioLevel, parameter.height)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    actionPrintPdf417(parameter: StarXpandCommand.Printer.Pdf417Parameter): PrinterBuilder {
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.actionPrintPdf417(this._nativeObject, parameter.content, parameter.column, parameter.line, parameter.module, parameter.aspect, parameter.level)
+            .catch(async (nativeError: any) => {
+                var error = await St

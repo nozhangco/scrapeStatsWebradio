@@ -270,3 +270,25 @@ export class PrinterBuilder extends BaseStarXpandCommandBuilder {
 
     actionPrintImage(parameter: StarXpandCommand.Printer.ImageParameter): PrinterBuilder {
         this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.actionPrintImage(this._nativeObject, parameter.source, parameter.width, parameter.effectDiffusion, parameter.threshold)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    add(builder: PrinterBuilder): PrinterBuilder {
+        this._addChild(builder);
+
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.add(this._nativeObject, builder._nativeObject)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+ 

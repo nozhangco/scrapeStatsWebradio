@@ -248,4 +248,25 @@ export class PrinterBuilder extends BaseStarXpandCommandBuilder {
         this._addAction(async() => {
             await NativeModules.PrinterBuilderWrapper.actionPrintPdf417(this._nativeObject, parameter.content, parameter.column, parameter.line, parameter.module, parameter.aspect, parameter.level)
             .catch(async (nativeError: any) => {
-                var error = await St
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    actionPrintQRCode(parameter: StarXpandCommand.Printer.QRCodeParameter): PrinterBuilder {
+        this._addAction(async() => {
+            await NativeModules.PrinterBuilderWrapper.actionPrintQRCode(this._nativeObject, parameter.content, parameter.model, parameter.level, parameter.cellSize)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    actionPrintImage(parameter: StarXpandCommand.Printer.ImageParameter): PrinterBuilder {
+        this._addAction(async() => {

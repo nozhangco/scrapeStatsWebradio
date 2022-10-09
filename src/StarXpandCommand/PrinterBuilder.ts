@@ -291,4 +291,14 @@ export class PrinterBuilder extends BaseStarXpandCommandBuilder {
             });
         });
 
- 
+        return this;
+    }
+
+    protected async _initNativeObjectImpl(): Promise<string> {
+        return await NativeModules.PrinterBuilderWrapper.init();
+    }
+
+    protected async _disposeNativeObjectImpl(nativeObject: string): Promise<void> {
+        await NativeModules.PrinterBuilderWrapper.dispose(nativeObject);
+    }
+}

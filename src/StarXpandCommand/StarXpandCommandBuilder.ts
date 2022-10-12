@@ -29,4 +29,27 @@ export class StarXpandCommandBuilder extends BaseStarXpandCommandBuilder {
             if(this.preSetting != null) {
                 await NativeModules.StarXpandCommandBuilderWrapper.setPreSetting(this._nativeObject, this.preSetting._nativeObject)
                 .catch(async (nativeError: any) => {
-                    va
+                    var error = await StarIO10ErrorFactory.create(nativeError.code);
+                    throw error;
+                });
+            }
+        });
+    }
+
+    addDocument(builder: StarXpandCommand.DocumentBuilder): StarXpandCommandBuilder {
+        this._addChild(builder);
+
+        this._addAction(async() => {
+            await NativeModules.StarXpandCommandBuilderWrapper.addDocument(this._nativeObject, builder._nativeObject)
+            .catch(async (nativeError: any) => {
+                var error = await StarIO10ErrorFactory.create(nativeError.code);
+                throw error;
+            });
+        });
+
+        return this;
+    }
+
+    async getCommands(): Promise<string> {
+        try {
+            await this._initAllNativeObjects();

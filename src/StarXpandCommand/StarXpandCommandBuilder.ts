@@ -53,3 +53,22 @@ export class StarXpandCommandBuilder extends BaseStarXpandCommandBuilder {
     async getCommands(): Promise<string> {
         try {
             await this._initAllNativeObjects();
+
+            await this._executeAllActions();
+
+            var result = await NativeModules.StarXpandCommandBuilderWrapper.getCommands(this._nativeObject)
+
+            return result;
+        } finally {
+            await this._disposeAllNativeObjects();
+        }
+    }
+
+    protected async _initNativeObjectImpl(): Promise<string> {
+        return await NativeModules.StarXpandCommandBuilderWrapper.init();
+    }
+
+    protected async _disposeNativeObjectImpl(nativeObject: string): Promise<void> {
+        await NativeModules.StarXpandCommandBuilderWrapper.dispose(nativeObject);
+    }
+}

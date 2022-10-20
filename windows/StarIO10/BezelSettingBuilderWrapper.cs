@@ -26,4 +26,22 @@ namespace StarMicronics.ReactNative.StarIO10
         }
 
         [ReactMethod("settingAutomaticPageLength")]
-        public void SettingAutomaticPageLength(string objectIdentifier, bool enable, IReact
+        public void SettingAutomaticPageLength(string objectIdentifier, bool enable, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out BezelSettingBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.SettingAutomaticPageLength(enable);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("settingLedAutomaticBlink")]
+        public void SettingLedAutomaticBlink(string objectIdentifier, string type, int onTime, int offTime, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out BezelSettingBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToBezelLedAutomaticBlinkParameter(type, onTime, offTime, out LedAutomaticBlinkParameter parameter))
+            {

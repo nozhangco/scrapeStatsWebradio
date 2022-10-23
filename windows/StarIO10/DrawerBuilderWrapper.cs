@@ -8,4 +8,25 @@ namespace StarMicronics.ReactNative.StarIO10
     class DrawerBuilderWrapper : StarIO10ObjectWrapper<DrawerBuilder>
     {
         [ReactMethod("init")]
- 
+        public void Init(IReactPromise<string> promise)
+        {
+            DrawerBuilder nativeObject = new DrawerBuilder();
+
+            SetObject(nativeObject, out string objectIdentifier);
+
+            promise.Resolve(objectIdentifier);
+        }
+
+        [ReactMethod("dispose")]
+        public void Dispose(string objectIdentifier, IReactPromise<JSValue.Void> promise)
+        {
+            DisposeObject(objectIdentifier);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionOpen")]
+        public void ActionOpen(string objectIdentifier, string channel, int onTime, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out DrawerBuilder nativeObject) ||
+                !StarIO10Val

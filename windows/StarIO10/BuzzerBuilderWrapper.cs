@@ -35,4 +35,9 @@ namespace StarMicronics.ReactNative.StarIO10
                 return;
             }
 
-            nativeObject.
+            nativeObject.ActionDrive(parameter);
+
+            promise.Resolve();
+        }
+    }
+}

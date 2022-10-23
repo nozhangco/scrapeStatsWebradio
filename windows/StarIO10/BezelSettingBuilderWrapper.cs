@@ -45,3 +45,13 @@ namespace StarMicronics.ReactNative.StarIO10
             if (!GetObject(objectIdentifier, out BezelSettingBuilder nativeObject) ||
                 !StarIO10ValueConverter.ToBezelLedAutomaticBlinkParameter(type, onTime, offTime, out LedAutomaticBlinkParameter parameter))
             {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.SettingLedAutomaticBlink(parameter);
+
+            promise.Resolve();
+        }
+    }
+}

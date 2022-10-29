@@ -29,4 +29,15 @@ namespace StarMicronics.ReactNative.StarIO10
         public void ActionOpen(string objectIdentifier, string channel, int onTime, IReactPromise<JSValue.Void> promise)
         {
             if (!GetObject(objectIdentifier, out DrawerBuilder nativeObject) ||
-                !StarIO10Val
+                !StarIO10ValueConverter.ToDrawerOpenParameter(channel, onTime, out OpenParameter parameter))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.ActionOpen(parameter);
+
+            promise.Resolve();
+        }
+    }
+}

@@ -16,3 +16,9 @@ namespace StarMicronics.ReactNative.StarIO10
                 output = dictionary.First(x => x.Value.Equals(value)).Key;
                 result = true;
             }
+            catch (Exception) { }
+
+            return result;
+        }
+    }
+}

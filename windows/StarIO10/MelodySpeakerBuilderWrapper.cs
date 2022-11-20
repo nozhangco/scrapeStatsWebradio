@@ -33,4 +33,26 @@ namespace StarMicronics.ReactNative.StarIO10
             if (!GetObject(objectIdentifier, out MelodySpeakerBuilder nativeObject) ||
                 !StarIO10ValueConverter.ToMelodySpeakerDriveRegisteredSoundParameter(area, number, volume, out DriveRegisteredSoundParameter parameter))
             {
-                promise.
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.ActionDriveRegisteredSound(parameter);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionDriveOneTimeSound")]
+        public async void ActionDriveOneTimeSound(string objectIdentifier, string source, int volume, IReactPromise<JSValue.Void> promise)
+        {
+            try
+            {
+                if (!GetObject(objectIdentifier, out MelodySpeakerBuilder nativeObject))
+                {
+                    promise.Reject(new ReactError());
+                    return;
+                }
+
+                DriveOneTimeSoundParameter parameter = await StarIO10ValueConverter.ToMelodySpeakerDriveOneTimeSoundParameterAsync(source, volume);
+
+                nativeObject.Ac

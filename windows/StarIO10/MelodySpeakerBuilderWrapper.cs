@@ -55,4 +55,16 @@ namespace StarMicronics.ReactNative.StarIO10
 
                 DriveOneTimeSoundParameter parameter = await StarIO10ValueConverter.ToMelodySpeakerDriveOneTimeSoundParameterAsync(source, volume);
 
-                nativeObject.Ac
+                nativeObject.ActionDriveOneTimeSound(parameter);
+
+                promise.Resolve();
+            }
+            catch (Exception)
+            {
+                StarIO10Exception exception = new StarIO10ArgumentException("Invalid source.");
+                StarIO10ErrorWrapper.SetObject(exception, out string exceptionIdentifier);
+                promise.Reject(new ReactError() { Code = exceptionIdentifier, Exception = exception });
+            }
+        }
+    }
+}

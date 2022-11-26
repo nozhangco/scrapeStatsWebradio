@@ -50,4 +50,29 @@ namespace StarMicronics.ReactNative.StarIO10
                 !StarIO10ValueConverter.ToPrinterFontType(type, out FontType nativeType))
             {
                 promise.Reject(new ReactError());
-              
+                return;
+            }
+
+            nativeObject.StyleFont(nativeType);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleBold")]
+        public void StyleBold(string objectIdentifier, bool enable, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleBold(enable);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleInvert")]
+        public void StyleInvert(string objectIdentifier, bool enable, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder n

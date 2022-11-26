@@ -31,4 +31,23 @@ namespace StarMicronics.ReactNative.StarIO10
         [ReactMethod("stylePrintDirection")]
         public void StylePrintDirection(string objectIdentifier, string direction, IReactPromise<JSValue.Void> promise)
         {
-            if (!GetObject(objectIdentifier, out PageMode
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToPrinterPageModePrintDirection(direction, out PageModePrintDirection nativeDirection))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StylePrintDirection(nativeDirection);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleFont")]
+        public void StyleFont(string objectIdentifier, string type, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToPrinterFontType(type, out FontType nativeType))
+            {
+                promise.Reject(new ReactError());
+              

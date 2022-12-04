@@ -101,4 +101,24 @@ namespace StarMicronics.ReactNative.StarIO10
         }
 
         [ReactMethod("styleMagnification")]
-        public void StyleMagnification(string objectIdentifier, int width, int height, IReactPromise<JSValu
+        public void StyleMagnification(string objectIdentifier, int width, int height, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToMagnificationParameter(width, height, out MagnificationParameter parameter))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleMagnification(parameter);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleCharacterSpace")]
+        public void StyleCharacterSpace(string objectIdentifier, double width, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                ret

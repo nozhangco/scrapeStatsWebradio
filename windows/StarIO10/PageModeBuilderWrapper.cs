@@ -75,4 +75,30 @@ namespace StarMicronics.ReactNative.StarIO10
         [ReactMethod("styleInvert")]
         public void StyleInvert(string objectIdentifier, bool enable, IReactPromise<JSValue.Void> promise)
         {
-            if (!GetObject(objectIdentifier, out PageModeBuilder n
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleInvert(enable);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleUnderLine")]
+        public void StyleUnderLine(string objectIdentifier, bool enable, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleUnderLine(enable);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleMagnification")]
+        public void StyleMagnification(string objectIdentifier, int width, int height, IReactPromise<JSValu

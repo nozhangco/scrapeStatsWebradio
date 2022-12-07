@@ -121,4 +121,29 @@ namespace StarMicronics.ReactNative.StarIO10
             if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject))
             {
                 promise.Reject(new ReactError());
-                ret
+                return;
+            }
+
+            nativeObject.StyleCharacterSpace(width);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleLineSpace")]
+        public void StyleLineSpace(string objectIdentifier, double height, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleLineSpace(height);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleVerticalPositionTo")]
+        public void StyleVerticalPositionTo(string objectIdentifier, double position, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier

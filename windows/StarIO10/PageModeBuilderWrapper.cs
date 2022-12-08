@@ -169,4 +169,24 @@ namespace StarMicronics.ReactNative.StarIO10
             nativeObject.StyleVerticalPositionBy(position);
 
             promise.Resolve();
-       
+        }
+
+        [ReactMethod("styleHorizontalPositionTo")]
+        public void StyleHorizontalPositionTo(string objectIdentifier, double position, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleHorizontalPositionTo(position);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleHorizontalPositionBy")]
+        public void StyleHorizontalPositionBy(string objectIdentifier, double position, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject))
+  

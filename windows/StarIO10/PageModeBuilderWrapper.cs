@@ -252,4 +252,25 @@ namespace StarMicronics.ReactNative.StarIO10
                 return;
             }
 
-  
+            List<CjkCharacterType> nativeTypeList = new List<CjkCharacterType>();
+
+            foreach (string type in types)
+            {
+                if (!StarIO10ValueConverter.ToPrinterCjkCharacterType(type, out CjkCharacterType nativeType))
+                {
+                    promise.Reject(new ReactError());
+                    return;
+                }
+
+                nativeTypeList.Add(nativeType);
+            }
+
+            nativeObject.StyleCjkCharacterPriority(nativeTypeList);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionPrintText")]
+        public void ActionPrintText(string objectIdentifier, string content, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilde

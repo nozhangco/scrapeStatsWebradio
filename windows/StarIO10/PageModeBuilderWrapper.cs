@@ -214,4 +214,21 @@ namespace StarMicronics.ReactNative.StarIO10
         }
 
         [ReactMethod("styleInternationalCharacter")]
- 
+        public void StyleInternationalCharacter(string objectIdentifier, string type, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToPrinterInternationalCharacterType(type, out InternationalCharacterType nativeType))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleInternationalCharacter(nativeType);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleSecondPriorityCharacterEncoding")]
+        public void StyleSecondPriorityCharacterEncoding(string objectIdentifier, string type, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdent

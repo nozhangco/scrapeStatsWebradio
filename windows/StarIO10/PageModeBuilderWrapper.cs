@@ -231,4 +231,25 @@ namespace StarMicronics.ReactNative.StarIO10
         [ReactMethod("styleSecondPriorityCharacterEncoding")]
         public void StyleSecondPriorityCharacterEncoding(string objectIdentifier, string type, IReactPromise<JSValue.Void> promise)
         {
-            if (!GetObject(objectIdent
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToPrinterCharacterEncodingType(type, out CharacterEncodingType nativeType))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleSecondPriorityCharacterEncoding(nativeType);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleCjkCharacterPriority")]
+        public void StyleCjkCharacterPriority(string objectIdentifier, string[] types, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+  

@@ -273,4 +273,23 @@ namespace StarMicronics.ReactNative.StarIO10
         [ReactMethod("actionPrintText")]
         public void ActionPrintText(string objectIdentifier, string content, IReactPromise<JSValue.Void> promise)
         {
-            if (!GetObject(objectIdentifier, out PageModeBuilde
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.ActionPrintText(content);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionPrintBarcode")]
+        public void ActionPrintBarcode(string objectIdentifier, string content, string symbology, bool printHri, int barDots, string barRatioLevel, double height, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToPrinterBarcodeParameter(content, symbology, printHri, barDots, barRatioLevel, height, out BarcodeParameter parameter))
+            {
+                promise.Reject(new ReactError());
+                return;
+   

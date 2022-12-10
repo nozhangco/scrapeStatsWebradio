@@ -292,4 +292,26 @@ namespace StarMicronics.ReactNative.StarIO10
             {
                 promise.Reject(new ReactError());
                 return;
-   
+            }
+
+            nativeObject.ActionPrintBarcode(parameter);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionPrintPdf417")]
+        public void ActionPrintPdf417(string objectIdentifier, string content, int column, int line, int module, int aspect, string level, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToPrinterPdf417Parameter(content, column, line, module, aspect, level, out Pdf417Parameter parameter))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.ActionPrintPdf417(parameter);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionPrintQRCod

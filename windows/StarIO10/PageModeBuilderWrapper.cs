@@ -332,4 +332,22 @@ namespace StarMicronics.ReactNative.StarIO10
         [ReactMethod("actionPrintImage")]
         public async void ActionPrintImage(string objectIdentifier, string source, int width, bool effectDiffusion, int threshold, IReactPromise<JSValue.Void> promise)
         {
-            
+            try
+            {
+                if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject))
+                {
+                    promise.Reject(new ReactError());
+                    return;
+                }
+
+                ImageParameter parameter = await StarIO10ValueConverter.ToPrinterImageParameterAsync(source, width, effectDiffusion, threshold);
+
+                nativeObject.ActionPrintImage(parameter);
+
+                promise.Resolve();
+            }
+            catch (Exception)
+            {
+                StarIO10Exception exception = new StarIO10ArgumentException("Invalid source.");
+                StarIO10ErrorWrapper.SetObject(exception, out string exceptionIdentifier);
+                promise.Reject(new ReactError() { Code = exceptionIdentifier,

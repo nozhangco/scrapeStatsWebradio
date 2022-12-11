@@ -44,4 +44,22 @@ namespace StarMicronics.ReactNative.StarIO10
         }
 
         [ReactMethod("addPageMode")]
-        public void AddPageMode(string objectIdentifier, double x, double y, double width, double height, string pageModeBuilderIdentifier, IReactPromise<JSV
+        public void AddPageMode(string objectIdentifier, double x, double y, double width, double height, string pageModeBuilderIdentifier, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject) ||
+                !PageModeBuilderWrapper.GetObject(pageModeBuilderIdentifier, out PageModeBuilder pageModeBuilder) ||
+                !StarIO10ValueConverter.ToPrinterPageModeAreaParameter(x, y, width, height, out PageModeAreaParameter nativeParameter))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.AddPageMode(nativeParameter, pageModeBuilder);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleFont")]
+        public void StyleFont(string objectIdentifier, string type, IReactPromise<JSValue.Void> promise)
+        {
+            if (!G

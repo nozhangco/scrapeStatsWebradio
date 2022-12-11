@@ -350,4 +350,23 @@ namespace StarMicronics.ReactNative.StarIO10
             {
                 StarIO10Exception exception = new StarIO10ArgumentException("Invalid source.");
                 StarIO10ErrorWrapper.SetObject(exception, out string exceptionIdentifier);
-                promise.Reject(new ReactError() { Code = exceptionIdentifier,
+                promise.Reject(new ReactError() { Code = exceptionIdentifier, Exception = exception });
+            }
+        }
+
+        [ReactMethod("add")]
+        public void Add(string objectIdentifier, string pageModeBuilderIdentifier, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PageModeBuilder nativeObject) ||
+                !GetObject(pageModeBuilderIdentifier, out PageModeBuilder pageModeBuilder))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.Add(pageModeBuilder);
+
+            promise.Resolve();
+        }
+    }
+}

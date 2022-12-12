@@ -62,4 +62,27 @@ namespace StarMicronics.ReactNative.StarIO10
         [ReactMethod("styleFont")]
         public void StyleFont(string objectIdentifier, string type, IReactPromise<JSValue.Void> promise)
         {
-            if (!G
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToPrinterFontType(type, out FontType nativeType))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleFont(nativeType);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleBold")]
+        public void StyleBold(string objectIdentifier, bool enable, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleBold(enable);
+
+      

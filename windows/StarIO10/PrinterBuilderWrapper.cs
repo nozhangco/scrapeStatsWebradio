@@ -85,4 +85,30 @@ namespace StarMicronics.ReactNative.StarIO10
 
             nativeObject.StyleBold(enable);
 
-      
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleInvert")]
+        public void StyleInvert(string objectIdentifier, bool enable, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleInvert(enable);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleUnderLine")]
+        public void StyleUnderLine(string objectIdentifier, bool enable, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+   

@@ -111,4 +111,25 @@ namespace StarMicronics.ReactNative.StarIO10
                 return;
             }
 
-   
+            nativeObject.StyleUnderLine(enable);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleMagnification")]
+        public void StyleMagnification(string objectIdentifier, int width, int height, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToMagnificationParameter(width, height, out MagnificationParameter parameter))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleMagnification(parameter);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleCharacterSpace")]
+        public vo

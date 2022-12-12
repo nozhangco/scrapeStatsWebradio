@@ -132,4 +132,24 @@ namespace StarMicronics.ReactNative.StarIO10
         }
 
         [ReactMethod("styleCharacterSpace")]
-        public vo
+        public void StyleCharacterSpace(string objectIdentifier, double width, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleCharacterSpace(width);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleLineSpace")]
+        public void StyleLineSpace(string objectIdentifier, double height, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+       

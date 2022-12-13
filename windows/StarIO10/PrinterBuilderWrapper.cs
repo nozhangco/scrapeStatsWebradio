@@ -152,4 +152,26 @@ namespace StarMicronics.ReactNative.StarIO10
             {
                 promise.Reject(new ReactError());
                 return;
-       
+            }
+
+            nativeObject.StyleLineSpace(height);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleHorizontalPositionTo")]
+        public void StyleHorizontalPositionTo(string objectIdentifier, double position, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleHorizontalPositionTo(position);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleHorizontalPositionBy")]
+        public void StyleHorizontalPositionBy(string objectIdentifier, double position, IRe

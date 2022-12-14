@@ -174,4 +174,26 @@ namespace StarMicronics.ReactNative.StarIO10
         }
 
         [ReactMethod("styleHorizontalPositionBy")]
-        public void StyleHorizontalPositionBy(string objectIdentifier, double position, IRe
+        public void StyleHorizontalPositionBy(string objectIdentifier, double position, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleHorizontalPositionBy(position);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleHorizontalTabPositions")]
+        public void StyleHorizontalTabPositions(string objectIdentifier, int[] positions, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.Style

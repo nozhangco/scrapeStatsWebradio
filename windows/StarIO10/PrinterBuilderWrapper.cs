@@ -196,4 +196,24 @@ namespace StarMicronics.ReactNative.StarIO10
                 return;
             }
 
-            nativeObject.Style
+            nativeObject.StyleHorizontalTabPositions(positions);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleInternationalCharacter")]
+        public void StyleInternationalCharacter(string objectIdentifier, string type, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToPrinterInternationalCharacterType(type, out InternationalCharacterType nativeType))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.StyleInternationalCharacter(nativeType);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("styleSecondPriorityCharacterEncodin

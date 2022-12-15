@@ -234,4 +234,29 @@ namespace StarMicronics.ReactNative.StarIO10
         [ReactMethod("styleCjkCharacterPriority")]
         public void StyleCjkCharacterPriority(string objectIdentifier, string[] types, IReactPromise<JSValue.Void> promise)
         {
-            if (!GetObject(obje
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            List<CjkCharacterType> nativeTypeList = new List<CjkCharacterType>();
+
+            foreach (string type in types)
+            {
+                if (!StarIO10ValueConverter.ToPrinterCjkCharacterType(type, out CjkCharacterType nativeType))
+                {
+                    promise.Reject(new ReactError());
+                    return;
+                }
+
+                nativeTypeList.Add(nativeType);
+            }
+
+            nativeObject.StyleCjkCharacterPriority(nativeTypeList);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionCut")]
+        public v

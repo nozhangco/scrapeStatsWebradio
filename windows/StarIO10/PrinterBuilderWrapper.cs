@@ -279,3 +279,29 @@ namespace StarMicronics.ReactNative.StarIO10
             if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
             {
                 promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.ActionFeed(height);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionFeedLine")]
+        public void ActionFeedLine(string objectIdentifier, int lines, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.ActionFeedLine(lines);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionPrintText")]
+        public void ActionPrintText(string objectIdentifier, string content, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder na

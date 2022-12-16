@@ -330,4 +330,20 @@ namespace StarMicronics.ReactNative.StarIO10
             promise.Resolve();
         }
 
-        [ReactMeth
+        [ReactMethod("actionPrintBarcode")]
+        public void ActionPrintBarcode(string objectIdentifier, string content, string symbology, bool printHri, int barDots, string barRatioLevel, double height, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToPrinterBarcodeParameter(content, symbology, printHri, barDots, barRatioLevel, height, out BarcodeParameter parameter))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.ActionPrintBarcode(parameter);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionPrintPdf417")]
+        public void ActionPrintPdf417(string objectIdentifier, 

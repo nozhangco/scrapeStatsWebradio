@@ -304,4 +304,30 @@ namespace StarMicronics.ReactNative.StarIO10
         [ReactMethod("actionPrintText")]
         public void ActionPrintText(string objectIdentifier, string content, IReactPromise<JSValue.Void> promise)
         {
-            if (!GetObject(objectIdentifier, out PrinterBuilder na
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.ActionPrintText(content);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionPrintLogo")]
+        public void ActionPrintLogo(string objectIdentifier, string keyCode, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToPrinterLogoParameter(keyCode, out LogoParameter parameter))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.ActionPrintLogo(parameter);
+
+            promise.Resolve();
+        }
+
+        [ReactMeth

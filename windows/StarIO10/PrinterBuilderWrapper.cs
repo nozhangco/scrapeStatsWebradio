@@ -259,4 +259,23 @@ namespace StarMicronics.ReactNative.StarIO10
         }
 
         [ReactMethod("actionCut")]
-        public v
+        public void ActionCut(string objectIdentifier, string type, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToPrinterCutType(type, out CutType nativeType))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.ActionCut(nativeType);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionFeed")]
+        public void ActionFeed(string objectIdentifier, double height, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());

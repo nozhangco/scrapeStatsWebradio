@@ -346,4 +346,19 @@ namespace StarMicronics.ReactNative.StarIO10
         }
 
         [ReactMethod("actionPrintPdf417")]
-        public void ActionPrintPdf417(string objectIdentifier, 
+        public void ActionPrintPdf417(string objectIdentifier, string content, int column, int line, int module, int aspect, string level, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToPrinterPdf417Parameter(content, column, line, module, aspect, level, out Pdf417Parameter parameter))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.ActionPrintPdf417(parameter);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionPrintQRCode")]
+        public void ActionPrintQRCode(string objectIdentifier, string content, string model, string level, int cellSize, IReactPromise<JSValue.Void> p

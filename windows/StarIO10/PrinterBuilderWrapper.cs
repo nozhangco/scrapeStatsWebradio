@@ -361,4 +361,23 @@ namespace StarMicronics.ReactNative.StarIO10
         }
 
         [ReactMethod("actionPrintQRCode")]
-        public void ActionPrintQRCode(string objectIdentifier, string content, string model, string level, int cellSize, IReactPromise<JSValue.Void> p
+        public void ActionPrintQRCode(string objectIdentifier, string content, string model, string level, int cellSize, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject) ||
+                !StarIO10ValueConverter.ToPrinterQRCodeParameter(content, model, level, cellSize, out QRCodeParameter parameter))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.ActionPrintQRCode(parameter);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("actionPrintImage")]
+        public async void ActionPrintImage(string objectIdentifier, string source, int width, bool effectDiffusion, int threshold, IReactPromise<JSValue.Void> promise)
+        {
+            try
+            {
+                if (!GetObject(object

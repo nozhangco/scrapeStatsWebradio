@@ -397,4 +397,22 @@ namespace StarMicronics.ReactNative.StarIO10
                 StarIO10Exception exception = new StarIO10ArgumentException("Invalid source.");
                 StarIO10ErrorWrapper.SetObject(exception, out string exceptionIdentifier);
                 promise.Reject(new ReactError() { Code = exceptionIdentifier, Exception = exception });
-           
+            }
+        }
+
+        [ReactMethod("add")]
+        public void Add(string objectIdentifier, string printerBuilderIdentifier, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject) ||
+                !GetObject(printerBuilderIdentifier, out PrinterBuilder printerBuilder))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.Add(printerBuilder);
+
+            promise.Resolve();
+        }
+    }
+}

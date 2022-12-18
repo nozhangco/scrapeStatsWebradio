@@ -380,4 +380,21 @@ namespace StarMicronics.ReactNative.StarIO10
         {
             try
             {
-                if (!GetObject(object
+                if (!GetObject(objectIdentifier, out PrinterBuilder nativeObject))
+                {
+                    promise.Reject(new ReactError());
+                    return;
+                }
+
+                ImageParameter parameter = await StarIO10ValueConverter.ToPrinterImageParameterAsync(source, width, effectDiffusion, threshold);
+
+                nativeObject.ActionPrintImage(parameter);
+
+                promise.Resolve();
+            }
+            catch (Exception)
+            {
+                StarIO10Exception exception = new StarIO10ArgumentException("Invalid source.");
+                StarIO10ErrorWrapper.SetObject(exception, out string exceptionIdentifier);
+                promise.Reject(new ReactError() { Code = exceptionIdentifier, Exception = exception });
+           

@@ -26,4 +26,24 @@ namespace StarMicronics.ReactNative.StarIO10
             catch (StarIO10Exception e)
             {
                 StarIO10ErrorWrapper.SetObject(e, out string exceptionIdentifier);
-                promise.Reject(new ReactError() { Code = exceptionIdentifier, Excep
+                promise.Reject(new ReactError() { Code = exceptionIdentifier, Exception = e });
+            }
+        }
+
+        [ReactMethod("stop")]
+        public void Stop(IReactPromise<JSValue.Void> promise)
+        {
+            try
+            {
+                StarIO10Logger nativeObject = StarIO10Logger.Instance;
+                nativeObject.Stop();
+                promise.Resolve();
+            }
+            catch (StarIO10Exception e)
+            {
+                StarIO10ErrorWrapper.SetObject(e, out string exceptionIdentifier);
+                promise.Reject(new ReactError() { Code = exceptionIdentifier, Exception = e });
+            }
+        }
+    }
+}

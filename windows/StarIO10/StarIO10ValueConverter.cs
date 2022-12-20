@@ -25,4 +25,18 @@ namespace StarMicronics.ReactNative.StarIO10
 {
     internal class StarIO10ValueConverter
     {
-   
+        private static readonly IReadOnlyDictionary<InterfaceType, string> InterfaceTypeDictionary = new Dictionary<InterfaceType, string>()
+        {
+            { InterfaceType.Lan, "Lan" },
+            { InterfaceType.Bluetooth, "Bluetooth" },
+            { InterfaceType.BluetoothLE, "BluetoothLE" },
+            { InterfaceType.Usb, "Usb" }
+        };
+
+        private static readonly IReadOnlyDictionary<StarPrinterModel, string> StarPrinterModelDictionary = new Dictionary<StarPrinterModel, string>()
+        {
+            { StarPrinterModel.Unknown, "Unknown" },
+            { StarPrinterModel.TSP650II, "TSP650II" },
+            { StarPrinterModel.TSP700II, "TSP700II" },
+            { StarPrinterModel.TSP800II, "TSP800II" },
+            { StarPrinterModel.TSP100IIIW, 

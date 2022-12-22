@@ -68,4 +68,16 @@ namespace StarMicronics.ReactNative.StarIO10
             { StarPrinterEmulation.StarLine, "StarLine" },
             { StarPrinterEmulation.StarDot, "StarDot" },
             { StarPrinterEmulation.StarGraphic, "StarGraphic" },
-            { StarPrinterEmulation.StarPRNT, "StarPRNT
+            { StarPrinterEmulation.StarPRNT, "StarPRNT" },
+            { StarPrinterEmulation.EscPos, "EscPos" },
+            { StarPrinterEmulation.EscPosMobile, "EscPosMobile" }
+        };
+
+        private static readonly IReadOnlyDictionary<StarMicronics.StarIO10.StarXpandCommand.Bezel.LedType, string> BezelLedTypeDictionary = new Dictionary<StarMicronics.StarIO10.StarXpandCommand.Bezel.LedType, string>()
+        {
+            { StarMicronics.StarIO10.StarXpandCommand.Bezel.LedType.Holding, "Holding" },
+            { StarMicronics.StarIO10.StarXpandCommand.Bezel.LedType.Error, "Error" },
+            { StarMicronics.StarIO10.StarXpandCommand.Bezel.LedType.Idle, "Idle" }
+        };
+
+        private static readonly IReadOnlyDictionary<StarMicronics.StarIO10.StarXpandCommand.Presenter.LedType, string> PresenterLedTypeDictionary = new Dict

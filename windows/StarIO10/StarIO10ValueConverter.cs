@@ -80,4 +80,17 @@ namespace StarMicronics.ReactNative.StarIO10
             { StarMicronics.StarIO10.StarXpandCommand.Bezel.LedType.Idle, "Idle" }
         };
 
-        private static readonly IReadOnlyDictionary<StarMicronics.StarIO10.StarXpandCommand.Presenter.LedType, string> PresenterLedTypeDictionary = new Dict
+        private static readonly IReadOnlyDictionary<StarMicronics.StarIO10.StarXpandCommand.Presenter.LedType, string> PresenterLedTypeDictionary = new Dictionary<StarMicronics.StarIO10.StarXpandCommand.Presenter.LedType, string>()
+        {
+            { StarMicronics.StarIO10.StarXpandCommand.Presenter.LedType.Holding, "Holding" },
+            { StarMicronics.StarIO10.StarXpandCommand.Presenter.LedType.Error, "Error" },
+            { StarMicronics.StarIO10.StarXpandCommand.Presenter.LedType.Idle, "Idle" }
+        };
+
+        private static readonly IReadOnlyDictionary<BlackMarkPosition, string> PrinterBlackMarkPositionDictionary = new Dictionary<BlackMarkPosition, string>()
+        {
+            { BlackMarkPosition.Front, "Front" },
+            { BlackMarkPosition.Back, "Back" }
+        };
+
+        private static readonly IReadOnlyDictionary<Alignment, string> PrinterAl

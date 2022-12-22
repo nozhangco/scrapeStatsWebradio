@@ -93,4 +93,19 @@ namespace StarMicronics.ReactNative.StarIO10
             { BlackMarkPosition.Back, "Back" }
         };
 
-        private static readonly IReadOnlyDictionary<Alignment, string> PrinterAl
+        private static readonly IReadOnlyDictionary<Alignment, string> PrinterAlignmentDictionary = new Dictionary<Alignment, string>()
+        {
+            { Alignment.Left, "Left" },
+            { Alignment.Center, "Center" },
+            { Alignment.Right, "Right" }
+        };
+
+        private static readonly IReadOnlyDictionary<PageModePrintDirection, string> PrinterPageModePrintDirectionDictionary = new Dictionary<PageModePrintDirection, string>()
+        {
+            { PageModePrintDirection.BottomToTop, "BottomToTop" },
+            { PageModePrintDirection.LeftToRight, "LeftToRight" },
+            { PageModePrintDirection.RightToLeft, "RightToLeft" },
+            { PageModePrintDirection.TopToBottom, "TopToBottom" },
+        };
+
+        private static readonly IReadOnlyDictionary<FontType, string> Prin

@@ -53,4 +53,19 @@ namespace StarMicronics.ReactNative.StarIO10
             { StarPrinterModel.SMT300i, "SM_T300i" },
             { StarPrinterModel.SMT400i, "SM_T400i" },
             { StarPrinterModel.SML200, "SM_L200" },
-            { StarPrinterMo
+            { StarPrinterModel.SML300, "SM_L300" },
+            { StarPrinterModel.BSC10, "BSC10" },
+            { StarPrinterModel.TSP043, "TSP043" },
+            { StarPrinterModel.SP700, "SP700" },
+            { StarPrinterModel.TUP500, "TUP500" },
+            { StarPrinterModel.SK12xx, "SK1_2xx" },
+            { StarPrinterModel.SK13xx, "SK1_3xx" }
+        };
+
+        private static readonly IReadOnlyDictionary<StarPrinterEmulation, string> StarPrinterEmulationDictionary = new Dictionary<StarPrinterEmulation, string>()
+        {
+            { StarPrinterEmulation.Unknown, "Unknown" },
+            { StarPrinterEmulation.StarLine, "StarLine" },
+            { StarPrinterEmulation.StarDot, "StarDot" },
+            { StarPrinterEmulation.StarGraphic, "StarGraphic" },
+            { StarPrinterEmulation.StarPRNT, "StarPRNT

@@ -108,4 +108,15 @@ namespace StarMicronics.ReactNative.StarIO10
             { PageModePrintDirection.TopToBottom, "TopToBottom" },
         };
 
-        private static readonly IReadOnlyDictionary<FontType, string> Prin
+        private static readonly IReadOnlyDictionary<FontType, string> PrinterFontTypeDictionary = new Dictionary<FontType, string>()
+        {
+            { FontType.A, "A" },
+            { FontType.B, "B" },
+        };
+
+        private static readonly IReadOnlyDictionary<StarMicronics.StarIO10.StarXpandCommand.Printer.InternationalCharacterType, string> PrinterInternationalCharacterTypeDictionary = new Dictionary<StarMicronics.StarIO10.StarXpandCommand.Printer.InternationalCharacterType, string>()
+        {
+            { StarMicronics.StarIO10.StarXpandCommand.Printer.InternationalCharacterType.Usa, "Usa" },
+            { StarMicronics.StarIO10.StarXpandCommand.Printer.InternationalCharacterType.France, "France" },
+            { StarMicronics.StarIO10.StarXpandCommand.Printer.InternationalCharacterType.Germany, "Germany" },
+       

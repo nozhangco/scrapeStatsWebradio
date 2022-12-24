@@ -141,4 +141,14 @@ namespace StarMicronics.ReactNative.StarIO10
 
         private static readonly IReadOnlyDictionary<StarMicronics.StarIO10.StarXpandCommand.Printer.CharacterEncodingType, string> PrinterCharacterEncodingTypeDictionary = new Dictionary<StarMicronics.StarIO10.StarXpandCommand.Printer.CharacterEncodingType, string>()
         {
-            { StarMicronics.StarIO10.StarXpandCommand.Printer.CharacterEncodingType.Japanese, "Ja
+            { StarMicronics.StarIO10.StarXpandCommand.Printer.CharacterEncodingType.Japanese, "Japanese" },
+            { StarMicronics.StarIO10.StarXpandCommand.Printer.CharacterEncodingType.SimplifiedChinese, "SimplifiedChinese" },
+            { StarMicronics.StarIO10.StarXpandCommand.Printer.CharacterEncodingType.TraditionalChinese, "TraditionalChinese" },
+            { StarMicronics.StarIO10.StarXpandCommand.Printer.CharacterEncodingType.Korean, "Korean" },
+            { StarMicronics.StarIO10.StarXpandCommand.Printer.CharacterEncodingType.CodePage, "CodePage" },
+        };
+
+        private static readonly IReadOnlyDictionary<CjkCharacterType, string> PrinterCjkCharacterTypeDictionary = new Dictionary<CjkCharacterType, string>()
+        {
+            { CjkCharacterType.Japanese, "Japanese" },
+            { CjkCharacterType.S

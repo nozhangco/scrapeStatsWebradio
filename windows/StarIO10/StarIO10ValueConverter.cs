@@ -168,4 +168,19 @@ namespace StarMicronics.ReactNative.StarIO10
         {
             { BarcodeSymbology.UpcE, "UpcE" },
             { BarcodeSymbology.UpcA, "UpcA" },
-            { BarcodeSym
+            { BarcodeSymbology.Jan8, "Jan8" },
+            { BarcodeSymbology.Ean8, "Ean8" },
+            { BarcodeSymbology.Jan13, "Jan13" },
+            { BarcodeSymbology.Ean13, "Ean13" },
+            { BarcodeSymbology.Code39, "Code39" },
+            { BarcodeSymbology.Itf, "Itf" },
+            { BarcodeSymbology.Code128, "Code128" },
+            { BarcodeSymbology.Code93, "Code93" },
+            { BarcodeSymbology.NW7, "NW7" },
+        };
+
+        private static readonly IReadOnlyDictionary<BarcodeBarRatioLevel, string> PrinterBarcodeBarRatioLevelDictionary = new Dictionary<BarcodeBarRatioLevel, string>()
+        {
+            { BarcodeBarRatioLevel.LevelPlus1, "LevelPlus1" },
+            { BarcodeBarRatioLevel.Level0, "Level0" },
+            { BarcodeBarRatioLevel.LevelMi

@@ -201,4 +201,19 @@ namespace StarMicronics.ReactNative.StarIO10
 
         private static readonly IReadOnlyDictionary<QRCodeModel, string> PrinterQRCodeModelDictionary = new Dictionary<QRCodeModel, string>()
         {
-            { QRC
+            { QRCodeModel.Model1, "Model1" },
+            { QRCodeModel.Model2, "Model2" },
+        };
+
+        private static readonly IReadOnlyDictionary<QRCodeLevel, string> PrinterQRCodeLevelDictionary = new Dictionary<QRCodeLevel, string>()
+        {
+            { QRCodeLevel.L, "L" },
+            { QRCodeLevel.M, "M" },
+            { QRCodeLevel.Q, "Q" },
+            { QRCodeLevel.H, "H" },
+        };
+
+        private static readonly IReadOnlyDictionary<StarMicronics.StarIO10.StarXpandCommand.Buzzer.Channel, string> BuzzerChannelDictionary = new Dictionary<StarMicronics.StarIO10.StarXpandCommand.Buzzer.Channel, string>()
+        {
+            { StarMicronics.StarIO10.StarXpandCommand.Buzzer.Channel.No1, "No1" },
+            { StarMicronics.StarIO10.StarXpandCommand.Buzzer

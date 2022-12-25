@@ -183,4 +183,22 @@ namespace StarMicronics.ReactNative.StarIO10
         {
             { BarcodeBarRatioLevel.LevelPlus1, "LevelPlus1" },
             { BarcodeBarRatioLevel.Level0, "Level0" },
-            { BarcodeBarRatioLevel.LevelMi
+            { BarcodeBarRatioLevel.LevelMinus1, "LevelMinus1" },
+        };
+
+        private static readonly IReadOnlyDictionary<Pdf417Level, string> PrinterPdf417LevelDictionary = new Dictionary<Pdf417Level, string>()
+        {
+            { Pdf417Level.Ecc0, "Ecc0" },
+            { Pdf417Level.Ecc1, "Ecc1" },
+            { Pdf417Level.Ecc2, "Ecc2" },
+            { Pdf417Level.Ecc3, "Ecc3" },
+            { Pdf417Level.Ecc4, "Ecc4" },
+            { Pdf417Level.Ecc5, "Ecc5" },
+            { Pdf417Level.Ecc6, "Ecc6" },
+            { Pdf417Level.Ecc7, "Ecc7" },
+            { Pdf417Level.Ecc8, "Ecc8" },
+        };
+
+        private static readonly IReadOnlyDictionary<QRCodeModel, string> PrinterQRCodeModelDictionary = new Dictionary<QRCodeModel, string>()
+        {
+            { QRC

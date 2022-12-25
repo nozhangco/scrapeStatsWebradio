@@ -151,4 +151,21 @@ namespace StarMicronics.ReactNative.StarIO10
         private static readonly IReadOnlyDictionary<CjkCharacterType, string> PrinterCjkCharacterTypeDictionary = new Dictionary<CjkCharacterType, string>()
         {
             { CjkCharacterType.Japanese, "Japanese" },
-            { CjkCharacterType.S
+            { CjkCharacterType.SimplifiedChinese, "SimplifiedChinese" },
+            { CjkCharacterType.TraditionalChinese, "TraditionalChinese" },
+            { CjkCharacterType.Korean, "Korean" },
+        };
+
+        private static readonly IReadOnlyDictionary<CutType, string> PrinterCutTypeDictionary = new Dictionary<CutType, string>()
+        {
+            { CutType.Full, "Full" },
+            { CutType.Partial, "Partial" },
+            { CutType.FullDirect, "FullDirect" },
+            { CutType.PartialDirect, "PartialDirect" },
+        };
+
+        private static readonly IReadOnlyDictionary<BarcodeSymbology, string> PrinterBarcodeSymbologyDictionary = new Dictionary<BarcodeSymbology, string>()
+        {
+            { BarcodeSymbology.UpcE, "UpcE" },
+            { BarcodeSymbology.UpcA, "UpcA" },
+            { BarcodeSym

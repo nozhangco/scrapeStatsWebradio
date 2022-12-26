@@ -216,4 +216,19 @@ namespace StarMicronics.ReactNative.StarIO10
         private static readonly IReadOnlyDictionary<StarMicronics.StarIO10.StarXpandCommand.Buzzer.Channel, string> BuzzerChannelDictionary = new Dictionary<StarMicronics.StarIO10.StarXpandCommand.Buzzer.Channel, string>()
         {
             { StarMicronics.StarIO10.StarXpandCommand.Buzzer.Channel.No1, "No1" },
-            { StarMicronics.StarIO10.StarXpandCommand.Buzzer
+            { StarMicronics.StarIO10.StarXpandCommand.Buzzer.Channel.No2, "No2" },
+        };
+
+        private static readonly IReadOnlyDictionary<StarMicronics.StarIO10.StarXpandCommand.Drawer.Channel, string> DrawerChannelDictionary = new Dictionary<StarMicronics.StarIO10.StarXpandCommand.Drawer.Channel, string>()
+        {
+            { StarMicronics.StarIO10.StarXpandCommand.Drawer.Channel.No1, "No1" },
+            { StarMicronics.StarIO10.StarXpandCommand.Drawer.Channel.No2, "No2" }
+        };
+
+        private static readonly IReadOnlyDictionary<SoundStorageArea, string> MelodySpeakerSoundStorageAreaDictionary = new Dictionary<SoundStorageArea, string>()
+        {
+            { SoundStorageArea.Area1, "Area1" },
+            { SoundStorageArea.Area2, "Area2" },
+        };
+
+        private static r

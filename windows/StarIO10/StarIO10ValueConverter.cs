@@ -231,4 +231,22 @@ namespace StarMicronics.ReactNative.StarIO10
             { SoundStorageArea.Area2, "Area2" },
         };
 
-        private static r
+        private static readonly IReadOnlyDictionary<Contrast, string> DisplayContrastDictionary = new Dictionary<Contrast, string>()
+        {
+            { Contrast.Plus3, "Plus3" },
+            { Contrast.Plus2, "Plus2" },
+            { Contrast.Plus1, "Plus1" },
+            { Contrast.Default, "Default" },
+            { Contrast.Minus1, "Minus1" },
+            { Contrast.Minus2, "Minus2" },
+            { Contrast.Minus3, "Minus3" }
+        };
+
+        private static readonly IReadOnlyDictionary<CursorState, string> DisplayCursorStateDictionary = new Dictionary<CursorState, string>()
+        {
+            { CursorState.On, "On" },
+            { CursorState.Blink, "Blink" },
+            { CursorState.Off, "Off" }
+        };
+
+  

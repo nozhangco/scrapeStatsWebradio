@@ -262,4 +262,12 @@ namespace StarMicronics.ReactNative.StarIO10
             { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Japan, "Japan" },
             { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Norway, "Norway" },
             { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Denmark2, "Denmark2" },
-            { StarMicronics.StarIO10.StarXpandCommand.Display.
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Spain2, "Spain2" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.LatinAmerica, "LatinAmerica" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Korea, "Korea" }
+        };
+
+        private static readonly IReadOnlyDictionary<StarMicronics.StarIO10.StarXpandCommand.Display.CharacterEncodingType, string> DisplayCharacterEncodingTypeDictionary = new Dictionary<StarMicronics.StarIO10.StarXpandCommand.Display.CharacterEncodingType, string>()
+        {
+            { StarMicronics.StarIO10.StarXpandCommand.Display.CharacterEncodingType.Japanese, "Japanese" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.CharacterEncodingType.SimplifiedChinese, "

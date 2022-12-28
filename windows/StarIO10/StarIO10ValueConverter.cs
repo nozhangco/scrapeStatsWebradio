@@ -255,4 +255,11 @@ namespace StarMicronics.ReactNative.StarIO10
             { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.France, "France" },
             { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Germany, "Germany" },
             { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.UK, "UK" },
-            { StarMicronics.StarIO10.StarXpandC
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Denmark, "Denmark" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Sweden, "Sweden" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Italy, "Italy" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Spain, "Spain" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Japan, "Japan" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Norway, "Norway" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Denmark2, "Denmark2" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.

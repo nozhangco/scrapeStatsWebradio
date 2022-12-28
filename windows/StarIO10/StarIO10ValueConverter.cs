@@ -249,4 +249,10 @@ namespace StarMicronics.ReactNative.StarIO10
             { CursorState.Off, "Off" }
         };
 
-  
+        private static readonly IReadOnlyDictionary<StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType, string> DisplayInternationalCharacterTypeDictionary = new Dictionary<StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType, string>()
+        {
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Usa, "Usa" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.France, "France" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.Germany, "Germany" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType.UK, "UK" },
+            { StarMicronics.StarIO10.StarXpandC

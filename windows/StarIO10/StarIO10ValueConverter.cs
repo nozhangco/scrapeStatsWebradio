@@ -270,4 +270,20 @@ namespace StarMicronics.ReactNative.StarIO10
         private static readonly IReadOnlyDictionary<StarMicronics.StarIO10.StarXpandCommand.Display.CharacterEncodingType, string> DisplayCharacterEncodingTypeDictionary = new Dictionary<StarMicronics.StarIO10.StarXpandCommand.Display.CharacterEncodingType, string>()
         {
             { StarMicronics.StarIO10.StarXpandCommand.Display.CharacterEncodingType.Japanese, "Japanese" },
-            { StarMicronics.StarIO10.StarXpandCommand.Display.CharacterEncodingType.SimplifiedChinese, "
+            { StarMicronics.StarIO10.StarXpandCommand.Display.CharacterEncodingType.SimplifiedChinese, "SimplifiedChinese" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.CharacterEncodingType.TraditionalChinese, "TraditionalChinese" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.CharacterEncodingType.Korean, "Korean" },
+            { StarMicronics.StarIO10.StarXpandCommand.Display.CharacterEncodingType.CodePage, "CodePage" },
+        };
+
+        public static bool ToInterfaceType(string value, out InterfaceType output)
+        {
+            return InterfaceTypeDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToBezelLedType(string value, out StarMicronics.StarIO10.StarXpandCommand.Bezel.LedType output)
+        {
+            return BezelLedTypeDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToPresente

@@ -286,4 +286,22 @@ namespace StarMicronics.ReactNative.StarIO10
             return BezelLedTypeDictionary.TryGetKey(value, out output);
         }
 
-        public static bool ToPresente
+        public static bool ToPresenterLedType(string value, out StarMicronics.StarIO10.StarXpandCommand.Presenter.LedType output)
+        {
+            return PresenterLedTypeDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToPrinterBlackMarkPosition(string value, out BlackMarkPosition output)
+        {
+            return PrinterBlackMarkPositionDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToPrinterAlignment(string value, out Alignment output)
+        {
+            return PrinterAlignmentDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToPrinterPageModePrintDirection(string value, out PageModePrintDirection output)
+        {
+            return PrinterPageModePrintDirectionDictionary.TryGetKey(value, out output);
+    

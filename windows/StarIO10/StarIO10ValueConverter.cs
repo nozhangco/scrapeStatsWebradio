@@ -304,4 +304,21 @@ namespace StarMicronics.ReactNative.StarIO10
         public static bool ToPrinterPageModePrintDirection(string value, out PageModePrintDirection output)
         {
             return PrinterPageModePrintDirectionDictionary.TryGetKey(value, out output);
-    
+        }
+
+        public static bool ToPrinterFontType(string value, out FontType output)
+        {
+            return PrinterFontTypeDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToPrinterInternationalCharacterType(string value, out StarMicronics.StarIO10.StarXpandCommand.Printer.InternationalCharacterType output)
+        {
+            return PrinterInternationalCharacterTypeDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToPrinterCharacterEncodingType(string value, out StarMicronics.StarIO10.StarXpandCommand.Printer.CharacterEncodingType output)
+        {
+            return PrinterCharacterEncodingTypeDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToPrinterCjkCharacterType(string value

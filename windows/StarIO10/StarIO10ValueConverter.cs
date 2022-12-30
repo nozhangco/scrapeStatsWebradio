@@ -321,4 +321,24 @@ namespace StarMicronics.ReactNative.StarIO10
             return PrinterCharacterEncodingTypeDictionary.TryGetKey(value, out output);
         }
 
-        public static bool ToPrinterCjkCharacterType(string value
+        public static bool ToPrinterCjkCharacterType(string value, out CjkCharacterType output)
+        {
+            return PrinterCjkCharacterTypeDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToPrinterCutType(string value, out CutType output)
+        {
+            return PrinterCutTypeDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToPrinterBarcodeSymbology(string value, out BarcodeSymbology output)
+        {
+            return PrinterBarcodeSymbologyDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToPrinterBarcodeBarRatioLevel(string value, out BarcodeBarRatioLevel output)
+        {
+            return PrinterBarcodeBarRatioLevelDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToPrinterPdf417Level(string value, out Pdf417

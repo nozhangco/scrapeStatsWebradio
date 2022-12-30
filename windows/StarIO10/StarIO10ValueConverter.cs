@@ -341,4 +341,24 @@ namespace StarMicronics.ReactNative.StarIO10
             return PrinterBarcodeBarRatioLevelDictionary.TryGetKey(value, out output);
         }
 
-        public static bool ToPrinterPdf417Level(string value, out Pdf417
+        public static bool ToPrinterPdf417Level(string value, out Pdf417Level output)
+        {
+            return PrinterPdf417LevelDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToPrinterQRCodeModel(string value, out QRCodeModel output)
+        {
+            return PrinterQRCodeModelDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToPrinterQRCodeLevel(string value, out QRCodeLevel output)
+        {
+            return PrinterQRCodeLevelDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToBuzzerChannel(string value, out StarMicronics.StarIO10.StarXpandCommand.Buzzer.Channel output)
+        {
+            return BuzzerChannelDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToDrawerChannel(string value, out StarMicronics.StarIO10.StarXpandCommand.Drawer.Channel

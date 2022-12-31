@@ -361,4 +361,24 @@ namespace StarMicronics.ReactNative.StarIO10
             return BuzzerChannelDictionary.TryGetKey(value, out output);
         }
 
-        public static bool ToDrawerChannel(string value, out StarMicronics.StarIO10.StarXpandCommand.Drawer.Channel
+        public static bool ToDrawerChannel(string value, out StarMicronics.StarIO10.StarXpandCommand.Drawer.Channel output)
+        {
+            return DrawerChannelDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToMelodySpeakerSoundStorageArea(string value, out SoundStorageArea output)
+        {
+            return MelodySpeakerSoundStorageAreaDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToDisplayContrast(string value, out Contrast output)
+        {
+            return DisplayContrastDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToDisplayCursorState(string value, out CursorState output)
+        {
+            return DisplayCursorStateDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToDisplayInternationalCharacterType(string value, out StarMicronics.StarIO10

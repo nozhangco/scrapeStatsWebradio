@@ -381,4 +381,21 @@ namespace StarMicronics.ReactNative.StarIO10
             return DisplayCursorStateDictionary.TryGetKey(value, out output);
         }
 
-        public static bool ToDisplayInternationalCharacterType(string value, out StarMicronics.StarIO10
+        public static bool ToDisplayInternationalCharacterType(string value, out StarMicronics.StarIO10.StarXpandCommand.Display.InternationalCharacterType output)
+        {
+            return DisplayInternationalCharacterTypeDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToDisplayCharacterEncodingType(string value, out StarMicronics.StarIO10.StarXpandCommand.Display.CharacterEncodingType output)
+        {
+            return DisplayCharacterEncodingTypeDictionary.TryGetKey(value, out output);
+        }
+
+        public static bool ToString(InterfaceType value, out string output)
+        {
+            return InterfaceTypeDictionary.TryGetValue(value, out output);
+        }
+
+        public static bool ToString(StarPrinterModel value, out string output)
+        {
+            bool result = StarPrinterModelDictiona

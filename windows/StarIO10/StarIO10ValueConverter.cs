@@ -398,4 +398,30 @@ namespace StarMicronics.ReactNative.StarIO10
 
         public static bool ToString(StarPrinterModel value, out string output)
         {
-            bool result = StarPrinterModelDictiona
+            bool result = StarPrinterModelDictionary.TryGetValue(value, out output);
+
+            if (!result)
+            {
+                output = "Unknown";
+            }
+
+            return true;
+        }
+
+        public static bool ToString(StarPrinterEmulation value, out string output)
+        {
+            bool result = StarPrinterEmulationDictionary.TryGetValue(value, out output);
+
+            if (!result)
+            {
+                output = "Unknown";
+            }
+
+            return true;
+        }
+
+        public static bool ToPresenterModeParameter(bool loop, bool hold, bool retract, int holdTime, out ModeParameter parameter)
+        {
+            parameter = new ModeParameter();
+            parameter.SetLoop(loop);
+            parameter.SetHold(hold);

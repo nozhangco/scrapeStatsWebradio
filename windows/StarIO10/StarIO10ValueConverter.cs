@@ -447,4 +447,21 @@ namespace StarMicronics.ReactNative.StarIO10
             return true;
         }
 
+        public static bool ToPresenterLedAutomaticBlinkParameter(string type, int onTime, int offTime, out StarMicronics.StarIO10.StarXpandCommand.Presenter.LedAutomaticBlinkParameter parameter)
+        {
+            parameter = null;
+
+            if (!ToPresenterLedType(type, out StarMicronics.StarIO10.StarXpandCommand.Presenter.LedType nativeType))
+            {
+                return false;
+            }
+
+            parameter = new StarMicronics.StarIO10.StarXpandCommand.Presenter.LedAutomaticBlinkParameter(nativeType);
+            parameter.SetOnTime(onTime);
+            parameter.SetOffTime(offTime);
+
+            return true;
+        }
+
+        public static bool ToPrinterBlackMarkParameter(bool enable, string position, out BlackMarkParameter parameter)
        

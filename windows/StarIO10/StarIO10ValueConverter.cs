@@ -425,3 +425,26 @@ namespace StarMicronics.ReactNative.StarIO10
             parameter = new ModeParameter();
             parameter.SetLoop(loop);
             parameter.SetHold(hold);
+            parameter.SetRetract(retract);
+            parameter.SetHoldTime(holdTime);
+
+            return true;
+        }
+
+        public static bool ToBezelLedAutomaticBlinkParameter(string type, int onTime, int offTime, out StarMicronics.StarIO10.StarXpandCommand.Bezel.LedAutomaticBlinkParameter parameter)
+        {
+            parameter = null;
+
+            if (!ToBezelLedType(type, out StarMicronics.StarIO10.StarXpandCommand.Bezel.LedType nativeType))
+            {
+                return false;
+            }
+
+            parameter = new StarMicronics.StarIO10.StarXpandCommand.Bezel.LedAutomaticBlinkParameter(nativeType);
+            parameter.SetOnTime(onTime);
+            parameter.SetOffTime(offTime);
+
+            return true;
+        }
+
+       

@@ -464,4 +464,34 @@ namespace StarMicronics.ReactNative.StarIO10
         }
 
         public static bool ToPrinterBlackMarkParameter(bool enable, string position, out BlackMarkParameter parameter)
-       
+        {
+            parameter = null;
+
+            if (!ToPrinterBlackMarkPosition(position, out BlackMarkPosition nativePosition))
+            {
+                return false;
+            }
+
+            parameter = new BlackMarkParameter();
+            parameter.SetEnable(enable);
+            parameter.SetPosition(nativePosition);
+
+            return true;
+        }
+
+        public static bool ToPrinterLabelParameter(bool enable, out LabelParameter parameter)
+        {
+            parameter = new LabelParameter();
+            parameter.SetEnable(enable);
+
+            return true;
+        }
+
+        public static bool ToPrinterHoldPrintParameter(bool enable, out HoldPrintParameter parameter)
+        {
+            parameter = new HoldPrintParameter(enable);
+
+            return true;
+        }
+
+        public static bool ToPrinterPageModeAre

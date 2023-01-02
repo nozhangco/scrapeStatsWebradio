@@ -494,4 +494,27 @@ namespace StarMicronics.ReactNative.StarIO10
             return true;
         }
 
-        public static bool ToPrinterPageModeAre
+        public static bool ToPrinterPageModeAreaParameter(double x, double y, double width, double height, out PageModeAreaParameter parameter)
+        {
+            parameter = new PageModeAreaParameter(width, height);
+            parameter.SetX(x);
+            parameter.SetY(y);
+
+            return true;
+        }
+
+        public static bool ToMagnificationParameter(int width, int height, out MagnificationParameter parameter)
+        {
+            parameter = new MagnificationParameter(width, height);
+
+            return true;
+        }
+
+        public static bool ToPrinterLogoParameter(string keyCode, out LogoParameter parameter)
+        {
+            parameter = new LogoParameter(keyCode);
+
+            return true;
+        }
+
+        public static bool ToPrinterBarcodeParameter(string 

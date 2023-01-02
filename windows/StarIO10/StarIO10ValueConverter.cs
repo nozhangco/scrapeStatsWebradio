@@ -517,4 +517,23 @@ namespace StarMicronics.ReactNative.StarIO10
             return true;
         }
 
-        public static bool ToPrinterBarcodeParameter(string 
+        public static bool ToPrinterBarcodeParameter(string content, string symbology, bool printHri, int barDots, string barRatioLevel, double height, out BarcodeParameter parameter)
+        {
+            parameter = null;
+
+            if (!ToPrinterBarcodeSymbology(symbology, out BarcodeSymbology nativeSymbology) ||
+                !ToPrinterBarcodeBarRatioLevel(barRatioLevel, out BarcodeBarRatioLevel nativeBarRatioLevel))
+            {
+                return false;
+            }
+
+            parameter = new BarcodeParameter(content, nativeSymbology);
+            parameter.SetPrintHri(printHri);
+            parameter.SetBarDots(barDots);
+            parameter.SetBarRatioLevel(nativeBarRatioLevel);
+            parameter.SetHeight(height);
+
+            return true;
+        }
+
+        public static bool ToPrinterPdf417Parameter(string

@@ -536,4 +536,25 @@ namespace StarMicronics.ReactNative.StarIO10
             return true;
         }
 
-        public static bool ToPrinterPdf417Parameter(string
+        public static bool ToPrinterPdf417Parameter(string content, int column, int line, int module, int aspect, string level, out Pdf417Parameter parameter)
+        {
+            parameter = null;
+
+            if (!ToPrinterPdf417Level(level, out Pdf417Level nativeLevel))
+            {
+                return false;
+            }
+
+            parameter = new Pdf417Parameter(content);
+            parameter.SetColumn(column);
+            parameter.SetLine(line);
+            parameter.SetModule(module);
+            parameter.SetAspect(aspect);
+            parameter.SetLevel(nativeLevel);
+
+            return true;
+        }
+
+        public static bool ToPrinterQRCodeParameter(string content, string model, string level, int cellSize, out QRCodeParameter parameter)
+        {
+            parameter = null;

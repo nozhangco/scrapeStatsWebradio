@@ -558,3 +558,23 @@ namespace StarMicronics.ReactNative.StarIO10
         public static bool ToPrinterQRCodeParameter(string content, string model, string level, int cellSize, out QRCodeParameter parameter)
         {
             parameter = null;
+
+            if (!ToPrinterQRCodeModel(model, out QRCodeModel nativeModel) ||
+                !ToPrinterQRCodeLevel(level, out QRCodeLevel nativeLevel))
+            {
+                return false;
+            }
+
+            parameter = new QRCodeParameter(content);
+            parameter.SetModel(nativeModel);
+            parameter.SetLevel(nativeLevel);
+            parameter.SetCellSize(cellSize);
+
+            return true;
+        }
+
+        public static async Task<StarMicronics.StarIO10.StarXpandCommand.Printer.ImageParameter> ToPrinterImageParameterAsync(string source, int width, bool effectDiffusion, int threshold)
+        {
+            SoftwareBitmap image = await SourceToImageAsync(source);
+
+            StarMicronics.Star

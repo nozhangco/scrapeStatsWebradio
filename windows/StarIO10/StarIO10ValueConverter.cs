@@ -577,4 +577,22 @@ namespace StarMicronics.ReactNative.StarIO10
         {
             SoftwareBitmap image = await SourceToImageAsync(source);
 
-            StarMicronics.Star
+            StarMicronics.StarIO10.StarXpandCommand.Printer.ImageParameter parameter = new StarMicronics.StarIO10.StarXpandCommand.Printer.ImageParameter(image, width);
+            parameter.SetEffectDiffusion(effectDiffusion);
+            parameter.SetThreshold(threshold);
+
+            return parameter;
+        }
+
+        public static bool ToBuzzerDriveParameter(string channel, int repeat, int onTime, int offTime, out DriveParameter parameter)
+        {
+            parameter = null;
+
+            if (!ToBuzzerChannel(channel, out StarMicronics.StarIO10.StarXpandCommand.Buzzer.Channel nativeChannel))
+            {
+                return false;
+            }
+
+            parameter = new DriveParameter();
+            parameter.SetChannel(nativeChannel);
+            parameter.SetRepeat

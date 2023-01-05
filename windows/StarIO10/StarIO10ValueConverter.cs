@@ -618,4 +618,23 @@ namespace StarMicronics.ReactNative.StarIO10
             return true;
         }
 
-        public static bool ToMelodySpeakerDriveRegisteredSoundParameter(string area, int number, int volume, out DriveRegistere
+        public static bool ToMelodySpeakerDriveRegisteredSoundParameter(string area, int number, int volume, out DriveRegisteredSoundParameter parameter)
+        {
+            parameter = null;
+
+            if (!ToMelodySpeakerSoundStorageArea(area, out SoundStorageArea nativeArea))
+            {
+                return false;
+            }
+
+            parameter = new DriveRegisteredSoundParameter(nativeArea, number);
+            parameter.SetVolume(volume);
+
+            return true;
+        }
+
+        public static async Task<StarMicronics.StarIO10.StarXpandCommand.Display.ImageParameter> ToDisplayImageParameterAsync(string source, bool effectDiffusion, int threshold)
+        {
+            SoftwareBitmap image = await SourceToImageAsync(source);
+
+            StarMicronics.StarIO10.StarXpandCommand.Display.ImageParameter parameter = new

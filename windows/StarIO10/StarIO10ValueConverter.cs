@@ -637,4 +637,23 @@ namespace StarMicronics.ReactNative.StarIO10
         {
             SoftwareBitmap image = await SourceToImageAsync(source);
 
-            StarMicronics.StarIO10.StarXpandCommand.Display.ImageParameter parameter = new
+            StarMicronics.StarIO10.StarXpandCommand.Display.ImageParameter parameter = new StarMicronics.StarIO10.StarXpandCommand.Display.ImageParameter(image);
+            parameter.SetEffectDiffusion(effectDiffusion);
+            parameter.SetThreshold(threshold);
+
+            return parameter;
+        }
+
+        public static bool ToDisplayPositionParameter(int x, int y, out PositionParameter parameter)
+        {
+            parameter = new PositionParameter(x, y);
+
+            return true;
+        }
+
+        public static async Task<DriveOneTimeSoundParameter> ToMelodySpeakerDriveOneTimeSoundParameterAsync(string source, int volume)
+        {
+            byte[] sourceBytes = await SourceToBytesAsync(source);
+
+            DriveOneTimeSoundParameter parameter = new DriveOneTimeSoundParameter(sourceBytes);
+            parameter.SetVolume(volume);

@@ -595,4 +595,27 @@ namespace StarMicronics.ReactNative.StarIO10
 
             parameter = new DriveParameter();
             parameter.SetChannel(nativeChannel);
-            parameter.SetRepeat
+            parameter.SetRepeat(repeat);
+            parameter.SetOnTime(onTime);
+            parameter.SetOffTime(offTime);
+
+            return true;
+        }
+
+        public static bool ToDrawerOpenParameter(string channel, int onTime, out OpenParameter parameter)
+        {
+            parameter = null;
+
+            if (!ToDrawerChannel(channel, out StarMicronics.StarIO10.StarXpandCommand.Drawer.Channel nativeChannel))
+            {
+                return false;
+            }
+
+            parameter = new OpenParameter();
+            parameter.SetChannel(nativeChannel);
+            parameter.SetOnTime(onTime);
+
+            return true;
+        }
+
+        public static bool ToMelodySpeakerDriveRegisteredSoundParameter(string area, int number, int volume, out DriveRegistere

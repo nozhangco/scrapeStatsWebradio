@@ -733,4 +733,28 @@ namespace StarMicronics.ReactNative.StarIO10
             return result;
         }
 
-        public static ReadOnlyCollection<JSValue> ToJSCo
+        public static ReadOnlyCollection<JSValue> ToJSCollection(IEnumerable<dynamic> colleciton)
+        {
+            List<JSValue> result = new List<JSValue>();
+
+            foreach (dynamic item in colleciton)
+            {
+                result.Add(ToJSValue(item));
+            }
+
+            return new ReadOnlyCollection<JSValue>(result);
+        }
+
+        public static IReadOnlyDictionary<string, JSValue> ToJSDictionary(IEnumerable<KeyValuePair<string, object>> dictionary)
+        {
+            Dictionary<string, object> jsNamingDictionary = new Dictionary<string, object>();
+
+            foreach (KeyValuePair<string, object> item in dictionary)
+            {
+                jsNamingDictionary[ToJSNaming(item.Key)] = item.Value;
+            }
+
+            return ToJSDictionaryGeneral(jsNamingDictionary);
+        }
+
+   

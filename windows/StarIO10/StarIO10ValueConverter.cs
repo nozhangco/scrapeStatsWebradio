@@ -685,4 +685,28 @@ namespace StarMicronics.ReactNative.StarIO10
             {
                 result = new JSValue(intValue);
             }
-            els
+            else if (value is long longValue)
+            {
+                result = new JSValue(longValue);
+            }
+            else if (value is byte byteValue)
+            {
+                result = new JSValue(byteValue);
+            }
+            else if (value is ushort ushortValue)
+            {
+                result = new JSValue(ushortValue);
+            }
+            else if (value is uint uintValue)
+            {
+                result = new JSValue(uintValue);
+            }
+            else if (value is ulong ulongValue)
+            {
+                result = new JSValue(ulongValue);
+            }
+            else if (value is float floatValue)
+            {
+                result = new JSValue(floatValue);
+            }
+            else if (value is 

@@ -709,4 +709,28 @@ namespace StarMicronics.ReactNative.StarIO10
             {
                 result = new JSValue(floatValue);
             }
-            else if (value is 
+            else if (value is double doubleValue)
+            {
+                result = new JSValue(doubleValue);
+            }
+            else if (value is IDictionary<string, dynamic> dictionaryValue)
+            {
+                result = new JSValue(ToJSDictionary(dictionaryValue));
+            }
+            else if (value is IEnumerable<dynamic> collectionValue)
+            {
+                result = ToJSCollection(collectionValue);
+            }
+            else if (value is Array arrayValue)
+            {
+                result = ToJSCollection(arrayValue.OfType<dynamic>().ToList());
+            }
+            else
+            {
+                result = JSValue.Null;
+            }
+
+            return result;
+        }
+
+        public static ReadOnlyCollection<JSValue> ToJSCo

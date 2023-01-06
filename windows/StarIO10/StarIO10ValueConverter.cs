@@ -657,3 +657,32 @@ namespace StarMicronics.ReactNative.StarIO10
 
             DriveOneTimeSoundParameter parameter = new DriveOneTimeSoundParameter(sourceBytes);
             parameter.SetVolume(volume);
+
+            return parameter;
+        }
+
+        public static JSValue ToJSValue(dynamic value)
+        {
+            JSValue result;
+
+            if (value is string stringValue)
+            {
+                result = new JSValue(stringValue);
+            }
+            else if (value is bool boolValue)
+            {
+                result = new JSValue(boolValue);
+            }
+            else if (value is sbyte sbyteValue)
+            {
+                result = new JSValue(sbyteValue);
+            }
+            else if (value is short shortValue)
+            {
+                result = new JSValue(shortValue);
+            }
+            else if (value is int intValue)
+            {
+                result = new JSValue(intValue);
+            }
+            els

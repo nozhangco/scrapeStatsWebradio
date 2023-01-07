@@ -782,4 +782,34 @@ namespace StarMicronics.ReactNative.StarIO10
                 catch { }
             }
 
-            if (image == nul
+            if (image == null)
+            {
+                try
+                {
+                    image = await ResourceFileToImageAsync(source);
+                }
+                catch { }
+            }
+
+            if (image == null)
+            {
+                try
+                {
+                    image = await Base64ToImageAsync(source);
+                }
+                catch { }
+            }
+
+            if (image == null)
+            {
+                throw new StarIO10ArgumentException("Invalid source.");
+            }
+
+            return image;
+        }
+
+        private static async Task<SoftwareBitmap> Base64ToImageAsync(string base64String)
+        {
+            SoftwareBitmap image;
+
+            using (InMemoryRandomAccessStream stream = new InMemo

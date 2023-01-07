@@ -833,4 +833,23 @@ namespace StarMicronics.ReactNative.StarIO10
             WebResponse response = request.GetResponse();
             Stream stream = response.GetResponseStream();
 
-            Sof
+            SoftwareBitmap image;
+
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                stream.CopyTo(memoryStream);
+                BitmapDecoder decoder = await BitmapDecoder.CreateAsync(memoryStream.AsRandomAccessStream());
+                image = await decoder.GetSoftwareBitmapAsync(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied);
+            }
+
+            return image;
+        }
+
+        private static async Task<SoftwareBitmap> ResourceFileToImageAsync(string fileName)
+        {
+            SoftwareBitmap image = null;
+            StorageFile file = await GetResourceFileAsync(fileName);
+
+            if (file != null)
+            {
+                using (IRandomAccessStream stream = await fil

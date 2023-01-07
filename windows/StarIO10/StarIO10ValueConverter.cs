@@ -757,4 +757,29 @@ namespace StarMicronics.ReactNative.StarIO10
             return ToJSDictionaryGeneral(jsNamingDictionary);
         }
 
-   
+        public static IReadOnlyDictionary<TKey, JSValue> ToJSDictionaryGeneral<TKey, TValue>(IEnumerable<KeyValuePair<TKey, TValue>> dictionary)
+        {
+            Dictionary<TKey, JSValue> result = new Dictionary<TKey, JSValue>();
+
+            foreach (KeyValuePair<TKey, TValue> item in dictionary)
+            {
+                result[item.Key] = ToJSValue(item.Value);
+            }
+
+            return result;
+        }
+
+        private static async Task<SoftwareBitmap> SourceToImageAsync(string source)
+        {
+            SoftwareBitmap image = null;
+
+            if (image == null)
+            {
+                try
+                {
+                    image = await UriToImageAsync(source);
+                }
+                catch { }
+            }
+
+            if (image == nul

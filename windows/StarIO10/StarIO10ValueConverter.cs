@@ -911,4 +911,31 @@ namespace StarMicronics.ReactNative.StarIO10
 
             byte[] buffer;
 
-            using (MemoryStream memorySt
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                stream.CopyTo(memoryStream);
+                buffer = memoryStream.ToArray();
+            }
+
+            return buffer;
+        }
+
+        private static async Task<byte[]> ResourceFileToBytesAsync(string fileName)
+        {
+            byte[] buffer = null;
+            StorageFile file = await GetResourceFileAsync(fileName);
+
+            if (file != null)
+            {
+                using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.Read))
+                {
+                    buffer = new byte[stream.Size];
+                    await stream.ReadAsync(buffer.AsBuffer(), (uint)stream.Size, InputStreamOptions.None);
+                }
+
+            }
+
+            return buffer;
+        }
+
+        private static async

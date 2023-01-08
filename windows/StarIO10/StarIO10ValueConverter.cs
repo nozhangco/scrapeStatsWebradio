@@ -880,4 +880,35 @@ namespace StarMicronics.ReactNative.StarIO10
             {
                 try
                 {
-                    sourceBytes = await ResourceFileToBytesAsync(so
+                    sourceBytes = await ResourceFileToBytesAsync(source);
+                }
+                catch { }
+            }
+
+
+            if (sourceBytes == null)
+            {
+                try
+                {
+                    sourceBytes = Convert.FromBase64String(source);
+                }
+                catch { }
+            }
+
+            if (sourceBytes == null)
+            {
+                throw new StarIO10ArgumentException("Invalid source.");
+            }
+
+            return sourceBytes;
+        }
+
+        private static byte[] UriToBytes(string uri)
+        {
+            WebRequest request = WebRequest.Create(uri);
+            WebResponse response = request.GetResponse();
+            Stream stream = response.GetResponseStream();
+
+            byte[] buffer;
+
+            using (MemoryStream memorySt

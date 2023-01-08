@@ -852,4 +852,32 @@ namespace StarMicronics.ReactNative.StarIO10
 
             if (file != null)
             {
-                using (IRandomAccessStream stream = await fil
+                using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.Read))
+                {
+                    BitmapDecoder decoder = await BitmapDecoder.CreateAsync(stream);
+                    image = await decoder.GetSoftwareBitmapAsync(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied);
+                }
+
+            }
+
+            return image;
+        }
+
+        private static async Task<byte[]> SourceToBytesAsync(string source)
+        {
+            byte[] sourceBytes = null;
+
+            if (sourceBytes == null)
+            {
+                try
+                {
+                    sourceBytes = UriToBytes(source);
+                }
+                catch { }
+            }
+
+            if (sourceBytes == null)
+            {
+                try
+                {
+                    sourceBytes = await ResourceFileToBytesAsync(so

@@ -967,4 +967,29 @@ namespace StarMicronics.ReactNative.StarIO10
                 return value;
             }
 
-            StringBuilder result = 
+            StringBuilder result = new StringBuilder();
+
+            char[] characters = value.ToCharArray();
+
+            for(int i = 0; i < characters.Length; i++)
+            {
+                char character = characters[i];
+
+                if(char.IsUpper(character))
+                {
+                    StringBuilder upperWord = new StringBuilder();
+                    upperWord.Append(character);
+
+                    for(int j = i + 1; j < characters.Length; j++)
+                    {
+                        i = j;
+
+                        char nextCharacter = characters[j];
+
+                        if(char.IsUpper(nextCharacter))
+                        {
+                            upperWord.Append(nextCharacter);
+                        }
+                        else
+                        {
+                        

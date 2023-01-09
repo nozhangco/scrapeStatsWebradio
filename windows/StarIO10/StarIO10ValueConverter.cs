@@ -938,4 +938,33 @@ namespace StarMicronics.ReactNative.StarIO10
             return buffer;
         }
 
-        private static async
+        private static async Task<StorageFile> GetResourceFileAsync(string fileName)
+        {
+            StorageFile file = null;
+
+            try
+            {
+                file = await Package.Current.InstalledLocation.GetFileAsync(@"Assets\" + fileName);
+            }
+            catch (Exception) { }
+
+            //if (file == null)
+            //{
+            //    try
+            //    {
+            //        file = await ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
+            //    }
+            //    catch (Exception) { }
+            //}
+
+            return file;
+        }
+
+        private static string ToJSNaming(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return value;
+            }
+
+            StringBuilder result = 

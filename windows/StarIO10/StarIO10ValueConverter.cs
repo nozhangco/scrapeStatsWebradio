@@ -992,4 +992,30 @@ namespace StarMicronics.ReactNative.StarIO10
                         }
                         else
                         {
-                        
+                            i = j - 1;
+                            break;
+                        }
+                    }
+
+                    if(2 <= upperWord.Length && i != characters.Length - 1)
+                    {
+                        upperWord.Remove(upperWord.Length - 1, 1);
+                        i--;
+                    }
+
+                    if(result.Length == 0)
+                    {
+                        result.Append(upperWord.ToString().ToLower());
+                    }
+                    else
+                    {
+                        result.Append(ToProperString(upperWord.ToString()));
+                    }
+                }
+                else
+                {
+                    result.Append(character);
+                }
+            }
+
+            return T

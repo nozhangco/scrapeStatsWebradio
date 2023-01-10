@@ -1018,4 +1018,32 @@ namespace StarMicronics.ReactNative.StarIO10
                 }
             }
 
-            return T
+            return ToTopLowerString(result.ToString());
+        }
+
+        private static string ToProperString(string value)
+        {
+            StringBuilder result = new StringBuilder();
+
+            char[] characters = value.ToCharArray();
+
+            for (int i = 0; i < characters.Length; i++)
+            {
+                char character = characters[i];
+
+                if (i == 0 || characters.Length <= 2)
+                {
+                    result.Append(char.ToUpper(character));
+                }
+                else
+                {
+                    result.Append(char.ToLower(character));
+                }
+            }
+
+            return result.ToString();
+        }
+
+        private static string ToTopLowerString(string value)
+        {
+            char[] characters

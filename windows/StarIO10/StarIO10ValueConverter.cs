@@ -1046,4 +1046,10 @@ namespace StarMicronics.ReactNative.StarIO10
 
         private static string ToTopLowerString(string value)
         {
-            char[] characters
+            char[] characters = value.ToCharArray();
+            characters[0] = char.ToLower(characters[0]);
+
+            return new string(characters);
+        }
+    }
+}

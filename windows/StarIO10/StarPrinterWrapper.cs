@@ -37,4 +37,22 @@ namespace StarMicronics.ReactNative.StarIO10
         public Action<IReadOnlyDictionary<string, JSValue>> DrawerCommunicationError { get; set; }
 
         [ReactEvent]
-       
+        public Action<IReadOnlyDictionary<string, JSValue>> DrawerOpenCloseSignalSwitched { get; set; }
+
+        [ReactEvent]
+        public Action<IReadOnlyDictionary<string, JSValue>> InputDeviceCommunicationError { get; set; }
+
+        [ReactEvent]
+        public Action<IReadOnlyDictionary<string, JSValue>> InputDeviceConnected { get; set; }
+
+        [ReactEvent]
+        public Action<IReadOnlyDictionary<string, JSValue>> InputDeviceDisconnected { get; set; }
+
+        [ReactEvent]
+        public Action<IReadOnlyDictionary<string, JSValue>> InputDeviceDataReceived { get; set; }
+
+        [ReactEvent]
+        public Action<IReadOnlyDictionary<string, JSValue>> DisplayCommunicationError { get; set; }
+
+        [ReactEvent]
+        public Action<IReadOnlyDictionary<str

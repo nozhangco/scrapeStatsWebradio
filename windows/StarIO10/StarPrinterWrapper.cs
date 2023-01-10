@@ -16,4 +16,25 @@ namespace StarMicronics.ReactNative.StarIO10
         public Action<IReadOnlyDictionary<string, JSValue>> PrinterReady { get; set; }
 
         [ReactEvent]
-        public Ac
+        public Action<IReadOnlyDictionary<string, JSValue>> PrinterError { get; set; }
+
+        [ReactEvent]
+        public Action<IReadOnlyDictionary<string, JSValue>> PrinterPaperReady { get; set; }
+
+        [ReactEvent]
+        public Action<IReadOnlyDictionary<string, JSValue>> PrinterPaperNearEmpty { get; set; }
+
+        [ReactEvent]
+        public Action<IReadOnlyDictionary<string, JSValue>> PrinterPaperEmpty { get; set; }
+
+        [ReactEvent]
+        public Action<IReadOnlyDictionary<string, JSValue>> PrinterCoverOpened { get; set; }
+
+        [ReactEvent]
+        public Action<IReadOnlyDictionary<string, JSValue>> PrinterCoverClosed { get; set; }
+
+        [ReactEvent]
+        public Action<IReadOnlyDictionary<string, JSValue>> DrawerCommunicationError { get; set; }
+
+        [ReactEvent]
+       

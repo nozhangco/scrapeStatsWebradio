@@ -55,4 +55,22 @@ namespace StarMicronics.ReactNative.StarIO10
         public Action<IReadOnlyDictionary<string, JSValue>> DisplayCommunicationError { get; set; }
 
         [ReactEvent]
-        public Action<IReadOnlyDictionary<str
+        public Action<IReadOnlyDictionary<string, JSValue>> DisplayConnected { get; set; }
+
+        [ReactEvent]
+        public Action<IReadOnlyDictionary<string, JSValue>> DisplayDisconnected { get; set; }
+
+        [ReactMethod("init")]
+        public void Init(IReactPromise<string> promise)
+        {
+            StarPrinter nativeObject = new StarPrinter(new StarConnectionSettings(InterfaceType.Unknown));
+
+            SetObject(nativeObject, out string objectIdentifier);
+
+            nativeObject.PrinterDelegate.CommunicationError += (sender, e) =>
+            {
+                StarIO10ErrorWrapper.SetObject(e.Exception, out string exceptionIdentifier);
+
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
+             

@@ -91,4 +91,21 @@ namespace StarMicronics.ReactNative.StarIO10
 
             nativeObject.InputDeviceDelegate.CommunicationError += (sender, e) =>
             {
-                StarIO10ErrorWrapper.SetObject
+                StarIO10ErrorWrapper.SetObject(e.Exception, out string exceptionIdentifier);
+
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
+                parameter.Add(EventParameter.KeyErrorIdentifier, exceptionIdentifier);
+
+                InputDeviceCommunicationError(parameter);
+            };
+
+            nativeObject.DisplayDelegate.CommunicationError += (sender, e) =>
+            {
+                StarIO10ErrorWrapper.SetObject(e.Exception, out string exceptionIdentifier);
+
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
+                parameter.Add(EventParameter.KeyErrorIdentifier, exceptionIdentifier);
+
+                DisplayCommunicati

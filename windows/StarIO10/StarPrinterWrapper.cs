@@ -108,4 +108,31 @@ namespace StarMicronics.ReactNative.StarIO10
                 parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
                 parameter.Add(EventParameter.KeyErrorIdentifier, exceptionIdentifier);
 
-                DisplayCommunicati
+                DisplayCommunicationError(parameter);
+            };
+
+            promise.Resolve(objectIdentifier);
+        }
+
+        [ReactMethod("dispose")]
+        public void Dispose(string objectIdentifier, IReactPromise<JSValue.Void> promise)
+        {
+            DisposeObject(objectIdentifier);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("addListener")]
+        public void AddListener(string objectIdentifier, string eventName, IReactPromise<JSValue.Void> promise)
+        {
+            promise.Resolve();
+        }
+
+        [ReactMethod("removeListeners")]
+        public void RemoveListeners(string objectIdentifier, int count, IReactPromise<JSValue.Void> promise)
+        {
+            promise.Resolve();
+        }
+        
+        [ReactMethod("activatePrinterDelegate")]
+        pu

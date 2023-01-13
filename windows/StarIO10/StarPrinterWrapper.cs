@@ -135,4 +135,23 @@ namespace StarMicronics.ReactNative.StarIO10
         }
         
         [ReactMethod("activatePrinterDelegate")]
-        pu
+        public void ActivatePrinterDelegate(string objectIdentifier, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out StarPrinter nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.PrinterDelegate.Ready += (sender, e) =>
+            {
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
+
+                PrinterReady(parameter);
+            };
+
+            nativeObject.PrinterDelegate.Error += (sender, e) =>
+            {
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(EventParameter.KeyI

@@ -175,4 +175,26 @@ namespace StarMicronics.ReactNative.StarIO10
                 PrinterPaperNearEmpty(parameter);
             };
 
-            nativeObject.PrinterDelegate.PaperEmpty += (sender, e) =
+            nativeObject.PrinterDelegate.PaperEmpty += (sender, e) =>
+            {
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
+
+                PrinterPaperEmpty(parameter);
+            };
+
+            nativeObject.PrinterDelegate.CoverOpened += (sender, e) =>
+            {
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
+
+                PrinterCoverOpened(parameter);
+            };
+
+            nativeObject.PrinterDelegate.CoverClosed += (sender, e) =>
+            {
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
+
+                PrinterCoverClosed(parameter);
+     

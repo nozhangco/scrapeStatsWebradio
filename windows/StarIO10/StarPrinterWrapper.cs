@@ -240,4 +240,24 @@ namespace StarMicronics.ReactNative.StarIO10
                 InputDeviceConnected(parameter);
             };
 
-            nativeObject.InputDev
+            nativeObject.InputDeviceDelegate.Disconnected += (sender, e) =>
+            {
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
+
+                InputDeviceDisconnected(parameter);
+            };
+
+            nativeObject.InputDeviceDelegate.DataReceived += (sender, e) =>
+            {
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
+                parameter.Add(EventParameter.KeyInputDeviceData, StarIO10ValueConverter.ToJSValue(e.Data.ToArray()));
+
+                InputDeviceDataReceived(parameter);
+            };
+
+            promise.Resolve();
+        }
+
+        [ReactMeth

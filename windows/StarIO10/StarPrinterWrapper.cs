@@ -197,4 +197,24 @@ namespace StarMicronics.ReactNative.StarIO10
                 parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
 
                 PrinterCoverClosed(parameter);
-     
+            };
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("activateDrawerDelegate")]
+        public void ActivateDrawerDelegate(string objectIdentifier, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out StarPrinter nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.DrawerDelegate.OpenCloseSignalSwitched += (sender, e) =>
+            {
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
+                parameter.Add(EventParameter.KeyDrawerOpenCloseSignalState, e.OpenCloseSignal);
+
+                DrawerOpenCloseSignalSwitched(pa

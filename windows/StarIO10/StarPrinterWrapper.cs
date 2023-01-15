@@ -217,4 +217,27 @@ namespace StarMicronics.ReactNative.StarIO10
                 parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
                 parameter.Add(EventParameter.KeyDrawerOpenCloseSignalState, e.OpenCloseSignal);
 
-                DrawerOpenCloseSignalSwitched(pa
+                DrawerOpenCloseSignalSwitched(parameter);
+            };
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("activateInputDeviceDelegate")]
+        public void ActivateInputDeviceDelegate(string objectIdentifier, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out StarPrinter nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.InputDeviceDelegate.Connected += (sender, e) =>
+            {
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
+
+                InputDeviceConnected(parameter);
+            };
+
+            nativeObject.InputDev

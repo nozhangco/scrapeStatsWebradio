@@ -260,4 +260,24 @@ namespace StarMicronics.ReactNative.StarIO10
             promise.Resolve();
         }
 
-        [ReactMeth
+        [ReactMethod("activateDisplayDelegate")]
+        public void ActivateDisplayDelegate(string objectIdentifier, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out StarPrinter nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.DisplayDelegate.Connected += (sender, e) =>
+            {
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
+
+                DisplayConnected(parameter);
+            };
+
+            nativeObject.DisplayDelegate.Disconnected += (sender, e) =>
+            {
+                var parameter = new Dictionary<string, JSValue>();
+                parameter.Add(

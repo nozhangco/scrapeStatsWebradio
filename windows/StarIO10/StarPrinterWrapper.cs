@@ -280,4 +280,23 @@ namespace StarMicronics.ReactNative.StarIO10
             nativeObject.DisplayDelegate.Disconnected += (sender, e) =>
             {
                 var parameter = new Dictionary<string, JSValue>();
-                parameter.Add(
+                parameter.Add(EventParameter.KeyIdentifier, objectIdentifier);
+
+                DisplayDisconnected(parameter);
+            };
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("open")]
+        public async void Open(string objectIdentifier, string interfaceType, string identifier, int timeout, bool autoSwitchInterface, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out StarPrinter nativeObject) ||
+                !StarIO10ValueConverter.ToInterfaceType(interfaceType, out InterfaceType nativeInterfaceType))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.ConnectionSettings.InterfaceType = nativeInterfaceType;
+            nativeObject.Conne

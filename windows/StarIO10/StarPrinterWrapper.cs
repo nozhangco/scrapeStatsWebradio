@@ -299,4 +299,24 @@ namespace StarMicronics.ReactNative.StarIO10
             }
 
             nativeObject.ConnectionSettings.InterfaceType = nativeInterfaceType;
-            nativeObject.Conne
+            nativeObject.ConnectionSettings.Identifier = identifier;
+            nativeObject.ConnectionSettings.AutoSwitchInterface = autoSwitchInterface;
+            nativeObject.OpenTimeout = timeout;
+
+            try
+            {
+                await nativeObject.OpenAsync();
+                promise.Resolve();
+            }
+            catch (StarIO10Exception e)
+            {
+                StarIO10ErrorWrapper.SetObject(e, out string exceptionIdentifier);
+                promise.Reject(new ReactError() { Code = exceptionIdentifier, Exception = e });
+            }
+        }
+
+        [ReactMethod("getModel")]
+        public void GetModel(string objectIdentifier, IReactPromise<string> promise)
+        {
+            if (!GetObject(objectIdentifier, out StarPrinter nativeObject) ||
+               

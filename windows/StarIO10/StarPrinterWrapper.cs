@@ -319,4 +319,26 @@ namespace StarMicronics.ReactNative.StarIO10
         public void GetModel(string objectIdentifier, IReactPromise<string> promise)
         {
             if (!GetObject(objectIdentifier, out StarPrinter nativeObject) ||
-               
+                !StarIO10ValueConverter.ToString(nativeObject.Information.Model, out string modelString))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            promise.Resolve(modelString);
+        }
+
+        [ReactMethod("getEmulation")]
+        public void GetEmulation(string objectIdentifier, IReactPromise<string> promise)
+        {
+            if (!GetObject(objectIdentifier, out StarPrinter nativeObject) ||
+                !StarIO10ValueConverter.ToString(nativeObject.Information.Emulation, out string emulationString))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            promise.Resolve(emulationString);
+        }
+
+        [

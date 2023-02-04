@@ -341,4 +341,22 @@ namespace StarMicronics.ReactNative.StarIO10
             promise.Resolve(emulationString);
         }
 
-        [
+        [ReactMethod("getReserved")]
+        public void GetReserved(string objectIdentifier, IReactPromise<IReadOnlyDictionary<string, JSValue>> promise)
+        {
+            if (!GetObject(objectIdentifier, out StarPrinter nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            promise.Resolve(StarIO10ValueConverter.ToJSDictionary(nativeObject.Information.Reserved));
+        }
+
+        [ReactMethod("print")]
+        public async void Print(string objectIdentifier, string command, int timeout, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out StarPrinter nativeObject))
+            {
+                promise.Reject(new ReactError());
+     

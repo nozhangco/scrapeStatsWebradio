@@ -405,4 +405,25 @@ namespace StarMicronics.ReactNative.StarIO10
             if (!GetObject(objectIdentifier, out StarPrinter nativeObject))
             {
                 promise.Reject(new ReactError());
-     
+                return;
+            }
+
+            nativeObject.GetStatusTimeout = timeout;
+
+            try
+            {
+                StarPrinterStatus status = await nativeObject.GetStatusAsync();
+                StarPrinterStatusWrapper.SetObject(status, out string statusIdentifier);
+                promise.Resolve(statusIdentifier);
+            }
+            catch (StarIO10Exception e)
+            {
+                StarIO10ErrorWrapper.SetObject(e, out string exceptionIdentifier);
+                promise.Reject(new ReactError() { Code = exceptionIdentifier, Exception = e });
+            }
+        }
+
+        [ReactMethod("close")]
+        public async void Close(string objectIdentifier, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, 

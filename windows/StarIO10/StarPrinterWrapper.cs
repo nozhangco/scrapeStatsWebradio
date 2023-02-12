@@ -426,4 +426,22 @@ namespace StarMicronics.ReactNative.StarIO10
         [ReactMethod("close")]
         public async void Close(string objectIdentifier, IReactPromise<JSValue.Void> promise)
         {
-            if (!GetObject(objectIdentifier, 
+            if (!GetObject(objectIdentifier, out StarPrinter nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            try
+            {
+                await nativeObject.CloseAsync();
+                promise.Resolve();
+            }
+            catch (StarIO10Exception e)
+            {
+                StarIO10ErrorWrapper.SetObject(e, out string exceptionIdentifier);
+                promise.Reject(new ReactError() { Code = exceptionIdentifier, Exception = e });
+            }
+        }
+    }
+}

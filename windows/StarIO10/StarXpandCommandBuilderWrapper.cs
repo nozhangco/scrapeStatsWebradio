@@ -27,4 +27,20 @@ namespace StarMicronics.ReactNative.StarIO10
         [ReactMethod("setPreSetting")]
         public void SetPreSetting(string objectIdentifier, string preSettingBuilderIdentifier, IReactPromise<JSValue.Void> promise)
         {
-         
+            if (!GetObject(objectIdentifier, out StarXpandCommandBuilder nativeObject) ||
+                !PreSettingBuilderWrapper.GetObject(preSettingBuilderIdentifier, out PreSettingBuilder preSettingBuilder))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.PreSetting = preSettingBuilder;
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("addDocument")]
+        public void AddDocument(string objectIdentifier, string documentBuilderIdentifier, IReactPromise<JSValue.Void> promise)
+        {
+            if (!GetObject(objectIdentifier, out StarXpandCommandBuilder nativeObject) ||
+                !DocumentBuilderWrapper.GetObject(documentBuilderIdent

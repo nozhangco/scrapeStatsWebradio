@@ -43,4 +43,27 @@ namespace StarMicronics.ReactNative.StarIO10
         public void AddDocument(string objectIdentifier, string documentBuilderIdentifier, IReactPromise<JSValue.Void> promise)
         {
             if (!GetObject(objectIdentifier, out StarXpandCommandBuilder nativeObject) ||
-                !DocumentBuilderWrapper.GetObject(documentBuilderIdent
+                !DocumentBuilderWrapper.GetObject(documentBuilderIdentifier, out DocumentBuilder documentBuilder))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            nativeObject.AddDocument(documentBuilder);
+
+            promise.Resolve();
+        }
+
+        [ReactMethod("getCommands")]
+        public void GetCommands(string objectIdentifier, IReactPromise<string> promise)
+        {
+            if (!GetObject(objectIdentifier, out StarXpandCommandBuilder nativeObject))
+            {
+                promise.Reject(new ReactError());
+                return;
+            }
+
+            promise.Resolve(nativeObject.GetCommand());
+        }
+    }
+}
